@@ -40,8 +40,8 @@ import { validateSplitEntrypointOption } from './helpers/validate-cli-options.js
 
 // Workaround for https://github.com/rollup/plugins/issues/1329
 const virtual = virtualDefault as unknown as typeof virtualDefault.default;
-const vue = vueDefault as unknown as typeof vueDefault.default;
-const esbuild = esbuildDefault as unknown as typeof esbuildDefault.default;
+const vue = vueDefault;
+const esbuild = esbuildDefault;
 const styles = stylesDefault as unknown as typeof stylesDefault.default;
 const commonjs = commonjsDefault as unknown as typeof commonjsDefault.default;
 const json = jsonDefault as unknown as typeof jsonDefault.default;
@@ -517,7 +517,7 @@ function getRollupOptions({
 		external: mode === 'browser' ? APP_SHARED_DEPS : API_SHARED_DEPS,
 		plugins: [
 			typeof input !== 'string' ? virtual(input) : null,
-			mode === 'browser' ? vue({ isProduction: true }) : null,
+			mode === 'browser' ? (vue({ isProduction: true }) as unknown as Plugin) : null,
 			esbuild({ include: /\.tsx?$/, sourceMap: sourcemap }),
 			mode === 'browser' ? styles() : null,
 			...plugins,

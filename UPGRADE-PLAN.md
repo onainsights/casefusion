@@ -144,7 +144,18 @@ need Node 22 and remove most of the inherited advisories.
   used by any deployment; the Mapbox basemap and geocoder paths compile but are untested. Verified in headless Chromium
   against PostGIS, old vs new: map interface and map layout render identically, tiles load, controls present, drawing a
   point and saving stores the same coordinates.
-- **E5 Toolchain.** Only what E1–E4 need to build cleanly. Decide Storybook: remove if nobody uses it.
+- **E5 Toolchain (done 2026-10-21).** Scoped to what ships or runs for others; per-package Vitest 0.31 in packages that
+  only use it for their own tests stays (dev-only, report-only in the full audit).
+  - Extension SDK (published tool for extension authors): `@vitejs/plugin-vue` 5, Vite 6, `esbuild` 0.25,
+    `rollup-plugin-esbuild` 6, `@rollup/plugin-terser` 1.0, `inquirer` 9.3 (also in `create-directus-extension`). An
+    endpoint and an interface extension built with it load and work in the CaseFusion image.
+  - Admin app dev toolchain: Vite 6, `@vitejs/plugin-vue` 5, Vitest 3, `happy-dom` 21 (fixes its RCE advisory),
+    `@vue/test-utils` 2.4. 36 snapshot files rewritten by Vitest's new escaping (content verified identical); two tests
+    corrected to real-DOM behaviour (cancelable keydown events, string `input.value`).
+  - Storybook 7 removed (it does not support Vite 6 and pulled in Babel, webpack and React): `app/.storybook/`, the 41
+    `*.stories.ts` files, two scripts and 19 dev dependencies.
+  - Integration tests: MinIO images can no longer be pulled, so the `minio` compose service runs S3Mock 5.2.3 with the
+    test bucket created at startup; the `minio-mc` helper is gone.
 - **E6 Hardening.** `pnpm dedupe`; `license-checker --summary` clean (no BUSL, SSPL, Commons Clause); README and
   `contributing.md` state the Node/pnpm matrix.
 

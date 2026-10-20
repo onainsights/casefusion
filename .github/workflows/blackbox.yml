@@ -19,8 +19,7 @@ jobs:
 
       - name: Start database and services
         run:
-          docker compose -f tests/blackbox/docker-compose.yml up postgres auth-saml redis minio minio-mc -d --quiet-pull
-          --wait
+          docker compose -f tests/blackbox/docker-compose.yml up postgres auth-saml redis minio -d --quiet-pull --wait
 
       - name: Run tests
         run: TEST_DB=postgres pnpm run test:blackbox
