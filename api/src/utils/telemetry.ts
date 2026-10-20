@@ -6,9 +6,10 @@ import { version } from './package.js';
 export async function collectTelemetry(): Promise<void> {
 	const axios = (await import('axios')).default;
 
-	if (env['TELEMETRY'] !== false) {
+	// CaseFusion: off by default and no built-in endpoint, so nothing is reported to Monospace
+	if (env['TELEMETRY'] === true && env['TELEMETRY_URL']) {
 		try {
-			await axios.post('https://telemetry.directus.io/', {
+			await axios.post(env['TELEMETRY_URL'], {
 				version: version,
 				public_url: env['PUBLIC_URL'],
 				project_id: env['KEY'],
