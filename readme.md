@@ -35,7 +35,9 @@ being updated for security (see [`UPGRADE-PLAN.md`](UPGRADE-PLAN.md)).
 
 ## Running it
 
-Requirements: Node.js 18 and pnpm 8.9 for now (Node 22 and pnpm 9 are the next step in `UPGRADE-PLAN.md`).
+Requirements: Node.js 22 and pnpm 9. Start Node with `--no-node-snapshot` (needed by `isolated-vm` for "Run Script" flow
+operations): the `casefusion` CLI and the `pnpm dev` / `pnpm cli` scripts do this for you; set it yourself, for example
+in `NODE_OPTIONS`, if you start the API another way.
 
 ```bash
 pnpm install --frozen-lockfile

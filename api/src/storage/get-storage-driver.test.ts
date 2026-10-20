@@ -7,7 +7,8 @@ test('Returns imported installed driver for each supported driver', async () => 
 		const driver = await getStorageDriver(driverKey);
 		expect(driver).not.toBeUndefined();
 	}
-});
+	// Cold-imports every storage SDK; under a full parallel test run this can exceed the 5 s default
+}, 30_000);
 
 test('Throws error for key that is not supported', async () => {
 	const driverKey = `fake-${randWord()}`;

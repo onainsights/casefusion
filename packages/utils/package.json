@@ -46,7 +46,7 @@
 		"@directus/types": "workspace:*",
 		"@types/fs-extra": "11.0.1",
 		"@types/lodash-es": "4.17.7",
-		"@types/node": "18.16.12",
+		"@types/node": "22.20.5",
 		"@types/tmp": "0.2.3",
 		"@vitest/coverage-c8": "0.31.1",
 		"concurrently": "8.2.1",
