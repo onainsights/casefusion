@@ -81,11 +81,11 @@ need Node 22 and remove most of the inherited advisories.
      version. Record each override in this file with the parent that blocks it, so it can be dropped once the parent
      updates. Overrides in place (drop each once its parent no longer needs it):
 
-  | Override                        | Parent that blocks the fix                                            |
-  | ------------------------------- | --------------------------------------------------------------------- |
-  | `fast-xml-parser@4.1.2` → 4.5.7 | `@aws-sdk/client-s3`, `client-ses`, `client-sts` 3.332 pin it exactly |
-  | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6)     |
-  | `request>qs` → 6.16.1           | same                                                                  |
+  | Override                        | Parent that blocks the fix                                        |
+  | ------------------------------- | ----------------------------------------------------------------- |
+  | `fast-xml-parser@4.1.2` → 4.5.7 | `@aws-sdk/client-s3`, `client-sts` 3.332 pin it exactly           |
+  | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6) |
+  | `request>qs` → 6.16.1           | same                                                              |
 
 - **E2a.4 Admin app bundle (done 2026-10-20, after E1).** `pnpm audit --prod` skips `app/` entirely: its packages are
   devDependencies because Vite bundles them, so E0 to E2a.3 measured the API only. Classifying the app's advisories by
