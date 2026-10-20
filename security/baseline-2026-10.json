@@ -1,0 +1,2669 @@
+{
+	"date": "2026-10-20",
+	"command": "pnpm audit --prod --json (Node 18.20.8, pnpm 8.9.0)",
+	"totals": {
+		"info": 0,
+		"low": 32,
+		"moderate": 142,
+		"high": 156,
+		"critical": 12
+	},
+	"dependencies": 1279,
+	"advisories": [
+		{
+			"id": "GHSA-fjxv-7rqg-78g4",
+			"package": "form-data",
+			"severity": "critical",
+			"installed": ["4.0.0"],
+			"patched": ">=4.0.4",
+			"fix": "same-major",
+			"title": "form-data uses unsafe random function in form-data for choosing boundary"
+		},
+		{
+			"id": "GHSA-fjxv-7rqg-78g4",
+			"package": "form-data",
+			"severity": "critical",
+			"installed": ["3.0.1"],
+			"patched": ">=3.0.4",
+			"fix": "same-major",
+			"title": "form-data uses unsafe random function in form-data for choosing boundary"
+		},
+		{
+			"id": "GHSA-fjxv-7rqg-78g4",
+			"package": "form-data",
+			"severity": "critical",
+			"installed": ["2.3.3", "2.5.1"],
+			"patched": ">=2.5.4",
+			"fix": "same-major",
+			"title": "form-data uses unsafe random function in form-data for choosing boundary"
+		},
+		{
+			"id": "GHSA-gf2q-c269-pqgc",
+			"package": "liquidjs",
+			"severity": "critical",
+			"installed": ["10.7.1"],
+			"patched": ">=10.26.0",
+			"fix": "same-major",
+			"title": "LiquidJS is Vulnerable to Remote Code Execution"
+		},
+		{
+			"id": "GHSA-jqcg-44mw-7w3h",
+			"package": "proxy-addr",
+			"severity": "critical",
+			"installed": ["2.0.7"],
+			"patched": ">=2.0.8",
+			"fix": "same-major",
+			"title": "proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet"
+		},
+		{
+			"id": "GHSA-r683-v43c-6xqv",
+			"package": "samlify",
+			"severity": "critical",
+			"installed": ["2.8.10"],
+			"patched": ">=2.10.0",
+			"fix": "same-major",
+			"title": "samlify SAML Signature Wrapping attack"
+		},
+		{
+			"id": "GHSA-23hp-3jrh-7fpw",
+			"package": "tar",
+			"severity": "critical",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.19",
+			"fix": "major",
+			"title": "node-tar: Decompression/parse DoS via unlimited input"
+		},
+		{
+			"id": "GHSA-5gmw-xhrv-c9v3",
+			"package": "tinypool",
+			"severity": "critical",
+			"installed": ["0.8.1"],
+			"patched": ">=2.1.1",
+			"fix": "major",
+			"title": "Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution"
+		},
+		{
+			"id": "GHSA-85c8-ppgw-ccpr",
+			"package": "tinypool",
+			"severity": "critical",
+			"installed": ["0.8.1"],
+			"patched": ">=2.1.2",
+			"fix": "major",
+			"title": "Tinypool: Prototype Pollution Gadget to RCE in run() options"
+		},
+		{
+			"id": "GHSA-9p8x-f768-wp2g",
+			"package": "xml-crypto",
+			"severity": "critical",
+			"installed": ["3.2.0"],
+			"patched": ">=3.2.1",
+			"fix": "same-major",
+			"title": "xml-crypto Vulnerable to XML Signature Verification Bypass via Multiple SignedInfo References"
+		},
+		{
+			"id": "GHSA-x3m8-899r-f7c3",
+			"package": "xml-crypto",
+			"severity": "critical",
+			"installed": ["3.2.0"],
+			"patched": ">=3.2.1",
+			"fix": "same-major",
+			"title": "xml-crypto Vulnerable to XML Signature Verification Bypass via DigestValue Comment"
+		},
+		{
+			"id": "GHSA-g2v6-rqmx-r4w6",
+			"package": "@vue/server-renderer",
+			"severity": "high",
+			"installed": ["3.3.4"],
+			"patched": ">=3.5.42",
+			"fix": "same-major",
+			"title": "@vue/server-renderer: XSS via missing CR in attribute-name blacklist"
+		},
+		{
+			"id": "GHSA-27p8-2357-5qqv",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: DocType `name` Injection Bypasses requireWellFormed"
+		},
+		{
+			"id": "GHSA-2v35-w6hq-6mfw",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.13",
+			"fix": "same-major",
+			"title": "xmldom: Uncontrolled recursion in XML serialization leads to DoS"
+		},
+		{
+			"id": "GHSA-4w3w-2rp5-g8jm",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.14",
+			"fix": "same-major",
+			"title": "xmldom: Attribute name injection via setAttribute() bypasses requireWellFormed"
+		},
+		{
+			"id": "GHSA-8344-3jmq-59r6",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: Quadratic-time attribute deduplication"
+		},
+		{
+			"id": "GHSA-93r5-fhx6-vmg9",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: Quadratic-time parsing via the malformed-input recovery path \u2014 `parseElementStartPart` re-scan and `normalize()` adjacent-text merge"
+		},
+		{
+			"id": "GHSA-965w-775f-mr7g",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: Quadratic-memory consumption"
+		},
+		{
+			"id": "GHSA-c7q8-3ch8-vqpv",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: Processing Instruction Target Injection Bypasses requireWellFormed"
+		},
+		{
+			"id": "GHSA-f6ww-3ggp-fr8h",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.13",
+			"fix": "same-major",
+			"title": "xmldom has XML injection through unvalidated DocumentType serialization"
+		},
+		{
+			"id": "GHSA-j759-j44w-7fr8",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.13",
+			"fix": "same-major",
+			"title": "xmldom has XML node injection through unvalidated comment serialization"
+		},
+		{
+			"id": "GHSA-w2rr-34g9-rvrj",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.14",
+			"fix": "same-major",
+			"title": "xmldom: Element name injection via createElement() bypasses requireWellFormed"
+		},
+		{
+			"id": "GHSA-wh4c-j3r5-mjhp",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.12",
+			"fix": "same-major",
+			"title": "xmldom: XML injection via unsafe CDATA serialization allows attacker-controlled markup insertion"
+		},
+		{
+			"id": "GHSA-x4fp-j954-r2f4",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: End-tag Whitespace-Trim Regex ReDoS \u2014 quadratic backtracking in the 0.8.x end-tag parser"
+		},
+		{
+			"id": "GHSA-x6wf-f3px-wcqx",
+			"package": "@xmldom/xmldom",
+			"severity": "high",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.13",
+			"fix": "same-major",
+			"title": "xmldom has XML node injection through unvalidated processing instruction serialization"
+		},
+		{
+			"id": "GHSA-35jp-ww65-95wh",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`"
+		},
+		{
+			"id": "GHSA-3g43-6gmg-66jw",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.2",
+			"fix": "same-major",
+			"title": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge"
+		},
+		{
+			"id": "GHSA-43fc-jf86-j433",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.13.5",
+			"fix": "same-major",
+			"title": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig"
+		},
+		{
+			"id": "GHSA-4hjh-wcwx-xvwj",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.12.0",
+			"fix": "same-major",
+			"title": "Axios is vulnerable to DoS attack through lack of data size check"
+		},
+		{
+			"id": "GHSA-6chq-wfr3-2hj9",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: Header Injection via Prototype Pollution"
+		},
+		{
+			"id": "GHSA-8hc4-vh64-cxmj",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.7.4",
+			"fix": "same-major",
+			"title": "Server-Side Request Forgery in axios"
+		},
+		{
+			"id": "GHSA-hfxv-24rg-xrqf",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection"
+		},
+		{
+			"id": "GHSA-j5f8-grm9-p9fc",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection"
+		},
+		{
+			"id": "GHSA-jr5f-v2jv-69x6",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.8.2",
+			"fix": "same-major",
+			"title": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL"
+		},
+		{
+			"id": "GHSA-p92q-9vqr-4j8v",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter"
+		},
+		{
+			"id": "GHSA-pf86-5x62-jrwf",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking"
+		},
+		{
+			"id": "GHSA-pmwg-cvhr-8vh7",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0"
+		},
+		{
+			"id": "GHSA-q8qp-cvcw-x6jj",
+			"package": "axios",
+			"severity": "high",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.2",
+			"fix": "same-major",
+			"title": "Axios has prototype pollution read-side gadgets in HTTP adapter that allow credential injection and request hijacking"
+		},
+		{
+			"id": "GHSA-qwcr-r2fm-qrc7",
+			"package": "body-parser",
+			"severity": "high",
+			"installed": ["1.20.1"],
+			"patched": ">=1.20.3",
+			"fix": "same-major",
+			"title": "body-parser vulnerable to denial of service when url encoding is enabled"
+		},
+		{
+			"id": "GHSA-3jxr-9vmj-r5cp",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.2",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups"
+		},
+		{
+			"id": "GHSA-3jxr-9vmj-r5cp",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.16",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups"
+		},
+		{
+			"id": "GHSA-6j4f-fj2g-mc7p",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.19",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion"
+		},
+		{
+			"id": "GHSA-6j4f-fj2g-mc7p",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.5",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion"
+		},
+		{
+			"id": "GHSA-mh99-v99m-4gvg",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.17",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash"
+		},
+		{
+			"id": "GHSA-mh99-v99m-4gvg",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.3",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash"
+		},
+		{
+			"id": "GHSA-qhr7-859c-m2p7",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.20",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion"
+		},
+		{
+			"id": "GHSA-qhr7-859c-m2p7",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.6",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion"
+		},
+		{
+			"id": "GHSA-rgw5-rvv9-x895",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.4",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation"
+		},
+		{
+			"id": "GHSA-rgw5-rvv9-x895",
+			"package": "brace-expansion",
+			"severity": "high",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.18",
+			"fix": "same-major",
+			"title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation"
+		},
+		{
+			"id": "GHSA-grv7-fg5c-xmjg",
+			"package": "braces",
+			"severity": "high",
+			"installed": ["3.0.2"],
+			"patched": ">=3.0.3",
+			"fix": "same-major",
+			"title": "Uncontrolled resource consumption in braces"
+		},
+		{
+			"id": "GHSA-vfj7-8cjw-p6xm",
+			"package": "braces",
+			"severity": "high",
+			"installed": ["3.0.2"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns"
+		},
+		{
+			"id": "GHSA-73wf-gq98-2v4g",
+			"package": "browserslist",
+			"severity": "high",
+			"installed": ["4.22.1"],
+			"patched": ">=4.28.7",
+			"fix": "same-major",
+			"title": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)"
+		},
+		{
+			"id": "GHSA-c83g-rgw3-j3cx",
+			"package": "browserslist",
+			"severity": "high",
+			"installed": ["4.22.1"],
+			"patched": ">=4.28.7",
+			"fix": "same-major",
+			"title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM"
+		},
+		{
+			"id": "GHSA-3xgq-45jj-v275",
+			"package": "cross-spawn",
+			"severity": "high",
+			"installed": ["7.0.3"],
+			"patched": ">=7.0.5",
+			"fix": "same-major",
+			"title": "Regular Expression Denial of Service (ReDoS) in cross-spawn"
+		},
+		{
+			"id": "GHSA-737v-mqg7-c878",
+			"package": "defu",
+			"severity": "high",
+			"installed": ["6.1.2"],
+			"patched": ">=6.1.5",
+			"fix": "same-major",
+			"title": "defu: Prototype pollution via `__proto__` key in defaults argument"
+		},
+		{
+			"id": "GHSA-8gc5-j5rx-235r",
+			"package": "fast-xml-parser",
+			"severity": "high",
+			"installed": ["4.1.2"],
+			"patched": ">=4.5.5",
+			"fix": "same-major",
+			"title": "fast-xml-parser affected by numeric entity expansion bypassing all entity expansion limits (incomplete fix for CVE-2026-26278)"
+		},
+		{
+			"id": "GHSA-hmw2-7cc7-3qxx",
+			"package": "form-data",
+			"severity": "high",
+			"installed": ["4.0.0"],
+			"patched": ">=4.0.6",
+			"fix": "same-major",
+			"title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames"
+		},
+		{
+			"id": "GHSA-hmw2-7cc7-3qxx",
+			"package": "form-data",
+			"severity": "high",
+			"installed": ["3.0.1"],
+			"patched": ">=3.0.5",
+			"fix": "same-major",
+			"title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames"
+		},
+		{
+			"id": "GHSA-hmw2-7cc7-3qxx",
+			"package": "form-data",
+			"severity": "high",
+			"installed": ["2.3.3", "2.5.1"],
+			"patched": ">=2.5.6",
+			"fix": "same-major",
+			"title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames"
+		},
+		{
+			"id": "GHSA-ch52-4w7c-c8xp",
+			"package": "http-cache-semantics",
+			"severity": "high",
+			"installed": ["4.1.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "http-cache-semantics max-stale handling can disclose cross-user cached responses"
+		},
+		{
+			"id": "GHSA-v56q-mh7h-f735",
+			"package": "immutable",
+			"severity": "high",
+			"installed": ["4.3.4"],
+			"patched": ">=4.3.9",
+			"fix": "same-major",
+			"title": "Immutable.js `List` 32-bit trie overflow \u2192 unrecoverable DoS"
+		},
+		{
+			"id": "GHSA-wf6x-7x77-mvgw",
+			"package": "immutable",
+			"severity": "high",
+			"installed": ["4.3.4"],
+			"patched": ">=4.3.8",
+			"fix": "same-major",
+			"title": "Immutable is vulnerable to Prototype Pollution"
+		},
+		{
+			"id": "GHSA-xvcm-6775-5m9r",
+			"package": "immutable",
+			"severity": "high",
+			"installed": ["4.3.4"],
+			"patched": ">=4.3.9",
+			"fix": "same-major",
+			"title": "Immutable: Hash-collision algorithmic complexity denial of service in Immutable.Map/Set"
+		},
+		{
+			"id": "GHSA-2p57-rm9w-gvfp",
+			"package": "ip",
+			"severity": "high",
+			"installed": ["2.0.0"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "ip SSRF improper categorization in isPublic"
+		},
+		{
+			"id": "GHSA-6h2x-m376-mqjq",
+			"package": "joi",
+			"severity": "high",
+			"installed": ["17.9.2"],
+			"patched": ">=17.13.7",
+			"fix": "same-major",
+			"title": "joi: Quadratic regular-expression backtracking in `Joi.string().isoDate()`"
+		},
+		{
+			"id": "GHSA-2883-xcg3-v3hh",
+			"package": "js-yaml",
+			"severity": "high",
+			"installed": ["4.1.0"],
+			"patched": ">=4.3.2",
+			"fix": "same-major",
+			"title": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources"
+		},
+		{
+			"id": "GHSA-52cp-r559-cp3m",
+			"package": "js-yaml",
+			"severity": "high",
+			"installed": ["4.1.0"],
+			"patched": ">=4.3.0",
+			"fix": "same-major",
+			"title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption"
+		},
+		{
+			"id": "GHSA-5p4m-2wfm-xmqj",
+			"package": "js-yaml",
+			"severity": "high",
+			"installed": ["4.1.0"],
+			"patched": ">=4.3.1",
+			"fix": "same-major",
+			"title": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) \u2014 CVE-2026-59870 fix not backported"
+		},
+		{
+			"id": "GHSA-869p-cjfg-cm3x",
+			"package": "jws",
+			"severity": "high",
+			"installed": ["4.0.0"],
+			"patched": ">=4.0.1",
+			"fix": "same-major",
+			"title": "auth0/node-jws Improperly Verifies HMAC Signature"
+		},
+		{
+			"id": "GHSA-869p-cjfg-cm3x",
+			"package": "jws",
+			"severity": "high",
+			"installed": ["3.2.2"],
+			"patched": ">=3.2.3",
+			"fix": "same-major",
+			"title": "auth0/node-jws Improperly Verifies HMAC Signature"
+		},
+		{
+			"id": "GHSA-4r6h-5v86-94p3",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.27.2",
+			"fix": "same-major",
+			"title": "LiquidJS: Uncontrolled Resource Consumption in `join` filter allows template authors to bypass `memoryLimit` and crash the process"
+		},
+		{
+			"id": "GHSA-4rc3-7j7w-m548",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.7",
+			"fix": "same-major",
+			"title": "liquidjs has a Denial of Service via circular block reference in layout"
+		},
+		{
+			"id": "GHSA-56p5-8mhr-2fph",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.3",
+			"fix": "same-major",
+			"title": "LiquidJS: Root restriction bypass for partial and layout loading through symlinked templates"
+		},
+		{
+			"id": "GHSA-6q5m-63h6-5x4v",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS has Exponential Memory Amplification through its replace_first Filter $& Pattern"
+		},
+		{
+			"id": "GHSA-9r5m-9576-7f6x",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS: memoryLimit Bypass through Negative Range Values Leads to Process Crash"
+		},
+		{
+			"id": "GHSA-g357-x5c3-c72p",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.27.1",
+			"fix": "same-major",
+			"title": "LiquidJS: `pop` filter bypasses `memoryLimit` accounting that its array-filter siblings enforce"
+		},
+		{
+			"id": "GHSA-hh27-hf48-9f5q",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS has a memory and render limit bypass via unbounded width padding in `date` filter (strftime)"
+		},
+		{
+			"id": "GHSA-r7g9-xpmj-5fcq",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.26.0",
+			"fix": "same-major",
+			"title": "LiquidJS Vulnerable to ReDoS via Quadratic Backtracking in `strip_html` Filter Regex"
+		},
+		{
+			"id": "GHSA-wmfp-5q7x-987x",
+			"package": "liquidjs",
+			"severity": "high",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.0",
+			"fix": "same-major",
+			"title": "liquidjs has a path traversal fallback vulnerability"
+		},
+		{
+			"id": "GHSA-r5fr-rjxr-66jc",
+			"package": "lodash",
+			"severity": "high",
+			"installed": ["4.17.21"],
+			"patched": ">=4.18.0",
+			"fix": "same-major",
+			"title": "lodash vulnerable to Code Injection via `_.template` imports key names"
+		},
+		{
+			"id": "GHSA-r5fr-rjxr-66jc",
+			"package": "lodash-es",
+			"severity": "high",
+			"installed": ["4.17.21"],
+			"patched": ">=4.18.0",
+			"fix": "same-major",
+			"title": "lodash vulnerable to Code Injection via `_.template` imports key names"
+		},
+		{
+			"id": "GHSA-23c5-xmqv-rm74",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["3.1.2"],
+			"patched": ">=3.1.4",
+			"fix": "same-major",
+			"title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions"
+		},
+		{
+			"id": "GHSA-23c5-xmqv-rm74",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["5.1.6"],
+			"patched": ">=5.1.8",
+			"fix": "same-major",
+			"title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions"
+		},
+		{
+			"id": "GHSA-23c5-xmqv-rm74",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["9.0.1"],
+			"patched": ">=9.0.7",
+			"fix": "same-major",
+			"title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions"
+		},
+		{
+			"id": "GHSA-3ppc-4f35-3m26",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["3.1.2"],
+			"patched": ">=3.1.3",
+			"fix": "same-major",
+			"title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern"
+		},
+		{
+			"id": "GHSA-3ppc-4f35-3m26",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["5.1.6"],
+			"patched": ">=5.1.7",
+			"fix": "same-major",
+			"title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern"
+		},
+		{
+			"id": "GHSA-3ppc-4f35-3m26",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["9.0.1"],
+			"patched": ">=9.0.6",
+			"fix": "same-major",
+			"title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern"
+		},
+		{
+			"id": "GHSA-7r86-cg39-jmmj",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["3.1.2"],
+			"patched": ">=3.1.3",
+			"fix": "same-major",
+			"title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments"
+		},
+		{
+			"id": "GHSA-7r86-cg39-jmmj",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["5.1.6"],
+			"patched": ">=5.1.8",
+			"fix": "same-major",
+			"title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments"
+		},
+		{
+			"id": "GHSA-7r86-cg39-jmmj",
+			"package": "minimatch",
+			"severity": "high",
+			"installed": ["9.0.1"],
+			"patched": ">=9.0.7",
+			"fix": "same-major",
+			"title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments"
+		},
+		{
+			"id": "GHSA-28wg-ghj8-5hjv",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["4.0.2"],
+			"patched": ">=5.1.16",
+			"fix": "major",
+			"title": "nanoid: non-secure generators can loop indefinitely with negative size"
+		},
+		{
+			"id": "GHSA-28wg-ghj8-5hjv",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["3.3.6"],
+			"patched": ">=3.3.16",
+			"fix": "same-major",
+			"title": "nanoid: non-secure generators can loop indefinitely with negative size"
+		},
+		{
+			"id": "GHSA-2v37-7h3g-55p8",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["3.3.6"],
+			"patched": ">=3.3.18",
+			"fix": "same-major",
+			"title": "nanoid: custom generators can loop indefinitely when size is zero"
+		},
+		{
+			"id": "GHSA-2v37-7h3g-55p8",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["4.0.2"],
+			"patched": ">=5.1.6",
+			"fix": "major",
+			"title": "nanoid: custom generators can loop indefinitely when size is zero"
+		},
+		{
+			"id": "GHSA-xwg4-73v4-xw9w",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["4.0.2"],
+			"patched": ">=5.1.11",
+			"fix": "major",
+			"title": "nanoid: Integer Overflow or Wraparound"
+		},
+		{
+			"id": "GHSA-xwg4-73v4-xw9w",
+			"package": "nanoid",
+			"severity": "high",
+			"installed": ["3.3.6"],
+			"patched": ">=3.3.12",
+			"fix": "same-major",
+			"title": "nanoid: Integer Overflow or Wraparound"
+		},
+		{
+			"id": "GHSA-2328-f5f3-gj25",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.4.0",
+			"fix": "same-major",
+			"title": "Forge has a basicConstraints bypass in its certificate chain verification (RFC 5280 violation)"
+		},
+		{
+			"id": "GHSA-554w-wpv2-vw27",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.3.2",
+			"fix": "same-major",
+			"title": "node-forge has ASN.1 Unbounded Recursion"
+		},
+		{
+			"id": "GHSA-5gfm-wpxj-wjgq",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.3.2",
+			"fix": "same-major",
+			"title": "node-forge has an Interpretation Conflict vulnerability via its ASN.1 Validator Desynchronization"
+		},
+		{
+			"id": "GHSA-5m6q-g25r-mvwx",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.4.0",
+			"fix": "same-major",
+			"title": "Forge has Denial of Service via Infinite Loop in BigInteger.modInverse() with Zero Input"
+		},
+		{
+			"id": "GHSA-86w9-cpqp-85rv",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "node-forge RSA PKCS#1 v1.5 signature verification accepts extra nested DigestAlgorithm elements"
+		},
+		{
+			"id": "GHSA-ppp5-5v6c-4jwp",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.4.0",
+			"fix": "same-major",
+			"title": "Forge has signature forgery in RSA-PKCS due to ASN.1 extra field  "
+		},
+		{
+			"id": "GHSA-q67f-28xg-22rw",
+			"package": "node-forge",
+			"severity": "high",
+			"installed": ["1.3.1"],
+			"patched": ">=1.4.0",
+			"fix": "same-major",
+			"title": "Forge has signature forgery in Ed25519 due to missing S > L check"
+		},
+		{
+			"id": "GHSA-2x7j-588g-ccc2",
+			"package": "nodemailer",
+			"severity": "high",
+			"installed": ["6.9.2"],
+			"patched": ">=9.1.0",
+			"fix": "major",
+			"title": "Nodemailer: Quadratic (O(n\u00b2)) time complexity in addressparser allows remote denial of service via a crafted address list"
+		},
+		{
+			"id": "GHSA-p6gq-j5cr-w38f",
+			"package": "nodemailer",
+			"severity": "high",
+			"installed": ["6.9.2"],
+			"patched": ">=9.0.1",
+			"fix": "major",
+			"title": "Nodemailer: Message-level raw option bypasses disableFileAccess/disableUrlAccess, enabling arbitrary file read and full-response SSRF in the delivered message"
+		},
+		{
+			"id": "GHSA-r7g4-qg5f-qqm2",
+			"package": "nodemailer",
+			"severity": "high",
+			"installed": ["6.9.2"],
+			"patched": ">=8.0.8",
+			"fix": "major",
+			"title": "Nodemailer: Improper TLS Certificate Validation in OAuth2 Token Fetch Enables Credential Interception"
+		},
+		{
+			"id": "GHSA-rcmh-qjqh-p98v",
+			"package": "nodemailer",
+			"severity": "high",
+			"installed": ["6.9.2"],
+			"patched": ">=7.0.11",
+			"fix": "major",
+			"title": "Nodemailer\u2019s addressparser is vulnerable to DoS caused by recursive calls"
+		},
+		{
+			"id": "GHSA-v53p-9fqp-m79j",
+			"package": "nodemailer",
+			"severity": "high",
+			"installed": ["6.9.2"],
+			"patched": ">=10.0.6",
+			"fix": "major",
+			"title": "Nodemailer: Quadratic backtracking in the addressparser free-text fallback allows remote denial of service"
+		},
+		{
+			"id": "GHSA-37ch-88jc-xwx2",
+			"package": "path-to-regexp",
+			"severity": "high",
+			"installed": ["0.1.7"],
+			"patched": ">=0.1.13",
+			"fix": "same-major",
+			"title": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters"
+		},
+		{
+			"id": "GHSA-9wv6-86v2-598j",
+			"package": "path-to-regexp",
+			"severity": "high",
+			"installed": ["0.1.7"],
+			"patched": ">=0.1.10",
+			"fix": "same-major",
+			"title": "path-to-regexp outputs backtracking regular expressions"
+		},
+		{
+			"id": "GHSA-rhx6-c78j-4q9w",
+			"package": "path-to-regexp",
+			"severity": "high",
+			"installed": ["0.1.7"],
+			"patched": ">=0.1.12",
+			"fix": "same-major",
+			"title": "path-to-regexp contains a ReDoS"
+		},
+		{
+			"id": "GHSA-c2c7-rcm5-vvqj",
+			"package": "picomatch",
+			"severity": "high",
+			"installed": ["2.3.1"],
+			"patched": ">=2.3.2",
+			"fix": "same-major",
+			"title": "Picomatch has a ReDoS vulnerability via extglob quantifiers"
+		},
+		{
+			"id": "GHSA-6g55-p6wh-862q",
+			"package": "postcss",
+			"severity": "high",
+			"installed": ["8.4.31"],
+			"patched": ">=8.5.12",
+			"fix": "same-major",
+			"title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments"
+		},
+		{
+			"id": "GHSA-r28c-9q8g-f849",
+			"package": "postcss",
+			"severity": "high",
+			"installed": ["8.4.31"],
+			"patched": ">=8.5.18",
+			"fix": "same-major",
+			"title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure"
+		},
+		{
+			"id": "GHSA-gcx4-mw62-g8wm",
+			"package": "rollup",
+			"severity": "high",
+			"installed": ["3.22.0"],
+			"patched": ">=3.29.5",
+			"fix": "same-major",
+			"title": "DOM Clobbering Gadget found in rollup bundled scripts that leads to XSS"
+		},
+		{
+			"id": "GHSA-mw96-cpmx-2vgc",
+			"package": "rollup",
+			"severity": "high",
+			"installed": ["3.22.0"],
+			"patched": ">=3.30.0",
+			"fix": "same-major",
+			"title": "Rollup 4 has Arbitrary File Write via Path Traversal"
+		},
+		{
+			"id": "GHSA-34r5-q4jw-r36m",
+			"package": "samlify",
+			"severity": "high",
+			"installed": ["2.8.10"],
+			"patched": ">=2.13.0",
+			"fix": "same-major",
+			"title": "samlify: XML Injection in AttributeValue Allows Privilege Escalation in Signed SAML Assertions"
+		},
+		{
+			"id": "GHSA-c2qf-rxjj-qqgw",
+			"package": "semver",
+			"severity": "high",
+			"installed": ["7.5.1"],
+			"patched": ">=7.5.2",
+			"fix": "same-major",
+			"title": "semver vulnerable to Regular Expression Denial of Service"
+		},
+		{
+			"id": "GHSA-5c6j-r48x-rmvq",
+			"package": "serialize-javascript",
+			"severity": "high",
+			"installed": ["6.0.1"],
+			"patched": ">=7.0.3",
+			"fix": "major",
+			"title": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()"
+		},
+		{
+			"id": "GHSA-54xq-cgqr-rpm3",
+			"package": "sharp",
+			"severity": "high",
+			"installed": ["0.32.5"],
+			"patched": ">=0.32.6",
+			"fix": "same-major",
+			"title": "sharp vulnerability in libwebp dependency CVE-2023-4863"
+		},
+		{
+			"id": "GHSA-f88m-g3jw-g9cj",
+			"package": "sharp",
+			"severity": "high",
+			"installed": ["0.32.5"],
+			"patched": ">=0.35.0",
+			"fix": "major",
+			"title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591"
+		},
+		{
+			"id": "GHSA-rgj7-g3m4-5g8c",
+			"package": "sharp",
+			"severity": "high",
+			"installed": ["0.32.5"],
+			"patched": ">=0.35.4",
+			"fix": "major",
+			"title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545"
+		},
+		{
+			"id": "GHSA-wq5f-xc86-pv6w",
+			"package": "sharp",
+			"severity": "high",
+			"installed": ["0.32.5"],
+			"patched": ">=0.35.5",
+			"fix": "major",
+			"title": "sharp : Vulnerability in librsvg dependency CVE-2026-96889"
+		},
+		{
+			"id": "GHSA-68fv-2mgg-jv7q",
+			"package": "source-map-js",
+			"severity": "high",
+			"installed": ["1.0.2"],
+			"patched": ">=1.2.2",
+			"fix": "same-major",
+			"title": "source-map-js allows event-loop denial of service through indexed source-map section offsets"
+		},
+		{
+			"id": "GHSA-2p49-hgcm-8545",
+			"package": "svgo",
+			"severity": "high",
+			"installed": ["2.8.0"],
+			"patched": ">=2.8.3",
+			"fix": "same-major",
+			"title": "SVGO removeScripts plugin leaves some executable scripts intact"
+		},
+		{
+			"id": "GHSA-w27v-7q3p-w38r",
+			"package": "svgo",
+			"severity": "high",
+			"installed": ["2.8.0"],
+			"patched": ">=2.8.4",
+			"fix": "same-major",
+			"title": "SVGO: removeScripts allows executable links through namespace and control-character bypasses"
+		},
+		{
+			"id": "GHSA-xpqw-6gx7-v673",
+			"package": "svgo",
+			"severity": "high",
+			"installed": ["2.8.0"],
+			"patched": ">=2.8.1",
+			"fix": "same-major",
+			"title": "SVGO DoS through entity expansion in DOCTYPE (Billion Laughs)"
+		},
+		{
+			"id": "GHSA-34x7-hfp2-rc4v",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.7",
+			"fix": "major",
+			"title": "node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal"
+		},
+		{
+			"id": "GHSA-83g3-92jg-28cx",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.8",
+			"fix": "major",
+			"title": "Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction"
+		},
+		{
+			"id": "GHSA-8qq5-rm4j-mr97",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.3",
+			"fix": "major",
+			"title": "node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization"
+		},
+		{
+			"id": "GHSA-8x88-c5mf-7j5w",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.18",
+			"fix": "major",
+			"title": "node-tar: Negative tar entry size causes infinite loop in archive replace"
+		},
+		{
+			"id": "GHSA-9ppj-qmqm-q256",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.11",
+			"fix": "major",
+			"title": "node-tar Symlink Path Traversal via Drive-Relative Linkpath"
+		},
+		{
+			"id": "GHSA-qffp-2rhf-9h96",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.10",
+			"fix": "major",
+			"title": "tar has Hardlink Path Traversal via Drive-Relative Linkpath"
+		},
+		{
+			"id": "GHSA-r292-9mhp-454m",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.21",
+			"fix": "major",
+			"title": "node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection"
+		},
+		{
+			"id": "GHSA-r6q2-hw4h-h46w",
+			"package": "tar",
+			"severity": "high",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.4",
+			"fix": "major",
+			"title": "Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS"
+		},
+		{
+			"id": "GHSA-8cj5-5rvv-wf4v",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["3.0.4"],
+			"patched": ">=3.0.9",
+			"fix": "same-major",
+			"title": "tar-fs can extract outside the specified dir with a specific tarball"
+		},
+		{
+			"id": "GHSA-8cj5-5rvv-wf4v",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["2.1.1"],
+			"patched": ">=2.1.3",
+			"fix": "same-major",
+			"title": "tar-fs can extract outside the specified dir with a specific tarball"
+		},
+		{
+			"id": "GHSA-pq67-2wwv-3xjx",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["3.0.4"],
+			"patched": ">=3.0.7",
+			"fix": "same-major",
+			"title": "tar-fs Vulnerable to Link Following and Path Traversal via Extracting a Crafted tar File"
+		},
+		{
+			"id": "GHSA-pq67-2wwv-3xjx",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["2.1.1"],
+			"patched": ">=2.1.2",
+			"fix": "same-major",
+			"title": "tar-fs Vulnerable to Link Following and Path Traversal via Extracting a Crafted tar File"
+		},
+		{
+			"id": "GHSA-vj76-c3g6-qr5v",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["2.1.1"],
+			"patched": ">=2.1.4",
+			"fix": "same-major",
+			"title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball"
+		},
+		{
+			"id": "GHSA-vj76-c3g6-qr5v",
+			"package": "tar-fs",
+			"severity": "high",
+			"installed": ["3.0.4"],
+			"patched": ">=3.1.1",
+			"fix": "same-major",
+			"title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball"
+		},
+		{
+			"id": "GHSA-ph9p-34f9-6g65",
+			"package": "tmp",
+			"severity": "high",
+			"installed": ["0.0.33", "0.2.1"],
+			"patched": ">=0.2.6",
+			"fix": "major",
+			"title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape"
+		},
+		{
+			"id": "GHSA-v9p9-hfj2-hcw8",
+			"package": "undici",
+			"severity": "high",
+			"installed": ["5.22.1"],
+			"patched": ">=6.24.0",
+			"fix": "major",
+			"title": "Undici has Unhandled Exception in WebSocket Client Due to Invalid server_max_window_bits Validation"
+		},
+		{
+			"id": "GHSA-vrm6-8vpv-qv8q",
+			"package": "undici",
+			"severity": "high",
+			"installed": ["5.22.1"],
+			"patched": ">=6.24.0",
+			"fix": "major",
+			"title": "Undici has Unbounded Memory Consumption in WebSocket permessage-deflate Decompression"
+		},
+		{
+			"id": "GHSA-vxpw-j846-p89q",
+			"package": "undici",
+			"severity": "high",
+			"installed": ["5.22.1"],
+			"patched": ">=6.27.0",
+			"fix": "major",
+			"title": "undici WebSocket client vulnerable to denial of service via fragment count bypass"
+		},
+		{
+			"id": "GHSA-353f-5xf4-qw67",
+			"package": "vite",
+			"severity": "high",
+			"installed": ["4.3.7"],
+			"patched": ">=4.3.9",
+			"fix": "same-major",
+			"title": "Vite Server Options (server.fs.deny) can be bypassed using double forward-slash (//)"
+		},
+		{
+			"id": "GHSA-c24v-8rfc-w8vw",
+			"package": "vite",
+			"severity": "high",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.2",
+			"fix": "same-major",
+			"title": "Vite dev server option `server.fs.deny` can be bypassed when hosted on case-insensitive filesystem"
+		},
+		{
+			"id": "GHSA-c27g-q93r-2cwf",
+			"package": "vite",
+			"severity": "high",
+			"installed": ["4.3.7"],
+			"patched": ">=5.4.9",
+			"fix": "major",
+			"title": "launch-editor vulnerable to command injection via the crafted request on Windows"
+		},
+		{
+			"id": "GHSA-fx2h-pf6j-xcff",
+			"package": "vite",
+			"severity": "high",
+			"installed": ["4.3.7"],
+			"patched": ">=6.4.3",
+			"fix": "major",
+			"title": "vite: `server.fs.deny` bypass on Windows alternate paths"
+		},
+		{
+			"id": "GHSA-p2ph-7g93-hw3m",
+			"package": "vue-i18n",
+			"severity": "high",
+			"installed": ["9.2.2"],
+			"patched": ">=9.14.3",
+			"fix": "same-major",
+			"title": "Vue I18n Allows Prototype Pollution in `handleFlatJson`"
+		},
+		{
+			"id": "GHSA-3h5v-q93c-6h6q",
+			"package": "ws",
+			"severity": "high",
+			"installed": ["8.12.1"],
+			"patched": ">=8.17.1",
+			"fix": "same-major",
+			"title": "ws affected by a DoS when handling a request with many HTTP headers"
+		},
+		{
+			"id": "GHSA-96hv-2xvq-fx4p",
+			"package": "ws",
+			"severity": "high",
+			"installed": ["8.12.1"],
+			"patched": ">=8.21.0",
+			"fix": "same-major",
+			"title": "ws: Memory exhaustion DoS from tiny fragments and data chunks"
+		},
+		{
+			"id": "GHSA-m5vv-6r4h-3vj9",
+			"package": "@azure/identity",
+			"severity": "moderate",
+			"installed": ["2.1.0"],
+			"patched": ">=4.2.1",
+			"fix": "major",
+			"title": "Azure Identity Libraries and Microsoft Authentication Library Elevation of Privilege Vulnerability"
+		},
+		{
+			"id": "GHSA-968p-4wvh-cqc8",
+			"package": "@babel/runtime",
+			"severity": "moderate",
+			"installed": ["7.23.1"],
+			"patched": ">=7.26.10",
+			"fix": "same-major",
+			"title": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups"
+		},
+		{
+			"id": "GHSA-x8qp-wqqm-57ph",
+			"package": "@intlify/core-base",
+			"severity": "moderate",
+			"installed": ["9.2.2"],
+			"patched": ">=9.14.5",
+			"fix": "same-major",
+			"title": "vue-i18n's escapeParameterHtml does not prevent DOM-based XSS through its tag attributes"
+		},
+		{
+			"id": "GHSA-6gmq-8vp8-gcm6",
+			"package": "@xmldom/xmldom",
+			"severity": "moderate",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: XML fragment injection via invalid EntityReference.nodeName during requireWellFormed serialization"
+		},
+		{
+			"id": "GHSA-6h8r-xr42-gp59",
+			"package": "@xmldom/xmldom",
+			"severity": "moderate",
+			"installed": ["0.8.10"],
+			"patched": ">=0.8.15",
+			"fix": "same-major",
+			"title": "xmldom: Parser silently accepts a not-well-formed end tag whose name is followed by a line break and trailing content"
+		},
+		{
+			"id": "GHSA-2g4f-4pwh-qvx6",
+			"package": "ajv",
+			"severity": "moderate",
+			"installed": ["6.12.6"],
+			"patched": ">=6.14.0",
+			"fix": "same-major",
+			"title": "ajv has ReDoS when using `$data` option"
+		},
+		{
+			"id": "GHSA-3p68-rc4w-qgx5",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.0",
+			"fix": "same-major",
+			"title": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF"
+		},
+		{
+			"id": "GHSA-3w6x-2g7m-8v23",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.2",
+			"fix": "same-major",
+			"title": "Axios: Invisible JSON Response Tampering via Prototype Pollution Gadget in `parseReviver`"
+		},
+		{
+			"id": "GHSA-42h9-826w-cgv3",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.18.0",
+			"fix": "same-major",
+			"title": "Axios: Excessive recursion in formDataToJSON can cause denial of service"
+		},
+		{
+			"id": "GHSA-445q-vr5w-6q77",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: CRLF Injection in multipart/form-data body via unsanitized blob.type in formDataToStream"
+		},
+		{
+			"id": "GHSA-5c9x-8gcm-mpgx",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0"
+		},
+		{
+			"id": "GHSA-62hf-57xw-28j9",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data"
+		},
+		{
+			"id": "GHSA-7q8q-rj6j-mhjq",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.18.0",
+			"fix": "same-major",
+			"title": "Axios: Nested axios option objects can consume polluted prototype values"
+		},
+		{
+			"id": "GHSA-898c-q2cr-xwhg",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions"
+		},
+		{
+			"id": "GHSA-9fr6-4gfg-395g",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.20.0",
+			"fix": "same-major",
+			"title": "Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method"
+		},
+		{
+			"id": "GHSA-fvcv-3m26-pcqx",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.0",
+			"fix": "same-major",
+			"title": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain"
+		},
+		{
+			"id": "GHSA-j8rh-479h-cp32",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.20.0",
+			"fix": "same-major",
+			"title": "Axios: Header Injection via Inherited headers After Minimal Interceptor"
+		},
+		{
+			"id": "GHSA-m7pr-hjqh-92cm",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: no_proxy bypass via IP alias allows SSRF"
+		},
+		{
+			"id": "GHSA-mmx7-hfxf-jppx",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.18.0",
+			"fix": "same-major",
+			"title": "Axios: Prototype pollution gadgets can alter axios request construction"
+		},
+		{
+			"id": "GHSA-pmv8-rq9r-6j72",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.18.0",
+			"fix": "same-major",
+			"title": "Axios: Deep formToJSON Key Recursion Can Cause Denial of Service"
+		},
+		{
+			"id": "GHSA-vf2m-468p-8v99",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: HTTP adapter streamed responses bypass maxContentLength"
+		},
+		{
+			"id": "GHSA-w9j2-pvgh-6h63",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy"
+		},
+		{
+			"id": "GHSA-wf5p-g6vw-rhxx",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.6.0",
+			"fix": "same-major",
+			"title": "Axios Cross-Site Request Forgery Vulnerability"
+		},
+		{
+			"id": "GHSA-xx6v-rp6x-q39c",
+			"package": "axios",
+			"severity": "moderate",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion"
+		},
+		{
+			"id": "GHSA-f886-m6hf-6m8v",
+			"package": "brace-expansion",
+			"severity": "moderate",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.13",
+			"fix": "same-major",
+			"title": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion"
+		},
+		{
+			"id": "GHSA-f886-m6hf-6m8v",
+			"package": "brace-expansion",
+			"severity": "moderate",
+			"installed": ["2.0.1"],
+			"patched": ">=2.0.3",
+			"fix": "same-major",
+			"title": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion"
+		},
+		{
+			"id": "GHSA-q2hr-2g5m-vwhr",
+			"package": "brace-expansion",
+			"severity": "moderate",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.21",
+			"fix": "same-major",
+			"title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service"
+		},
+		{
+			"id": "GHSA-q2hr-2g5m-vwhr",
+			"package": "brace-expansion",
+			"severity": "moderate",
+			"installed": ["2.0.1"],
+			"patched": ">=2.1.7",
+			"fix": "same-major",
+			"title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service"
+		},
+		{
+			"id": "GHSA-2wm5-q62r-hmrv",
+			"package": "colord",
+			"severity": "moderate",
+			"installed": ["2.9.3"],
+			"patched": ">=2.9.4",
+			"fix": "same-major",
+			"title": "Colord: Slow rejection of oversized malformed color strings"
+		},
+		{
+			"id": "GHSA-vcc3-ghjq-m6fr",
+			"package": "decode-uri-component",
+			"severity": "moderate",
+			"installed": ["0.2.2"],
+			"patched": ">=0.5.0",
+			"fix": "major",
+			"title": "decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input"
+		},
+		{
+			"id": "GHSA-67mh-4wv8-2f99",
+			"package": "esbuild",
+			"severity": "moderate",
+			"installed": ["0.17.19", "0.18.20"],
+			"patched": ">=0.25.0",
+			"fix": "major",
+			"title": "esbuild enables any website to send any requests to the development server and read the response"
+		},
+		{
+			"id": "GHSA-rv95-896h-c2vc",
+			"package": "express",
+			"severity": "moderate",
+			"installed": ["4.18.2"],
+			"patched": ">=4.19.2",
+			"fix": "same-major",
+			"title": "Express.js Open Redirect in malformed URLs"
+		},
+		{
+			"id": "GHSA-jggr-w7fw-pc2j",
+			"package": "fast-copy",
+			"severity": "moderate",
+			"installed": ["3.0.1"],
+			"patched": ">=3.1.0",
+			"fix": "same-major",
+			"title": "fast-copy: Stack exhaustion in fast-copy when copying deeply-nested values"
+		},
+		{
+			"id": "GHSA-gh4j-gqv2-49f6",
+			"package": "fast-xml-parser",
+			"severity": "moderate",
+			"installed": ["4.1.2"],
+			"patched": ">=5.7.0",
+			"fix": "major",
+			"title": "fast-xml-parser XMLBuilder: XML Comment and CDATA Injection via Unescaped Delimiters"
+		},
+		{
+			"id": "GHSA-jp2q-39xq-3w4g",
+			"package": "fast-xml-parser",
+			"severity": "moderate",
+			"installed": ["4.1.2"],
+			"patched": ">=4.5.5",
+			"fix": "same-major",
+			"title": "Entity Expansion Limits Bypassed When Set to Zero Due to JavaScript Falsy Evaluation in fast-xml-parser"
+		},
+		{
+			"id": "GHSA-cxjh-pqwp-8mfp",
+			"package": "follow-redirects",
+			"severity": "moderate",
+			"installed": ["1.15.3"],
+			"patched": ">=1.15.6",
+			"fix": "same-major",
+			"title": "follow-redirects' Proxy-Authorization header kept across hosts"
+		},
+		{
+			"id": "GHSA-jchw-25xp-jwwc",
+			"package": "follow-redirects",
+			"severity": "moderate",
+			"installed": ["1.15.3"],
+			"patched": ">=1.15.4",
+			"fix": "same-major",
+			"title": "Follow Redirects improperly handles URLs in the url.parse() function"
+		},
+		{
+			"id": "GHSA-r4q5-vmmm-2653",
+			"package": "follow-redirects",
+			"severity": "moderate",
+			"installed": ["1.15.3"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "follow-redirects leaks Custom Authentication Headers to Cross-Domain Redirect Targets"
+		},
+		{
+			"id": "GHSA-9pv7-vfvm-6vr7",
+			"package": "graphql",
+			"severity": "moderate",
+			"installed": ["16.6.0"],
+			"patched": ">=16.8.1",
+			"fix": "same-major",
+			"title": "graphql Uncontrolled Resource Consumption vulnerability"
+		},
+		{
+			"id": "GHSA-q7cg-457f-vx79",
+			"package": "joi",
+			"severity": "moderate",
+			"installed": ["17.9.2"],
+			"patched": ">=17.13.4",
+			"fix": "same-major",
+			"title": "joi has an uncaught RangeError on deeply nested input through recursive `link()` schemas"
+		},
+		{
+			"id": "GHSA-wr44-6hxh-3jwq",
+			"package": "joi",
+			"severity": "moderate",
+			"installed": ["17.9.2"],
+			"patched": ">=17.13.8",
+			"fix": "same-major",
+			"title": "joi messages compilation allows prototype replacement through __proto__ error codes"
+		},
+		{
+			"id": "GHSA-hhhv-q57g-882q",
+			"package": "jose",
+			"severity": "moderate",
+			"installed": ["4.15.2"],
+			"patched": ">=4.15.5",
+			"fix": "same-major",
+			"title": "jose vulnerable to resource exhaustion via specifically crafted JWE with compressed plaintext"
+		},
+		{
+			"id": "GHSA-h67p-54hq-rp68",
+			"package": "js-yaml",
+			"severity": "moderate",
+			"installed": ["4.1.0"],
+			"patched": ">=4.2.0",
+			"fix": "same-major",
+			"title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases"
+		},
+		{
+			"id": "GHSA-mh29-5h37-fv8m",
+			"package": "js-yaml",
+			"severity": "moderate",
+			"installed": ["4.1.0"],
+			"patched": ">=4.1.1",
+			"fix": "same-major",
+			"title": "js-yaml has prototype pollution in merge (<<)"
+		},
+		{
+			"id": "GHSA-2qv6-9wx5-cwv4",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS's strip_html filter bypass via newline characters in HTML tags enables XSS"
+		},
+		{
+			"id": "GHSA-8xx9-69p8-7jp3",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS has a renderLimit DoS guard bypass via empty `{% for %}` body"
+		},
+		{
+			"id": "GHSA-9x9p-qf8f-mvjg",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "LiquidJS's `{% render %}` tag silently bypasses per-render `ownPropertyOnly:true` via `Context.spawn()`"
+		},
+		{
+			"id": "GHSA-fwxr-j5w2-587m",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": ">=10.27.2",
+			"fix": "same-major",
+			"title": "LiquidJS: ownPropertyOnly bypass for inherited array indices in first/last/join/reverse/slice/compact, `.first`/`.last`, negative index, and for-loop iteration"
+		},
+		{
+			"id": "GHSA-rv5g-f82m-qrvv",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.4",
+			"fix": "same-major",
+			"title": "LiquidJS: ownPropertyOnly bypass via sort_natural filter \u2014 prototype property information disclosure through sorting side-channel"
+		},
+		{
+			"id": "GHSA-v273-448j-v4qj",
+			"package": "liquidjs",
+			"severity": "moderate",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.5",
+			"fix": "same-major",
+			"title": "LiquidJS: `renderFile()` / `parseFile()` bypass configured `root` and allow arbitrary file read"
+		},
+		{
+			"id": "GHSA-f23m-r3pf-42rh",
+			"package": "lodash",
+			"severity": "moderate",
+			"installed": ["4.17.21"],
+			"patched": ">=4.18.0",
+			"fix": "same-major",
+			"title": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`"
+		},
+		{
+			"id": "GHSA-xxjr-mmjv-4gpg",
+			"package": "lodash",
+			"severity": "moderate",
+			"installed": ["4.17.21"],
+			"patched": ">=4.17.23",
+			"fix": "same-major",
+			"title": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions"
+		},
+		{
+			"id": "GHSA-f23m-r3pf-42rh",
+			"package": "lodash-es",
+			"severity": "moderate",
+			"installed": ["4.17.21"],
+			"patched": ">=4.18.0",
+			"fix": "same-major",
+			"title": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`"
+		},
+		{
+			"id": "GHSA-xxjr-mmjv-4gpg",
+			"package": "lodash-es",
+			"severity": "moderate",
+			"installed": ["4.17.21"],
+			"patched": ">=4.17.23",
+			"fix": "same-major",
+			"title": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions"
+		},
+		{
+			"id": "GHSA-952p-6rrq-rcjv",
+			"package": "micromatch",
+			"severity": "moderate",
+			"installed": ["4.0.5"],
+			"patched": ">=4.0.8",
+			"fix": "same-major",
+			"title": "Regular Expression Denial of Service (ReDoS) in micromatch"
+		},
+		{
+			"id": "GHSA-mwcw-c2x4-8c55",
+			"package": "nanoid",
+			"severity": "moderate",
+			"installed": ["3.3.6"],
+			"patched": ">=3.3.8",
+			"fix": "same-major",
+			"title": "Predictable results in nanoid generation when given non-integer values"
+		},
+		{
+			"id": "GHSA-mwcw-c2x4-8c55",
+			"package": "nanoid",
+			"severity": "moderate",
+			"installed": ["4.0.2"],
+			"patched": ">=5.0.9",
+			"fix": "major",
+			"title": "Predictable results in nanoid generation when given non-integer values"
+		},
+		{
+			"id": "GHSA-65ch-62r8-g69g",
+			"package": "node-forge",
+			"severity": "moderate",
+			"installed": ["1.3.1"],
+			"patched": ">=1.3.2",
+			"fix": "same-major",
+			"title": "node-forge is vulnerable to ASN.1 OID Integer Truncation"
+		},
+		{
+			"id": "GHSA-268h-hp4c-crq3",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=8.0.9",
+			"fix": "major",
+			"title": "Nodemailer: CRLF injection in Nodemailer List-* header comments allows arbitrary message header injection"
+		},
+		{
+			"id": "GHSA-6vj9-mwq6-2f5v",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=10.0.2",
+			"fix": "major",
+			"title": "Nodemailer: Process-global DNS cache reuses TLS `servername` across transports, enabling cross-tenant SMTP credential disclosure"
+		},
+		{
+			"id": "GHSA-8m3c-c648-2xjj",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=9.1.1",
+			"fix": "major",
+			"title": "Nodemailer: resolveContent() on a MailMessage bypasses disableFileAccess/disableUrlAccess when called with the legacy signature"
+		},
+		{
+			"id": "GHSA-8vvx-rff5-p5rq",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=10.0.2",
+			"fix": "major",
+			"title": "Nodemailer: Nested structured recipient arrays bypass the parser depth limit and cause stack exhaustion DoS"
+		},
+		{
+			"id": "GHSA-9h6g-pr28-7cqp",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=6.9.9",
+			"fix": "same-major",
+			"title": "nodemailer ReDoS when trying to send a specially crafted email"
+		},
+		{
+			"id": "GHSA-mm7p-fcc7-pg87",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=7.0.7",
+			"fix": "major",
+			"title": "Nodemailer: Email to an unintended domain can occur due to Interpretation Conflict"
+		},
+		{
+			"id": "GHSA-vvjj-xcjg-gr5g",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=8.0.5",
+			"fix": "major",
+			"title": "Nodemailer Vulnerable to SMTP Command Injection via CRLF in Transport name Option (EHLO/HELO) "
+		},
+		{
+			"id": "GHSA-wmmp-3585-3rmp",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=9.1.0",
+			"fix": "major",
+			"title": "Nodemailer: IDN/Punycode domain allow-list bypass leads to email delivery to an attacker-controlled domain"
+		},
+		{
+			"id": "GHSA-wqvq-jvpq-h66f",
+			"package": "nodemailer",
+			"severity": "moderate",
+			"installed": ["6.9.2"],
+			"patched": ">=8.0.9",
+			"fix": "major",
+			"title": "Nodemailer jsonTransport bypasses disableFileAccess and disableUrlAccess during message normalization"
+		},
+		{
+			"id": "GHSA-3v7f-55p6-f55p",
+			"package": "picomatch",
+			"severity": "moderate",
+			"installed": ["2.3.1"],
+			"patched": ">=2.3.2",
+			"fix": "same-major",
+			"title": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching"
+		},
+		{
+			"id": "GHSA-fxqj-rqcc-2cmp",
+			"package": "postcss",
+			"severity": "moderate",
+			"installed": ["8.4.31"],
+			"patched": ">=8.5.23",
+			"fix": "same-major",
+			"title": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q \u2014 attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset"
+		},
+		{
+			"id": "GHSA-qx2v-qp2m-jg93",
+			"package": "postcss",
+			"severity": "moderate",
+			"installed": ["8.4.31"],
+			"patched": ">=8.5.10",
+			"fix": "same-major",
+			"title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output"
+		},
+		{
+			"id": "GHSA-rj75-hqrm-r3gf",
+			"package": "postcss-selector-parser",
+			"severity": "moderate",
+			"installed": ["6.0.13"],
+			"patched": ">=7.1.6",
+			"fix": "major",
+			"title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion"
+		},
+		{
+			"id": "GHSA-4mjr-xmp4-gh2g",
+			"package": "qs",
+			"severity": "moderate",
+			"installed": ["6.11.0", "6.11.2", "6.5.3"],
+			"patched": ">=6.16.0",
+			"fix": "same-major",
+			"title": "qs: Denial of Service via Attacker Controlled isBuffer"
+		},
+		{
+			"id": "GHSA-6rw7-vpxm-498p",
+			"package": "qs",
+			"severity": "moderate",
+			"installed": ["6.11.0", "6.11.2", "6.5.3"],
+			"patched": ">=6.14.1",
+			"fix": "same-major",
+			"title": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion"
+		},
+		{
+			"id": "GHSA-q8mj-m7cp-5q26",
+			"package": "qs",
+			"severity": "moderate",
+			"installed": ["6.11.2"],
+			"patched": ">=6.15.2",
+			"fix": "same-major",
+			"title": "qs has a remotely triggerable DoS: qs.stringify crashes with TypeError on null/undefined entries in comma-format arrays when encodeValuesOnly is set"
+		},
+		{
+			"id": "GHSA-p8p7-x288-28g6",
+			"package": "request",
+			"severity": "moderate",
+			"installed": ["2.88.2"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "Server-Side Request Forgery in Request"
+		},
+		{
+			"id": "GHSA-g8qq-57p8-ggw5",
+			"package": "sanitize-html",
+			"severity": "moderate",
+			"installed": ["2.10.0"],
+			"patched": ">=2.17.7",
+			"fix": "same-major",
+			"title": "ApostropheCMS: Stored XSS via SVG SMIL URI-list scheme-policy bypass"
+		},
+		{
+			"id": "GHSA-jxwj-j7wr-gfrw",
+			"package": "sanitize-html",
+			"severity": "moderate",
+			"installed": ["2.10.0"],
+			"patched": ">=2.17.6",
+			"fix": "same-major",
+			"title": "ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close"
+		},
+		{
+			"id": "GHSA-rm97-x556-q36h",
+			"package": "sanitize-html",
+			"severity": "moderate",
+			"installed": ["2.10.0"],
+			"patched": ">=2.12.1",
+			"fix": "same-major",
+			"title": "sanitize-html Information Exposure vulnerability"
+		},
+		{
+			"id": "GHSA-vccv-cmxp-4j9h",
+			"package": "sanitize-html",
+			"severity": "moderate",
+			"installed": ["2.10.0"],
+			"patched": ">=2.17.5",
+			"fix": "same-major",
+			"title": "sanitize-html has incomplete URI scheme validation in that allows javascript: URIs through action, formaction, data, poster, and background attributes"
+		},
+		{
+			"id": "GHSA-76p7-773f-r4q5",
+			"package": "serialize-javascript",
+			"severity": "moderate",
+			"installed": ["6.0.1"],
+			"patched": ">=6.0.2",
+			"fix": "same-major",
+			"title": "Cross-site Scripting (XSS) in serialize-javascript"
+		},
+		{
+			"id": "GHSA-qj8w-gfj5-8c6v",
+			"package": "serialize-javascript",
+			"severity": "moderate",
+			"installed": ["6.0.1"],
+			"patched": ">=7.0.5",
+			"fix": "major",
+			"title": "Serialize JavaScript has CPU Exhaustion Denial of Service via crafted array-like objects"
+		},
+		{
+			"id": "GHSA-hp3w-g68c-fv3c",
+			"package": "sprintf-js",
+			"severity": "moderate",
+			"installed": ["1.1.3"],
+			"patched": "<0.0.0",
+			"fix": "no-fix",
+			"title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers"
+		},
+		{
+			"id": "GHSA-528h-pc64-c93x",
+			"package": "stream-json",
+			"severity": "moderate",
+			"installed": ["1.7.5"],
+			"patched": ">=3.5.0",
+			"fix": "major",
+			"title": "stream-json: pick/ignore/filter/replace filters are O(depth\u00b2) on nested input \u2014 small crafted JSON blocks the event loop for seconds\u2192minutes (DoS)"
+		},
+		{
+			"id": "GHSA-hqr4-qq8f-hg3x",
+			"package": "stream-json",
+			"severity": "moderate",
+			"installed": ["1.7.5"],
+			"patched": ">=3.6.0",
+			"fix": "major",
+			"title": "stream-json: JSONC parser and verifier re-scan the whole accumulated comment on every input chunk"
+		},
+		{
+			"id": "GHSA-mjw6-4jj6-33hc",
+			"package": "stream-json",
+			"severity": "moderate",
+			"installed": ["1.7.5"],
+			"patched": ">=3.6.0",
+			"fix": "major",
+			"title": "stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects"
+		},
+		{
+			"id": "GHSA-4vpr-x523-8j87",
+			"package": "svgo",
+			"severity": "moderate",
+			"installed": ["2.8.0"],
+			"patched": ">=2.8.4",
+			"fix": "same-major",
+			"title": "SVGO: removeScripts incompletely sanitizes executable HTML in SVG foreignObject elements"
+		},
+		{
+			"id": "GHSA-f5x3-32g6-xq36",
+			"package": "tar",
+			"severity": "moderate",
+			"installed": ["6.2.0"],
+			"patched": ">=6.2.1",
+			"fix": "same-major",
+			"title": "Denial of service while parsing a tar file due to lack of folders count validation"
+		},
+		{
+			"id": "GHSA-gvwx-54wh-qm9j",
+			"package": "tar",
+			"severity": "moderate",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.17",
+			"fix": "major",
+			"title": "node-tar: Uncaught Exception DoS via NUL byte in PAX path/linkpath records"
+		},
+		{
+			"id": "GHSA-vmf3-w455-68vh",
+			"package": "tar",
+			"severity": "moderate",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.16",
+			"fix": "major",
+			"title": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)"
+		},
+		{
+			"id": "GHSA-w8wr-v893-vjvp",
+			"package": "tar",
+			"severity": "moderate",
+			"installed": ["6.2.0"],
+			"patched": ">=7.5.18",
+			"fix": "major",
+			"title": "node-tar: Process crash via PAX numeric path type confusion"
+		},
+		{
+			"id": "GHSA-72xf-g2v4-qvf3",
+			"package": "tough-cookie",
+			"severity": "moderate",
+			"installed": ["2.5.0"],
+			"patched": ">=4.1.3",
+			"fix": "major",
+			"title": "tough-cookie Prototype Pollution vulnerability"
+		},
+		{
+			"id": "GHSA-2mjp-6q6p-2qxm",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.24.0",
+			"fix": "major",
+			"title": "Undici has an HTTP Request/Response Smuggling issue"
+		},
+		{
+			"id": "GHSA-4992-7rv2-5pvq",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.24.0",
+			"fix": "major",
+			"title": "Undici has CRLF Injection in undici via `upgrade` option"
+		},
+		{
+			"id": "GHSA-8xcm-r25x-g524",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.28.0",
+			"fix": "major",
+			"title": "undici vulnerable to downstream response desynchronization via retry interceptor"
+		},
+		{
+			"id": "GHSA-c76h-2ccp-4975",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=5.28.5",
+			"fix": "same-major",
+			"title": "Use of Insufficiently Random Values in undici"
+		},
+		{
+			"id": "GHSA-g9mf-h72j-4rw9",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.23.0",
+			"fix": "major",
+			"title": "Undici has an unbounded decompression chain in HTTP responses on Node.js Fetch API via Content-Encoding leads to resource exhaustion"
+		},
+		{
+			"id": "GHSA-m8rv-5g2x-5cg5",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.28.0",
+			"fix": "major",
+			"title": "undici vulnerable to CRLF Injection via blob-like body 'type' property"
+		},
+		{
+			"id": "GHSA-p88m-4jfj-68fv",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.27.0",
+			"fix": "major",
+			"title": "undici vulnerable to HTTP header injection via Set-Cookie percent-decoding"
+		},
+		{
+			"id": "GHSA-v3r7-h72x-cjcm",
+			"package": "undici",
+			"severity": "moderate",
+			"installed": ["5.22.1"],
+			"patched": ">=6.28.0",
+			"fix": "major",
+			"title": "undici vulnerable to cookie attribute injection via unsanitized domain and unparsed setCookie fields"
+		},
+		{
+			"id": "GHSA-w5hq-g745-h8pq",
+			"package": "uuid",
+			"severity": "moderate",
+			"installed": ["3.4.0", "8.3.2", "9.0.0", "9.0.1"],
+			"patched": ">=11.1.1",
+			"fix": "major",
+			"title": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided"
+		},
+		{
+			"id": "GHSA-356w-63v5-8wf4",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.13",
+			"fix": "same-major",
+			"title": "Vite has an `server.fs.deny` bypass with an invalid `request-target`"
+		},
+		{
+			"id": "GHSA-4r4m-qw57-chr8",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.11",
+			"fix": "same-major",
+			"title": "Vite has a `server.fs.deny` bypassed for `inline` and `raw` with `?import` query"
+		},
+		{
+			"id": "GHSA-4w7w-66w2-5vf9",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=6.4.2",
+			"fix": "major",
+			"title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling"
+		},
+		{
+			"id": "GHSA-64vr-g452-qvp3",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.4",
+			"fix": "same-major",
+			"title": "Vite DOM Clobbering gadget found in vite bundled scripts that leads to XSS"
+		},
+		{
+			"id": "GHSA-859w-5945-r5v3",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.14",
+			"fix": "same-major",
+			"title": "Vite's server.fs.deny bypassed with /. for files under project root"
+		},
+		{
+			"id": "GHSA-8jhw-289h-jh2g",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.3",
+			"fix": "same-major",
+			"title": "Vite's `server.fs.deny` did not deny requests for patterns with directories."
+		},
+		{
+			"id": "GHSA-9cwx-2883-4wfx",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.4",
+			"fix": "same-major",
+			"title": "Vite's `server.fs.deny` is bypassed when using `?import&raw`"
+		},
+		{
+			"id": "GHSA-v6wh-96g9-6wx3",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=6.4.3",
+			"fix": "major",
+			"title": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows"
+		},
+		{
+			"id": "GHSA-vg6x-rcgg-rjx6",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.6",
+			"fix": "same-major",
+			"title": "Websites were able to send any requests to the development server and read the response in vite"
+		},
+		{
+			"id": "GHSA-x574-m823-4x7w",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.10",
+			"fix": "same-major",
+			"title": "Vite bypasses server.fs.deny when using ?raw??"
+		},
+		{
+			"id": "GHSA-xcj6-pq6g-qj4x",
+			"package": "vite",
+			"severity": "moderate",
+			"installed": ["4.3.7"],
+			"patched": ">=4.5.12",
+			"fix": "same-major",
+			"title": "Vite allows server.fs.deny to be bypassed with .svg or relative paths"
+		},
+		{
+			"id": "GHSA-x8qp-wqqm-57ph",
+			"package": "vue-i18n",
+			"severity": "moderate",
+			"installed": ["9.2.2"],
+			"patched": ">=9.14.5",
+			"fix": "same-major",
+			"title": "vue-i18n's escapeParameterHtml does not prevent DOM-based XSS through its tag attributes"
+		},
+		{
+			"id": "GHSA-58qx-3vcg-4xpx",
+			"package": "ws",
+			"severity": "moderate",
+			"installed": ["8.12.1"],
+			"patched": ">=8.20.1",
+			"fix": "same-major",
+			"title": "ws: Uninitialized memory disclosure"
+		},
+		{
+			"id": "GHSA-48c2-rrv3-qjmp",
+			"package": "yaml",
+			"severity": "moderate",
+			"installed": ["1.10.2"],
+			"patched": ">=1.10.3",
+			"fix": "same-major",
+			"title": "yaml is vulnerable to Stack Overflow via deeply nested YAML collections"
+		},
+		{
+			"id": "GHSA-48c2-rrv3-qjmp",
+			"package": "yaml",
+			"severity": "moderate",
+			"installed": ["2.3.2"],
+			"patched": ">=2.8.3",
+			"fix": "same-major",
+			"title": "yaml is vulnerable to Stack Overflow via deeply nested YAML collections"
+		},
+		{
+			"id": "GHSA-m95q-7qp3-xv42",
+			"package": "zod",
+			"severity": "moderate",
+			"installed": ["3.21.4"],
+			"patched": ">=3.22.3",
+			"fix": "same-major",
+			"title": "Zod denial of service vulnerability"
+		},
+		{
+			"id": "GHSA-vpq2-c234-7xj6",
+			"package": "@tootallnate/once",
+			"severity": "low",
+			"installed": ["1.1.2", "2.0.0"],
+			"patched": ">=2.0.1",
+			"fix": "major",
+			"title": "@tootallnate/once vulnerable to Incorrect Control Flow Scoping"
+		},
+		{
+			"id": "GHSA-xhjh-pmcv-23jw",
+			"package": "axios",
+			"severity": "low",
+			"installed": ["1.4.0", "1.5.1"],
+			"patched": ">=1.15.1",
+			"fix": "same-major",
+			"title": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams"
+		},
+		{
+			"id": "GHSA-v422-hmwv-36x6",
+			"package": "body-parser",
+			"severity": "low",
+			"installed": ["1.20.1"],
+			"patched": ">=1.20.6",
+			"fix": "same-major",
+			"title": "body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement"
+		},
+		{
+			"id": "GHSA-v6h2-p8h4-qcjw",
+			"package": "brace-expansion",
+			"severity": "low",
+			"installed": ["1.1.11"],
+			"patched": ">=1.1.12",
+			"fix": "same-major",
+			"title": "brace-expansion Regular Expression Denial of Service vulnerability"
+		},
+		{
+			"id": "GHSA-v6h2-p8h4-qcjw",
+			"package": "brace-expansion",
+			"severity": "low",
+			"installed": ["2.0.1"],
+			"patched": ">=2.0.2",
+			"fix": "same-major",
+			"title": "brace-expansion Regular Expression Denial of Service vulnerability"
+		},
+		{
+			"id": "GHSA-pxg6-pf52-xh8x",
+			"package": "cookie",
+			"severity": "low",
+			"installed": ["0.4.1", "0.5.0"],
+			"patched": ">=0.7.0",
+			"fix": "major",
+			"title": "cookie accepts cookie name, path, and domain with out of bounds characters"
+		},
+		{
+			"id": "GHSA-qw6h-vgh9-j6wx",
+			"package": "express",
+			"severity": "low",
+			"installed": ["4.18.2"],
+			"patched": ">=4.20.0",
+			"fix": "same-major",
+			"title": "express vulnerable to XSS via response.redirect()"
+		},
+		{
+			"id": "GHSA-fj3w-jwp8-x2g3",
+			"package": "fast-xml-parser",
+			"severity": "low",
+			"installed": ["4.1.2"],
+			"patched": ">=4.5.4",
+			"fix": "same-major",
+			"title": "fast-xml-parser has stack overflow in XMLBuilder with preserveOrder"
+		},
+		{
+			"id": "GHSA-78xj-cgh5-2h22",
+			"package": "ip",
+			"severity": "low",
+			"installed": ["2.0.0"],
+			"patched": ">=2.0.1",
+			"fix": "same-major",
+			"title": "NPM IP package incorrectly identifies some private IP addresses as public"
+		},
+		{
+			"id": "GHSA-6w3j-5fw6-r9vr",
+			"package": "joi",
+			"severity": "low",
+			"installed": ["17.9.2"],
+			"patched": ">=17.13.6",
+			"fix": "same-major",
+			"title": "joi: Prototype pollution via a `__proto__` language key in custom messages"
+		},
+		{
+			"id": "GHSA-gg4h-3hg2-grpc",
+			"package": "joi",
+			"severity": "low",
+			"installed": ["17.9.2"],
+			"patched": ">=17.13.5",
+			"fix": "same-major",
+			"title": "joi: object().rename() with a template target can set the validated object's prototype"
+		},
+		{
+			"id": "GHSA-mmg9-6m6j-jqqx",
+			"package": "liquidjs",
+			"severity": "low",
+			"installed": ["10.7.1"],
+			"patched": ">=10.25.3",
+			"fix": "same-major",
+			"title": "LiquidJS Has Memory Limit Bypass via Quadratic Amplification in `replace` Filter"
+		},
+		{
+			"id": "GHSA-c7w3-x93f-qmm8",
+			"package": "nodemailer",
+			"severity": "low",
+			"installed": ["6.9.2"],
+			"patched": ">=8.0.4",
+			"fix": "major",
+			"title": "Nodemailer has SMTP command injection due to unsanitized `envelope.size` parameter"
+		},
+		{
+			"id": "GHSA-w7fw-mjwx-w883",
+			"package": "qs",
+			"severity": "low",
+			"installed": ["6.11.0", "6.11.2"],
+			"patched": ">=6.14.2",
+			"fix": "same-major",
+			"title": "qs's arrayLimit bypass in comma parsing allows denial of service"
+		},
+		{
+			"id": "GHSA-m6fv-jmcg-4jfg",
+			"package": "send",
+			"severity": "low",
+			"installed": ["0.18.0"],
+			"patched": ">=0.19.0",
+			"fix": "major",
+			"title": "send vulnerable to template injection that can lead to XSS"
+		},
+		{
+			"id": "GHSA-cm22-4g7w-348p",
+			"package": "serve-static",
+			"severity": "low",
+			"installed": ["1.15.0"],
+			"patched": ">=1.16.0",
+			"fix": "same-major",
+			"title": "serve-static vulnerable to template injection that can lead to XSS"
+		},
+		{
+			"id": "GHSA-52f5-9888-hmc6",
+			"package": "tmp",
+			"severity": "low",
+			"installed": ["0.0.33", "0.2.1"],
+			"patched": ">=0.2.4",
+			"fix": "major",
+			"title": "tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter"
+		},
+		{
+			"id": "GHSA-35p6-xmwp-9g52",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=6.27.0",
+			"fix": "major",
+			"title": "undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse"
+		},
+		{
+			"id": "GHSA-3787-6prv-h9w3",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=5.28.3",
+			"fix": "same-major",
+			"title": "Undici proxy-authorization header not cleared on cross-origin redirect in fetch"
+		},
+		{
+			"id": "GHSA-9qxr-qj54-h672",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=5.28.4",
+			"fix": "same-major",
+			"title": "Undici's fetch with integrity option is too lax when algorithm is specified but hash value is in incorrect"
+		},
+		{
+			"id": "GHSA-cxrh-j4jr-qwg3",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=5.29.0",
+			"fix": "same-major",
+			"title": "undici Denial of Service attack via bad certificate data"
+		},
+		{
+			"id": "GHSA-g8m3-5g58-fq7m",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=6.27.0",
+			"fix": "major",
+			"title": "undici vulnerable to Set-Cookie SameSite attribute downgrade via permissive substring matching"
+		},
+		{
+			"id": "GHSA-m4v8-wqvr-p9f7",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=5.28.4",
+			"fix": "same-major",
+			"title": "Undici's Proxy-Authorization header not cleared on cross-origin redirect for dispatch, request, stream, pipeline"
+		},
+		{
+			"id": "GHSA-r53p-7pc4-xj5r",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=6.28.1",
+			"fix": "major",
+			"title": "undici vulnerable to downstream response splitting via retry interceptor"
+		},
+		{
+			"id": "GHSA-wqq4-5wpv-mx2g",
+			"package": "undici",
+			"severity": "low",
+			"installed": ["5.22.1"],
+			"patched": ">=5.26.2",
+			"fix": "same-major",
+			"title": "Undici's cookie header not cleared on cross-origin redirect in fetch"
+		},
+		{
+			"id": "GHSA-g4jq-h2w9-997c",
+			"package": "vite",
+			"severity": "low",
+			"installed": ["4.3.7"],
+			"patched": ">=5.4.20",
+			"fix": "major",
+			"title": "Vite middleware may serve files starting with the same name with the public directory"
+		},
+		{
+			"id": "GHSA-jqfw-vq24-v9c3",
+			"package": "vite",
+			"severity": "low",
+			"installed": ["4.3.7"],
+			"patched": ">=5.4.20",
+			"fix": "major",
+			"title": "Vite's `server.fs` settings were not applied to HTML files"
+		}
+	]
+}
