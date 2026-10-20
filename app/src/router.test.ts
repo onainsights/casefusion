@@ -61,7 +61,8 @@ beforeEach(async () => {
 
 	router.beforeEach(importedRouter.onBeforeEach);
 	router.afterEach(importedRouter.onAfterEach);
-});
+	// Re-imports the router (and most of the app) cold after vi.resetModules(); can exceed 10 s under a full parallel run
+}, 30_000);
 
 afterEach(() => {
 	// Ensure the internal firstLoad variable in the imported router
