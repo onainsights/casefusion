@@ -61,9 +61,9 @@ docker build -t casefusion .
 docker run -p 8055:8055 -e KEY=... -e SECRET=... -e ADMIN_EMAIL=... -e ADMIN_PASSWORD=... casefusion
 ```
 
-Images are published to `ghcr.io/onainsights/casefusion`: `main` and `sha-<commit>` from the main branch, and a version
-tag plus `latest` for each `casefusion-v<version>` release tag. (Plain `v<version>` tags are upstream Directus
-releases.)
+Images are published to `ghcr.io/onainsights/casefusion`: `main` and `sha-<commit>` from the main branch (amd64), and a
+version tag plus `latest` for each `casefusion-v<version>` release tag (amd64 and arm64). A manual run of the Docker
+image workflow also builds both architectures. (Plain `v<version>` tags are upstream Directus releases.)
 
 ## Documentation
 
