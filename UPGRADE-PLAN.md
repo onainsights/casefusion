@@ -87,6 +87,17 @@ need Node 22 and remove most of the inherited advisories.
   | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6)     |
   | `request>qs` → 6.16.1           | same                                                                  |
 
+- **E2a.4 Admin app bundle (done 2026-10-20, after E1).** `pnpm audit --prod` skips `app/` entirely: its packages are
+  devDependencies because Vite bundles them, so E0 to E2a.3 measured the API only. Classifying the app's advisories by
+  whether the package is imported from `app/src` (and not only by build or test tooling) gave 44 advisories in the
+  browser bundle (1 critical, 11 high). Fixed: `dompurify` 3.0.3 → 3.4.17 (21 advisories, XSS sanitiser bypasses),
+  `tinymce` 6.6.0 → 6.8.6, `nanoid` 4.0.2 → 5.1.16 in app, api and composables (same API; the 4.x fixes only exist in
+  5.x), and an in-range refresh of `protocol-buffers-schema`. Left for majors: `tinymce` 7 (E2b; its licence is
+  GPLv2-or-later, compatible), `unhead` 2 (E2b), `maplibre-gl` (E4). CI's audit job now also runs a full audit.
+
+  Totals on 2026-10-20 after E2a.4, distinct advisories: API production dependencies 79 (4 critical, 30 high); admin app
+  bundle 9 (1 critical, 4 high); everything including build and test tooling 157 (10 critical, 65 high).
+
 - **E1 Engine (done 2026-10-20).** Node 22 LTS and pnpm 9.15.9 (`packageManager`, `engines`, lockfile v9),
   `node:22-alpine`, CI on Node 22, `@types/node` 22.20.5, `tsx` 4.23.15, `isolated-vm` 5.0.4. `engines.node` raised in
   root, `api/` and `casefusion/` only: `sdk/` and `packages/extensions-sdk/` are libraries that run in other projects.

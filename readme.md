@@ -15,9 +15,11 @@ Any implementation (UNICEF CFM, UN Women Wasil, …) is built from this core plu
 dedicated intellectual property of Ona Insights or its clients and are **not included in this repository**. On its own,
 this repository gives you a working data platform, not a case-management product.
 
-> ⚠️ **Not ready for production yet.** This is Directus 10.6.4's code with its 2023 dependency tree, which has known
-> vulnerabilities (12 critical, 156 high in `pnpm audit --prod` as of October 2026). The dependency upgrades in
-> [`UPGRADE-PLAN.md`](UPGRADE-PLAN.md) are in progress; this notice will be removed once they land.
+> ⚠️ **Not ready for production yet.** This is Directus 10.6.4's code, and some of its dependencies still have known
+> vulnerabilities that need major-version upgrades: as of 20 October 2026, 4 critical and 30 high advisories in the
+> API's dependencies (295 advisories when the fork started), and 1 critical and 4 high in the admin app's browser bundle
+> (the map and rich-text editor). The remaining upgrades are tracked in [`UPGRADE-PLAN.md`](UPGRADE-PLAN.md); this
+> notice will be removed once they land.
 
 ## What works out of the box
 

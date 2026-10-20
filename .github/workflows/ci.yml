@@ -62,4 +62,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: pnpm audit --prod --audit-level high
+      - name: API production dependencies
+        run: pnpm audit --prod --audit-level high
+      # The app's packages are devDependencies because they are bundled, so --prod skips them. This covers the bundle
+      # and the build tooling.
+      - name: All dependencies, including the app bundle
+        if: ${{ !cancelled() }}
+        run: pnpm audit --audit-level high
