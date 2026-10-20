@@ -53,8 +53,9 @@ pnpm --recursive exec tsc --noEmit # typecheck only
 - **One phase or step per PR**, with the verification gate in `UPGRADE-PLAN.md` run before merging.
 - **Never hand-edit `pnpm-lock.yaml`.** Let pnpm regenerate it.
 - **Preserve copyright.** `Copyright © 2023 Monospace, Inc.` stays wherever it appears.
-- **Licence fields.** `package.json` files and some workspace `license` files still say BUSL-1.1 until the licence pass
-  lands; afterwards `git grep BUSL` must stay empty (upstream merges re-add it).
+- **Licence fields.** Every workspace that was BUSL-1.1 is GPL-3.0-only (`package.json` and its `license` file); MIT
+  packages stay MIT. Upstream merges re-add BUSL: after each merge, `git grep -n BUSL -- '*package.json' '*license'`
+  must come back empty.
 
 ## Known landmines
 
