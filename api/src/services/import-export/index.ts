@@ -10,7 +10,7 @@ import { createReadStream } from 'node:fs';
 import { appendFile } from 'node:fs/promises';
 import type { Readable } from 'node:stream';
 import Papa from 'papaparse';
-import StreamArray from 'stream-json/streamers/StreamArray.js';
+import { streamArray } from 'stream-json/streamers/stream-array.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
 import env from '../../env.js';
@@ -70,7 +70,7 @@ export class ImportService {
 	}
 
 	importJSON(collection: string, stream: Readable): Promise<void> {
-		const extractJSON = StreamArray.withParser();
+		const extractJSON = streamArray.withParserAsStream();
 		const nestedActionEvents: ActionEventParams[] = [];
 
 		return this.knex.transaction((trx) => {

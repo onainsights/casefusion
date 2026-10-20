@@ -81,11 +81,10 @@ need Node 22 and remove most of the inherited advisories.
      version. Record each override in this file with the parent that blocks it, so it can be dropped once the parent
      updates. Overrides in place (drop each once its parent no longer needs it):
 
-  | Override                        | Parent that blocks the fix                                        |
-  | ------------------------------- | ----------------------------------------------------------------- |
-  | `fast-xml-parser@4.1.2` → 4.5.7 | `@aws-sdk/client-s3`, `client-sts` 3.332 pin it exactly           |
-  | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6) |
-  | `request>qs` → 6.16.1           | same                                                              |
+  | Override                    | Parent that blocks the fix                                        |
+  | --------------------------- | ----------------------------------------------------------------- |
+  | `request>form-data` → 2.5.6 | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6) |
+  | `request>qs` → 6.16.1       | same                                                              |
 
 - **E2a.4 Admin app bundle (done 2026-10-20, after E1).** `pnpm audit --prod` skips `app/` entirely: its packages are
   devDependencies because Vite bundles them, so E0 to E2a.3 measured the API only. Classifying the app's advisories by
@@ -108,10 +107,31 @@ need Node 22 and remove most of the inherited advisories.
   `NodeJS.Timer` annotations in `sdk/` and `api/src/websocket/` changed to the timer types `@types/node` 22 expects
   (type-only). Audit: 85 → 83 advisories. `isolated-vm` needs `--no-node-snapshot` on Node 20+: `casefusion/cli.js`
   re-launches itself with it, and the api `dev`/`cli` scripts set it in `NODE_OPTIONS`.
-- **E2b Remaining security fixes.** The major bumps the audit still lists after E2a and E1: `samlify` 2.10+ (SAML
-  behaviour, test against a real IdP), `nodemailer` 7+, `tinypool` 2, `undici` 6, `helmet` 8, `@aws-sdk/*`, and the rest
-  of the Security and Server rows above. Exit criterion: `pnpm audit --prod` reports zero high/critical, or each
-  remaining one is documented with why it is not exploitable here; then make the CI audit job blocking.
+- **E2b Major-version security fixes (done 2026-10-20, PRs #12, #16–#19, #21, #22).**
+  - E2b.1 `undici` 6 (Cloudinary, Supabase drivers). E2b.2 `nodemailer` 10; the SES transport uses SESv2
+    (`@aws-sdk/client-sesv2`), same `EMAIL_SES_*` settings; the sending IAM policy must allow the SESv2 send action.
+    E2b.3 `sharp` 0.35. E2b.4 TinyMCE 7 (`license_key: 'gpl'`), `unhead` 2, Vue 3.5. E2b.5 `samlify` 2.15 (SAML is
+    unused, lightweight check only); `@directus/extensions-sdk` removed from the API's dependencies (unused). `tinypool`
+    2 via Dependabot.
+  - E2b.6: `argon2` 0.45 and `sqlite3` 6 (no more `node-gyp`/`tar` install chain; password hashes verified compatible
+    both ways), `knex` 2.5.1 everywhere, AWS SDK v3.1154 (`@smithy/node-http-handler`; unused
+    `@aws-sdk/abort-controller` dropped; the `fast-xml-parser` override is no longer needed), `@azure/storage-blob`
+    12.34, `@google-cloud/storage` 7.22 (drops `node-forge`), `stream-json` 3 (fixes prototype pollution in JSON import:
+    a `__proto__` key in an imported record could replace the record's prototype), `chokidar` 3.6, `cookie-parser`
+    1.4.7, `tmp` 0.2.7, `inquirer` 9.3. The S3, Azure and GCS drivers were run against local emulators (S3Mock, Azurite,
+    fake-gcs-server) on old and new SDKs with identical results.
+  - Accepted or deferred, with reasons:
+    - `braces` (via `chokidar` 3, no fixed release): only matters for attacker-controlled glob patterns; ours are fixed
+      paths from server configuration. `chokidar` 4+ drops glob support, which would mean rewriting the extension
+      watcher.
+    - `request` / `tough-cookie` via `nodemailer-sendgrid` (no fix; `request` is deprecated): SendGrid can be used
+      through the SMTP transport instead; replacing the plugin is a feature change.
+    - `tedious` 16 → 19+ (MSSQL; moderate advisories in `@azure/identity`, `uuid`, `sprintf-js`): `knex` 2.5's MSSQL
+      dialect targets `tedious` 15/16 and no deployment uses MSSQL; revisit with `knex` 3 or a real SQL Server test.
+    - The extension build kit (`extensions-sdk`, `create-directus-extension`: `vite` 4, `esbuild`, plugin-terser) and
+      the unused `update-check` package: developer tooling, not server code; handled in E5.
+  - Status after E2b: API production dependencies 22 distinct advisories (0 critical, 6 high; all in the categories
+    above), admin app bundle 1 (`maplibre-gl`, E4).
 - **E3 `ldapjs` → `ldapts`.** Rewrite `api/src/auth/drivers/ldap.ts` with the same behaviour and config. May be deferred
   behind an "LDAP disabled" default if it blocks the working build.
 - **E4 `mapbox-gl` → `maplibre-gl`.** `app/src/interfaces/map/`, `app/src/layouts/map/`,
