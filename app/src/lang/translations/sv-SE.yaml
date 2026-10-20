@@ -1538,7 +1538,7 @@ interfaces:
     default_language: Förvalt språk
   user:
     user: Användare
-    description: Välj en befintlig Directus användare
+    description: Välj en befintlig CaseFusion användare
     select_mode: Välj läge
     modes:
       auto: Automatisk
@@ -1676,7 +1676,7 @@ displays:
     description: Visa relativa värden
   user:
     user: Användare
-    description: Visa en Directus användare
+    description: Visa en CaseFusion användare
     avatar: Profilbild
     name: Namn
     both: Båda

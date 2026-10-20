@@ -49,12 +49,12 @@ const externalItems = computed(() => {
 		{
 			icon: 'bug_report',
 			name: t('report_bug'),
-			href: 'https://github.com/directus/directus/issues/new',
+			href: 'https://github.com/onainsights/casefusion/issues/new',
 		},
 		{
 			icon: 'new_releases',
 			name: t('request_feature'),
-			href: 'https://github.com/directus/directus/discussions/new',
+			href: 'https://github.com/onainsights/casefusion/issues/new',
 		},
 	];
 });
@@ -78,10 +78,10 @@ const externalItems = computed(() => {
 			</v-list-item-content>
 		</v-list-item>
 
-		<v-list-item href="https://github.com/directus/directus/releases" class="version">
+		<v-list-item href="https://github.com/onainsights/casefusion" class="version">
 			<v-list-item-icon><v-icon name="directus" /></v-list-item-icon>
 			<v-list-item-content>
-				<v-text-overflow class="version" :text="`Directus ${version}`" />
+				<v-text-overflow class="version" :text="`CaseFusion ${version}`" />
 			</v-list-item-content>
 		</v-list-item>
 	</v-list>

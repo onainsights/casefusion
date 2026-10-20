@@ -103,7 +103,7 @@ export class MailService {
 			.first();
 
 		return {
-			projectName: projectInfo?.project_name || 'Directus',
+			projectName: projectInfo?.project_name || 'CaseFusion',
 			projectColor: projectInfo?.project_color || '#546e7a',
 			projectLogo: getProjectLogoURL(projectInfo?.project_logo),
 			projectUrl: projectInfo?.project_url || '',
@@ -115,7 +115,8 @@ export class MailService {
 			if (logoID) {
 				projectLogoUrl.addPath('assets', logoID);
 			} else {
-				projectLogoUrl.addPath('admin', 'img', 'directus-white.png');
+				// TODO(logo): placeholder CaseFusion wordmark until the real logo is supplied
+				projectLogoUrl.addPath('admin', 'img', 'casefusion-white.png');
 			}
 
 			return projectLogoUrl.toString();

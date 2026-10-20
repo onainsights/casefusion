@@ -26,7 +26,7 @@ const brandStyle = computed(() => {
 
 useHead({
 	titleTemplate: computed((title?: string) => {
-		const projectName = serverStore.info?.project?.project_name ?? 'Directus';
+		const projectName = serverStore.info?.project?.project_name ?? 'CaseFusion';
 		return !title ? projectName : `${title} · ${projectName}`;
 	}),
 	meta: computed(() => {

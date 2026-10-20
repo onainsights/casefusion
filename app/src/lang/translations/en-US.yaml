@@ -1793,7 +1793,7 @@ interfaces:
     recursive_only: The tree view interface only works for recursive relationships.
   user:
     user: User
-    description: Select an existing directus user
+    description: Select an existing CaseFusion user
     select_mode: Select Mode
     modes:
       auto: Auto
@@ -1981,7 +1981,7 @@ displays:
     display_template_configure_notice: You can configure the display template after creating this field.
   user:
     user: User
-    description: Display a directus user
+    description: Display a CaseFusion user
     avatar: Avatar
     name: Name
     both: Both
