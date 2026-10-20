@@ -5,13 +5,14 @@ export function resolvePreset({ transformationParams, acceptFormat }: Transforma
 	const transforms = transformationParams.transforms ? [...transformationParams.transforms] : [];
 
 	if (transformationParams.format || transformationParams.quality) {
+		// sharp's types no longer list the 'jpg' alias, but sharp still accepts it at runtime
 		transforms.push([
 			'toFormat',
 			getFormat(file, transformationParams.format, acceptFormat),
 			{
 				quality: transformationParams.quality ? Number(transformationParams.quality) : undefined,
 			},
-		]);
+		] as Transformation);
 	}
 
 	if (transformationParams.width || transformationParams.height) {
