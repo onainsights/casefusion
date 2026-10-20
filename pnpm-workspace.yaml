@@ -4,4 +4,7 @@ packages:
   - api
   - sdk
   - packages/*
+  # Unused here: the CLI update check is disabled, and upstream's changesets release tooling was removed
+  - '!packages/update-check'
+  - '!packages/release-notes-generator'
   - tests/**
