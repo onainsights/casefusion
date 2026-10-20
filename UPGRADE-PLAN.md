@@ -156,8 +156,19 @@ need Node 22 and remove most of the inherited advisories.
     `*.stories.ts` files, two scripts and 19 dev dependencies.
   - Integration tests: MinIO images can no longer be pulled, so the `minio` compose service runs S3Mock 5.2.3 with the
     test bucket created at startup; the `minio-mc` helper is gone.
-- **E6 Hardening.** `pnpm dedupe`; `license-checker --summary` clean (no BUSL, SSPL, Commons Clause); README and
-  `contributing.md` state the Node/pnpm matrix.
+- **E6 Hardening (done 2026-10-21).**
+  - Admin app on Vitest 4.1 (its 3.x `tinypool` had two criticals); all app tests pass unchanged.
+  - `packages/update-check` and `packages/release-notes-generator` are excluded from the pnpm workspace (unused: the
+    update check is disabled and upstream's changesets tooling was removed); the root `@changesets/cli` dependency is
+    gone. The files stay in place to keep upstream merges clean.
+  - `pnpm dedupe`: 156 duplicate package versions removed.
+  - **CI audit is now blocking** for production dependencies at high and above. Accepted advisories are listed in
+    `package.json` under `pnpm.auditConfig.ignoreGhsas`, each with its reason here:
+    - `GHSA-vfj7-8cjw-p6xm` (`braces`, via `chokidar` 3 in the extension watcher): see E2b; patterns are fixed server
+      configuration, not user input.
+  - The full audit (app bundle, build and test tooling) stays report-only. Status 2026-10-21: production dependencies 9
+    distinct advisories (0 critical, 1 high accepted, 7 moderate, 1 low); app browser bundle 0 critical/high; the rest
+    is development tooling (Vitest 0.31 in per-package tests, `histoire`, `swagger-ui-watcher`, ...).
 
 ## Verification gate
 

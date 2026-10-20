@@ -53,19 +53,19 @@ jobs:
   audit:
     name: Security audit
     runs-on: ubuntu-latest
-    # Report-only until step E2 of UPGRADE-PLAN.md clears the inherited advisories; then remove this line so
-    # high and critical advisories block merges.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: API production dependencies
+      # Blocking: high and critical advisories in production dependencies fail the build. Accepted advisories are
+      # listed in package.json (pnpm.auditConfig.ignoreGhsas) with their reasons in UPGRADE-PLAN.md.
+      - name: Production dependencies
         run: pnpm audit --prod --audit-level high
-      # The app's packages are devDependencies because they are bundled, so --prod skips them. This covers the bundle
-      # and the build tooling.
-      - name: All dependencies, including the app bundle
+      # Report-only: the app's packages are devDependencies because they are bundled, so --prod skips them. This covers
+      # the bundle and the build and test tooling.
+      - name: All dependencies, including the app bundle and tooling
         if: ${{ !cancelled() }}
+        continue-on-error: true
         run: pnpm audit --audit-level high
