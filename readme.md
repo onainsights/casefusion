@@ -35,7 +35,7 @@ Requirements: Node.js 18 and pnpm 8.9 for now (Node 22 and pnpm 9 are the next s
 
 ```bash
 pnpm install --frozen-lockfile
-pnpm build
+NODE_OPTIONS=--max-old-space-size=8192 pnpm build
 
 # API (http://localhost:8055) and app, in two terminals
 pnpm --filter @directus/api dev
