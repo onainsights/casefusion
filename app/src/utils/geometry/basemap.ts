@@ -1,6 +1,11 @@
-import { Style, RasterSource } from 'maplibre-gl';
+import { setWorkerUrl } from 'maplibre-gl';
+import type { StyleSpecification as Style, RasterSourceSpecification as RasterSource } from 'maplibre-gl';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { getTheme } from '@/utils/get-theme';
 import { useSettingsStore } from '@/stores/settings';
+
+// MapLibre 6 loads its worker from a separate file next to its own module, which bundling breaks; use the emitted asset
+setWorkerUrl(maplibreWorkerUrl);
 
 export type BasemapSource = {
 	name: string;
@@ -20,6 +25,8 @@ export const defaultBasemap: BasemapSource = {
 
 const baseStyle: Style = {
 	version: 8,
+	sources: {},
+	layers: [],
 	glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
 };
 
