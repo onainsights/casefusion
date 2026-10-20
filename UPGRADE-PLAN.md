@@ -132,11 +132,18 @@ need Node 22 and remove most of the inherited advisories.
       the unused `update-check` package: developer tooling, not server code; handled in E5.
   - Status after E2b: API production dependencies 22 distinct advisories (0 critical, 6 high; all in the categories
     above), admin app bundle 1 (`maplibre-gl`, E4).
-- **E3 `ldapjs` → `ldapts`.** Rewrite `api/src/auth/drivers/ldap.ts` with the same behaviour and config. May be deferred
-  behind an "LDAP disabled" default if it blocks the working build.
-- **E4 `mapbox-gl` → `maplibre-gl`.** `app/src/interfaces/map/`, `app/src/layouts/map/`,
-  `app/src/styles/lib/_mapbox.scss`, geocoder and draw plugins. Mapbox basemaps keep working with a user token through
-  MapLibre's style URL support.
+- **E3 `ldapjs` → `ldapts` (done 2026-10-20, PR #27).** `api/src/auth/drivers/ldap.ts` ported to `ldapts` 8.1.8 (promise
+  API, same behaviour). Unix sockets (`client.socketPath`) are not supported by `ldapts` and are now rejected. Pinned to
+  8.1.8 because 8.2+ publishes `catalog:` devDependency specs that break pnpm 9's `deploy`. Verified against an OpenLDAP
+  test directory, old vs new identical (login, refresh, group → role mapping, profile fields, error codes).
+- **E4 `maplibre-gl` 1.15 → 6.15 (done 2026-10-20).** Clears the last browser-bundle critical. The unused `mapbox-gl`
+  dependency is removed. Changes: style types renamed (`StyleSpecification`, `LayerSpecification`, ...), namespace
+  import (no default export), `getClusterExpansionZoom` returns a promise, the worker is a separate file (`setWorkerUrl`
+  with Vite's emitted asset), and every `mapboxgl-*` CSS class in our code is now `maplibregl-*` (MapLibre 2+ dropped
+  the Mapbox compatibility classes; the draw plugin's control classes are pointed at MapLibre's). Mapbox tokens are not
+  used by any deployment; the Mapbox basemap and geocoder paths compile but are untested. Verified in headless Chromium
+  against PostGIS, old vs new: map interface and map layout render identically, tiles load, controls present, drawing a
+  point and saving stores the same coordinates.
 - **E5 Toolchain.** Only what E1–E4 need to build cleanly. Decide Storybook: remove if nobody uses it.
 - **E6 Hardening.** `pnpm dedupe`; `license-checker --summary` clean (no BUSL, SSPL, Commons Clause); README and
   `contributing.md` state the Node/pnpm matrix.

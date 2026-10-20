@@ -11,7 +11,8 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { Geometry } from 'geojson';
 import { debounce, isEqual, snakeCase } from 'lodash';
-import maplibre, {
+import * as maplibre from 'maplibre-gl';
+import {
 	AnimationOptions,
 	AttributionControl,
 	CameraOptions,
@@ -104,10 +105,15 @@ function updateProjection() {
 
 watch(location, updateProjection);
 
+// mapbox-gl-draw defaults to Mapbox's control classes; MapLibre 2+ only styles maplibregl-*
+(MapboxDraw.constants.classes as Record<string, string>).CONTROL_BASE = 'maplibregl-ctrl';
+(MapboxDraw.constants.classes as Record<string, string>).CONTROL_PREFIX = 'maplibregl-ctrl-';
+(MapboxDraw.constants.classes as Record<string, string>).CONTROL_GROUP = 'maplibregl-ctrl-group';
+
 const controls = {
 	attribution: new AttributionControl(),
 	draw: new MapboxDraw(getDrawOptions(geometryType)),
-	fitData: new ButtonControl('mapboxgl-ctrl-fitdata', fitDataBounds),
+	fitData: new ButtonControl('maplibregl-ctrl-fitdata', fitDataBounds),
 	navigation: new NavigationControl({
 		showCompass: false,
 	}),
@@ -193,11 +199,11 @@ function setupMap(): () => void {
 	map.on('load', async () => {
 		map.resize();
 		mapLoading.value = false;
-		map.on('draw.create', handleDrawUpdate);
-		map.on('draw.delete', handleDrawUpdate);
-		map.on('draw.update', handleDrawUpdate);
-		map.on('draw.modechange', handleDrawModeChange);
-		map.on('draw.selectionchange', handleSelectionChange);
+		(map as any).on('draw.create', handleDrawUpdate);
+		(map as any).on('draw.delete', handleDrawUpdate);
+		(map as any).on('draw.update', handleDrawUpdate);
+		(map as any).on('draw.modechange', handleDrawModeChange);
+		(map as any).on('draw.selectionchange', handleSelectionChange);
 		map.on('move', updateProjection);
 
 		for (const layer of activeLayers) {
@@ -413,7 +419,7 @@ function handleKeyDown(event: any) {
 		</div>
 		<div
 			v-if="location"
-			class="mapboxgl-user-location-dot mapboxgl-search-location-dot"
+			class="maplibregl-user-location-dot maplibregl-search-location-dot"
 			:style="`transform: translate(${projection!.x}px, ${projection!.y}px) translate(-50%, -50%) rotateX(0deg) rotateZ(0deg)`"
 		></div>
 		<transition name="fade">
@@ -425,7 +431,7 @@ function handleKeyDown(event: any) {
 				{{ tooltipMessage }}
 			</div>
 		</transition>
-		<div class="mapboxgl-ctrl-group mapboxgl-ctrl mapboxgl-ctrl-dropdown basemap-select">
+		<div class="maplibregl-ctrl-group maplibregl-ctrl maplibregl-ctrl-dropdown basemap-select">
 			<v-icon name="map" />
 			<v-select v-model="basemap" inline :items="basemaps.map((s) => ({ text: s.name, value: s.name }))" />
 		</div>
@@ -520,7 +526,7 @@ function handleKeyDown(event: any) {
 		}
 	}
 
-	.mapboxgl-search-location-dot {
+	.maplibregl-search-location-dot {
 		position: absolute;
 		top: 0;
 		left: 0;

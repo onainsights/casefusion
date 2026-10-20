@@ -6,8 +6,9 @@ import { useAppStore } from '@directus/stores';
 import { ShowSelect } from '@directus/types';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import maplibre, {
-	AnyLayer,
+import * as maplibre from 'maplibre-gl';
+import {
+	LayerSpecification as AnyLayer,
 	AttributionControl,
 	CameraOptions,
 	GeoJSONSource,
@@ -16,7 +17,7 @@ import maplibre, {
 	LngLatLike,
 	Map,
 	MapLayerMouseEvent,
-	MapboxGeoJSONFeature,
+	MapGeoJSONFeature as MapboxGeoJSONFeature,
 	NavigationControl,
 } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -68,15 +69,15 @@ const navigationControl = new NavigationControl({
 	showCompass: false,
 });
 
-const geolocateControl = new GeolocateControl();
+const geolocateControl = new GeolocateControl({});
 
-const fitDataControl = new ButtonControl('mapboxgl-ctrl-fitdata', () => {
+const fitDataControl = new ButtonControl('maplibregl-ctrl-fitdata', () => {
 	emit('fitdata');
 });
 
 const boxSelectControl = new BoxSelectControl({
 	boxElementClass: 'map-selection-box',
-	selectButtonClass: 'mapboxgl-ctrl-select',
+	selectButtonClass: 'maplibregl-ctrl-select',
 	layers: ['__directus_polygons', '__directus_points', '__directus_lines'],
 });
 
@@ -84,7 +85,7 @@ let geocoderControl: MapboxGeocoder | undefined;
 
 if (mapboxKey) {
 	const marker = document.createElement('div');
-	marker.className = 'mapboxgl-user-location-dot mapboxgl-search-location-dot';
+	marker.className = 'maplibregl-user-location-dot maplibregl-search-location-dot';
 
 	geocoderControl = new MapboxGeocoder({
 		accessToken: mapboxKey,
@@ -139,10 +140,10 @@ function setupMap() {
 		map.on('click', '__directus_clusters', expandCluster);
 		map.on('mousemove', '__directus_clusters', hoverCluster);
 		map.on('mouseleave', '__directus_clusters', hoverCluster);
-		map.on('select.enable', () => (selectMode.value = true));
-		map.on('select.disable', () => (selectMode.value = false));
+		(map as any).on('select.enable', () => (selectMode.value = true));
+		(map as any).on('select.disable', () => (selectMode.value = false));
 
-		map.on('select.end', (event: MapLayerMouseEvent & { alt: unknown }) => {
+		(map as any).on('select.end', (event: MapLayerMouseEvent & { alt: unknown }) => {
 			const ids = event.features?.map((f) => f.id);
 			emit('featureselect', { ids, replace: !event.alt });
 		});
@@ -316,15 +317,17 @@ function expandCluster(event: MapLayerMouseEvent) {
 	const clusterId = features[0]?.properties?.cluster_id;
 	const source = map.getSource('__directus') as GeoJSONSource;
 
-	source.getClusterExpansionZoom(clusterId, (err: any, zoom: number) => {
-		if (err) return;
-
-		map.flyTo({
-			center: (features[0].geometry as GeoJSON.Point).coordinates as LngLatLike,
-			zoom: zoom,
-			speed: 1.3,
-		});
-	});
+	// MapLibre 3+ returns a promise instead of taking a callback
+	source.getClusterExpansionZoom(clusterId).then(
+		(zoom: number) => {
+			map.flyTo({
+				center: (features[0]!.geometry as GeoJSON.Point).coordinates as LngLatLike,
+				zoom: zoom,
+				speed: 1.3,
+			});
+		},
+		() => undefined
+	);
 }
 
 function hoverCluster(event: MapLayerMouseEvent) {
@@ -345,11 +348,11 @@ function hoverCluster(event: MapLayerMouseEvent) {
 </template>
 
 <style lang="scss" scoped>
-#map-container.hover :deep(.mapboxgl-canvas-container) {
+#map-container.hover :deep(.maplibregl-canvas-container) {
 	cursor: pointer !important;
 }
 
-#map-container.select :deep(.mapboxgl-canvas-container) {
+#map-container.select :deep(.maplibregl-canvas-container) {
 	cursor: crosshair !important;
 }
 

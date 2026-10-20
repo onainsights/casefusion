@@ -65,7 +65,7 @@ limitWritable.value = selectedSize;
 	<div class="layout-map">
 		<map-component
 			ref="map"
-			class="mapboxgl-map"
+			class="maplibregl-map"
 			:class="{ loading, error: error || geojsonError || !geometryOptions }"
 			:data="geojson"
 			:feature-id="featureId"
@@ -124,7 +124,7 @@ limitWritable.value = selectedSize;
 						@update:model-value="toPage"
 					/>
 				</div>
-				<div class="mapboxgl-ctrl-dropdown">
+				<div class="maplibregl-ctrl-dropdown">
 					<span>{{ t('limit') }}</span>
 					<v-select :model-value="limit" :items="pageSizes" inline @update:model-value="limitWritable = +$event" />
 				</div>
@@ -146,15 +146,15 @@ limitWritable.value = selectedSize;
 	pointer-events: initial;
 }
 
-.layout-map .mapboxgl-map :deep(.mapboxgl-canvas-container) {
+.layout-map .maplibregl-map :deep(.maplibregl-canvas-container) {
 	transition: opacity 0.2s;
 }
 
-.layout-map .mapboxgl-map.loading :deep(.mapboxgl-canvas-container) {
+.layout-map .maplibregl-map.loading :deep(.maplibregl-canvas-container) {
 	opacity: 0.9;
 }
 
-.layout-map .mapboxgl-map.error :deep(.mapboxgl-canvas-container) {
+.layout-map .maplibregl-map.error :deep(.maplibregl-canvas-container) {
 	opacity: 0.4;
 }
 
@@ -199,7 +199,7 @@ limitWritable.value = selectedSize;
 	padding-right: 0;
 }
 
-.mapboxgl-ctrl-dropdown {
+.maplibregl-ctrl-dropdown {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
