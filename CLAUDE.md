@@ -16,8 +16,8 @@ The repository keeps full upstream git history. `upstream` is a fetch-only remot
 
 ## Stack
 
-- **Monorepo:** pnpm workspaces (`pnpm-workspace.yaml`): `api/`, `app/`, `directus/` (CLI entry), `sdk/`, `docs/`,
-  `packages/*`, `tests/**`
+- **Monorepo:** pnpm workspaces (`pnpm-workspace.yaml`): `api/`, `app/`, `directus/` (CLI entry), `sdk/`, `packages/*`,
+  `tests/**`. `docs/` is not a workspace: it is kept as upstream reference text and never installed or built.
 - **Backend:** Node.js + TypeScript, Express 4, Knex 2.5, Pino 8, under `api/`
 - **Frontend:** Vue 3.3 + Vite 4 + Pinia + vue-i18n, under `app/`
 - **Tests:** Vitest per workspace; integration suite in `tests/blackbox` (Vitest, Docker DB matrix)
