@@ -874,8 +874,8 @@ importers:
         specifier: 7.0.12
         version: 7.0.12(encoding@0.1.13)
       tinymce:
-        specifier: 6.8.6
-        version: 6.8.6
+        specifier: 7.9.3
+        version: 7.9.3
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -11804,6 +11804,9 @@ packages:
 
   tinymce@6.8.6:
     resolution: {integrity: sha512-++XYEs8lKWvZxDCjrr8Baiw7KiikraZ5JkLMg6EdnUVNKJui0IsrAADj5MsyUeFkcEryfn2jd3p09H7REvewyg==}
+
+  tinymce@7.9.3:
+    resolution: {integrity: sha512-Mtm54U5YJ6Pyo/GaAx+JSHXTGEuxrg2AowVWCD9zy1eBolp5Ub7S1rTtsyQdxhPegfhLuR3VLiTKGw1tacv09g==}
 
   tinypool@0.5.0:
     resolution: {integrity: sha512-paHQtnrlS1QZYKF/GnLoOM/DN9fqaGOFbCbxzAhwniySnzl9Ebk8w73/dd34DAhe/obUbPAOldTyYXQZxnPBPQ==}
@@ -24925,6 +24928,8 @@ snapshots:
   tinybench@2.5.1: {}
 
   tinymce@6.8.6: {}
+
+  tinymce@7.9.3: {}
 
   tinypool@0.5.0: {}
 
