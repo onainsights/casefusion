@@ -45,7 +45,7 @@ importers:
     dependencies:
       '@authenio/samlify-node-xmllint':
         specifier: 2.0.0
-        version: 2.0.0(samlify@2.8.10)
+        version: 2.0.0(samlify@2.15.0)
       '@aws-sdk/client-sesv2':
         specifier: 3.1153.0
         version: 3.1153.0
@@ -61,9 +61,6 @@ importers:
       '@directus/extensions':
         specifier: workspace:*
         version: link:../packages/extensions
-      '@directus/extensions-sdk':
-        specifier: workspace:*
-        version: link:../packages/extensions-sdk
       '@directus/format-title':
         specifier: 10.0.0
         version: 10.0.0
@@ -308,8 +305,8 @@ importers:
         specifier: 3.30.0
         version: 3.30.0
       samlify:
-        specifier: 2.8.10
-        version: 2.8.10
+        specifier: 2.15.0
+        version: 2.15.0
       sanitize-html:
         specifier: 2.18.1
         version: 2.18.1
@@ -5836,9 +5833,17 @@ packages:
   '@webassemblyjs/wast-printer@1.11.6':
     resolution: {integrity: sha512-JM7AhRcE+yW2GWYaKeHL5vt4xqee5N2WcezptmgyhNS+ScggqcT1OtXykhAb13Sn5Yas0j2uv9tHgrjwvzAP4A==}
 
+  '@xmldom/is-dom-node@1.0.1':
+    resolution: {integrity: sha512-CJDxIgE5I0FH+ttq/Fxy6nRpxP70+e2O048EPe85J2use3XKdatVM7dDVvFNjQudd9B49NPoZ+8PG49zj4Er8Q==}
+    engines: {node: '>= 16'}
+
   '@xmldom/xmldom@0.8.15':
     resolution: {integrity: sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==}
     engines: {node: '>=10.0.0'}
+
+  '@xmldom/xmldom@0.9.12':
+    resolution: {integrity: sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==}
+    engines: {node: '>=14.6'}
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -11139,8 +11144,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  samlify@2.8.10:
-    resolution: {integrity: sha512-g2M1Qq2uL7GHtmBRaTVYcJD0Vb+XOyvXHsPARHCoqQ54Vp7m5h3NMUGzvLEIFGujxaamyM3BhEi9fdVAkJMvHw==}
+  samlify@2.15.0:
+    resolution: {integrity: sha512-Yn+c3FmmRRKyFIgA/6exK+9YKoYmRF7dNPVPZGRNx9C1zvs4497TEYYS7tDuIQJ4ezlWY23s9mHaSp4e6Y/RYg==}
 
   sanitize-html@2.18.1:
     resolution: {integrity: sha512-2X5lC8fYla8YaT8g73Nj+HcLWXan5dLyCWLgVvaOmfw7JI78IRsyNtIDytTHdn7hBQbIkCah7Zbmd5jabzeDig==}
@@ -12808,9 +12813,12 @@ packages:
       utf-8-validate:
         optional: true
 
-  xml-crypto@3.2.1:
-    resolution: {integrity: sha512-0GUNbPtQt+PLMsC5HoZRONX+K6NBJEqpXe/lsvrFj0EqfpGPpVfJKGE7a5jCg8s2+Wkrf/2U1G41kIH+zC9eyQ==}
-    engines: {node: '>=4.0.0'}
+  xml-crypto@6.4.0:
+    resolution: {integrity: sha512-d21ModhBO/+QWWAmOjyDeQJuHNmsR/HtOxyBchiTbKfGNKuHYwQNd+SlLhwyyrwoAGLp4Qc6BQ7nAtnM47dHSQ==}
+    engines: {node: '>=16'}
+
+  xml-escape@1.1.0:
+    resolution: {integrity: sha512-B/T4sDK8Z6aUh/qNr7mjKAwwncIljFuUP+DO/D5hloYFj+90O88z8Wf7oSucZTHxBAsC1/CTP4rtx/x1Uf72Mg==}
 
   xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
@@ -12835,6 +12843,14 @@ packages:
 
   xpath@0.0.32:
     resolution: {integrity: sha512-rxMJhSIoiO8vXcWvSifKqhvV96GjiD5wYb8/QHdoRyQvraTpp4IEv944nhGausZZ3u7dhQXteZuZbaqfpB7uYw==}
+    engines: {node: '>=0.6.0'}
+
+  xpath@0.0.33:
+    resolution: {integrity: sha512-NNXnzrkDrAzalLhIUc01jO2mOzXGXh1JwPgkihcLLzw98c0WgYDmmjSh1Kl3wzaxSVWMuA+fe0WTWOBDWCBmNA==}
+    engines: {node: '>=0.6.0'}
+
+  xpath@0.0.34:
+    resolution: {integrity: sha512-FxF6+rkr1rNSQrhUNYrAFJpRXNzlDoMxeXN5qI84939ylEv3qqPFKa85Oxr6tDaJKqwW6KKyo2v26TSv3k6LeA==}
     engines: {node: '>=0.6.0'}
 
   xtend@4.0.2:
@@ -12961,10 +12977,10 @@ snapshots:
 
   '@assemblyscript/loader@0.19.23': {}
 
-  '@authenio/samlify-node-xmllint@2.0.0(samlify@2.8.10)':
+  '@authenio/samlify-node-xmllint@2.0.0(samlify@2.15.0)':
     dependencies:
       node-xmllint: 1.0.0
-      samlify: 2.8.10
+      samlify: 2.15.0
 
   '@authenio/xml-encryption@2.0.2':
     dependencies:
@@ -18118,7 +18134,11 @@ snapshots:
       '@webassemblyjs/ast': 1.11.6
       '@xtuc/long': 4.2.2
 
+  '@xmldom/is-dom-node@1.0.1': {}
+
   '@xmldom/xmldom@0.8.15': {}
+
+  '@xmldom/xmldom@0.9.12': {}
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -24187,18 +24207,15 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  samlify@2.8.10:
+  samlify@2.15.0:
     dependencies:
       '@authenio/xml-encryption': 2.0.2
-      '@xmldom/xmldom': 0.8.15
-      camelcase: 6.3.0
-      node-forge: 1.4.0
+      '@xmldom/xmldom': 0.9.12
       node-rsa: 1.1.1
-      pako: 1.0.11
-      uuid: 8.3.2
       xml: 1.0.1
-      xml-crypto: 3.2.1
-      xpath: 0.0.32
+      xml-crypto: 6.4.0
+      xml-escape: 1.1.0
+      xpath: 0.0.34
 
   sanitize-html@2.18.1:
     dependencies:
@@ -26074,10 +26091,13 @@ snapshots:
 
   ws@8.22.0: {}
 
-  xml-crypto@3.2.1:
+  xml-crypto@6.4.0:
     dependencies:
+      '@xmldom/is-dom-node': 1.0.1
       '@xmldom/xmldom': 0.8.15
-      xpath: 0.0.32
+      xpath: 0.0.33
+
+  xml-escape@1.1.0: {}
 
   xml-name-validator@4.0.0: {}
 
@@ -26095,6 +26115,10 @@ snapshots:
   xmlcreate@2.0.4: {}
 
   xpath@0.0.32: {}
+
+  xpath@0.0.33: {}
+
+  xpath@0.0.34: {}
 
   xtend@4.0.2: {}
 
