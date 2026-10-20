@@ -155,7 +155,7 @@
 		"sanitize-html": "2.18.1",
 		"sharp": "0.35.5",
 		"snappy": "7.2.2",
-		"stream-json": "1.7.5",
+		"stream-json": "3.6.0",
 		"strip-bom-stream": "5.0.0",
 		"tinypool": "2.1.2",
 		"tsx": "4.23.15",
