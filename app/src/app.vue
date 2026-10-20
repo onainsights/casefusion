@@ -26,10 +26,9 @@ const brandStyle = computed(() => {
 });
 
 useHead({
-	titleTemplate: computed((title?: string) => {
-		const projectName = serverStore.info?.project?.project_name ?? 'CaseFusion';
-		return !title ? projectName : `${title} · ${projectName}`;
-	}),
+	// The getter used to take a `title` parameter that Vue never passed, so the result was always the project name.
+	// Vue 3.4+ passes the computed's previous value as the first argument, which doubled the name; keep the old result.
+	titleTemplate: computed(() => serverStore.info?.project?.project_name ?? 'CaseFusion'),
 	meta: computed(() => {
 		const content = serverStore.info?.project?.project_color ?? DEFAULT_BRAND_COLOR;
 

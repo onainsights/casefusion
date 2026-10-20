@@ -31,7 +31,7 @@ export type ComputedQuery = {
 	sort: Ref<Query['sort']> | ComputedRef<Query['sort']> | WritableComputedRef<Query['sort']>;
 	search: Ref<Query['search']> | ComputedRef<Query['search']> | WritableComputedRef<Query['search']>;
 	filter: Ref<Query['filter']> | ComputedRef<Query['filter']> | WritableComputedRef<Query['filter']>;
-	page: Ref<Query['page']> | WritableComputedRef<Query['page']>;
+	page: Ref<Query['page']>;
 	alias?: Ref<Query['alias']> | ComputedRef<Query['alias']> | WritableComputedRef<Query['alias']>;
 	deep?: Ref<Query['deep']> | ComputedRef<Query['deep']> | WritableComputedRef<Query['deep']>;
 };

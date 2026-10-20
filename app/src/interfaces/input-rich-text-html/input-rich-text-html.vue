@@ -173,6 +173,8 @@ const editorOptions = computed(() => {
 	}
 
 	return {
+		// TinyMCE 7+ requires a licence key; 'gpl' declares use under its GPL-2.0-or-later licence
+		license_key: 'gpl',
 		skin: false,
 		content_css: false,
 		content_style: getEditorStyles(props.font as 'sans-serif' | 'serif' | 'monospace'),
