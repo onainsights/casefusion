@@ -61,9 +61,6 @@ importers:
       '@directus/extensions':
         specifier: workspace:*
         version: link:../packages/extensions
-      '@directus/extensions-sdk':
-        specifier: workspace:*
-        version: link:../packages/extensions-sdk
       '@directus/format-title':
         specifier: 10.0.0
         version: 10.0.0
