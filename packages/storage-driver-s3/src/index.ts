@@ -2,8 +2,10 @@ import type {
 	CopyObjectCommandInput,
 	GetObjectCommandInput,
 	ListObjectsV2CommandInput,
+	ObjectCannedACL,
 	PutObjectCommandInput,
 	S3ClientConfig,
+	ServerSideEncryption,
 } from '@aws-sdk/client-s3';
 import {
 	CopyObjectCommand,
@@ -14,7 +16,7 @@ import {
 	S3Client,
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
-import { NodeHttpHandler } from '@aws-sdk/node-http-handler';
+import { NodeHttpHandler } from '@smithy/node-http-handler';
 import type { Driver, Range } from '@directus/storage';
 import { normalizePath } from '@directus/utils';
 import { isReadableStream } from '@directus/utils/node';
@@ -28,8 +30,8 @@ export type DriverS3Config = {
 	key?: string;
 	secret?: string;
 	bucket: string;
-	acl?: string;
-	serverSideEncryption?: string;
+	acl?: ObjectCannedACL;
+	serverSideEncryption?: ServerSideEncryption;
 	endpoint?: string;
 	region?: string;
 	forcePathStyle?: boolean;

@@ -1,4 +1,4 @@
-import type { Driver, Range } from '@directus/storage';
+import type { Driver, Range, Stat } from '@directus/storage';
 import { normalizePath } from '@directus/utils';
 import type { Bucket, CreateReadStreamOptions, GetFilesOptions } from '@google-cloud/storage';
 import { Storage } from '@google-cloud/storage';
@@ -54,7 +54,8 @@ export class DriverGCS implements Driver {
 
 	async stat(filepath: string) {
 		const [{ size, updated }] = await this.file(this.fullPath(filepath)).getMetadata();
-		return { size, modified: updated };
+		// GCS returns size and updated as strings; this matches the untyped metadata the driver returned before 7.x
+		return { size, modified: updated } as unknown as Stat;
 	}
 
 	async exists(filepath: string) {
