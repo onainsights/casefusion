@@ -11,6 +11,6 @@ and publishing others' private information without their permission.
 
 ## Reporting
 
-Report unacceptable behaviour to the maintainers at [alessandro@onainsights.io](mailto:alessandro@onainsights.io).
-Reports are handled confidentially. The maintainers will review each report and may respond with a correction, a
-warning, a temporary ban or a permanent ban, following the Contributor Covenant's enforcement guidelines.
+Report unacceptable behaviour to the maintainers at [security@onainsights.io](mailto:security@onainsights.io). Reports
+are handled confidentially. The maintainers will review each report and may respond with a correction, a warning, a
+temporary ban or a permanent ban, following the Contributor Covenant's enforcement guidelines.

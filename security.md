@@ -6,7 +6,7 @@ Please report security issues privately, not in a public issue:
 
 - through a [private vulnerability report](https://github.com/onainsights/casefusion/security/advisories/new) on GitHub
   (preferred), or
-- by email to [alessandro@onainsights.io](mailto:alessandro@onainsights.io).
+- by email to [security@onainsights.io](mailto:security@onainsights.io).
 
 Include the affected version or commit, steps to reproduce, and the impact you expect. We aim to acknowledge reports
 within five working days and will keep you informed while we work on a fix. We credit reporters in the advisory unless
