@@ -56,11 +56,14 @@ git merge --no-ff v10.7.0 -m "Merge upstream v10.7.0 (GPLv3 since 2026-10-23)"
 # 4. Resolve conflicts. Expected only in files we deliberately changed:
 #    branding, readme/notice/licence files, package.json "license" fields,
 #    telemetry/update-check defaults, .github/, Dockerfile, deps we bumped.
+#    Files we deleted (upstream workflows, issue templates, crowdin.yml, cla.md,
+#    contributors.yml, .changeset/) come back as modify/delete conflicts:
+#    keep them deleted with `git rm`.
 #    For pnpm-lock.yaml: take ours/theirs for package.json files first, then
 #    `pnpm install` to regenerate the lockfile. Never hand-edit it.
 
 # 5. Re-apply invariants
-git grep -n "BUSL"                      # must be empty (upstream re-adds it on every package.json)
+git grep -n BUSL -- '*package.json' '*license'   # must be empty (upstream re-adds it; CI checks too)
 git grep -nE "telemetry.directus.io"    # must be empty
 
 # 6. Verify (same gate as every phase)

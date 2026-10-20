@@ -1,0 +1,28 @@
+name: Blackbox tests
+
+# Upstream's integration suite, against Postgres only to keep it cheap. Run by hand, for example after an upstream
+# merge or a dependency step in UPGRADE-PLAN.md.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Postgres
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/prepare
+
+      - name: Start database and services
+        run:
+          docker compose -f tests/blackbox/docker-compose.yml up postgres auth-saml redis minio minio-mc -d --quiet-pull
+          --wait
+
+      - name: Run tests
+        run: TEST_DB=postgres pnpm run test:blackbox
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144

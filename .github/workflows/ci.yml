@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint and format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/prepare
+        with:
+          build: false
+      - run: pnpm exec eslint .
+      - run: pnpm exec prettier --check .
+
+  test:
+    name: Build and unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/prepare
+      - run: pnpm test
+
+  licenses:
+    name: Dependency licences
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/prepare
+        with:
+          build: false
+      - run: pnpm licenses:check
+      - name: No BUSL in our own packages
+        run: |
+          if git grep -n -E 'BUSL|BSUL' -- '*package.json' '*license'; then
+            echo "BUSL found: an upstream merge re-added it (see UPSTREAM.md)"; exit 1
+          fi
+
+  audit:
+    name: Security audit
+    runs-on: ubuntu-latest
+    # Report-only until step E2 of UPGRADE-PLAN.md clears the inherited advisories; then remove this line so
+    # high and critical advisories block merges.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: pnpm audit --prod --audit-level high

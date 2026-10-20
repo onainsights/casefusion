@@ -1,43 +1,31 @@
-name: Report a bug
-description: Create a report to help us improve
+name: Bug report
+description: Something in CaseFusion does not work as expected
 body:
   - type: markdown
     attributes:
       value: |
-        Hi, thank you for taking the time to create an issue! Before you get started, please ensure the following are correct:
-
-        - I'm using the [latest version of Directus](https://github.com/directus/directus/releases)
-        - I've completed all [Troubleshooting Steps](https://docs.directus.io/getting-started/support/#troubleshooting-steps).
-        - There's [no other issue](https://github.com/directus/directus/issues?q=is%3Aissue) that already describes the problem.
-
-        _For issues specific to Directus Cloud projects, please reach out through the Live Chat in our Cloud Dashboard._
+        Security issues: do not open an issue, see [security.md](https://github.com/onainsights/casefusion/blob/main/security.md).
   - type: textarea
+    id: what
     attributes:
-      label: Describe the Bug
-      description: A clear and concise description of what the bug is.
+      label: What happened, and what did you expect?
     validations:
       required: true
   - type: textarea
+    id: steps
     attributes:
-      label: To Reproduce
-      description:
-        Steps to reproduce the behavior. Contributors should be able to follow the steps provided in order to reproduce
-        the bug.
+      label: Steps to reproduce
     validations:
       required: true
   - type: input
+    id: version
     attributes:
-      label: Directus Version
-      placeholder: v10.x.x
+      label: Commit or image tag
+      placeholder: e.g. main @ 1a2b3c4, or ghcr.io/onainsights/casefusion:sha-1a2b3c4
     validations:
       required: true
-  - type: dropdown
-    id: deployment
+  - type: input
+    id: database
     attributes:
-      label: Hosting Strategy
-      options:
-        - Self-Hosted (Docker Image)
-        - Self-Hosted (Custom)
-        - Directus Cloud
-    validations:
-      required: true
+      label: Database and Node.js version
+      placeholder: e.g. PostgreSQL 16, Node 18.20

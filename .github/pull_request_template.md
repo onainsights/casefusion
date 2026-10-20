@@ -1,33 +1,9 @@
-<!--
+## What and why
 
-Heya! Thanks for opening a Pull Request! If your PR is implementing a new feature or fix for Directus, please make sure your PR adheres to the following requirements:
+<!-- One change per pull request. Link the issue if there is one. -->
 
-- The PR closes an Issue (not Discussion)
-- Tests are added/updated and are passing locally if applicable
-- Documentation was added/updated if applicable
+## Checks
 
-Please make sure to "Link" the issue you're closing. Without a Linked issue, this PR won't be accepted. See https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue for more information.
-
--->
-
-## Scope
-
-What's changed:
-
-- Lorem ipsum dolor sit amet
-- Consectetur adipiscing elit
-- Sed do eiusmod tempor incididunt
-
-## Potential Risks / Drawbacks
-
-- Lorem ipsum dolor sit amet
-- Consectetur adipiscing elit
-
-## Review Notes / Questions
-
-- I would like to lorem ipsum
-- Special attention should be paid to dolor sit amet
-
----
-
-Fixes #\<num\>
+- [ ] `pnpm lint`, `pnpm format` and the unit tests pass for the workspaces I touched
+- [ ] Commits are signed off (`git commit -s`, see contributing.md)
+- [ ] No code copied from Directus releases still under BUSL (see UPSTREAM.md)
