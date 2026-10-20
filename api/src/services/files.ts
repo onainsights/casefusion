@@ -296,7 +296,7 @@ export class FilesService extends ItemsService {
 		const payload = {
 			filename_download: filename,
 			storage: toArray(env['STORAGE_LOCATIONS'])[0],
-			type: fileResponse.headers['content-type'],
+			type: fileResponse.headers['content-type'] as string,
 			title: formatTitle(filename),
 			...(body || {}),
 		};
@@ -352,7 +352,7 @@ export class FilesService extends ItemsService {
 }
 
 function decompressResponse(stream: Readable, headers: AxiosResponse['headers']) {
-	const contentEncoding = (headers['content-encoding'] || '').toLowerCase();
+	const contentEncoding = ((headers['content-encoding'] as string | undefined) || '').toLowerCase();
 
 	if (!['gzip', 'deflate', 'br'].includes(contentEncoding)) {
 		return stream;

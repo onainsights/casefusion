@@ -31,7 +31,7 @@
 		"filenamify": "6.0.0",
 		"find-cache-dir": "5.0.0",
 		"got": "13.0.0",
-		"semver": "7.5.4"
+		"semver": "7.8.5"
 	},
 	"devDependencies": {
 		"@directus/tsconfig": "workspace:*",
