@@ -112,21 +112,10 @@ services:
       - 'host.docker.internal:host-gateway'
 
   minio:
-    image: minio/minio:latest
-    command: server /data/minio/ --console-address :9001
+    # S3-compatible stand-in: MinIO's images can no longer be pulled from Docker Hub or quay.io. S3Mock accepts any
+    # credentials and creates the test bucket at startup.
+    image: adobe/s3mock:5.2.3
     ports:
-      - 8881:9000
-      - 8882:9001
+      - 8881:9090
     environment:
-      MINIO_ROOT_USER: directus
-      MINIO_ROOT_PASSWORD: miniosecret
-
-  minio-mc:
-    image: minio/mc
-    depends_on:
-      - minio
-    entrypoint: >
-      /bin/sh -c " /usr/bin/mc alias set directusminio http://minio:9000 directus miniosecret; /usr/bin/mc mb
-      directusminio/directus-blackbox-test; while true; do
-          sleep 3600;
-      done "
+      COM_ADOBE_TESTING_S3MOCK_STORE_INITIAL_BUCKETS: directus-blackbox-test
