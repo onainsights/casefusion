@@ -14,6 +14,7 @@ RUN \
   if [ "$TARGETPLATFORM" = 'linux/arm64' ]; then \
   apk --no-cache add \
   python3 \
+  py3-setuptools \
   build-base \
   && ln -sf /usr/bin/python3 /usr/bin/python \
   ; fi
