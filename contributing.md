@@ -21,7 +21,7 @@ independently or wait for the release to convert.
 
 ## Development
 
-Requirements: Node.js 18 and pnpm 8.9 (Node 22 and pnpm 9 are planned).
+Requirements: Node.js 22 and pnpm 9.
 
 ```bash
 pnpm install --frozen-lockfile

@@ -22,7 +22,8 @@ The repository keeps full upstream git history. `upstream` is a fetch-only remot
 - **Backend:** Node.js + TypeScript, Express 4, Knex 2.5, Pino 8, under `api/`
 - **Frontend:** Vue 3.3 + Vite 4 + Pinia + vue-i18n, under `app/`
 - **Tests:** Vitest per workspace; integration suite in `tests/blackbox` (Vitest, Docker DB matrix)
-- **Currently pinned:** Node `>=18` (EOL), pnpm 8.9.0, TypeScript 5.2.2. These are upgrade targets.
+- **Currently pinned:** Node `>=22`, pnpm 9.15, TypeScript 5.2.2. `--no-node-snapshot` is required for `isolated-vm`
+  (`casefusion/cli.js` re-launches with it; the api `dev`/`cli` scripts set it).
 
 ## Commands
 
@@ -67,4 +68,4 @@ pnpm --recursive exec tsc --noEmit # typecheck only
 - **Telemetry** (`api/src/utils/telemetry.ts`) and `packages/update-check` call Monospace services; they must default
   off.
 - `isolated-vm` (Run Script operation, `api/src/operations/exec/`) is a native module: it must be rebuilt for each Node
-  major.
+  major, and Node 20+ must run with `--no-node-snapshot`.

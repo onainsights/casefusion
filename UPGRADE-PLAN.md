@@ -87,9 +87,16 @@ need Node 22 and remove most of the inherited advisories.
   | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6)     |
   | `request>qs` → 6.16.1           | same                                                                  |
 
-- **E1 Engine.** Node 22 LTS, pnpm 9, `node:22-alpine`, `@types/node` 22, `tsx` 4. `engines.node` in root, `api/`,
-  `casefusion/`, `sdk/`, `packages/extensions-sdk/`. Bump native modules that do not build on Node 22 (`isolated-vm` 5,
-  `argon2`, `sharp`, `sqlite3`). Fix fetch/undici typing and ESM edges as they appear.
+- **E1 Engine (done 2026-10-20).** Node 22 LTS and pnpm 9.15.9 (`packageManager`, `engines`, lockfile v9),
+  `node:22-alpine`, CI on Node 22, `@types/node` 22.20.5, `tsx` 4.23.15, `isolated-vm` 5.0.4. `engines.node` raised in
+  root, `api/` and `casefusion/` only: `sdk/` and `packages/extensions-sdk/` are libraries that run in other projects.
+  `argon2`, `sharp` and `sqlite3` work unchanged on Node 22 (N-API binaries). Minimum is Node 22.12 because
+  `sanitize-html` 2.17.6+ (two XSS fixes) needs it; it moves to 2.18.1. pnpm 9's audit also reports `handlebars`,
+  `underscore`, `ejs` and `pug` (via `nodemailer-mailgun-transport`), refreshed in range. `tedious` (MSSQL driver)
+  16.1.0 → 16.7.1, because 16.1's `@azure/msal-node` 1.x declares Node ≤ 18 and fails the Docker build's `pnpm deploy`.
+  `NodeJS.Timer` annotations in `sdk/` and `api/src/websocket/` changed to the timer types `@types/node` 22 expects
+  (type-only). Audit: 85 → 83 advisories. `isolated-vm` needs `--no-node-snapshot` on Node 20+: `casefusion/cli.js`
+  re-launches itself with it, and the api `dev`/`cli` scripts set it in `NODE_OPTIONS`.
 - **E2b Remaining security fixes.** The major bumps the audit still lists after E2a and E1: `samlify` 2.10+ (SAML
   behaviour, test against a real IdP), `nodemailer` 7+, `tinypool` 2, `undici` 6, `helmet` 8, `@aws-sdk/*`, and the rest
   of the Security and Server rows above. Exit criterion: `pnpm audit --prod` reports zero high/critical, or each

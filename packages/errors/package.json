@@ -33,7 +33,7 @@
 		"@directus/random": "workspace:*",
 		"@directus/tsconfig": "workspace:*",
 		"@types/ms": "0.7.31",
-		"@types/node": "18.16.12",
+		"@types/node": "22.20.5",
 		"@vitest/coverage-c8": "0.31.1",
 		"tsup": "7.2.0",
 		"typescript": "5.2.2",
