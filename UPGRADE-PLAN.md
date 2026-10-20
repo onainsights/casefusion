@@ -71,6 +71,7 @@ need Node 22 and remove most of the inherited advisories.
   | No patched version released | 0        | 7    | 5        | 0   | 12    |
 
 - **E2a Easy security fixes (Node 18).** Same-major updates only, no API changes. One PR each:
+
   1. Refresh transitive dependencies within their declared ranges (`pnpm update --recursive --depth Infinity`, which
      leaves our exactly-pinned direct dependencies alone).
   2. Bump directly pinned dependencies to the latest patch/minor of their current major: `axios` 1.x, `liquidjs` 10.x,
@@ -78,7 +79,14 @@ need Node 22 and remove most of the inherited advisories.
      `vue-i18n` 9.x, `jsonwebtoken` 9.x, `express` 4.x, and whatever else the audit lists.
   3. `pnpm.overrides` in the root `package.json` for transitive packages that stay stuck because a parent pins an old
      version. Record each override in this file with the parent that blocks it, so it can be dropped once the parent
-     updates.
+     updates. Overrides in place (drop each once its parent no longer needs it):
+
+  | Override                        | Parent that blocks the fix                                            |
+  | ------------------------------- | --------------------------------------------------------------------- |
+  | `fast-xml-parser@4.1.2` → 4.5.7 | `@aws-sdk/client-s3`, `client-ses`, `client-sts` 3.332 pin it exactly |
+  | `request>form-data` → 2.5.6     | `request` 2.88 (via `nodemailer-sendgrid` → `@sendgrid/client` 6)     |
+  | `request>qs` → 6.16.1           | same                                                                  |
+
 - **E1 Engine.** Node 22 LTS, pnpm 9, `node:22-alpine`, `@types/node` 22, `tsx` 4. `engines.node` in root, `api/`,
   `casefusion/`, `sdk/`, `packages/extensions-sdk/`. Bump native modules that do not build on Node 22 (`isolated-vm` 5,
   `argon2`, `sharp`, `sqlite3`). Fix fetch/undici typing and ESM edges as they appear.

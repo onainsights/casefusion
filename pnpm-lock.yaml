@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  fast-xml-parser@4.1.2: 4.5.7
+  request>form-data: 2.5.6
+  request>qs: 6.16.1
+
 importers:
 
   .:
@@ -1237,7 +1242,7 @@ importers:
         version: 8.2.1
       knex:
         specifier: 2.4.2
-        version: 2.4.2
+        version: 2.4.2(mysql@2.18.1)(pg@8.11.0)(sqlite3@5.1.6)(tedious@16.1.0)
       pino:
         specifier: 8.14.1
         version: 8.14.1
@@ -1444,7 +1449,7 @@ importers:
     dependencies:
       knex:
         specifier: 2.4.2
-        version: 2.4.2
+        version: 2.4.2(mysql@2.18.1)(pg@8.11.0)(sqlite3@5.1.6)(tedious@16.1.0)
     devDependencies:
       '@directus/tsconfig':
         specifier: workspace:*
@@ -1777,7 +1782,7 @@ importers:
         version: 0.5.0
       knex:
         specifier: 2.4.2
-        version: 2.4.2
+        version: 2.4.2(mysql@2.18.1)(pg@8.11.0)(sqlite3@5.1.6)(tedious@16.1.0)
       pino:
         specifier: 8.14.1
         version: 8.14.1
@@ -2294,7 +2299,7 @@ packages:
       '@aws-sdk/util-utf8': 3.310.0
       '@aws-sdk/util-waiter': 3.329.0
       '@aws-sdk/xml-builder': 3.310.0
-      fast-xml-parser: 4.1.2
+      fast-xml-parser: 4.5.7
       tslib: 2.6.2
     transitivePeerDependencies:
       - '@aws-sdk/signature-v4-crt'
@@ -2340,7 +2345,7 @@ packages:
       '@aws-sdk/util-user-agent-node': 3.329.0
       '@aws-sdk/util-utf8': 3.310.0
       '@aws-sdk/util-waiter': 3.329.0
-      fast-xml-parser: 4.1.2
+      fast-xml-parser: 4.5.7
       tslib: 2.6.2
     transitivePeerDependencies:
       - aws-crt
@@ -2464,7 +2469,7 @@ packages:
       '@aws-sdk/util-user-agent-browser': 3.329.0
       '@aws-sdk/util-user-agent-node': 3.329.0
       '@aws-sdk/util-utf8': 3.310.0
-      fast-xml-parser: 4.1.2
+      fast-xml-parser: 4.5.7
       tslib: 2.6.2
     transitivePeerDependencies:
       - aws-crt
@@ -5513,7 +5518,7 @@ packages:
       ignore: 5.2.4
       import-fresh: 3.3.0
       js-yaml: 4.3.2
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
@@ -5780,7 +5785,7 @@ packages:
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
       debug: 4.3.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6103,7 +6108,7 @@ packages:
       '@mapbox/parse-mapbox-token': 0.2.0
       '@mapbox/polyline': 1.2.1
       eventemitter3: 3.1.2
-      form-data: 3.0.1
+      form-data: 3.0.5
       got: 11.8.6
       is-plain-obj: 1.1.0
       xtend: 4.0.2
@@ -6193,7 +6198,7 @@ packages:
       '@rushstack/rig-package': 0.5.1
       '@rushstack/ts-command-line': 4.16.1
       colors: 1.2.5
-      lodash: 4.17.21
+      lodash: 4.17.23
       resolve: 1.22.6
       semver: 7.5.4
       source-map: 0.6.1
@@ -8035,7 +8040,7 @@ packages:
     resolution: {integrity: sha512-Unz/WHmd4pGax91rdIKWi51wnVUW11QttMEPpBiBgIewnc9UQIX7UDLxr5vRlqeByXCwhkF6VabSsI0raWcyAQ==}
     dependencies:
       fast-glob: 3.3.1
-      minimatch: 7.4.6
+      minimatch: 7.4.9
       mkdirp: 2.1.6
       path-browserify: 1.0.1
     dev: true
@@ -8501,7 +8506,7 @@ packages:
     resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
     dependencies:
       '@types/node': 18.16.12
-      form-data: 3.0.1
+      form-data: 3.0.5
 
   /@types/node-schedule@2.1.0:
     resolution: {integrity: sha512-NiTwl8YN3v/1YCKrDFSmCTkVxFDylueEqsOFdgF+vPsm+AlyJKGAo5yzX1FiOxPsZiN6/r8gJitYx2EaSuBmmg==}
@@ -8597,7 +8602,7 @@ packages:
       '@types/caseless': 0.12.3
       '@types/node': 18.16.12
       '@types/tough-cookie': 4.0.3
-      form-data: 2.5.1
+      form-data: 2.5.6
     dev: false
     optional: true
 
@@ -11270,7 +11275,7 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       mkdirp: 1.0.4
       noms: 0.0.0
       through2: 2.0.5
@@ -12436,7 +12441,7 @@ packages:
       json-stable-stringify-without-jsonify: 1.0.1
       levn: 0.4.1
       lodash.merge: 4.6.2
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       natural-compare: 1.4.0
       optionator: 0.9.3
       strip-ansi: 6.0.1
@@ -12705,8 +12710,8 @@ packages:
     resolution: {integrity: sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==}
     dev: true
 
-  /fast-xml-parser@4.1.2:
-    resolution: {integrity: sha512-CDYeykkle1LiA/uqQyNwYpFbyF6Axec6YapmpUP+/RHWIoR1zKjocdvNaTsxCxZzQ6v9MLXaSYm9Qq0thv0DHg==}
+  /fast-xml-parser@4.5.7:
+    resolution: {integrity: sha512-a6Qh1RMCNbSrU1+sAyAAZH3rTe+OaWJbNZIq0S+ifZciUUOQtlVxBJwoTUE2bYhysmG/RYyI5WJFIKdBahJdrQ==}
     hasBin: true
     dependencies:
       strnum: 1.0.5
@@ -12773,7 +12778,7 @@ packages:
   /filelist@1.0.4:
     resolution: {integrity: sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q==}
     dependencies:
-      minimatch: 5.1.6
+      minimatch: 5.1.9
     dev: true
 
   /filename-reserved-regex@3.0.0:
@@ -12983,34 +12988,28 @@ packages:
     engines: {node: '>= 14.17'}
     dev: false
 
-  /form-data@2.3.3:
-    resolution: {integrity: sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ==}
+  /form-data@2.5.6:
+    resolution: {integrity: sha512-Ogz/E85h9tlfJzpI6TuFpGcHZFhLrb9Gw8wq9v40CxSCPnv7ahKr6Xgtkn0KYCDQJ8DNn5VoMO8EXr9V5PadyA==}
     engines: {node: '>= 0.12'}
     requiresBuild: true
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
+      es-set-tostringtag: 2.1.0
+      hasown: 2.0.4
       mime-types: 2.1.35
+      safe-buffer: 5.2.1
     dev: false
     optional: true
 
-  /form-data@2.5.1:
-    resolution: {integrity: sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==}
-    engines: {node: '>= 0.12'}
-    requiresBuild: true
-    dependencies:
-      asynckit: 0.4.0
-      combined-stream: 1.0.8
-      mime-types: 2.1.35
-    dev: false
-    optional: true
-
-  /form-data@3.0.1:
-    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+  /form-data@3.0.5:
+    resolution: {integrity: sha512-j23EibVLnp4zNXGW7LjryXYa2X6U/M96yoOX+ybZxwkYajdxRNEqYY3zhh7y0i6kfISKS2jr+EJq1YTUDEv5+w==}
     engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
+      es-set-tostringtag: 2.1.0
+      hasown: 2.0.4
       mime-types: 2.1.35
 
   /form-data@4.0.6:
@@ -13362,7 +13361,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -13373,7 +13372,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -13384,7 +13383,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 5.1.6
+      minimatch: 5.1.9
       once: 1.4.0
 
   /global-dirs@3.0.1:
@@ -14113,7 +14112,7 @@ packages:
       cli-width: 4.1.0
       external-editor: 3.1.0
       figures: 5.0.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       mute-stream: 1.0.0
       ora: 5.4.1
       run-async: 3.0.0
@@ -14587,7 +14586,7 @@ packages:
       async: 3.2.4
       chalk: 4.1.2
       filelist: 1.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
     dev: true
 
   /jest-haste-map@29.7.0:
@@ -14928,7 +14927,7 @@ packages:
     engines: {node: '>=12', npm: '>=6'}
     dependencies:
       jws: 3.2.3
-      lodash: 4.17.21
+      lodash: 4.18.1
       ms: 2.1.3
       semver: 7.5.4
 
@@ -15017,51 +15016,6 @@ packages:
       lodash.clonedeep: 4.5.0
     dev: true
 
-  /knex@2.4.2:
-    resolution: {integrity: sha512-tMI1M7a+xwHhPxjbl/H9K1kHX+VncEYcvCx5K00M16bWvpYPKAZd6QrCu68PtHAdIZNQPWZn0GVhqVBEthGWCg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      better-sqlite3: '*'
-      mysql: '*'
-      mysql2: '*'
-      pg: '*'
-      pg-native: '*'
-      sqlite3: '*'
-      tedious: '*'
-    peerDependenciesMeta:
-      better-sqlite3:
-        optional: true
-      mysql:
-        optional: true
-      mysql2:
-        optional: true
-      pg:
-        optional: true
-      pg-native:
-        optional: true
-      sqlite3:
-        optional: true
-      tedious:
-        optional: true
-    dependencies:
-      colorette: 2.0.19
-      commander: 9.5.0
-      debug: 4.3.4
-      escalade: 3.1.1
-      esm: 3.2.25
-      get-package-type: 0.1.0
-      getopts: 2.3.0
-      interpret: 2.2.0
-      lodash: 4.18.1
-      pg-connection-string: 2.5.0
-      rechoir: 0.8.0
-      resolve-from: 5.0.0
-      tarn: 3.0.2
-      tildify: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
-
   /knex@2.4.2(mysql@2.18.1)(pg@8.11.0)(sqlite3@5.1.6)(tedious@16.1.0):
     resolution: {integrity: sha512-tMI1M7a+xwHhPxjbl/H9K1kHX+VncEYcvCx5K00M16bWvpYPKAZd6QrCu68PtHAdIZNQPWZn0GVhqVBEthGWCg==}
     engines: {node: '>=12'}
@@ -15098,7 +15052,7 @@ packages:
       get-package-type: 0.1.0
       getopts: 2.3.0
       interpret: 2.2.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       mysql: 2.18.1
       pg: 8.11.0
       pg-connection-string: 2.5.0
@@ -15373,6 +15327,11 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
+
+  /lodash@4.17.23:
+    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
+    dev: true
 
   /lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
@@ -16232,19 +16191,19 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /minimatch@3.1.2:
-    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
+  /minimatch@3.1.5:
+    resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
     dependencies:
       brace-expansion: 1.1.21
 
-  /minimatch@5.1.6:
-    resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
+  /minimatch@5.1.9:
+    resolution: {integrity: sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.1.7
 
-  /minimatch@7.4.6:
-    resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
+  /minimatch@7.4.9:
+    resolution: {integrity: sha512-Brg/fp/iAVDOQoHxkuN5bEYhyQlZhxddI78yWsCbeEwTHXQjlNLtiJDUsp1GIptVqMI7/gkJMz4vVAc01mpoBw==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.1.7
@@ -16520,7 +16479,7 @@ packages:
     resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==}
     engines: {node: '>= 0.10.5'}
     dependencies:
-      minimatch: 3.1.2
+      minimatch: 3.1.5
     dev: true
 
   /node-fetch-native@1.4.0:
@@ -16692,7 +16651,7 @@ packages:
       chokidar: 3.5.3
       debug: 3.2.7(supports-color@5.5.0)
       ignore-by-default: 1.0.1
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       pstree.remy: 1.1.8
       semver: 5.7.2
       simple-update-notifier: 1.1.0
@@ -18367,13 +18326,6 @@ packages:
       es-define-property: 1.0.1
       side-channel: 1.1.1
 
-  /qs@6.5.3:
-    resolution: {integrity: sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==}
-    engines: {node: '>=0.6'}
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /query-string@7.1.3:
     resolution: {integrity: sha512-hh2WYhq4fi8+b+/2Kg9CEge4fDPvHS534aOOvOZeQ3+Vf2mCFsaFBYj0i+iXcAq6I9Vzp5fjMFBlONvayDC1qg==}
     engines: {node: '>=6'}
@@ -18767,7 +18719,7 @@ packages:
       combined-stream: 1.0.8
       extend: 3.0.2
       forever-agent: 0.6.1
-      form-data: 2.3.3
+      form-data: 2.5.6
       har-validator: 5.1.5
       http-signature: 1.2.0
       is-typedarray: 1.0.0
@@ -18776,7 +18728,7 @@ packages:
       mime-types: 2.1.35
       oauth-sign: 0.9.0
       performance-now: 2.1.0
-      qs: 6.5.3
+      qs: 6.16.1
       safe-buffer: 5.2.1
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
@@ -20402,7 +20354,7 @@ packages:
     dependencies:
       '@istanbuljs/schema': 0.1.3
       glob: 7.2.3
-      minimatch: 3.1.2
+      minimatch: 3.1.5
     dev: true
 
   /text-decoder@1.2.7:
