@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DEFAULT_BRAND_COLOR } from '@/constants';
 import { useServerStore } from '@/stores/server';
 import { getRootPath } from '@/utils/get-root-path';
 import { getTheme } from '@/utils/get-theme';
@@ -22,7 +23,7 @@ const serverStore = useServerStore();
 const { info } = storeToRefs(serverStore);
 
 const colors = computed(() => {
-	const primary = info.value?.project?.project_color || 'var(--primary)';
+	const primary = info.value?.project?.project_color || DEFAULT_BRAND_COLOR;
 	const primaryHex = primary.startsWith('var(--') ? cssVar(primary.substring(4, primary.length - 1)) : primary;
 	const isDark = getTheme() === 'dark';
 	const primaryColor = Color(primaryHex);

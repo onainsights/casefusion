@@ -1,5 +1,8 @@
 import { Type } from '@directus/types';
 
+/** Brand colour used when the project has no colour of its own (CaseFusion yellow, see brand/) */
+export const DEFAULT_BRAND_COLOR = '#ffc342';
+
 export const VALIDATION_TYPES = ['FAILED_VALIDATION', 'RECORD_NOT_UNIQUE'];
 
 export const DIRECTUS_LOGO = `

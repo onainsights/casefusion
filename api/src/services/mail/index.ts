@@ -104,7 +104,7 @@ export class MailService {
 
 		return {
 			projectName: projectInfo?.project_name || 'CaseFusion',
-			projectColor: projectInfo?.project_color || '#546e7a',
+			projectColor: projectInfo?.project_color || '#ffc342',
 			projectLogo: getProjectLogoURL(projectInfo?.project_logo),
 			projectUrl: projectInfo?.project_url || '',
 		};
@@ -115,7 +115,7 @@ export class MailService {
 			if (logoID) {
 				projectLogoUrl.addPath('assets', logoID);
 			} else {
-				// TODO(logo): placeholder CaseFusion wordmark until the real logo is supplied
+				// CaseFusion glyph in white, shown on the project colour (see brand/)
 				projectLogoUrl.addPath('admin', 'img', 'casefusion-white.png');
 			}
 

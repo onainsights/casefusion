@@ -2,6 +2,7 @@
 import { useSystem } from '@/composables/use-system';
 import { useServerStore } from '@/stores/server';
 import { useUserStore } from '@/stores/user';
+import { DEFAULT_BRAND_COLOR } from '@/constants';
 import { setFavicon } from '@/utils/set-favicon';
 import { useAppStore } from '@directus/stores';
 import { User } from '@directus/types';
@@ -20,7 +21,7 @@ const { hydrating } = toRefs(appStore);
 
 const brandStyle = computed(() => {
 	return {
-		'--brand': serverStore.info?.project?.project_color || 'var(--primary)',
+		'--brand': serverStore.info?.project?.project_color || DEFAULT_BRAND_COLOR,
 	} as StyleValue;
 });
 
@@ -30,7 +31,7 @@ useHead({
 		return !title ? projectName : `${title} · ${projectName}`;
 	}),
 	meta: computed(() => {
-		const content = serverStore.info?.project?.project_color ?? '#6644ff';
+		const content = serverStore.info?.project?.project_color ?? DEFAULT_BRAND_COLOR;
 
 		return [
 			{
