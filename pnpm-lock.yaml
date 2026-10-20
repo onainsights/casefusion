@@ -899,14 +899,11 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
 
-  directus:
+  casefusion:
     dependencies:
       '@directus/api':
         specifier: workspace:*
         version: link:../api
-      '@directus/update-check':
-        specifier: workspace:*
-        version: link:../packages/update-check
 
   packages/components:
     dependencies:
@@ -18859,6 +18856,7 @@ packages:
   /set-function-name@2.0.1:
     resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==}
     engines: {node: '>= 0.4'}
+    requiresBuild: true
     dependencies:
       define-data-property: 1.1.0
       functions-have-names: 1.2.3

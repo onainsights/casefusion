@@ -28,7 +28,7 @@ RUN pnpm install --recursive --offline --frozen-lockfile
 
 RUN : \
 	&& npm_config_workspace_concurrency=1 pnpm run build \
-	&& pnpm --filter directus deploy --prod dist \
+	&& pnpm --filter casefusion deploy --prod dist \
 	&& cd dist \
 	&& pnpm pack \
 	&& tar -zxvf *.tgz package/package.json \
@@ -41,6 +41,13 @@ RUN : \
 ## Create Production Image
 
 FROM node:18-alpine AS runtime
+
+LABEL \
+	org.opencontainers.image.title="CaseFusion" \
+	org.opencontainers.image.description="CaseFusion core: GPLv3 fork of Directus maintained by Ona Insights" \
+	org.opencontainers.image.source="https://github.com/onainsights/casefusion" \
+	org.opencontainers.image.vendor="Ona Insights" \
+	org.opencontainers.image.licenses="GPL-3.0-only"
 
 USER node
 

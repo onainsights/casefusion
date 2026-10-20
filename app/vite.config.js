@@ -17,7 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { searchForWorkspaceRoot } from 'vite';
 import { defineConfig } from 'vitest/config';
-import { version } from '../directus/package.json';
+import { version } from '../casefusion/package.json';
 import UnheadVite from '@unhead/addons/vite';
 
 const API_PATH = path.join('..', 'api');

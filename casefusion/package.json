@@ -1,0 +1,56 @@
+{
+	"name": "casefusion",
+	"version": "10.6.4",
+	"description": "CaseFusion: the case-management core maintained by Ona Insights, a GPLv3 fork of Directus",
+	"keywords": [
+		"casefusion",
+		"case-management",
+		"realtime",
+		"database",
+		"content",
+		"api",
+		"rest",
+		"graphql",
+		"app",
+		"dashboard",
+		"headless",
+		"cms",
+		"mysql",
+		"postgresql",
+		"cockroachdb",
+		"sqlite",
+		"framework",
+		"vue"
+	],
+	"homepage": "https://github.com/onainsights/casefusion",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/onainsights/casefusion.git"
+	},
+	"license": "BUSL-1.1",
+	"author": {
+		"name": "Ona Insights",
+		"url": "https://onainsights.io"
+	},
+	"type": "module",
+	"exports": {
+		"./package.json": "./package.json"
+	},
+	"bin": {
+		"casefusion": "cli.js",
+		"directus": "cli.js"
+	},
+	"dependencies": {
+		"@directus/api": "workspace:*"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"contributors": [
+		{
+			"name": "Monospace Inc",
+			"email": "info@monospace.io",
+			"url": "https://monospace.io"
+		}
+	]
+}
