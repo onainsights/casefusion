@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/casefusion-wordmark-dark.svg" />
+    <img alt="CaseFusion" src="brand/casefusion-wordmark.svg" width="420" />
+  </picture>
+</p>
+
 # CaseFusion
 
 CaseFusion is the skeleton application maintained by [Ona Insights](https://onainsights.io): a GPLv3 fork of
@@ -70,7 +77,8 @@ GPLv3; see [`license`](license) and [`LICENSE-NOTICE.md`](LICENSE-NOTICE.md) for
 copyright © 2023 Monospace, Inc.; modifications © 2026 Ona Insights.
 
 CaseFusion is not affiliated with, sponsored by or endorsed by Monospace, Inc. "Directus" is a trademark of Monospace,
-Inc.; this fork is distributed under the CaseFusion name.
+Inc.; this fork is distributed under the CaseFusion name. The CaseFusion name and logos are Ona Insights' marks; see
+[`brand/`](brand/readme.md).
 
 ## Support and contributing
 
