@@ -85,7 +85,7 @@ export default async function createApp(): Promise<express.Application> {
 	await validateDatabaseExtensions();
 
 	if ((await isInstalled()) === false) {
-		logger.error(`Database doesn't have Directus tables installed.`);
+		logger.error(`Database doesn't have CaseFusion system tables installed.`);
 		process.exit(1);
 	}
 
@@ -165,7 +165,7 @@ export default async function createApp(): Promise<express.Application> {
 	app.use(expressLogger);
 
 	app.use((_req, res, next) => {
-		res.setHeader('X-Powered-By', 'Directus');
+		res.setHeader('X-Powered-By', 'CaseFusion');
 		next();
 	});
 
