@@ -1,15 +1,15 @@
 openapi: 3.0.1
 info:
-  title: Directus
+  title: CaseFusion
   description: A real-time API and App dashboard for managing SQL database content.
   contact:
-    email: contact@directus.io
+    url: 'https://github.com/onainsights/casefusion'
   license:
-    name: BUSL-1.1
-    url: 'https://directus.io/bsl'
+    name: GPL-3.0-only
+    url: 'https://www.gnu.org/licenses/gpl-3.0.html'
   version: '10'
 externalDocs:
-  description: Directus Docs
+  description: Upstream Directus documentation (applies to CaseFusion)
   url: 'https://docs.directus.io'
 tags:
   - name: Activity
