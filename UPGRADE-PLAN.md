@@ -56,15 +56,36 @@ Items from the old plan that no longer apply:
 
 One PR per step. Each ends with the verification gate below.
 
-- **E0 Baseline.** On Node 18 and pnpm 8.9.0, untouched: `pnpm install --frozen-lockfile && pnpm build && pnpm test`.
-  Save `pnpm audit --prod --json` and `osv-scanner --lockfile pnpm-lock.yaml` output under
-  `security/baseline-2026-10.json` so progress is measurable. Record anything already failing.
+Order: E0, E2a, E1, E2b, E3, E4, E5, E6. The easy security fixes (E2a) come before the engine change because they do not
+need Node 22 and remove most of the inherited advisories.
+
+- **E0 Baseline (done 2026-10-20).** On Node 18.20.8 and pnpm 8.9.0, `pnpm install --frozen-lockfile`, `pnpm build`
+  (with `NODE_OPTIONS=--max-old-space-size=8192`, as in the Dockerfile) and `pnpm test` pass. `pnpm audit --prod`: 295
+  distinct advisories (12 critical, 156 high, 142 moderate, 32 low by path count). Per-advisory summary in
+  `security/baseline-2026-10.json`, each classed by the update that fixes it:
+
+  | Fix                         | Critical | High | Moderate | Low | Total |
+  | --------------------------- | -------- | ---- | -------- | --- | ----- |
+  | Patch/minor, same major     | 8        | 108  | 79       | 17  | 212   |
+  | Major version bump          | 3        | 26   | 32       | 10  | 71    |
+  | No patched version released | 0        | 7    | 5        | 0   | 12    |
+
+- **E2a Easy security fixes (Node 18).** Same-major updates only, no API changes. One PR each:
+  1. Refresh transitive dependencies within their declared ranges (`pnpm update --recursive --depth Infinity`, which
+     leaves our exactly-pinned direct dependencies alone).
+  2. Bump directly pinned dependencies to the latest patch/minor of their current major: `axios` 1.x, `liquidjs` 10.x,
+     `sharp` 0.32.x, `undici` 5.x, `ws` 8.x, `js-yaml` 4.x, `joi` 17.x, `nodemailer` 6.x, `vite` 4.x, `rollup` 3.x,
+     `vue-i18n` 9.x, `jsonwebtoken` 9.x, `express` 4.x, and whatever else the audit lists.
+  3. `pnpm.overrides` in the root `package.json` for transitive packages that stay stuck because a parent pins an old
+     version. Record each override in this file with the parent that blocks it, so it can be dropped once the parent
+     updates.
 - **E1 Engine.** Node 22 LTS, pnpm 9, `node:22-alpine`, `@types/node` 22, `tsx` 4. `engines.node` in root, `api/`,
-  `directus/`, `sdk/`, `packages/extensions-sdk/`. Bump native modules that do not build on Node 22 (`isolated-vm` 5,
+  `casefusion/`, `sdk/`, `packages/extensions-sdk/`. Bump native modules that do not build on Node 22 (`isolated-vm` 5,
   `argon2`, `sharp`, `sqlite3`). Fix fetch/undici typing and ESM edges as they appear.
-- **E2 Security sweep.** Curated allowlist from the Security and Server rows above, not `pnpm update --latest`. Exit
-  criterion: `pnpm audit --prod` reports zero high/critical, or each remaining one is documented with why it is not
-  exploitable here.
+- **E2b Remaining security fixes.** The major bumps the audit still lists after E2a and E1: `samlify` 2.10+ (SAML
+  behaviour, test against a real IdP), `nodemailer` 7+, `tinypool` 2, `undici` 6, `helmet` 8, `@aws-sdk/*`, and the rest
+  of the Security and Server rows above. Exit criterion: `pnpm audit --prod` reports zero high/critical, or each
+  remaining one is documented with why it is not exploitable here; then make the CI audit job blocking.
 - **E3 `ldapjs` → `ldapts`.** Rewrite `api/src/auth/drivers/ldap.ts` with the same behaviour and config. May be deferred
   behind an "LDAP disabled" default if it blocks the working build.
 - **E4 `mapbox-gl` → `maplibre-gl`.** `app/src/interfaces/map/`, `app/src/layouts/map/`,
