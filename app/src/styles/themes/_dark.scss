@@ -1,11 +1,13 @@
 // Dark Mode
 @mixin dark {
 	$purple: #8866ff;
+	$teal: #3ab1b0; // CaseFusion: the brand teal has enough contrast on dark backgrounds
 	$color-mapping: map-merge(
 		$color-mapping,
 		(
-			'primary': $purple,
-			'secondary': $pink,
+			'teal': $teal,
+			'primary': $teal,
+			'secondary': $yellow,
 		)
 	);
 

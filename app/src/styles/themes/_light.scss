@@ -6,8 +6,8 @@
 	--border-normal-alt: #a2b5cd;
 	--border-subdued: #f0f4f9;
 
-	--foreground-normal: #4f5464; // Less contrast for improved hierarchy
-	--foreground-normal-alt: #172940; // More contrast for titles and labels
+	--foreground-normal: #4e4e50; // Less contrast for improved hierarchy
+	--foreground-normal-alt: #2b2b2b; // More contrast for titles and labels
 	--foreground-subdued: #a2b5cd;
 	--foreground-inverted: #fff;
 
@@ -30,9 +30,9 @@
 	--navigation-shadow: 4px 0 7px -4px rgb(0 0 0 / 0.2);
 	--sidebar-shadow: -4px 0 7px -4px rgb(0 0 0 / 0.2);
 
-	--module-background: #18222f;
+	--module-background: #2f2f31;
 	--module-background-alt: var(--background-normal);
-	--module-icon: #8196b1;
+	--module-icon: #a6a6aa;
 	--module-icon-alt: var(--foreground-normal-alt);
 
 	// Generate color variations
@@ -44,8 +44,8 @@
 	--yellow-alt: var(--yellow-10);
 	--orange-alt: var(--orange-10);
 	--red-alt: var(--red-10);
-	--primary-alt: var(--purple-10);
-	--secondary-alt: var(--pink-10);
+	--primary-alt: var(--primary-10);
+	--secondary-alt: var(--secondary-10);
 	--success-alt: var(--green-10);
 	--warning-alt: var(--yellow-10);
 	--danger-alt: var(--red-10);

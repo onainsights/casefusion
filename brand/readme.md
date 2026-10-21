@@ -60,6 +60,12 @@ licensed under the SIL Open Font License 1.1.
   (`app/src/utils/set-favicon.ts`).
 - Emails: `app/public/img/casefusion-white.png` (white glyph) on the project colour.
 - Settings footer: the glyph as the `directus` custom icon (name kept for compatibility).
+- Admin app theme, following the Ona Insights palette: buttons, links and focus rings use teal (`primary` in
+  `app/src/styles/_colors.scss`). In light mode it is `#2a7f7e`, the brand teal `#3ab1b0` darkened to meet WCAG AA with
+  white text; dark mode uses `#3ab1b0` itself. Yellow is `secondary` and stays the brand colour of the logo tile and
+  sign-in page; it is not used for buttons or text because white on yellow, and yellow on white, are not legible. Text
+  is charcoal and the module bar a darker charcoal (`app/src/styles/themes/`). The interface typeface is Mulish
+  (variable weight, `app/src/assets/fonts/Mulish-*.woff2`, SIL OFL 1.1 in `Mulish-OFL.txt`), with Inter as the fallback.
 
 ## Source
 
