@@ -28,7 +28,7 @@ This Module is a management system that enables one to view, invite, create, edi
 information. Users can be created directly in the app, or invited to join via email.
 
 When a User is created, they must also be assigned a Role. This Role defines the User's data access permissions within
-Directus. In other words, it determines what a User can see and do inside the app.
+CaseFusion. In other words, it determines what a User can see and do inside the app.
 
 The User Directory is composed of two pages: The User Directory Page and the User Details Page. It has all the same
 features and functionality as the [Content Module](/user-guide/content-module/content/collections) such as manual and
@@ -75,7 +75,7 @@ adjust how Users are displayed on the User Directory. To learn more, see [Layout
 A User's profile page can be accessed from the User Directory or by clicking the User Menu at the bottom of the
 [Module Bar](/user-guide/overview/data-studio-app#_1-module-bar). The profile page has the same features and
 functionality as the [Item Page](/user-guide/content-module/content/items). Administrators can add and customize Fields
-under [Settings > Data Model > Directus Users](/app/data-model), but the following are available by default.
+under [Settings > Data Model > CaseFusion Users](/app/data-model), but the following are available by default.
 
 - **First Name** — The given name.
 - **Last Name** — The family/surname.

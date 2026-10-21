@@ -6,12 +6,12 @@ contributors: Kevin Lewis
 # Build a Live Poll Result Chart With JavaScript
 
 In this guide, you will build a live-updating chart based on votes to a multiple-choice poll. New entries will be added
-using a Directus REST API, and results will be accessed using a WebSockets connection. The chart will be created and
+using a CaseFusion REST API, and results will be accessed using a WebSockets connection. The chart will be created and
 updated using [Chart.js](https://www.chartjs.org).
 
 ## Before You Start
 
-You will need a Directus project. If you don’t already have one, the easiest way to get started is with our
+You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
 [managed Directus Cloud service](https://directus.cloud).
 
 Create a new collection called `votes`, with a dropdown selection field called `choice`. Create two choices - one with
@@ -54,13 +54,13 @@ Create a `vote.html` file and open it in your code editor. Add the following:
 </html>
 ```
 
-This uses the Directus REST API to create a new item in the `votes` collection when the a button is pressed. Make sure
+This uses the CaseFusion REST API to create a new item in the `votes` collection when the a button is pressed. Make sure
 to replace `your-directus-url` with your project’s URL.
 
-_Load `vote.html` in your browser and click a button. Check your Directus project and you should see a new item in the
+_Load `vote.html` in your browser and click a button. Check your CaseFusion project and you should see a new item in the
 `votes` collection._
 
-![Directus Votes collection with a single item with a choice of ‘cats’.](https://cdn.directus.io/docs/v9/guides/websockets/poll-item-added.webp)
+![CaseFusion Votes collection with a single item with a choice of ‘cats’.](https://cdn.directus.io/docs/v9/guides/websockets/poll-item-added.webp)
 
 At the bottom of your `vote` function, add some user feedback that the vote was cast:
 

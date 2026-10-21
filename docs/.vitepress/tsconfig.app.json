@@ -1,4 +1,4 @@
 {
-	"extends": "@directus/tsconfig/vue3",
+	"extends": "../../packages/tsconfig/vue3/tsconfig.json",
 	"include": ["env.d.ts", "**/*.vue"]
 }

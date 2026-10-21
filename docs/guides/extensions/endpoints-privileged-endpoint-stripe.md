@@ -1,11 +1,11 @@
 ---
-description: Learn how to use Directus permissions in custom endpoints.
+description: Learn how to use CaseFusion permissions in custom endpoints.
 contributors: Tim Butterfield, Kevin Lewis
 ---
 
 # Use Custom Endpoints to Create a Permissions-Based API Proxy
 
-Endpoints are used in the API to perform certain functions. In this guide, you will use internal Directus permissions
+Endpoints are used in the API to perform certain functions. In this guide, you will use internal CaseFusion permissions
 when creating a custom endpoint.
 
 As an example, this guide will proxy the Stripe API, but the same approach can be used for any API.
@@ -29,8 +29,8 @@ cd directus-endpoint-stripe
 npm install stripe
 ```
 
-You will also need a Stripe account and API token, and a collection in your Directus project with restricted permissions
-and a role which has read and create permissions.
+You will also need a Stripe account and API token, and a collection in your CaseFusion project with restricted
+permissions and a role which has read and create permissions.
 
 ## Build the Endpoint
 
@@ -58,15 +58,15 @@ handler: (router, { env }) => {
 ```
 
 Being sensitive information, it’s best practice to control who can access your Stripe account especially if you have
-public enrollment in your Directus project. To utilize the existing role system in Directus, add the services context as
-well:
+public enrollment in your CaseFusion project. To utilize the existing role system in CaseFusion, add the services
+context as well:
 
 ```js
 handler: (router, { env }) => { // [!code --]
 handler: (router, { env, services }) => { // [!code ++]
 ```
 
-Initialize the `stripe` library and grab the Directus `PermissionsService`:
+Initialize the `stripe` library and grab the CaseFusion `PermissionsService`:
 
 ```js
 const secretKey = env.STRIPE_LIVE_SECRET_KEY;
@@ -210,20 +210,20 @@ This is now complete and ready for testing. Build the endpoint with the latest c
 npm run build
 ```
 
-## Add Endpoint to Directus
+## Add Endpoint to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-endpoint-stripe`.
 
-For the permissions to work, add the collection from Directus where the permissions are assigned with the variable
+For the permissions to work, add the collection from CaseFusion where the permissions are assigned with the variable
 `STRIPE_CUSTOMERS_COLLECTION` - ensure the `.env` file has `STRIPE_LIVE_SECRET_KEY` and `STRIPE_CUSTOMERS_COLLECTION`
 variables.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -250,7 +250,7 @@ sure that you change the URL for your project's URL)
 
 ## Summary
 
-With this endpoint, you can now query payments and create customers through the Stripe API within Directus using the
+With this endpoint, you can now query payments and create customers through the Stripe API within CaseFusion using the
 built-in credentials of the current user. Now that you know how to create your own routes for an endpoint and protect
 them with the Permissions Service, you can discover more endpoints in Stripe and add them to your own.
 

@@ -1,15 +1,15 @@
 ---
-description: A list of any actions you may need to take on upgrades of Directus.
+description: A list of any actions you may need to take on upgrades of CaseFusion.
 ---
 
 # Breaking Changes
 
-As we continue to build Directus, we occasionally make changes that change how certain features works. We try and keep
+As we continue to build CaseFusion, we occasionally make changes that change how certain features works. We try and keep
 these to a minimum, but rest assured we only make them with good reason.
 
 [Learn more about Versioning ->](/getting-started/architecture#versioning)
 
-Starting with Directus 10.0, here is a list of potential breaking changes with remedial action you may need to take.
+Starting with CaseFusion 10.0, here is a list of potential breaking changes with remedial action you may need to take.
 
 ## Version 10.6.2
 
@@ -48,9 +48,9 @@ The SDK helper function `asSearch` has been renamed to `withSearch` for naming c
 
 ### Dropped Support for Custom NPM Modules in the Run Script operation in Flows
 
-Prior to this release, Directus relied on `vm2` to run code from **Run Script** operations in Flows - our automation
+Prior to this release, CaseFusion relied on `vm2` to run code from **Run Script** operations in Flows - our automation
 feature. `vm2` is now unmaintained with critical security issues that could potentially allow code to escape the sandbox
-and potentially access the machine which hosts your Directus project. We have migrated to `isolated-vm` to allow Flows
+and potentially access the machine which hosts your CaseFusion project. We have migrated to `isolated-vm` to allow Flows
 to continue to run safely.
 
 If you used to rely on axios, node-fetch, or other libraries to make web requests, we strongly recommend migrating to
@@ -62,9 +62,9 @@ allow-list that prevents traffic. For other npm packages in Flows, your will nee
 
 ### Consolidated Environment Variables for Redis Use
 
-Directus had various different functionalities that required you to use Redis when running Directus in a horizontally
-scaled environment such as caching, rate-limiting, realtime, and flows. The configuration for these different parts have
-been combined into a single set of `REDIS` environment variables that are reused across the system.
+CaseFusion had various different functionalities that required you to use Redis when running CaseFusion in a
+horizontally scaled environment such as caching, rate-limiting, realtime, and flows. The configuration for these
+different parts have been combined into a single set of `REDIS` environment variables that are reused across the system.
 
 ::: details Migration/Mitigation
 
@@ -104,10 +104,10 @@ MESSENGER_STORE="redis"
 
 ### Dropped Support for Memcached
 
-Directus used to support either memory, Redis, or Memcached for caching and rate-limiting storage. Given a deeper
-integration with Redis, and the low overall usage/adoption of Memcached across Directus installations, we've decided to
-sunset Memcached in favor of focusing on Redis as the primary solution for pub/sub and hot-storage across load-balanced
-Directus installations.
+CaseFusion used to support either memory, Redis, or Memcached for caching and rate-limiting storage. Given a deeper
+integration with Redis, and the low overall usage/adoption of Memcached across CaseFusion installations, we've decided
+to sunset Memcached in favor of focusing on Redis as the primary solution for pub/sub and hot-storage across
+load-balanced CaseFusion installations.
 
 ### Updated Errors Structure for Extensions
 
@@ -149,6 +149,6 @@ export default (router) => {
 
 As a security precaution, we have removed the following information from the `/server/info` endpoint:
 
-- Directus Version
+- CaseFusion Version
 - Node Version and Uptime
 - OS Type, Version, Uptime, and Memory

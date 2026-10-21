@@ -1,5 +1,5 @@
 ---
-description: How to host Directus on Docker.
+description: How to host CaseFusion on Docker.
 readTime: 3 min read
 ---
 
@@ -12,37 +12,39 @@ import { data as directus } from '../.vitepress/data/directus.data.js';
 ::: info Non-Docker Guides
 
 We only publish and maintain self-hosting guides using Docker as this removes many environment-specific configuration
-problems. If you can't or don't want to use Docker, we also publish an
-[npm package](https://www.npmjs.com/package/directus) without guides.
+problems. If you can't or don't want to use Docker, you can
+[run CaseFusion from source](https://github.com/onainsights/casefusion#running-it).
 
 :::
 
-Directus is published to [Docker Hub](https://hub.docker.com/r/directus/directus) under `directus/directus`. If you're
-just getting started, check out our [Self-Hosting Quickstart](/self-hosted/quickstart.html).
+CaseFusion is published to
+[GitHub Container Registry](https://github.com/onainsights/casefusion/pkgs/container/casefusion) under
+`ghcr.io/onainsights/casefusion`. If you're just getting started, check out our
+[Self-Hosting Quickstart](/self-hosted/quickstart.html).
 
 ## Installing Specific Versions
 
-To stick to a more specific version of Directus you can use one of the following tags:
+To stick to a more specific version of CaseFusion you can use one of the following tags:
 
 - Full version, e.g. `{{ directus.version.full }}`
 - Minor releases, e.g. `{{ directus.version.minor }}`
 - Major releases, e.g. `{{ directus.version.major }}`
 
-It is recommended to explicitly specify a Directus version in your `docker-compose.yml` file. Include the version number
-in your `services.directus.image` value:
+It is recommended to explicitly specify a CaseFusion version in your `docker-compose.yml` file. Include the version
+number in your `services.directus.image` value:
 
 ```yaml-vue
 services:
   directus:
-    image: directus/directus:latest // [!code --]
-    image: directus/directus:{{ directus.version.full }} // [!code ++]
+    image: ghcr.io/onainsights/casefusion:latest // [!code --]
+    image: ghcr.io/onainsights/casefusion:{{ directus.version.full }} // [!code ++]
 ```
 
 ## Configure Admin User
 
 The `ADMIN_EMAIL` and `ADMIN_PASSWORD` variables, while shown in the quickstart, are optional. If omitted, the published
 Docker image will automatically populate the database and create an admin user, and these will only be shown in the
-Docker bootstrap logs when starting Directus for the first time. To configure the email/password for this first user,
+Docker bootstrap logs when starting CaseFusion for the first time. To configure the email/password for this first user,
 include the following environment variables:
 
 ```bash
@@ -50,7 +52,7 @@ ADMIN_EMAIL="admin@example.com"
 ADMIN_PASSWORD="d1r3ctu5"
 ```
 
-Once you've started Directus for the first time, assuming your database is persisted, you can remove these values from
+Once you've started CaseFusion for the first time, assuming your database is persisted, you can remove these values from
 your compose file.
 
 ## Persistence
@@ -58,8 +60,8 @@ your compose file.
 Containers are ephemeral, and this means that whenever you stop a container, all the data associated with it is going to
 be removed [unless you persist them](https://docs.docker.com/storage) when creating your container.
 
-Directus image by default will use the following locations for data persistence (note that these can be changed through
-environment variables):
+CaseFusion image by default will use the following locations for data persistence (note that these can be changed
+through environment variables):
 
 - `/directus/uploads` for uploads
 - `/directus/database` (only when using SQLite and not configured to a different folder)
@@ -80,7 +82,7 @@ services:
 ## Example Docker Compose
 
 While the [Self-Hosting Quickstart](/self-hosted/quickstart.html) aims to show you the minimum-viable
-`docker-compose.yml` file, here is a more complete one that spins up a Postgres database, Redis cache, and Directus
+`docker-compose.yml` file, here is a more complete one that spins up a Postgres database, Redis cache, and CaseFusion
 project:
 
 ```yaml-vue
@@ -101,7 +103,7 @@ services:
     image: redis:6
 
   directus:
-    image: directus/directus:{{ directus.version.full }}
+    image: ghcr.io/onainsights/casefusion:{{ directus.version.full }}
     ports:
       - 8055:8055
     volumes:
@@ -136,12 +138,12 @@ services:
 
 ### Updating With Docker Compose
 
-If you are not using the `latest` tag for the Directus image you need to adjust your `docker-compose.yml` file to
+If you are not using the `latest` tag for the CaseFusion image you need to adjust your `docker-compose.yml` file to
 increment the tag version number, e.g.:
 
 ```diff-vue
--   image: directus/directus:{{ directus.version.major }}.0.0
-+   image: directus/directus:{{ directus.version.full }}
+-   image: ghcr.io/onainsights/casefusion:{{ directus.version.major }}.0.0
++   image: ghcr.io/onainsights/casefusion:{{ directus.version.full }}
 ```
 
 Then run the following from your docker-compose root:
@@ -155,14 +157,14 @@ containers have started you will be on the latest version (or the version you sp
 
 ## Supported Databases
 
-The Directus Docker Image contains all optional dependencies supported in the API. This means the Docker image can be
+The CaseFusion Docker Image contains all optional dependencies supported in the API. This means the Docker image can be
 used with most of the supported databases and storage adapters without having to create a custom image.
 
-Directus supports the LTS versions of PostgreSQL, MySQL, SQLite, MS SQL Server, MariaDB, CockroachDB, and OracleDB.
+CaseFusion supports the LTS versions of PostgreSQL, MySQL, SQLite, MS SQL Server, MariaDB, CockroachDB, and OracleDB.
 Please see https://endoflife.date/ to make sure your database version is still supported.
 
 ## Requirements
 
-It can be easy to under-provision resources to run a self-hosted instance of Directus. For Directus' container
+It can be easy to under-provision resources to run a self-hosted instance of CaseFusion. For CaseFusion' container
 resources, the required minimum system requirements are 1x 0.25 vCPU / 512 MB, although the recommended minimum is 2x 1
 vCPU / 2GB.

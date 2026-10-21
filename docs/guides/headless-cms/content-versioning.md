@@ -1,5 +1,5 @@
 ---
-description: This guide covers the process of enabling and utilizing Content Versioning in Directus.
+description: This guide covers the process of enabling and utilizing Content Versioning in CaseFusion.
 contributors: Esther Agbaje
 ---
 
@@ -23,9 +23,9 @@ use Content Versioning, including drafting content without publishing it, and mo
 
 ## Setting Up Content Versioning
 
-To enable Content Versioning for a collection in Directus, follow these steps:
+To enable Content Versioning for a collection in CaseFusion, follow these steps:
 
-1. Log in to your Directus instance.
+1. Log in to your CaseFusion instance.
 2. Navigate to **Settings** > **Data Model**.
 3. Select the collection that you want to enable Content Versioning for.
 4. Scroll down to the Content Versioning section.
@@ -84,7 +84,7 @@ our [API reference documentation](/reference/system/versions).
 Under the hood, content versions are stored in the `directus_revisions` collection. In bigger projects this collection
 can get large.
 
-Some Directus users combat this my periodically purging some or all data in this collection. Be aware that this could
+Some CaseFusion users combat this my periodically purging some or all data in this collection. Be aware that this could
 unintentionally purge content versions, so purging logic may have to be updated.
 
 ## Next Steps

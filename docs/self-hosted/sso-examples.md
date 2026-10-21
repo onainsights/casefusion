@@ -1,13 +1,13 @@
 ---
 description:
-  A collection of example Directus configurations for integrating with various OpenID, OAuth 2.0 and SAML platforms.
+  A collection of example CaseFusion configurations for integrating with various OpenID, OAuth 2.0 and SAML platforms.
 readTime: 2 min read
 outline: deep
 ---
 
 # SSO Examples
 
-Below is a collection of example Directus configurations for integrating with various OpenID, OAuth 2.0 and SAML
+Below is a collection of example CaseFusion configurations for integrating with various OpenID, OAuth 2.0 and SAML
 platforms.
 
 Due to the large number of available SSO platforms, this list will only cover the most common configurations.
@@ -129,7 +129,7 @@ AUTH_GITHUB_PROFILE_URL="https://api.github.com/user"
 
 ::: warning Notice
 
-If the authenticating user has not marked their email as "public" in GitHub, it will not be accessible by Directus.
+If the authenticating user has not marked their email as "public" in GitHub, it will not be accessible by CaseFusion.
 
 :::
 
@@ -173,14 +173,14 @@ AUTH_AWS_EMAIL_KEY="email"
 - Users have found that replacing
   `<md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://your-soo-portal-url"/>`
   in the IAM Identity Center SAML metadata file with your AWS Portal URL is a fix for getting the 'Login With SSO'
-  button on Directus to work, rather the default redirect from AWS.
-- Directus expects `<?xml version="1.0" encoding="UTF-8"?>` to be removed from the start of the XML.
+  button on CaseFusion to work, rather the default redirect from AWS.
+- CaseFusion expects `<?xml version="1.0" encoding="UTF-8"?>` to be removed from the start of the XML.
 
 :::
 
 **Mapping:**
 
-Maps the email address into Directus as `external_identifier`:
+Maps the email address into CaseFusion as `external_identifier`:
 
 | User attribute in the application | Maps to this string value or user attribute in IAM Identity Center | type           |
 | --------------------------------- | ------------------------------------------------------------------ | -------------- |
@@ -208,9 +208,9 @@ AUTH_GOOGLE_EMAIL_KEY="email"
 ::: tip SP Metadata
 
 - The `entityID` should be the same as the one configured in Google in the `EntityDescriptor` tag
-- The `Location` should be the ACS URL of your Directus instance in the format of
+- The `Location` should be the ACS URL of your CaseFusion instance in the format of
   `https://your-directus-instance/auth/login/sso/acs`
-- Directus expects `<?xml version="1.0" encoding="UTF-8"?>` to be removed from the start of the XML.
+- CaseFusion expects `<?xml version="1.0" encoding="UTF-8"?>` to be removed from the start of the XML.
 
 Example:
 

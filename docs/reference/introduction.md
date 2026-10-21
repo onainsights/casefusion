@@ -1,12 +1,12 @@
 ---
-description: An introduction to the REST and GraphQL APIs in Directus.
+description: An introduction to the REST and GraphQL APIs in CaseFusion.
 readTime: 7 min read
 pageClass: page-reference
 ---
 
 # API Reference
 
-> Directus offers both a REST and GraphQL API to manage the data in the database. The API has predictable
+> CaseFusion offers both a REST and GraphQL API to manage the data in the database. The API has predictable
 > resource-oriented URLs, relies on standard HTTP status codes, and uses JSON for input and output.
 
 ## Dynamic API
@@ -37,7 +37,7 @@ Useful references:
 
 ## Relational Data
 
-By default, Directus only retrieves the reference value of a relational field in your items. To also retrieve _nested_
+By default, CaseFusion only retrieves the reference value of a relational field in your items. To also retrieve _nested_
 data of a relational field [the `fields` parameter](/reference/query#fields) in REST can be used, or regular nested
 queries in GraphQL. This allows you to retrieve the author of your article included in the articles data, or fetch
 related log entry points for your app's analytics data for example.
@@ -61,8 +61,8 @@ your page, you could submit:
 ```
 
 This will create a new record in the related collection, and save its primary key in the `featured_article` field for
-this item. To update an existing item, simply provide the primary key with the updates, and Directus will treat it as an
-update instead of a creation:
+this item. To update an existing item, simply provide the primary key with the updates, and CaseFusion will treat it as
+an update instead of a creation:
 
 ```json
 {
@@ -243,7 +243,7 @@ or to rely on a different method altogether. As of right now, we've chosen
 While we recognize this is still a draft spec, the SEARCH method has been used extensively before in the WebDAV world
 ([spec](https://tools.ietf.org/html/rfc5323)), and compared to the other available options, it feels like the "cleanest"
 and most correct to handle this moving forward. As with everything else, if you have any ideas, opinions, or concerns,
-[we'd love to hear your thoughts](https://github.com/directus/directus/discussions/new).
+[we'd love to hear your thoughts](https://github.com/onainsights/casefusion/issues).
 
 Useful reading:
 
@@ -263,7 +263,7 @@ user and system data. The only difference in the two endpoints are the root quer
 
 ## Error Codes
 
-Below are the global error codes used within Directus, and what they mean.
+Below are the global error codes used within CaseFusion, and what they mean.
 
 | Error Code               | HTTP Status | Description                                                     |
 | ------------------------ | ----------- | --------------------------------------------------------------- |

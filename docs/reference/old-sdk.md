@@ -1,6 +1,6 @@
 ---
 description:
-  The JS SDK provides an intuitive interface for the Directus API from within a JavaScript-powered project (browsers and
+  The JS SDK provides an intuitive interface for the CaseFusion API from within a JavaScript-powered project (browsers and
   Node.js). The default implementation uses [Axios](https://npmjs.com/axios) for transport and `localStorage` for
   storing state.
 readTime: 14 min read
@@ -8,8 +8,8 @@ readTime: 14 min read
 
 # JavaScript SDK (pre v11)
 
-> The JS SDK provides an intuitive interface for the Directus API from within a JavaScript-powered project (browsers and
-> Node.js). The default implementation uses [Axios](https://npmjs.com/axios) for transport and `localStorage` for
+> The JS SDK provides an intuitive interface for the CaseFusion API from within a JavaScript-powered project (browsers
+> and Node.js). The default implementation uses [Axios](https://npmjs.com/axios) for transport and `localStorage` for
 > storing state. Advanced customizations are available.
 
 ::: danger This SDK is no longer supported!
@@ -38,7 +38,7 @@ const directus = new Directus('http://directus.example.com');
 ```
 
 You can always access data available to the
-[public role](/user-guide/user-management/users-roles-permissions#directus-roles).
+[public role](/user-guide/user-management/users-roles-permissions#casefusion-roles).
 
 ```js
 async function publicData() {
@@ -54,7 +54,7 @@ async function publicData() {
 ### Basic Authentication
 
 To access anything that is not available to the
-[public role](/user-guide/user-management/users-roles-permissions#directus-roles), you must be
+[public role](/user-guide/user-management/users-roles-permissions#casefusion-roles), you must be
 [authenticated](/reference/authentication).
 
 ```js
@@ -117,7 +117,7 @@ const directus = new Directus(url, init);
 #### `url` _required_
 
 - **Type** — `String`
-- **Description** — A string that points to your Directus instance. E.g., `https://example.directus.io`
+- **Description** — A string that points to your CaseFusion instance. E.g., `https://example.directus.io`
 - **Default** — N/A
 
 <br />
@@ -153,7 +153,7 @@ const config = {
 
 ## Customize `auth`
 
-Defines how authentication is handled by the SDK. By default, Directus creates an instance of `auth` which handles
+Defines how authentication is handled by the SDK. By default, CaseFusion creates an instance of `auth` which handles
 refresh tokens automatically.
 
 ```js
@@ -236,7 +236,7 @@ const directus = new Directus('https://example.directus.app', {
 
 ## Customize `storage`
 
-The storage is used to load and save token information. By default, Directus creates an instance of `storage` which
+The storage is used to load and save token information. By default, CaseFusion creates an instance of `storage` which
 handles store information automatically.
 
 ```js
@@ -316,7 +316,7 @@ const directus = new Directus('https://example.directus.app', {
 
 Defines settings you want to customize regarding [Transport](#extend-transport).
 
-By default, Directus creates an instance of `Transport` which handles requests automatically. It uses
+By default, CaseFusion creates an instance of `Transport` which handles requests automatically. It uses
 [`axios`](https://axios-http.com/) so it is compatible in both browsers and Node.js. With axios, it is also possible to
 handle upload progress (a downside of `fetch`).
 
@@ -471,7 +471,7 @@ const settings = await posts.singleton('settings').read();
 // typeof(settings) is a partial BlogSettings object
 ```
 
-You can also extend the Directus system type information by providing type information for system collections as well.
+You can also extend the CaseFusion system type information by providing type information for system collections as well.
 
 ```ts
 import { Directus } from '@directus/sdk';
@@ -543,7 +543,7 @@ await directus.auth.static('static_token');
 
 ### Refresh Auth Token
 
-By default, Directus will handle token refreshes. Although, you can handle this behavior manually by setting
+By default, CaseFusion will handle token refreshes. Although, you can handle this behavior manually by setting
 [`autoRefresh`](#options.auth.autoRefresh) to `false`.
 
 ```js

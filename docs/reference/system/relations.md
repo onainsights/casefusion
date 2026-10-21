@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Relations collection in Directus.
+description: REST and GraphQL API documentation on the Relations collection in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -22,7 +22,7 @@ Name of the related collection. This matches the table name in the database.
 
 #### Meta
 
-Directus metadata. Used to enable non-database relationship types
+CaseFusion metadata. Used to enable non-database relationship types
 
 `id` **integer**\
 Primary key of the metadata row in `directus_relations`.
@@ -111,7 +111,7 @@ Delete trigger for the foreign key constraint.
 
 ## List relations
 
-List all relations that exist in Directus.
+List all relations that exist in CaseFusion.
 
 ::: tip Permissions
 

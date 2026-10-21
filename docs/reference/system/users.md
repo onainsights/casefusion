@@ -1,13 +1,13 @@
 ---
-description: REST and GraphQL API documentation on the Users collection in Directus.
+description: REST and GraphQL API documentation on the Users collection in CaseFusion.
 readTime: 9 min read
 pageClass: page-reference
 ---
 
 # Users
 
-> Directus Users are the individual accounts that let you authenticate into the API and App. Each user belongs to a Role
-> which defines its granular Permissions. [Learn more about Users](/user-guide/overview/glossary#users).
+> CaseFusion Users are the individual accounts that let you authenticate into the API and App. Each user belongs to a
+> Role which defines its granular Permissions. [Learn more about Users](/user-guide/overview/glossary#users).
 
 ## The User Object
 
@@ -103,7 +103,7 @@ When this is enabled, the user will receive emails for notifications.
 
 ## List Users
 
-List all users that exist in Directus.
+List all users that exist in CaseFusion.
 
 ### Request
 

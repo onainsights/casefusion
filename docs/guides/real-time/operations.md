@@ -1,11 +1,11 @@
 ---
-description: "Learn how to execute CRUD operations over Directus' WebSockets interface"
+description: "Learn how to execute CRUD operations over CaseFusion' WebSockets interface"
 contributors: Kevin Lewis
 ---
 
 # WebSockets Operations
 
-You can execute CRUD operations over Directus' WebSockets interface.
+You can execute CRUD operations over CaseFusion' WebSockets interface.
 
 This guide assumes you already know
 [how to establish, authenticate, and send messages](/guides/real-time/getting-started/websockets) over a WebSocket

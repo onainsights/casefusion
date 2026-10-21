@@ -1,5 +1,5 @@
 ---
-description: This guide shows how to use the live preview feature in Directus when using a Nuxt 3 application.
+description: This guide shows how to use the live preview feature in CaseFusion when using a Nuxt 3 application.
 author: Kevin Lewis
 directus_version: 10.2.0
 ---
@@ -8,27 +8,27 @@ directus_version: 10.2.0
 
 <GuideMeta />
 
-Directus' Live Preview feature allows you to show changes in your website collection before publishing and without the
+CaseFusion' Live Preview feature allows you to show changes in your website collection before publishing and without the
 need to refresh the browser.
 
 By adding a preview URL and setting up your Nuxt 3 application, you can instantly see live changes made to your
-collection inside of Directus.
+collection inside of CaseFusion.
 
 ## Before You Start
 
 You will need:
 
-- A Directus project. The easiest way to get started with Directus is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host Directus.
+- A CaseFusion project. The easiest way to get started with CaseFusion is with our
+  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
 - A Nuxt 3 application.
 - Some knowledge of Vue and Nuxt.
 
-If you're just getting started with Nuxt and Directus, reference our
-[guide](/guides/headless-cms/build-static-website/nuxt-3.html) to set up Nuxt 3 with Directus by creating a custom
+If you're just getting started with Nuxt and CaseFusion, reference our
+[guide](/guides/headless-cms/build-static-website/nuxt-3.html) to set up Nuxt 3 with CaseFusion by creating a custom
 plugin. This guide assumes you have already set up the plugin and have access to `this.$directus`, `this.$readItem` and
 `this.$readItems` in your project.
 
-In your Directus project, create a new `posts` collection. Add `title` and `content` fields to your collection. Create
+In your CaseFusion project, create a new `posts` collection. Add `title` and `content` fields to your collection. Create
 an item in the new collection, and make sure the Public role has Read access to the collection.
 
 ## Set Up Nuxt
@@ -80,7 +80,7 @@ if (!post.value) throw createError({
 </script>
 ```
 
-## Configure Live Preview URL in Directus
+## Configure Live Preview URL in CaseFusion
 
 Navigate to Settings -> Data Model and select the `posts` collection. In the "Preview URL" section, specify the Preview
 URL for your Nuxt project by selecting ID from the dropdown and entering a URL in this format:
@@ -140,7 +140,7 @@ if (!post.value) throw createError({
 </script>
 ```
 
-## Preview Content in Directus
+## Preview Content in CaseFusion
 
 In an item page, toggle "Enable Preview" at the top of the page. Whenever you create or edit an item in your collection
 and “click” save, you should see a live preview of the item on the right-hand side of the screen.
@@ -153,7 +153,7 @@ Clicking on the "Dimensions Display" icon also lets you preview your content on 
 
 ## Next Steps
 
-Through this guide, you have successfully set up the live preview feature in Directus for your Nuxt 3 project.
+Through this guide, you have successfully set up the live preview feature in CaseFusion for your Nuxt 3 project.
 
 Share the preview URL with your team members, stakeholders, or clients to allow them to see how content changes would
 look.

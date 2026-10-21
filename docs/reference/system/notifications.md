@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Notifications collection in Directus.
+description: REST and GraphQL API documentation on the Notifications collection in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -53,7 +53,7 @@ Primary key of the item this notification references.
 
 ## List Notifications
 
-List all notifications that exist in Directus.
+List all notifications that exist in CaseFusion.
 
 ### Request
 

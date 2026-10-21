@@ -95,16 +95,16 @@ Both files are now complete. Build the operation with the latest changes.
 npm run build
 ```
 
-## Add Operation to Directus
+## Add Operation to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-operation-lodash`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -115,7 +115,7 @@ code has no negative effect.
 
 ## Use the Operation
 
-In the Directus Data Studio, open the Flows section in Settings. Create a new flow with a manual trigger. Select the
+In the CaseFusion Data Studio, open the Flows section in Settings. Create a new flow with a manual trigger. Select the
 collection(s) to include this button on.
 
 Add a new step (operation) by clicking the tick/plus on the card, then choose **Lodash Camel Case** from the list. In
@@ -127,7 +127,7 @@ flow from the right side toolbar.
 ## Summary
 
 This operation takes an NPM package (`lodash`) and exposes it as a custom operation extension. You can use the same
-technique for other packages to extend on the features of Directus Flows.
+technique for other packages to extend on the features of CaseFusion Flows.
 
 ## Complete Code
 

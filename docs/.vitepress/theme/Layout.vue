@@ -2,34 +2,36 @@
 import { useData, useRoute } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import { computed } from 'vue';
-import Feedback from '../components/Feedback.vue';
 
 const { Layout } = DefaultTheme;
 const { page } = useData();
-const route = useRoute();
-const title = computed(() => page.value.title);
 const contributors = computed(() => page.value.frontmatter['contributors']);
-const path = computed(() => route.path);
+const route = useRoute();
+const extensionsPage = computed(() => /\/(guides\/)?extensions\//.test(route.path));
 </script>
 
 <template>
 	<Layout>
 		<template #doc-before>
-			<div
-				v-if="RegExp('^/packages/.+$').test(path)"
-				class="warning custom-block"
-				style="padding-bottom: 16px; margin-bottom: 16px"
-			>
+			<div class="info custom-block casefusion-notice">
 				<p>
-					This is an auto-generated document to support extension builders understand the internal packages they can
-					utilize. To find our written guides, tutorials, and API/SDK reference, check out our
-					<a href="/">main docs</a>
-					.
+					<a href="https://onainsights.io/">Ona Insights</a>
+					maintains CaseFusion, a GPLv3 fork of Directus 10.6.4, and adapted this documentation from the Directus 10.6.4
+					documentation. Mentions of Directus Cloud, licensing or the marketplace do not apply to CaseFusion. CaseFusion
+					is not affiliated with Monospace, Inc.; "Directus" is a trademark of Monospace, Inc.
+				</p>
+			</div>
+			<div v-if="extensionsPage" class="warning custom-block casefusion-notice">
+				<p>
+					The CaseFusion extensions SDK will be made available soon. Until then,
+					<code>create-directus-extension</code>
+					and
+					<code>@directus/extensions-sdk</code>
+					from npm install upstream's tooling, which targets newer Directus releases than CaseFusion.
 				</p>
 			</div>
 		</template>
 		<template #doc-footer-before>
-			<Feedback :url="path" :title="title" />
 			<Meta v-if="contributors" id="contributors" title-left="Contributors">
 				<template #left>
 					<div class="contributors">{{ contributors }}</div>
@@ -46,5 +48,10 @@ const path = computed(() => route.path);
 
 .contributors {
 	font-weight: 700;
+}
+
+.casefusion-notice {
+	margin-bottom: 24px;
+	font-size: 14px;
 }
 </style>

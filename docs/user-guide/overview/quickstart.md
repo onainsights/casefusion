@@ -8,7 +8,7 @@ readTime: 7 min read
 # Quickstart Guide
 
 > This quickstart guide is designed to get you up and running with a Directus Cloud Project in a snap. Along the way,
-> you will better understand what Directus is, setup your Directus Cloud Account, and get a _hands-on introduction_ to
+> you will better understand what CaseFusion is, setup your Directus Cloud Account, and get a _hands-on introduction_ to
 > the App.
 
 ## 1. Create Cloud Account and Login
@@ -79,7 +79,7 @@ With your first Collection created, it's time to start adding some [Fields](/use
 1. Navigate to **Settings Module > Data Model > `Collection-Name`**.
 2. Click the **"Create Field"** button and select the **"Input"** Field type.
 3. Fill in a Field name under **Key**. We'll be calling our Field `title`.\
-   Directus offers powerful Field customization options, but let's stick to the defaults for now.
+   CaseFusion offers powerful Field customization options, but let's stick to the defaults for now.
 4. Select **"Save"**.
 
 ::: tip Learn More About Fields

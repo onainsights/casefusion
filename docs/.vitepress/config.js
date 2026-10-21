@@ -1,18 +1,19 @@
-import { formatTitle } from '@directus/format-title';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vitepress';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
-import TypeDocSidebar from '../packages/typedoc-sidebar.json';
 import guidesData from './data/guides.data.js';
 
 const { guides } = await guidesData.load();
 
 export default defineConfig({
-	base: '/',
+	// CaseFusion: published on GitHub Pages under /casefusion/; Directus' trackers, marketing CMS, Algolia index and
+	// generated package reference are removed
+	base: '/casefusion/',
 	lang: 'en-US',
-	title: 'Directus Docs',
-	description: 'Explore our resources and powerful data engine to build your projects confidently.',
+	title: 'CaseFusion Docs',
+	description: 'Documentation for CaseFusion, the GPLv3 fork of Directus maintained by Ona Insights.',
 	ignoreDeadLinks: true,
+	srcExclude: ['blog/**', 'packages/**', 'contributing/**', 'user-guide/cloud/**', 'README.md'],
 	markdown: {
 		theme: {
 			light: 'github-light',
@@ -26,110 +27,8 @@ export default defineConfig({
 		},
 	},
 	head: [
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				defer: true,
-				src: 'https://js-na1.hs-scripts.com/20534155.js',
-			},
-		],
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				src: 'https://ws.zoominfo.com/pixel/636535e8d10f825332bbd795',
-				'referrer-policy': 'unsafe-url',
-			},
-		],
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				defer: false,
-				src: 'https://www.googletagmanager.com/gtag/js?id=UA-24637628-7',
-			},
-		],
-		[
-			'script',
-			{},
-			`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-PTLT3GH');`,
-		],
-		[
-			'script',
-			{},
-			`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-24637628-7');
-			`,
-		],
-		['link', { rel: 'shortcut icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-		[
-			'link',
-			{
-				rel: 'apple-touch-icon',
-				type: 'image/svg+xml',
-				sizes: '180x180',
-				href: '/favicon.svg',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'icon',
-				type: 'image/svg+xml',
-				sizes: '32x32',
-				href: '/favicon.svg',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'icon',
-				type: 'image/svg+xml',
-				sizes: '16x16',
-				href: '/favicon.svg',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'preconnect',
-				href: 'https://fonts.googleapis.com',
-				crossorigin: 'crossorigin',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'preconnect',
-				href: 'https://fonts.gstatic.com',
-				crossorigin: 'crossorigin',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200',
-			},
-		],
-		[
-			'link',
-			{
-				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap',
-			},
-		],
+		['link', { rel: 'icon', type: 'image/svg+xml', href: '/casefusion/favicon.svg' }],
+		['link', { rel: 'apple-touch-icon', href: '/casefusion/favicon.svg' }],
 	],
 	lastUpdated: true,
 	themeConfig: {
@@ -138,66 +37,39 @@ gtag('config', 'UA-24637628-7');
 			light: '/logo-light.svg',
 			dark: '/logo-dark.svg',
 		},
-		socialLinks: [{ icon: 'github', link: 'https://github.com/directus/directus' }],
+		socialLinks: [{ icon: 'github', link: 'https://github.com/onainsights/casefusion' }],
 		nav: [
 			{
 				text: 'Developer Reference',
 				link: '/getting-started/quickstart',
-				// Active on every path except for '/', '/user-guide', '/packages'
-				activeMatch: '^\\/(?!$|user-guide|packages).*',
+				// Active on every path except for '/', '/user-guide'
+				activeMatch: '^\\/(?!$|user-guide).*',
 			},
 			{
 				text: 'User Guide',
 				link: '/user-guide/overview/data-studio-app',
 				activeMatch: '/user-guide',
 			},
-			{ text: 'Website', link: 'https://directus.io/' },
-			{ text: 'Cloud', link: 'https://directus.cloud/' },
+			{ text: 'Ona Insights', link: 'https://onainsights.io/' },
 		],
-		algolia: {
-			appId: 'T5BDNEU205',
-			apiKey: '76eb519cf1a4492777a6991f75c5252b',
-			indexName: 'directus',
+		search: {
+			provider: 'local',
 		},
 		sidebar: {
 			'/': sidebar(),
 			'/user-guide/': sidebarUserGuide(),
-			'/packages/': sidebarTypedocs(),
 		},
 		editLink: {
-			pattern: ({ filePath }) => {
-				if (filePath.includes('blog/')) {
-					return '/blog/guest-author';
-				} else {
-					return `https://github.com/directus/directus/edit/main/docs/${filePath}`;
-				}
-			},
+			pattern: 'https://github.com/onainsights/casefusion/edit/main/docs/:path',
 		},
 	},
 	sitemap: {
-		hostname: 'https://docs.directus.io',
+		hostname: 'https://onainsights.github.io/casefusion/',
 	},
 	transformPageData(pageData) {
-		function setOGImage(asset) {
-			return [
-				['meta', { name: 'og:image', content: `https://marketing.directus.app/assets/${asset}?key=card` }],
-				['meta', { name: 'twitter:image', content: `https://marketing.directus.app/assets/${asset}?key=card` }],
-				['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-			];
-		}
-
-		switch (pageData.frontmatter.type) {
-			case 'blog-post':
-				pageData.title = pageData.params.title;
-				pageData.description = pageData.params.summary;
-				pageData.frontmatter.head = setOGImage(pageData.params.image);
-				break;
-			case 'guides-index':
-				pageData.title = pageData.params.title;
-				pageData.description = pageData.params.summary;
-				break;
-			default:
-				pageData.frontmatter.head = setOGImage('246e2f8a-98cd-4d54-9907-8927d1b9fb77');
+		if (pageData.frontmatter.type === 'guides-index') {
+			pageData.title = pageData.params.title;
+			pageData.description = pageData.params.summary;
 		}
 	},
 	vite: {
@@ -211,51 +83,6 @@ gtag('config', 'UA-24637628-7');
 		},
 	},
 });
-
-function typeDocSidebarFormat(item) {
-	if (item.link && !item.link.startsWith('/packages')) {
-		item.link = item.link.substring(item.link.indexOf('/packages'));
-	}
-
-	if (item.items) {
-		item.items = item.items.filter((subItem) => {
-			return subItem.link !== null || subItem.items.length > 0;
-		});
-	}
-
-	if (item.text.startsWith('@directus/')) {
-		item.items.unshift({
-			text: 'Overview',
-			link: `/packages/${item.text}/`,
-			items: [],
-			collapsed: true,
-		});
-
-		item.text = formatTitle(item.text.replace('@directus/', ''));
-		item.text = item.text.replace('Sdk', 'SDK');
-	}
-
-	if (item?.items?.length > 0) {
-		item.items.map((subItem) => {
-			return typeDocSidebarFormat(subItem);
-		});
-	} else {
-		delete item.items;
-		delete item.collapsed;
-	}
-
-	return item;
-}
-
-function sidebarTypedocs() {
-	let sidebar = TypeDocSidebar;
-
-	sidebar = sidebar.map((item) => {
-		return typeDocSidebarFormat(item);
-	});
-
-	return sidebar;
-}
 
 function sidebarGuides() {
 	const guideSections = guides.sections.map((section) => ({
@@ -292,12 +119,6 @@ function sidebar() {
 					link: '/getting-started/resources',
 				},
 			],
-		},
-		{
-			text: 'Developer Blog',
-			link: '/blog/',
-			activeMatch: '/blog/.*',
-			items: [],
 		},
 		{
 			text: 'Data Studio App',
@@ -590,29 +411,6 @@ function sidebar() {
 						},
 					],
 				},
-				{
-					text: 'Internal Packages',
-					link: '/contributing/codebase-overview.html#packages-packages',
-				},
-			],
-		},
-		{
-			text: 'Contributing',
-			collapsed: true,
-			items: [
-				{ link: '/contributing/introduction', text: 'Introduction' },
-				{
-					text: 'Code',
-					items: [
-						{ link: '/contributing/feature-request-process', text: 'Request a Feature' },
-						{ link: '/contributing/pull-request-process', text: 'Pull Request Process' },
-						{ link: '/contributing/codebase-overview', text: 'Codebase Overview' },
-						{ link: '/contributing/running-locally', text: 'Running Dev Environment' },
-						{ link: '/contributing/tests', text: 'Tests' },
-					],
-				},
-				{ link: '/contributing/community', text: 'Community' },
-				{ link: '/contributing/sponsor', text: 'Sponsorship & Advocacy' },
 			],
 		},
 		{
@@ -789,32 +587,6 @@ function sidebarUserGuide() {
 				{
 					text: 'Charts',
 					link: '/user-guide/insights/charts',
-				},
-			],
-		},
-		{
-			text: 'Directus Cloud',
-			collapsed: true,
-			items: [
-				{
-					text: 'Overview',
-					link: '/user-guide/cloud/overview',
-				},
-				{
-					text: 'Projects',
-					link: '/user-guide/cloud/projects',
-				},
-				{
-					text: 'Teams',
-					link: '/user-guide/cloud/teams',
-				},
-				{
-					text: 'Accounts',
-					link: '/user-guide/cloud/accounts',
-				},
-				{
-					text: 'Glossary',
-					link: '/user-guide/cloud/glossary',
 				},
 			],
 		},

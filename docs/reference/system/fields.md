@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Fields collection in Directus.
+description: REST and GraphQL API documentation on the Fields collection in CaseFusion.
 readTime: 7 min read
 pageClass: page-reference
 ---
@@ -18,11 +18,11 @@ Name of the collection the field resides in.
 The identifier of the field. This matches the table column name.
 
 `type` **string**\
-The Directus data type of the field. See [Types](/user-guide/overview/glossary#types) for possible options.
+The CaseFusion data type of the field. See [Types](/user-guide/overview/glossary#types) for possible options.
 
 #### Meta
 
-Directus metadata, primarily used in the Admin App. Meta is optional.
+CaseFusion metadata, primarily used in the Admin App. Meta is optional.
 
 `id` **integer**\
 Primary key of the metadata row in `directus_fields`.
@@ -95,7 +95,7 @@ Precision for integer/float/decimal type fields.
 Scale for integer/float/decimal type fields.
 
 `is_nullable` **boolean**\
-Whether or not the column is nullable. This is what is used as the "required" state in Directus.
+Whether or not the column is nullable. This is what is used as the "required" state in CaseFusion.
 
 `is_primary_key` **boolean**\
 Whether or not the field is the primary key of the table.
@@ -440,8 +440,8 @@ This endpoint doesn't currently support any query parameters.
 Field key, also used as the column name.
 
 `type` **Required**\
-One of the Directus types. This in turn controls what datatype is used for the column in the database. Setting the type to
-`alias` prevents a column from being created in the database.
+One of the CaseFusion types. This in turn controls what datatype is used for the column in the database. Setting the type
+to `alias` prevents a column from being created in the database.
 
 `meta`\
 Any of the optional meta values in the [field object](#the-field-object).

@@ -1,11 +1,11 @@
 ---
-description: Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards.
+description: Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards.
 readTime: 9 min read
 ---
 
 # Charts
 
-> Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards. Regardless of your
+> Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards. Regardless of your
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 

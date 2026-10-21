@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, type Component } from 'vue';
+import { sitePath } from '../lib/site-path';
 
 const props = defineProps<{
 	secondary?: boolean;
@@ -16,7 +17,7 @@ const component = computed(() => {
 const additionalProps = computed(() => {
 	if (component.value === 'a') {
 		return {
-			...(props.href && { href: props.href }),
+			...(props.href && { href: sitePath(props.href) }),
 			...(props.external && {
 				target: '_blank',
 				rel: 'noopener noreferrer',

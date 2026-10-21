@@ -8,7 +8,7 @@ const rootDir = join(__dirname, '..', '..', '..');
 
 export default defineLoader({
 	async load() {
-		const { version: fullVersion } = await readPackageJson(join(rootDir, 'directus'));
+		const { version: fullVersion } = await readPackageJson(join(rootDir, 'casefusion'));
 		const splitVersion = fullVersion.split('.');
 
 		const { packageManager } = await readPackageJson(rootDir);

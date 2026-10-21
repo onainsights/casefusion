@@ -1,5 +1,5 @@
 ---
-description: An introduction to the Directus studio app and it's components.
+description: An introduction to the CaseFusion studio app and it's components.
 readTime: 3 min read
 ---
 
@@ -8,7 +8,7 @@ readTime: 3 min read
 > The App is a no-code presentation layer for your data, content, and assets. It uses an intuitive left-to-right visual
 > hierarchy for general organization and navigation.
 
-The Directus Studio App provides users with a user-friendly and intuitive interface that allows for the seamless
+The CaseFusion Studio App provides users with a user-friendly and intuitive interface that allows for the seamless
 creation and management of collections, definition of relationships, and control over access permissions.
 
 The App also enables users to create flows and dashboards for internal applications.
@@ -19,9 +19,9 @@ The App also enables users to create flows and dashboards for internal applicati
 
 The leftmost section of the App is the module bar, which includes the:
 
-- **Project Logo** — Displays your configured project logo and project color (defaults to the Directus logo and color).
-  If configured, clicking this component will navigate to the Project URL. During platform activity, an indeterminate
-  progress indicator will also be shown here.
+- **Project Logo** — Displays your configured project logo and project color (defaults to the CaseFusion logo and
+  color). If configured, clicking this component will navigate to the Project URL. During platform activity, an
+  indeterminate progress indicator will also be shown here.
 - **Module Navigation** — Allows navigating between the different modules your user has access to. Customizing the
   Module Navigation is done within the [Project Settings](/user-guide/settings/settings), but the default module list
   includes:

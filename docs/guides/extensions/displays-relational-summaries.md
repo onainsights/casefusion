@@ -185,9 +185,9 @@ fields: (options) => {
 ```
 
 Note, displays will fetch related collection values for each row on the page. Fetching more that you need will impact
-the performance of Directus.
+the performance of CaseFusion.
 
-Here is a preview of how this appears in Directus:
+Here is a preview of how this appears in CaseFusion:
 
 ![New display options showing a select field for column, a checkbox for calculate sum, and text fields for prefix and suffix.](https://marketing.directus.app/assets/1ac7ce81-f5ae-43a7-a1a1-18590fdfa404)
 
@@ -289,16 +289,16 @@ Build the display with the latest changes.
 npm run build
 ```
 
-## Add Display to Directus
+## Add Display to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-display-sum-count`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -322,7 +322,7 @@ display:
 
 With this display, you have learned how to interact with relational fields and values for a display and use options to
 customize the output. Be mindful of how much processing is happening inside a display because it will run for every
-single row in the table and will impact the performance of Directus.
+single row in the table and will impact the performance of CaseFusion.
 
 ## Complete Code
 

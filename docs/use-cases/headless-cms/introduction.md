@@ -1,5 +1,5 @@
 ---
-description: Directus' Data Studio and APIs are the perfect choice for your Headless CMS.
+description: CaseFusion' Data Studio and APIs are the perfect choice for your Headless CMS.
 author: Bryant Gillespie
 ---
 
@@ -27,7 +27,7 @@ Learn more about [Headless CMS Concepts](/use-cases/headless-cms/concepts).
 
 ## Guides & Tutorials
 
-### Learn Directus
+### Learn CaseFusion
 
 - [Create Re-Usable Page Components](/guides/headless-cms/reusable-components)
 - [Implementing Content Versioning](/guides/headless-cms/content-versioning)
@@ -37,8 +37,8 @@ Learn more about [Headless CMS Concepts](/use-cases/headless-cms/concepts).
 
 ### Build Your Project
 
-- [Build a Website with Directus and Next.js](/guides/headless-cms/build-static-website/next-13)
-- [Build a Website with Directus and Nuxt.js](/guides/headless-cms/build-static-website/nuxt-3)
+- [Build a Website with CaseFusion and Next.js](/guides/headless-cms/build-static-website/next-13)
+- [Build a Website with CaseFusion and Nuxt.js](/guides/headless-cms/build-static-website/nuxt-3)
 
 ### Deployment & Best Practice
 

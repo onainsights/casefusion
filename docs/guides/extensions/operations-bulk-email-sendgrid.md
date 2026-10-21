@@ -190,7 +190,7 @@ the very top:
 import sgMail from '@sendgrid/mail'
 ```
 
-The handler needs to include the fields from the `app.js` options and the environment variables from Directus. Replace
+The handler needs to include the fields from the `app.js` options and the environment variables from CaseFusion. Replace
 the handler definition with the following:
 
 ```js
@@ -286,18 +286,18 @@ Both files are now complete. Build the operation with the latest changes.
 npm run build
 ```
 
-## Add Operation to Directus
+## Add Operation to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-operation-bulk-sendgrid`.
 
 Ensure the `.env` file has `SENDGRID_API_KEY` variable.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -308,7 +308,7 @@ code has no negative effect.
 
 ## Use the Operation
 
-In the Directus Data Studio, open the Flows section in Settings. Create a new flow with a manual trigger. Select the
+In the CaseFusion Data Studio, open the Flows section in Settings. Create a new flow with a manual trigger. Select the
 collection(s) to include this button on.
 
 Fetch some recipients by adding a **Read Data** operation and include the required fields and filters. Add a new step

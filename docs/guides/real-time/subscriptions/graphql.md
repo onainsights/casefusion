@@ -1,6 +1,6 @@
 ---
 contributors: Esther Agbaje
-description: "Learn how to get started with Directus' GraphQL subscriptons."
+description: "Learn how to get started with CaseFusion' GraphQL subscriptons."
 ---
 
 # GraphQL Subscriptions

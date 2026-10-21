@@ -1,26 +1,27 @@
 ---
-description: A guide on how to create a custom Theme in Directus.
+description: A guide on how to create a custom Theme in CaseFusion.
 readTime: 2 min read
 ---
 
 # Theming
 
-> Theming allows you to customize and style the visual appearance of your Directus App.
+> Theming allows you to customize and style the visual appearance of your CaseFusion App.
 
 ## App Themes
 
-The Directus App has been developed with customization and extensibility in mind. Colors and styles referenced within
+The CaseFusion App has been developed with customization and extensibility in mind. Colors and styles referenced within
 the codebase all use CSS variables, and therefore it is easy to make comprehensive changes to the App styling.
 
 There are two themes included by default: Light and Dark. You can duplicate these files to create your own themes — with
 no limit to customization. Below are several code resources for key SCSS files.
 
-- **Themes** — See the [Light Theme](https://github.com/directus/directus/blob/main/app/src/styles/themes/_light.scss)
-  or [Dark Theme](https://github.com/directus/directus/blob/main/app/src/styles/themes/_dark.scss)
-- **Typography** — See the [Fonts](https://github.com/directus/directus/blob/main/app/src/styles/_type-styles.scss) and
-  [Type Styles](https://github.com/directus/directus/blob/main/app/src/styles/mixins/type-styles.scss)
+- **Themes** — See the
+  [Light Theme](https://github.com/onainsights/casefusion/blob/main/app/src/styles/themes/_light.scss) or
+  [Dark Theme](https://github.com/onainsights/casefusion/blob/main/app/src/styles/themes/_dark.scss)
+- **Typography** — See the [Fonts](https://github.com/onainsights/casefusion/blob/main/app/src/styles/_type-styles.scss)
+  and [Type Styles](https://github.com/onainsights/casefusion/blob/main/app/src/styles/mixins/type-styles.scss)
 - **Variables** — See the
-  [Global Variables](https://github.com/directus/directus/blob/main/app/src/styles/_variables.scss)
+  [Global Variables](https://github.com/onainsights/casefusion/blob/main/app/src/styles/_variables.scss)
 
 ## Custom CSS
 

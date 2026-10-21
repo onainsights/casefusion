@@ -1,13 +1,13 @@
 # Relationships
 
-> Relationships are a crucial part of any relational database. Directus supports all standard relationship types, as
+> Relationships are a crucial part of any relational database. CaseFusion supports all standard relationship types, as
 > well as a few more of its own _compound_ types, which are custom-tailored to make certain _common but complex_ tasks a
 > breeze.
 
 ::: tip Before You Begin
 
 Regardless of the relationship you want to configure, we recommend you read every section of this document, in order, at
-least once. This is because you must understand how M2Os work in Directus to understand O2Ms, you must understand M2Os
+least once. This is because you must understand how M2Os work in CaseFusion to understand O2Ms, you must understand M2Os
 and O2Ms to understand M2Ms, etc.
 
 :::
@@ -15,26 +15,26 @@ and O2Ms to understand M2Ms, etc.
 ## Overview
 
 The Data Studio makes _the process_ of configuring relational data models easier, faster, and more intuitive by offering
-no-code configuration. Directus _does not_ enforce opinionated schemas, rule systems, or other arbitrary limitations to
-your data models. Therefore, aside from any technical limitations of your project's infrastructure or core requirements
-for any relational data model, _like having a primary key field for every collection or a data type assigned to every
-field,_ you are free to build the data model as you want.
+no-code configuration. CaseFusion _does not_ enforce opinionated schemas, rule systems, or other arbitrary limitations
+to your data models. Therefore, aside from any technical limitations of your project's infrastructure or core
+requirements for any relational data model, _like having a primary key field for every collection or a data type
+assigned to every field,_ you are free to build the data model as you want.
 
 In this guide, we will go over the following topics:
 
-- What kinds of relationships exist within Directus.
+- What kinds of relationships exist within CaseFusion.
 - How to configure a desired relationship within the Data Studio.
 - How relationships are implemented in the data model and displayed in the Data Studio.
 - When it might be appropriate to use a given type of relationship.
 
-By the end, you'll understand everything needed to start building data models in Directus, even if relational data model
-concepts are a new concept to you.
+By the end, you'll understand everything needed to start building data models in CaseFusion, even if relational data
+model concepts are a new concept to you.
 
-### Directus vs Classic Data Model Terms
+### CaseFusion vs Classic Data Model Terms
 
 When we use classic data model terms, _such as data table, column, row, etc..._ this signals that the explanation is
-focused strictly on what happens in the database. When Directus terminology is used, _such as collection, field, item,
-etc..._ this signals that the explanation includes Directus logic and functionality.
+focused strictly on what happens in the database. When CaseFusion terminology is used, _such as collection, field, item,
+etc..._ this signals that the explanation includes CaseFusion logic and functionality.
 
 ## Many-to-One (M2O)
 
@@ -69,11 +69,11 @@ countries
 Note the following things from the schema above:
 
 - An M2O relationship requires just one column within the parent table.
-- When an M2O relational field is configured in Directus, an Item Page on the parent collection will enable access to
+- When an M2O relational field is configured in CaseFusion, an Item Page on the parent collection will enable access to
   the item from the related collection. So in our example above, an Item Page in `cities` will enable access to the
   related country from the `countries` table.
 
-However, in the Directus Data Studio, an M2O field does not automatically provide access to the parent collection's
+However, in the CaseFusion Data Studio, an M2O field does not automatically provide access to the parent collection's
 items within the related collection. In our example, this means that when you open an Item Page in `countries`, you will
 not see related cities.
 
@@ -90,8 +90,8 @@ template wizard.
 ## One-to-Many (O2M)
 
 Within a relational database, an O2M relationship is the exact same type of relationship as an M2O. Remember, at the end
-of the [M2O](#many-to-one-m2o) section, we learned that configuring an M2O in Directus does not let us access related
-items within an Item Page on the related collection. In Directus, configuring an O2M creates an
+of the [M2O](#many-to-one-m2o) section, we learned that configuring an M2O in CaseFusion does not let us access related
+items within an Item Page on the related collection. In CaseFusion, configuring an O2M creates an
 [Alias](/user-guide/overview/glossary#alias) field, which lets us access related items. To demonstrate this, let's
 continue with the `cities` and `countries` example relationship used in the M2O section.
 
@@ -113,7 +113,7 @@ cities
 - country_id (the M2O field)
 ```
 
-Note the following points from the schema above. When we create an O2M in Directus:
+Note the following points from the schema above. When we create an O2M in CaseFusion:
 
 - Since the perspective is flipped, we now consider `countries` to be the parent collection.
 - It isn't always necessary to create an O2M. In some cases, you won't want or need to access items from both sides.
@@ -136,9 +136,9 @@ template wizard.
 
 ## One-to-One (O2O)
 
-Directus does not include a dedicated One-to-One (O2O) relationship type or Interface. However, in the database, O2O is
-almost exactly the same as an M2O. The only difference is that an O2O enforces _cardinality_. In other words, one item
-from the parent collection can be linked with one item on the related collection, and vice-versa.
+CaseFusion does not include a dedicated One-to-One (O2O) relationship type or Interface. However, in the database, O2O
+is almost exactly the same as an M2O. The only difference is that an O2O enforces _cardinality_. In other words, one
+item from the parent collection can be linked with one item on the related collection, and vice-versa.
 
 For example, each country has one capital city, and vice versa. This is an O2O. To demonstrate how it works, let's add
 this O2O to the `cities` and `countries` example relationship used in the previous sections.
@@ -195,11 +195,11 @@ cities
 - country_id
 ```
 
-Note the following points from the schema above. When we create an O2O in Directus:
+Note the following points from the schema above. When we create an O2O in CaseFusion:
 
 - We can add the O2O field on either collection. However, in some cases it is more efficient to add it to a specific
   collection.
-- Since the O2O field is really just an M2O field behind the scenes, and since Directus doesn't automatically display
+- Since the O2O field is really just an M2O field behind the scenes, and since CaseFusion doesn't automatically display
   M2O fields in the related collection, you may want to [configure an O2M field](#one-to-many-o2m) so that you can
   access items from the related collection as well.
 
@@ -255,11 +255,11 @@ ingredients
 - name
 ```
 
-Note the following points from the schema above. When we create an M2M in Directus:
+Note the following points from the schema above. When we create an M2M in CaseFusion:
 
 - Our junction collection, `recipe_ingredients`, each row contains two foreign key columns. This is what creates the
   relationships between the two tables.
-- Assuming the M2M alias field is created within the `recipes` collection, Directus does not automatically add a field
+- Assuming the M2M alias field is created within the `recipes` collection, CaseFusion does not automatically add a field
   to display recipes within the `ingredients` collection. However, you can easily add such a field when creating the M2M
   field within the `recipes` collection, by clicking on `Continue in Advanced Field Creation Mode`, opening the
   `Relationship` tab and selecting `Add M2M to "ingredients"`:
@@ -292,7 +292,7 @@ template wizard.
 ## Many-to-Any (M2A)
 
 Sometimes called a _matrix field_ or _replicator_, an M2A relationship allows you to link items from the parent
-collection to any item in any collection in the database. When you configure an M2A in Directus, an M2A
+collection to any item in any collection in the database. When you configure an M2A in CaseFusion, an M2A
 [Alias](/user-guide/overview/glossary#alias) field is created as well as a junction collection, like we saw on M2M
 relationships. The difference is that the junction collection on an M2A also has a field to store the **collection key**
 _(the name of the collection)_ for related collections.
@@ -337,7 +337,7 @@ images
 - file
 ```
 
-Note the following points from the schema above. When we create an M2A in Directus:
+Note the following points from the schema above. When we create an M2A in CaseFusion:
 
 - Compared to the M2O and M2M relationships, there may be a lower likelihood that you will need to configure alias
   fields on related collections, such as `headings`, `text_bodies` and `images`, as these collections may not be as
@@ -361,7 +361,7 @@ from the template wizard.
 
 ## Translations (O2M)
 
-Directus provides this special relational Interface designed specifically to handle translations. When you create a
+CaseFusion provides this special relational Interface designed specifically to handle translations. When you create a
 Translations O2M in the Data Studio, the following things happen within your data model. A Translations O2M alias field
 is created. A junction collection and a `languages` collection are created. All your translations are stored within
 context fields, configured by you, on the junction collection. Therefore, when you create a Translations O2M, you also

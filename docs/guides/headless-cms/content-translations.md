@@ -10,16 +10,16 @@ author: Bryant Gillespie
 
 Here's what the end result will look like for users when using the Data Studio to manage content.
 
-![A Directus item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
+![A CaseFusion item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
 
 ## Before You Start
 
 You will need:
 
-- A Directus project. The easiest way to get started with Directus is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host Directus.
+- A CaseFusion project. The easiest way to get started with CaseFusion is with our
+  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
 - Familiarity with [creating collections](/app/data-model/collections#create-a-collection) and
-  [creating fields](/app/data-model/fields#create-a-field-standard) inside Directus.
+  [creating fields](/app/data-model/fields#create-a-field-standard) inside CaseFusion.
 
 You will be creating several collections (one for storing different languages, one for your content, and one junction
 collection that will store all the different translations of your content). Once you setup the data model, you will test
@@ -95,7 +95,7 @@ Before you can create translations, you need a collection of content to translat
 
 ::: tip
 
-By default Directus will name this junction collection `articles_translations` following the convention
+By default CaseFusion will name this junction collection `articles_translations` following the convention
 `{collection_name}_translations`. If you want more control over the naming of your translation collection and the fields
 within, you can choose to Continue in Advanced Field Creation Mode.
 
@@ -134,7 +134,7 @@ built.
 
    You can show one language at a time or show two languages side by side.
 
-   ![A Directus item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
+   ![A CaseFusion item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
 
    There is also a progress indicator for the status of each language.
 
@@ -228,7 +228,7 @@ const page = pages[0];
 
 ## Next Steps
 
-Over the course of this guide, you've setup the basics for translating your content within Directus. Nice work!
+Over the course of this guide, you've setup the basics for translating your content within CaseFusion. Nice work!
 
 Next, you would setup translations collections for all the different content collections you'll be translating.
 

@@ -12,7 +12,7 @@ author: Bryant Gillespie
 
 ## Explanation
 
-When using Directus as a Headless CMS, it is common to pair it with a front-end framework / static site generator like
+When using CaseFusion as a Headless CMS, it is common to pair it with a front-end framework / static site generator like
 [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxt.com), [SvelteKit](https://kit.svelte.dev/), or other options.
 
 [Netlify](https://www.netlify.com/) and other similar platforms make it easy to host and deploy your site using static
@@ -63,7 +63,7 @@ with them.
 
 3. [Create a new Operation](/app/flows/operations#operations)
 
-   ![Within a Directus Flow, the Create Operation screen is shown. The Name of the Operation is "If Published". The Operation type is "Condition". The value of the Condition Rules field is a JSON object.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-condition.webp)
+   ![Within a CaseFusion Flow, the Create Operation screen is shown. The Name of the Operation is "If Published". The Operation type is "Condition". The value of the Condition Rules field is a JSON object.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-condition.webp)
 
    a. Name your operation, i.e. `Check Status`, `If Published`, or similar.
 
@@ -101,9 +101,9 @@ You can learn more about Netlify Build Hooks on their documentation.
 
 ### Add Webhook Operation to Your Flow
 
-5. Back inside your Directus Flow, create a new Operation.
+5. Back inside your CaseFusion Flow, create a new Operation.
 
-   ![Within a Directus Flow, the Create Operation screen is shown. The Name of the Operation is "Deploy Site". The Operation type is "Webhook / Request URL". The Method selected is "POST". The URL field value is the an HTTP address for the build hook from the hosting platform.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-webhook.webp)
+   ![Within a CaseFusion Flow, the Create Operation screen is shown. The Name of the Operation is "Deploy Site". The Operation type is "Webhook / Request URL". The Method selected is "POST". The URL field value is the an HTTP address for the build hook from the hosting platform.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-webhook.webp)
 
    a. For the type of Operation, select **Webhook / Request URL**
 

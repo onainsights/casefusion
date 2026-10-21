@@ -1,0 +1,61 @@
+name: Docs
+
+# Builds docs/ (VitePress) on pull requests that touch it, and publishes it to GitHub Pages from main:
+# https://onainsights.github.io/casefusion/
+#
+# Publishing is off until the repository variable PUBLISH_DOCS is "true" and Pages is enabled with "GitHub Actions" as
+# its source (Settings > Pages). On the Team plan a Pages site is public even when the repository is private, so turn
+# it on when the repository goes public.
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**', 'scripts/rebrand-docs.mjs', '.github/workflows/docs.yml']
+  pull_request:
+    paths: ['docs/**', 'scripts/rebrand-docs.mjs', '.github/workflows/docs.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build docs
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Upstream merges bring back the Directus name in prose; scripts/rebrand-docs.mjs must have been run (UPSTREAM.md)
+      - name: Product name is rebranded
+        run: node ../scripts/rebrand-docs.mjs --check
+      # docs/ is not a pnpm workspace member; it has its own lockfile
+      - run: pnpm install --frozen-lockfile --ignore-workspace
+      - run: pnpm build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.PUBLISH_DOCS == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

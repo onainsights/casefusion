@@ -27,10 +27,10 @@ To manage users, role and permissions programmatically via the API, please see o
 
 :::
 
-In order to understand how users, roles, and permissions work in Directus, a conceptual understanding of _how they work
-in general_ will be helpful. The following few paragraphs will introduce you to how users, roles, and permissions work
-within a relational database. If you're already familiar with these concepts, feel free to skip to
-[How it Works in Directus](#how-it-works-in-directus).
+In order to understand how users, roles, and permissions work in CaseFusion, a conceptual understanding of _how they
+work in general_ will be helpful. The following few paragraphs will introduce you to how users, roles, and permissions
+work within a relational database. If you're already familiar with these concepts, feel free to skip to
+[How it Works in CaseFusion](#how-it-works-in-casefusion).
 
 ### Users
 
@@ -108,14 +108,14 @@ deadline. Finally, you likely want to restrict each student's CRUD access to all
 
 It is common to have multiple, complex business rules in a project.
 
-## How it Works in Directus
+## How it Works in CaseFusion
 
 <video title="How Users, Roles, & Permissions Work" autoplay playsinline muted loop controls>
 	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/how-users-roles-and-permissions-work-20220909A.mp4" type="video/mp4" />
 </video>
 
-While you have full reign to configure these using SQL, Directus also provides a complete system to configure and manage
-users, roles, and permissions without writing a single line of SQL. The process has three key steps.
+While you have full reign to configure these using SQL, CaseFusion also provides a complete system to configure and
+manage users, roles, and permissions without writing a single line of SQL. The process has three key steps.
 
 1. [Create a Role](/user-guide/user-management/roles#create-a-role)
 2. [Configure its Permissions](/user-guide/user-management/permissions#configure-role-permissions)
@@ -130,25 +130,25 @@ complex granular permissions as desired.
 
 ::: tip
 
-Remember, the following users, role and permissions systems built into Directus cannot be deleted, however using them is
-optional. You may configure your own system as desired.
+Remember, the following users, role and permissions systems built into CaseFusion cannot be deleted, however using them
+is optional. You may configure your own system as desired.
 
 :::
 
-## Directus Users
+## CaseFusion Users
 
-![Users in the Directus Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/users-20220807A.webp)
+![Users in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/users-20220807A.webp)
 
 Within the Data Studio, users are managed within the [User Directory](/user-guide/user-management/user-directory).
 However, there are some controls available to assign users to roles in **Settings > Roles and Permissions**.
 
 To learn more, please see our guide on [users](/user-guide/user-management/users).
 
-## Directus Roles
+## CaseFusion Roles
 
-![Roles in the Directus Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/roles-20220907A.webp)
+![Roles in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/roles-20220907A.webp)
 
-You can create as many roles as you need for your project. Directus also comes with built-in administrator and public
+You can create as many roles as you need for your project. CaseFusion also comes with built-in administrator and public
 roles, which cannot be deleted.
 
 The administrator role provides full permissions for all data in the app, and this cannot be limited. You must always
@@ -160,29 +160,29 @@ all existing users_. If you wish to keep the project private, simply keep all pe
 
 To learn more, see our guide on [roles](/user-guide/user-management/roles).
 
-## Directus Permissions
+## CaseFusion Permissions
 
-![Roles in the Directus Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/permissions-20220907A.webp)
+![Roles in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/permissions-20220907A.webp)
 
-Directus offers an extremely granular, yet easy to configure permissions system. When you
+CaseFusion offers an extremely granular, yet easy to configure permissions system. When you
 [create a role](#create-a-role), all permissions are turned off by default, allowing you to explicitly grant permissions
 as desired.
 
-There are two other key points to note about Directus. First, the term
+There are two other key points to note about CaseFusion. First, the term
 [custom access permissions](/user-guide/user-management/permissions#configure-custom-permissions) is used in place of
 [business rules](#business-rules), however the concept is the same. Second, instead of the standard CRUD permissions,
-Directus provides CRUDS permissions: _create, read, update, delete, and share_. This _fifth_ type of permission, share,
-defines whether a user has permissions to perform [data sharing](/user-guide/content-module/content/shares) on items in
-a collection.
+CaseFusion provides CRUDS permissions: _create, read, update, delete, and share_. This _fifth_ type of permission,
+share, defines whether a user has permissions to perform [data sharing](/user-guide/content-module/content/shares) on
+items in a collection.
 
 To learn more, see our guide on [permissions](/user-guide/user-management/permissions).
 
 ## Workflows
 
-![Workflows in the Directus](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/workflows-20220909/workflows-20220909B.webp)
+![Workflows in the CaseFusion](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/workflows-20220909/workflows-20220909B.webp)
 
 Workflows are a way to setup structured stages to content authoring and data management. They are created primarily with
 custom access permissions, but can be enhanced with email notifications, custom [Interfaces](/extensions/interfaces) as
-well as [flows](/app/flows). Directus supports endlessly configurable workflows.
+well as [flows](/app/flows). CaseFusion supports endlessly configurable workflows.
 
 To learn more, see our recipe on [Content Approval Workflows](/guides/headless-cms/approval-workflows).

@@ -99,7 +99,7 @@ permissions. However, you can always
 
 ::: tip Built-in Roles
 
-Directus does not allow you to delete the built-in public role or administrator role. To learn more, please see the
-introductory section on [Directus Roles](/user-guide/user-management/users-roles-permissions#directus-roles).
+CaseFusion does not allow you to delete the built-in public role or administrator role. To learn more, please see the
+introductory section on [CaseFusion Roles](/user-guide/user-management/users-roles-permissions#casefusion-roles).
 
 :::

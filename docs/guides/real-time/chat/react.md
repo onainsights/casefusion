@@ -5,15 +5,15 @@ description: Learn how to build a real-time multi-user chat with WebSockets and 
 
 # Build a Multi-User Chat With React.js
 
-In this guide, you will build a multi-user chat application with Directus’ WebSockets interface that authenticates users
-with an existing account, shows historical messages stored in Directus, allows users to send new messages, and
+In this guide, you will build a multi-user chat application with CaseFusion’ WebSockets interface that authenticates
+users with an existing account, shows historical messages stored in CaseFusion, allows users to send new messages, and
 immediately updates all connected chats.
 
 ## Before You Start
 
-### Set Up Your Directus Project
+### Set Up Your CaseFusion Project
 
-You will need a Directus project. If you don’t already have one, the easiest way to get started is with our
+You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
 [managed Directus Cloud service](https://directus.cloud).
 
 Create a new collection called `messages`, with `date_created` and `user_created` fields enabled in the _Optional System
@@ -244,7 +244,7 @@ Then, connect these values to the form input fields:
 </form>
 ```
 
-Within the `messageSubmit` method, send a new message to create the item in your Directus collection:
+Within the `messageSubmit` method, send a new message to create the item in your CaseFusion collection:
 
 ```js
 const messageSubmit = (event) => {
@@ -261,10 +261,10 @@ const messageSubmit = (event) => {
 };
 ```
 
-_Refresh your browser, login, and submit a new message. Check the `Messages` collection in your Directus project and you
-should see a new item._
+_Refresh your browser, login, and submit a new message. Check the `Messages` collection in your CaseFusion project and
+you should see a new item._
 
-![Directus Data Studio Content Module showing the Messages collection with one item in it. Visible is the text, User, and Date Created.](https://cdn.directus.io/docs/v9/guides/websockets/chat-collection.webp)
+![CaseFusion Data Studio Content Module showing the Messages collection with one item in it. Visible is the text, User, and Date Created.](https://cdn.directus.io/docs/v9/guides/websockets/chat-collection.webp)
 
 ## Display New Messages
 

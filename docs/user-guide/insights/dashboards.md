@@ -1,11 +1,11 @@
 ---
-description: Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards.
+description: Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards.
 readTime: 9 min read
 ---
 
 # Dashboards
 
-> Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards. Regardless of your
+> Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards. Regardless of your
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
@@ -35,7 +35,7 @@ First, create a Dashboard, then fill the Dashboard with Panels.
 
 ![Dashboard Grid Area](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/dashboards-overview-20220216A.webp)
 
-Each Directus Dashboard provides a drag-and-drop canvas where you can create and arrange different Panels to easily
+Each CaseFusion Dashboard provides a drag-and-drop canvas where you can create and arrange different Panels to easily
 build out customized analytics. The Dashboard area automatically expands as you add more and more Panels. In theory, a
 Dashboard area can expand infinitely large... but in practice, users will probably only want to build Dashboards as
 large as the screen they will be viewing on. You are able to create as many Dashboards as you need. Additionally, the
@@ -51,7 +51,7 @@ refresh dashboard data.
 
 ## Create, Edit, and Delete Dashboards
 
-![How to Add, Edit and Delete Dashboards in Directus Insights](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/create-edit-delete-dashboards-20220216A.webp)
+![How to Add, Edit and Delete Dashboards in CaseFusion Insights](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/create-edit-delete-dashboards-20220216A.webp)
 
 1. Click the <span mi btn >add</span> icon in the page header to create a new Dashboard.
 2. Click the item option to edit or delete a Dashboard.

@@ -1,16 +1,16 @@
 ---
-description: This guide shows you how build a website with Next 13 and Directus as a Headless CMS.
+description: This guide shows you how build a website with Next 13 and CaseFusion as a Headless CMS.
 directus_version: 9.21.4
 author: Kevin Lewis
 ---
 
-# Build a Website With Next 13 and the Directus JavaScript SDK
+# Build a Website With Next 13 and the CaseFusion JavaScript SDK
 
 > {{ $frontmatter.description }}
 
 [Next.js](https://nextjs.org/) is a popular JavaScript framework based on React.js. In this tutorial, you will learn how
-to build a website using Directus as a CMS. You will store, retrieve, and use global metadata such as the site title,
-create new pages dynamically based on Directus items, and build a blog.
+to build a website using CaseFusion as a CMS. You will store, retrieve, and use global metadata such as the site title,
+create new pages dynamically based on CaseFusion items, and build a blog.
 
 ## Before You Start
 
@@ -40,7 +40,7 @@ npx create-next-app \
 ```
 
 Once finished, navigate into the new directory, delete all of the files in `app` so you can build this project from
-scratch and install the Directus JavaScript SDK:
+scratch and install the CaseFusion JavaScript SDK:
 
 ```shell
 cd my-website
@@ -52,8 +52,9 @@ Now, open `my-website` in your code editor for the following steps.
 
 ## Create a Helper for the SDK
 
-To share a single instance of the Directus JavaScript SDK between multiple pages in this project, create a single helper
-file that can be imported later. Create a new directory called `lib` and a new file called `directus.js` inside of it.
+To share a single instance of the CaseFusion JavaScript SDK between multiple pages in this project, create a single
+helper file that can be imported later. Create a new directory called `lib` and a new file called `directus.js` inside
+of it.
 
 ```js
 import { createDirectus } from '@directus/sdk';
@@ -64,11 +65,11 @@ const directus = createDirectus('https://directus.example.com').with(rest());
 export default directus;
 ```
 
-Ensure your Project URL is correct when initializing the Directus JavaScript SDK.
+Ensure your Project URL is correct when initializing the CaseFusion JavaScript SDK.
 
 ## Using Global Metadata and Settings
 
-In your Directus project, navigate to Settings -> Data Model and create a new collection called `global`. Under the
+In your CaseFusion project, navigate to Settings -> Data Model and create a new collection called `global`. Under the
 Singleton option, select 'Treat as a single object', as this collection will have just a single entry containing global
 website metadata.
 
@@ -105,10 +106,10 @@ export default async function HomePage() {
 ```
 
 Type `npm run dev` in your terminal to start the Next development server and open `http://localhost:3000` in your
-browser. You should see data from your Directus Global collection in your page. Some additional files will be created by
-Next that it expects, but do not yet exist - these can be safely ignored for now.
+browser. You should see data from your CaseFusion Global collection in your page. Some additional files will be created
+by Next that it expects, but do not yet exist - these can be safely ignored for now.
 
-## Creating Pages With Directus
+## Creating Pages With CaseFusion
 
 Create a new collection called `pages` - make the Primary ID Field a "Manually Entered String" called `slug`, which will
 correlate with the URL for the page. For example `about` will later correlate to the page `localhost:3000/about`.
@@ -145,14 +146,14 @@ export default async function DynamicPage({ params }) {
 }
 ```
 
-Go to `http://localhost:3000/about`, replacing `about` with any of your item slugs. Using the Directus JavaScript SDK,
+Go to `http://localhost:3000/about`, replacing `about` with any of your item slugs. Using the CaseFusion JavaScript SDK,
 the single item with that slug is retrieved, and the page should show your data. `readItem()` allows you to specify the
 Primary ID Field.
 
 _Note that we check if a returned value exists, and return a 404 if not. Please also note that
 [`dangerouslySetInnerHTML` should only be used for trusted content](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)._
 
-## Creating Blog Posts With Directus
+## Creating Blog Posts With CaseFusion
 
 Create a new collection called `authors` with a single text input field called `name`. Create one or more authors.
 
@@ -268,11 +269,11 @@ export default async function DynamicPage({ params }) {
 
 Some key notes about this code snippet.
 
-- In the `<img>` tag, `directus.url` is the value provided when creating the Directus plugin.
-- The `width` attribute demonstrates Directus' built-in image transformations.
+- In the `<img>` tag, `directus.url` is the value provided when creating the CaseFusion plugin.
+- The `width` attribute demonstrates CaseFusion' built-in image transformations.
 - Once again, `dangerouslySetInnerHTML` should only be used if all content is trusted.
 - Because almost-all fields are used in this page, including those from the `image` relational field, the `fields`
-  property when using the Directus JavaScript SDK can be set to `*.*`.
+  property when using the CaseFusion JavaScript SDK can be set to `*.*`.
 
 Click on any of the blog post links, and it will take you to a blog post page complete with a header image.
 
@@ -280,7 +281,7 @@ Click on any of the blog post links, and it will take you to a blog post page co
 
 ## Add Navigation
 
-While not strictly Directus-related, there are now several pages that aren't linked to each other. Create the file
+While not strictly CaseFusion-related, there are now several pages that aren't linked to each other. Create the file
 `app/layout.tsx` to add a navigation above the main content. Don't forget to use your specific page slugs.
 
 ```jsx
@@ -304,8 +305,8 @@ export default function RootLayout({ children }) {
 
 ## Next Steps
 
-Through this guide, you have set up a Next project, created a Directus helper, and used it to query data. You have used
-a singleton collection for global metadata, dynamically created pages, as well as blog listing and post pages.
+Through this guide, you have set up a Next project, created a CaseFusion helper, and used it to query data. You have
+used a singleton collection for global metadata, dynamically created pages, as well as blog listing and post pages.
 
 If you want to change what is user-accessible, consider setting up more restrictive roles and accessing only valid data
 at build-time.

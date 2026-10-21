@@ -1,11 +1,11 @@
 ---
 contributors: Esther Agbaje
-description: "Learn how to get started with Directus' GraphQL interface."
+description: "Learn how to get started with CaseFusion' GraphQL interface."
 ---
 
 # Getting Started With GraphQL Subscriptions
 
-You can connect to a Directus project and get updates on data held in a collection in real-time.
+You can connect to a CaseFusion project and get updates on data held in a collection in real-time.
 
 This guide will show you how to get started with subscribing to data using GraphQL. GraphQL is framework-agnostic, so
 you can apply the same set of steps in your stack of choice.
@@ -15,8 +15,8 @@ you can apply the same set of steps in your stack of choice.
 
 ## Before You Begin
 
-You will need a Directus project. If you don’t already have one, the easiest way to get started is with our
-[managed Directus Cloud service](https://directus.cloud). You can also self-host Directus, ensuring the
+You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
+[managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion, ensuring the
 `WEBSOCKETS_ENABLED` environment variable is set to `true`.
 
 Create a new collection called `messages`, with a `date_created` field enabled in the _Optional System Fields_ pane on
@@ -24,7 +24,7 @@ collection creation. Create the required field such as an input field called `te
 
 If it doesn’t already exist, create a user with a role that can execute read and create operations on the collection.
 
-Finally in the Directus Data Studio, create a static access token for the user, copy it, and save the user profile.
+Finally in the CaseFusion Data Studio, create a static access token for the user, copy it, and save the user profile.
 
 ## Create a Connection
 
@@ -87,4 +87,4 @@ Go ahead to add new data to your `messages` collection, you should immediately r
 
 In this guide, you have successfully established a connection and created your first subscription.
 
-[Learn more about subscriptions with GraphQL with Directus.](/guides/real-time/subscriptions/graphql)
+[Learn more about subscriptions with GraphQL with CaseFusion.](/guides/real-time/subscriptions/graphql)

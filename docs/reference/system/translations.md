@@ -1,5 +1,5 @@
 ---
-description: REST documentation on the Translations collection in Directus.
+description: REST documentation on the Translations collection in CaseFusion.
 readTime: 3 min read
 pageClass: page-reference
 ---
@@ -33,7 +33,7 @@ The translation value.
 
 ## List Translations
 
-List all translations that exist in Directus.
+List all translations that exist in CaseFusion.
 
 ### Request
 

@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Webhooks collection in Directus.
+description: REST and GraphQL API documentation on the Webhooks collection in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -52,7 +52,7 @@ What collections to fire this webhook on.
 
 ## List Webhooks
 
-List all webhooks that exist in Directus.
+List all webhooks that exist in CaseFusion.
 
 ### Request
 

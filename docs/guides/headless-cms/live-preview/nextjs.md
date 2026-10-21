@@ -1,5 +1,5 @@
 ---
-description: This guide shows how to use the live preview feature in Directus when using a Next.js application.
+description: This guide shows how to use the live preview feature in CaseFusion when using a Next.js application.
 directus_version: 10.2.0
 author: Esther Agbaje
 ---
@@ -8,30 +8,30 @@ author: Esther Agbaje
 
 <GuideMeta />
 
-Directus' Live Preview feature allows you to show changes in your website collection before publishing and without the
+CaseFusion' Live Preview feature allows you to show changes in your website collection before publishing and without the
 need to refresh the browser.
 
 [Next.js](https://nextjs.org/) Draft Mode feature renders pages on request instead of build time and fetches draft
 content instead of the published content.
 
 By adding a preview URL and setting up your Next.js application, you can instantly see live changes made to your
-collection inside of Directus.
+collection inside of CaseFusion.
 
 ## Before You Start
 
 You will need:
 
-- A Directus project. The easiest way to get started with Directus is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host Directus.
+- A CaseFusion project. The easiest way to get started with CaseFusion is with our
+  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
 - A Next.js application.
 - Some knowledge of React.js and Next.js.
 
-If you're just getting started with Next.js and Directus, reference our
-[guide](/guides/headless-cms/build-static-website/next-13) to set up Next.js 13 with Directus.
+If you're just getting started with Next.js and CaseFusion, reference our
+[guide](/guides/headless-cms/build-static-website/next-13) to set up Next.js 13 with CaseFusion.
 
-## Configure Live Preview URL in Directus
+## Configure Live Preview URL in CaseFusion
 
-In your Directus project, create a new `Posts` collection. Add `title` and `content` fields to your collection.
+In your CaseFusion project, create a new `Posts` collection. Add `title` and `content` fields to your collection.
 
 Navigate to Settings -> Data Model and select the collection you want to configure. In the "Preview URL" section,
 specify the Preview URL for your Next.js project by selecting ID from the dropdown and entering a URL in this format:
@@ -84,7 +84,7 @@ export async function generateStaticParams() {
 
 ## Set Up Draft Mode in Next.js
 
-By default, when rendering content from Directus to a live site using static rendering, changes made to an existing
+By default, when rendering content from CaseFusion to a live site using static rendering, changes made to an existing
 collection or adding new content require rebuilding the entire site for the changes to take effect. With Draft Mode
 enabled, pages can be rendered at request time instead of build time.
 
@@ -184,7 +184,7 @@ currently enabled. If `isEnabled` is true, then the code will show the text "(Dr
 Run `npm run dev` and visit your preview URL `http:/<your-site>/api/draft?secret=MY_SECRET_TOKEN&id=ID`, you should be
 able to see the preview of your content.
 
-## Preview Content in Directus
+## Preview Content in CaseFusion
 
 In an item page, toggle "Enable Preview" at the top of the page. Whenever you create or edit an item in your collection
 and “click” save, you should see a live preview of the item on the right-hand side of the screen.
@@ -197,7 +197,7 @@ Clicking on the "Dimensions Display" icon also lets you preview your content on 
 
 ## Next Steps
 
-Through this guide, you have successfully set up the live preview feature in Directus for your Next.js project.
+Through this guide, you have successfully set up the live preview feature in CaseFusion for your Next.js project.
 
 Share the preview URL with your team members, stakeholders, or clients to allow them to see how content changes would
 look.

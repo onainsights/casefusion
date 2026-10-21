@@ -6,14 +6,14 @@ readTime: 15 min read
 
 # Data Model
 
-> The Directus data studio enables no-code configuration and management for any SQL database, with no arbitrary
+> The CaseFusion data studio enables no-code configuration and management for any SQL database, with no arbitrary
 > restrictions on how you build your data model. You get control over table, column and relationship configuration, as
 > well as how users view and interact with data inside the data studio.
 
 <!--
 ::: tip Before You Begin
 
-Learn Directus
+Learn CaseFusion
 Please see the [Quickstart Guide]().
 Configuration > Overview
 
@@ -22,7 +22,7 @@ Configuration > Overview
 
 ::: tip Learn More
 
-Remember, you will have full access to manage your database using SQL. Directus will mirror any changes. You can also
+Remember, you will have full access to manage your database using SQL. CaseFusion will mirror any changes. You can also
 configure your data model programmatically via the API. To learn more, see our API documentation on
 [Collections](/reference/system/collections), [Fields](/reference/system/fields), and
 [Relations](/reference/system/relations).
@@ -31,15 +31,15 @@ configure your data model programmatically via the API. To learn more, see our A
 
 ## Relational Data Models
 
-In order to understand how Directus handles data models, you will need an understanding of what relational data models
+In order to understand how CaseFusion handles data models, you will need an understanding of what relational data models
 are. This section provides a brief summary of the core concepts. It may be useful as a review, or for business users
 working on your team that want a simple explanation of how data models work. If you have a firm knowledge of relational
 data model concepts, such as databases, data tables, columns, data types, primary and foreign keys, rows, relationships,
-and schemas then feel free to jump to [Data Models in Directus](#data-models-in-directus).
+and schemas then feel free to jump to [Data Models in CaseFusion](#data-models-in-casefusion).
 
 ### Databases
 
-Directus is an SQL database wrapper. A database is a set of data stored in a computer, in a structured way, making it
+CaseFusion is an SQL database wrapper. A database is a set of data stored in a computer, in a structured way, making it
 organized, accessible, and scalable. The specific way you structure your data within a database is called your data
 model.
 
@@ -163,8 +163,8 @@ There are several ways you can relationally link tables:
   M2M relationships, M2As require a junction data table as well as an additional column on the junction table to store
   the related tables' names.
 
-To learn more about how these relationships work conceptually, as well as how they are handled within Directus, see our
-guide on [relationships](/app/data-model/relationships).
+To learn more about how these relationships work conceptually, as well as how they are handled within CaseFusion, see
+our guide on [relationships](/app/data-model/relationships).
 
 ### Database Schemas
 
@@ -348,14 +348,14 @@ Therefore, developers need to build front-ends with polished UIs and custom disp
 human-friendly. However, even for developers with strong SQL database skills, building out APIs and GUIs to build and
 manage a data model is time consuming.
 
-## Data Models in Directus
+## Data Models in CaseFusion
 
 <video title="Settings > Data Model" autoplay playsinline muted loop controls>
 	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/data-model-overview-20220805A.mp4" type="video/mp4" />
 </video>
 
-All relational data model concepts listed above apply in Directus. You get complete, un-opinionated, relational data
-model design and configuration. The difference is that Directus handles all SQL, builds the API, and provides a Data
+All relational data model concepts listed above apply in CaseFusion. You get complete, un-opinionated, relational data
+model design and configuration. The difference is that CaseFusion handles all SQL, builds the API, and provides a Data
 Studio which lets business users work with data in a human-friendly way.
 
 The Data Studio also offers features and functionalities to display and interact with your data intuitively. Once your
@@ -372,10 +372,10 @@ You have the power to do the following things, without a line of code or SQL:
 - Configure how data is interacted with by users in the Data Studio.
 - Translate any and all text in the Data Studio into any language.
 
-Directus replaces traditional relational database jargon with more user-friendly terms and concepts. Please keep in mind
-that while traditional relational database jargon strictly encompasses database concepts, some of the new Directus terms
-encompass these relational database concepts _plus display and interaction logic_. The following sections will introduce
-Directus terms and map them to classic relational database concepts.
+CaseFusion replaces traditional relational database jargon with more user-friendly terms and concepts. Please keep in
+mind that while traditional relational database jargon strictly encompasses database concepts, some of the new
+CaseFusion terms encompass these relational database concepts _plus display and interaction logic_. The following
+sections will introduce CaseFusion terms and map them to classic relational database concepts.
 
 ## Collections
 
@@ -399,8 +399,8 @@ Data Model**. From there, click a collection to open its configurations page. To
 Fields are database columns, but with a twist.
 
 Remember, SQL database columns store pure, raw data. From there, developers build out custom logic and UIs to determine
-how this data is displayed and interacted with. In Directus, fields encompass column configurations, as well as custom
-configuration over how to the data is displayed and interacted with in the Data Studio. Directus also has
+how this data is displayed and interacted with. In CaseFusion, fields encompass column configurations, as well as custom
+configuration over how to the data is displayed and interacted with in the Data Studio. CaseFusion also has
 [alias fields](/user-guide/overview/glossary#alias), which are virtual and do not match directly to a column. To learn
 more, see our guide on [fields](/app/data-model/fields).
 
@@ -422,7 +422,7 @@ You access items from other app modules, such as [Content](/user-guide/content-m
 
 ## Data Type Superset
 
-Directus abstracts type differences between SQL vendors with a
+CaseFusion abstracts type differences between SQL vendors with a
 [Data Type Superset](/user-guide/overview/glossary#data-type-superset).
 
 ## Keys and IDs
@@ -431,8 +431,8 @@ Directus abstracts type differences between SQL vendors with a
 	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/keys-and-ids-20220805A.mp4" type="video/mp4" />
 </video>
 
-Primary keys are called IDs in Directus fairly frequently. When you
-[create a collection](/app/data-model/collections#create-a-collection), you must add an `id` field. Directus supports
+Primary keys are called IDs in CaseFusion fairly frequently. When you
+[create a collection](/app/data-model/collections#create-a-collection), you must add an `id` field. CaseFusion supports
 the following types of IDs:
 
 - **Auto-Incremented Integer** — IDs increment `1`, `2`, `3` up to `2^31-1` or `2,147,483,647`.
@@ -449,5 +449,5 @@ the following types of IDs:
 	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/relationships-20220805A.mp4" type="video/mp4" />
 </video>
 
-Directus supports all standard [types of relationships](#types-of-relationships), as well as a few more of its own
+CaseFusion supports all standard [types of relationships](#types-of-relationships), as well as a few more of its own
 compound types. To learn more, see our guide on [relationships](/app/data-model/relationships).

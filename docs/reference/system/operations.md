@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Operations collection in Directus.
+description: REST and GraphQL API documentation on the Operations collection in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
 
 # Operations
 
-> Operations are the building blocks of Data Flows within Directus.
+> Operations are the building blocks of Data Flows within CaseFusion.
 
 ## The Operation Object
 
@@ -67,7 +67,7 @@ The flow containing this operation. Many-to-one to [flows](/reference/system/flo
 
 ## List Operations
 
-List all operations that exist in Directus.
+List all operations that exist in CaseFusion.
 
 ### Request
 
