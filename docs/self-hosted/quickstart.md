@@ -23,7 +23,7 @@ required environment settings. This means that applications can run reliably and
 to use CaseFusion both locally and in-production.
 
 As soon as there are new releases of CaseFusion, we publish them on
-[Docker Hub](https://hub.docker.com/r/directus/directus).
+[GitHub Container Registry](https://github.com/onainsights/casefusion/pkgs/container/casefusion).
 
 :::
 
@@ -39,7 +39,7 @@ Copy and paste the following and save the file as `docker-compose.yml`:
 version: '3'
 services:
   directus:
-    image: directus/directus:{{ directus.version.full }}
+    image: ghcr.io/onainsights/casefusion:{{ directus.version.full }}
     ports:
       - 8055:8055
     volumes:
@@ -57,7 +57,8 @@ services:
 
 Save the file. Let's step through it:
 
-- This file defines a single Docker container that will use the specified version of the `directus/directus` image.
+- This file defines a single Docker container that will use the specified version of the
+  `ghcr.io/onainsights/casefusion` image.
 - The `ports` list maps internal port `8055` is made available to our machine using the same port number, meaning we can
   access it from our computer's browser.
 - The`volumes` section maps internal `directus/database` and `directus/uploads` to our local file system alongside the

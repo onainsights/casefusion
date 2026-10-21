@@ -68,7 +68,8 @@ git grep -n BUSL -- '*package.json' '*license'   # must be empty (upstream re-ad
 git grep -nE "telemetry.directus.io"    # must be empty
 # Docs pages: on a conflict in docs/**/*.md take upstream's version (`git checkout --theirs`), then re-apply the name:
 node scripts/rebrand-docs.mjs && pnpm exec prettier --write docs   # CI checks with --check
-# docs/self-hosted/config-options.md: keep our Telemetry section (off by default) on a conflict.
+# Docs pages we rewrote, keep ours on a conflict: getting-started/support.md, getting-started/resources.md, the
+# "Initialize a New Project" section of self-hosted/cli.md, the Telemetry section of self-hosted/config-options.md.
 # New docs pages about Directus Cloud or upstream's own contribution process: add them to srcExclude in
 # docs/.vitepress/config.js and drop them from the sidebar.
 

@@ -21,12 +21,9 @@ For server-side CLI, all functionality can be accessed by running `npx directus 
 
 ### Initialize a New Project
 
-```bash
-npm init directus-project <project-folder>
-```
-
-Will setup a new CaseFusion project based on the provided configuration values. The script installs the required
-database driver, creates a `.env` file and installs the required dependencies.
+CaseFusion is not published to npm, so `npm init directus-project` would install a newer upstream release instead. Start
+a new project with the [Docker image](/self-hosted/quickstart) or
+[from source](https://github.com/onainsights/casefusion#running-it).
 
 ### Bootstrap a Project
 

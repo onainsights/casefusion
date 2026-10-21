@@ -12,13 +12,15 @@ import { data as directus } from '../.vitepress/data/directus.data.js';
 ::: info Non-Docker Guides
 
 We only publish and maintain self-hosting guides using Docker as this removes many environment-specific configuration
-problems. If you can't or don't want to use Docker, we also publish an
-[npm package](https://www.npmjs.com/package/directus) without guides.
+problems. If you can't or don't want to use Docker, you can
+[run CaseFusion from source](https://github.com/onainsights/casefusion#running-it).
 
 :::
 
-CaseFusion is published to [Docker Hub](https://hub.docker.com/r/directus/directus) under `directus/directus`. If you're
-just getting started, check out our [Self-Hosting Quickstart](/self-hosted/quickstart.html).
+CaseFusion is published to
+[GitHub Container Registry](https://github.com/onainsights/casefusion/pkgs/container/casefusion) under
+`ghcr.io/onainsights/casefusion`. If you're just getting started, check out our
+[Self-Hosting Quickstart](/self-hosted/quickstart.html).
 
 ## Installing Specific Versions
 
@@ -34,8 +36,8 @@ number in your `services.directus.image` value:
 ```yaml-vue
 services:
   directus:
-    image: directus/directus:latest // [!code --]
-    image: directus/directus:{{ directus.version.full }} // [!code ++]
+    image: ghcr.io/onainsights/casefusion:latest // [!code --]
+    image: ghcr.io/onainsights/casefusion:{{ directus.version.full }} // [!code ++]
 ```
 
 ## Configure Admin User
@@ -101,7 +103,7 @@ services:
     image: redis:6
 
   directus:
-    image: directus/directus:{{ directus.version.full }}
+    image: ghcr.io/onainsights/casefusion:{{ directus.version.full }}
     ports:
       - 8055:8055
     volumes:
@@ -140,8 +142,8 @@ If you are not using the `latest` tag for the CaseFusion image you need to adjus
 increment the tag version number, e.g.:
 
 ```diff-vue
--   image: directus/directus:{{ directus.version.major }}.0.0
-+   image: directus/directus:{{ directus.version.full }}
+-   image: ghcr.io/onainsights/casefusion:{{ directus.version.major }}.0.0
++   image: ghcr.io/onainsights/casefusion:{{ directus.version.full }}
 ```
 
 Then run the following from your docker-compose root:

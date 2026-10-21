@@ -8,8 +8,12 @@
 // - fenced code blocks, inline code, HTML tags and attributes, Vue interpolations, URLs and link targets;
 // - the text of links that point to Directus' own sites;
 // - Directus Cloud, the Directus team or community, Directus Marketplace, Monospace's trademark notices;
-// - lower-case "directus" (package names, CLI commands, table prefixes).
+// - lower-case "directus" (package names, CLI commands, table prefixes);
+// - anything between `<!-- rebrand-docs: off -->` and `<!-- rebrand-docs: on -->` (our own text about upstream).
 // Heading anchors change with the heading text, so "directus" in the #fragment of internal links is updated too.
+//
+// It also points references to upstream's distribution at ours (`references` below), in code blocks too: the Docker
+// image, Docker Hub, the npm package and links into upstream's GitHub repository.
 
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
@@ -26,6 +30,31 @@ const keepAfter =
 
 const directusSite =
 	/directus\.(?:io|cloud|chat|app)|github\.com\/directus|discord\.(?:gg|com)|monospace\.io|youtube\.com/i;
+
+const repo = 'https://github.com/onainsights/casefusion';
+
+// [pattern, replacement], applied in order to every line, code included
+const references = [
+	[
+		/\[Docker Hub\]\(https:\/\/hub\.docker\.com\/r\/directus\/directus\/?\)/g,
+		`[GitHub Container Registry](${repo}/pkgs/container/casefusion)`,
+	],
+	[/https:\/\/hub\.docker\.com\/r\/directus\/directus\/?/g, `${repo}/pkgs/container/casefusion`],
+	[/(?<![\w./-])directus\/directus(?=:|`)/g, 'ghcr.io/onainsights/casefusion'],
+	[/https:\/\/www\.npmjs\.com\/package\/directus(?![\w/-])/g, `${repo}#running-it`],
+	[/https:\/\/github\.com\/directus\/directus\/blob\/main\//g, `${repo}/blob/main/`],
+	[
+		/https:\/\/github\.com\/directus\/directus\/(?:discussions(?:\/new)?|issues(?:\?[^)\s]*)?)(?![\w/])/g,
+		`${repo}/issues`,
+	],
+	[/https:\/\/github\.com\/directus\/directus\/pulls/g, `${repo}/pulls`],
+	[/https:\/\/github\.com\/directus\/directus\/releases(?:\/latest)?/g, `${repo}/releases`],
+	[/https:\/\/github\.com\/directus\/directus\/?(?=[)\s]|$)/g, repo],
+];
+
+function replaceReferences(line) {
+	return references.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), line);
+}
 
 // Spans on a line that are not prose: inline code, links and images (their text is rewritten, their target is not),
 // HTML tags, Vue interpolations, bare URLs.
@@ -90,9 +119,15 @@ export function rebrand(source) {
 	let fence = null;
 	let inFrontmatter = lines[0] === '---';
 	let inProse = false;
+	let off = false;
 
 	return lines
-		.map((line, index) => {
+		.map((source, index) => {
+			if (/<!-- rebrand-docs: off -->/.test(source)) off = true;
+			if (/<!-- rebrand-docs: on -->/.test(source)) off = false;
+			if (off) return source;
+			const line = replaceReferences(source);
+
 			if (inFrontmatter) {
 				if (index > 0 && line === '---') inFrontmatter = false;
 				else if (/^(title|description):/.test(line)) inProse = true;

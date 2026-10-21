@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import { computed } from 'vue';
 
 const { Layout } = DefaultTheme;
 const { page } = useData();
 const contributors = computed(() => page.value.frontmatter['contributors']);
+const route = useRoute();
+const extensionsPage = computed(() => /\/(guides\/)?extensions\//.test(route.path));
 </script>
 
 <template>
@@ -13,11 +15,19 @@ const contributors = computed(() => page.value.frontmatter['contributors']);
 		<template #doc-before>
 			<div class="info custom-block casefusion-notice">
 				<p>
-					CaseFusion is a GPLv3 fork of Directus 10.6.4, maintained by
 					<a href="https://onainsights.io/">Ona Insights</a>
-					. This documentation is adapted from the Directus 10.6.4 documentation. Mentions of Directus Cloud, licensing
-					or the marketplace do not apply to CaseFusion. CaseFusion is not affiliated with Monospace, Inc.; "Directus"
-					is a trademark of Monospace, Inc.
+					maintains CaseFusion, a GPLv3 fork of Directus 10.6.4, and adapted this documentation from the Directus 10.6.4
+					documentation. Mentions of Directus Cloud, licensing or the marketplace do not apply to CaseFusion. CaseFusion
+					is not affiliated with Monospace, Inc.; "Directus" is a trademark of Monospace, Inc.
+				</p>
+			</div>
+			<div v-if="extensionsPage" class="warning custom-block casefusion-notice">
+				<p>
+					The CaseFusion extensions SDK will be made available soon. Until then,
+					<code>create-directus-extension</code>
+					and
+					<code>@directus/extensions-sdk</code>
+					from npm install upstream's tooling, which targets newer Directus releases than CaseFusion.
 				</p>
 			</div>
 		</template>
