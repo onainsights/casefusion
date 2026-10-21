@@ -186,6 +186,29 @@ describe('createApp', async () => {
 		});
 	});
 
+	describe('Query parser', () => {
+		test('Should parse arrays of more than 20 values, as repeated keys or with indices', async () => {
+			const testRoute = '/query-to-test';
+			const mockRouter = Router();
+
+			mockRouter.use(testRoute, (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			const ids = Array.from({ length: 50 }, (_, i) => String(i + 1));
+			const repeated = ids.map((id) => `filter[id][_in]=${id}`).join('&');
+			const indexed = ids.map((id, i) => `filter[id][_in][${i}]=${id}`).join('&');
+
+			for (const query of [repeated, indexed]) {
+				const response = await request(app).get(`${testRoute}?${query}`);
+				expect(response.body).toEqual({ filter: { id: { _in: ids } } });
+			}
+		});
+	});
+
 	describe('Not Found Handler', () => {
 		test('Should return ROUTE_NOT_FOUND error when a route does not exist', async () => {
 			const testRoute = '/this-route-does-not-exist';

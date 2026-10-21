@@ -12,6 +12,7 @@ jobs:
   test:
     name: Postgres
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
 
@@ -21,7 +22,19 @@ jobs:
         run:
           docker compose -f tests/blackbox/docker-compose.yml up postgres auth-saml redis minio -d --quiet-pull --wait
 
+      # The runner prints its results and "Tests complete" but can stay alive afterwards (servers spawned by the suite keep
+      # it open), so wait for that line, stop it, and decide pass/fail from the summary.
       - name: Run tests
-        run: TEST_DB=postgres pnpm run test:blackbox
+        run: |
+          TEST_DB=postgres pnpm run test:blackbox > blackbox.log 2>&1 &
+          runner=$!
+          tail -f blackbox.log &
+          until grep -q "Tests complete" blackbox.log || ! kill -0 "$runner" 2> /dev/null; do sleep 10; done
+          sleep 10
+          kill "$runner" 2> /dev/null || true
+          pkill -f "[v]itest" || true
+          kill %2 2> /dev/null || true
+          grep -q "Tests complete" blackbox.log || { echo "The suite did not finish"; exit 1; }
+          if grep -E "Test Files.*failed" blackbox.log; then exit 1; fi
         env:
           NODE_OPTIONS: --max-old-space-size=6144

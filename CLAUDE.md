@@ -20,8 +20,9 @@ The repository keeps full upstream git history. `upstream` is a fetch-only remot
   `directus`), `sdk/`, `packages/*`, `tests/**`. `docs/` is not a workspace: it is kept as upstream reference text and
   never installed or built.
 - **Backend:** Node.js + TypeScript, Express 4, Knex 2.5, Pino 8, under `api/`
-- **Frontend:** Vue 3.3 + Vite 4 + Pinia + vue-i18n, under `app/`
-- **Tests:** Vitest per workspace; integration suite in `tests/blackbox` (Vitest, Docker DB matrix)
+- **Frontend:** Vue 3.5 + Vite 6 + Pinia + vue-i18n, under `app/`; Ona Insights brand theme (`brand/readme.md`)
+- **Tests:** Vitest per workspace (4.1 in `app/`, 0.31 elsewhere); integration suite in `tests/blackbox` (Vitest, Docker
+  DB matrix; CI workflow `blackbox.yml`, Postgres, run by hand)
 - **Currently pinned:** Node `>=22`, pnpm 9.15, TypeScript 5.2.2. `--no-node-snapshot` is required for `isolated-vm`
   (`casefusion/cli.js` re-launches with it; the api `dev`/`cli` scripts set it).
 
@@ -60,12 +61,24 @@ pnpm --recursive exec tsc --noEmit # typecheck only
 
 ## Known landmines
 
-- **`ldapjs` 2.3.3** (`api/src/auth/drivers/ldap.ts`) is decommissioned upstream; replace with `ldapts`.
-- **`mapbox-gl` 1.13.3** is the last BSD-licensed Mapbox release. Never bump to 2.x (proprietary, GPL incompatible).
-  Migration target is `maplibre-gl`.
-- **`samlify` 2.8.10** has CVE-2024-45389 (signature wrapping); bump to 2.10+.
-- **`@aws-sdk/abort-controller`** is deprecated; use native `AbortController` in `packages/storage-driver-s3`.
-- **Telemetry** (`api/src/utils/telemetry.ts`) and `packages/update-check` call Monospace services; they must default
-  off.
+Resolved in Phase E (see `UPGRADE-PLAN.md`); do not undo them:
+
+- **LDAP** uses `ldapts` 8.1.8 (`api/src/auth/drivers/ldap.ts`). 8.2+ publishes `catalog:` devDependency specs that
+  break `pnpm deploy` (the Docker build); stay on 8.1.x until pnpm is upgraded.
+- **Maps** use `maplibre-gl`. Never bring back `mapbox-gl` 2+ (proprietary, GPL incompatible). Mapbox-specific basemaps
+  are not supported (no client uses a Mapbox token).
+- **SAML** uses `samlify` 2.15, which checks the assertion's `Recipient` against the SP's ACS URL. SHA-1 signed
+  assertions fail on hosts whose Node uses a system OpenSSL that forbids SHA-1 (Fedora's default crypto policy); the
+  Docker image and the official Node builds are fine.
+- **Telemetry** (`api/src/utils/telemetry.ts`) and the update check call Monospace services; they must default off.
+- **Production audit is blocking** in CI at high and above. An accepted advisory goes in `package.json`
+  (`pnpm.auditConfig.ignoreGhsas`) with its reason in `UPGRADE-PLAN.md`.
+
+Still true:
+
 - `isolated-vm` (Run Script operation, `api/src/operations/exec/`) is a native module: it must be rebuilt for each Node
   major, and Node 20+ must run with `--no-node-snapshot`.
+- Per-package tests outside `app/` still run Vitest 0.31 (development tooling only; report-only in the audit).
+- The blackbox runner (`pnpm test:blackbox`) can stay alive after printing its results; stop it once "Tests complete"
+  appears. Run it on an otherwise idle machine: under load, timing-sensitive tests (health, rate limits, asset
+  transforms, WebSockets) fail.

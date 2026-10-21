@@ -105,7 +105,10 @@ export default async function createApp(): Promise<express.Application> {
 
 	app.disable('x-powered-by');
 	app.set('trust proxy', env['IP_TRUST_PROXY']);
-	app.set('query parser', (str: string) => qs.parse(str, { depth: 10 }));
+	// CaseFusion: qs 6.14+ applies arrayLimit (default 20) to repeated keys too, which turned `filter[id][_in]=1&...`
+	// with more than 20 values into an object that matches nothing. Allow arrays up to qs' own parameter limit (1000), as
+	// qs 6.11 did for repeated keys.
+	app.set('query parser', (str: string) => qs.parse(str, { depth: 10, arrayLimit: 1000 }));
 
 	if (env['PRESSURE_LIMITER_ENABLED']) {
 		const sampleInterval = Number(env['PRESSURE_LIMITER_SAMPLE_INTERVAL']);

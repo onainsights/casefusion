@@ -169,6 +169,22 @@ need Node 22 and remove most of the inherited advisories.
   - The full audit (app bundle, build and test tooling) stays report-only. Status 2026-10-21: production dependencies 9
     distinct advisories (0 critical, 1 high accepted, 7 moderate, 1 low); app browser bundle 0 critical/high; the rest
     is development tooling (Vitest 0.31 in per-package tests, `histoire`, `swagger-ui-watcher`, ...).
+- **Phase F working-version gate (done 2026-10-21).** The Docker image of `main` on PostGIS 16 passed a scripted
+  25-point check (bootstrap, login, data model, REST and GraphQL CRUD, geometry, file upload and thumbnail, Run Script
+  flow, field-level permissions on a restricted role, anonymous access blocked, branding, telemetry off), also with no
+  internet access; the admin app contacts only the server and OpenStreetMap tiles. The upstream blackbox suite against
+  Postgres found two regressions from Phase E, both fixed:
+  - **Query arrays over 20 values.** `qs` 6.14+ (pulled in with Express 4.22) applies its `arrayLimit` of 20 to repeated
+    keys, so `filter[id][_in]=1&filter[id][_in]=2&...` with more than 20 values became an object and the filter silently
+    matched nothing. `api/src/app.ts` now parses with `arrayLimit: 1000` (qs' own parameter limit, so no new exposure);
+    unit test in `api/src/app.test.ts`. The admin app was not affected (it sends filters as JSON).
+  - **SAML test fixture.** `samlify` 2.10+ checks the assertion's `Recipient` against the SP's ACS URL; the fixture's SP
+    metadata declared a different URL from the one the test IdP posts to. Fixed in `tests/blackbox/common/config.ts`.
+    SHA-1 signed assertions (the test IdP uses RSA-SHA1) also fail on hosts whose Node uses a system OpenSSL that
+    forbids SHA-1, such as Fedora's; the Docker image and official Node builds accept them.
+  - Everything else that failed locally (health `warn`, rate limits, asset transforms, WebSockets) was load on the test
+    machine and passed on GitHub's runner. The runner process can stay alive after printing its results; `blackbox.yml`
+    now stops it and reads the summary.
 
 ## Verification gate
 
@@ -187,5 +203,5 @@ need Node 22 and remove most of the inherited advisories.
 
 1. Drop optional DB drivers we will never support (`tedious`/MSSQL, Oracle, CockroachDB) to shrink audit surface?
    Changes behaviour for anyone using them; default: keep.
-2. Storybook: keep (and bump to 8) or remove.
+2. ~~Storybook: keep (and bump to 8) or remove.~~ Removed in E5.
 3. ESLint 9 flat config: only if ESLint 8 fails on Node 22.
