@@ -86,7 +86,7 @@ options: [
 - `collection` - the interface system-collection which renders a searchable dropdown for all collections. This field
   will also accept a manually entered string or a variable from the Flow.
 - `comment_key` - field where the ID of the item is entered. This will accept a string, guid, int or a variable from the
-  Flow. This must be an existing record in Directus.
+  Flow. This must be an existing record in CaseFusion.
 - `comment` - a simple input-multiline field (textarea) to match how comments are made. Variables from the Flow can be
   mixed with standard text.
 
@@ -203,16 +203,16 @@ Build the operation with the latest changes.
 npm run build
 ```
 
-## Add Operation to Directus
+## Add Operation to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-operation-add-comment`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -223,7 +223,7 @@ code has no negative effect.
 
 ## Use the Operation
 
-In the Directus Data Studio, open the Flows section in Settings. Create a new flow with an event trigger such as
+In the CaseFusion Data Studio, open the Flows section in Settings. Create a new flow with an event trigger such as
 `item.update`. Select the collection(s) to use.
 
 Add a new step (operation) in the flow by clicking the tick/plus on the card. This can be at any point in the workflow.
@@ -238,9 +238,9 @@ the logs in the right side toolbar.
 ## Summary
 
 With this operation, a comment will be created with the pre-configured settings on all submitted keys and respond with
-an array of activity IDs for the comments. This operation requires setting up fields on the front-end and using Directus
-services on the API side to complete the transaction. Now that you know how to interact with these services, you can
-investigate other ways to extend your operations.
+an array of activity IDs for the comments. This operation requires setting up fields on the front-end and using
+CaseFusion services on the API side to complete the transaction. Now that you know how to interact with these services,
+you can investigate other ways to extend your operations.
 
 ## Complete Code
 

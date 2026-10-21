@@ -26,7 +26,7 @@ export default defineLoader({
 			{
 				title: 'Framework Guides',
 				indexPath: 'frameworks',
-				summary: 'Combine Directus with your favorite framework to create dynamic and efficient web applications.',
+				summary: 'Combine CaseFusion with your favorite framework to create dynamic and efficient web applications.',
 				cols: 2,
 				blocks: [
 					{
@@ -48,7 +48,7 @@ export default defineLoader({
 			{
 				title: 'Use Case Guides',
 				indexPath: 'use-cases',
-				summary: 'Use Directus features to build various use cases in one project.',
+				summary: 'Use CaseFusion features to build various use cases in one project.',
 				cols: 1,
 				blocks: [
 					{
@@ -121,7 +121,7 @@ export default defineLoader({
 			},
 			{
 				title: 'Extensions Guides',
-				summary: 'Learn how to extend Directus with various custom extension types.',
+				summary: 'Learn how to extend CaseFusion with various custom extension types.',
 				indexPath: 'extensions',
 				cols: 2,
 				blocks: [
@@ -229,7 +229,7 @@ export default defineLoader({
 			},
 			{
 				title: 'Administration Guides',
-				summary: 'Learn key skills needed to successfully administer Directus in a real-world context.',
+				summary: 'Learn key skills needed to successfully administer CaseFusion in a real-world context.',
 				indexPath: 'administration',
 				cols: 1,
 				blocks: [

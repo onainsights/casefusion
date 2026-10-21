@@ -1,18 +1,18 @@
 ---
 contributors: Kevin Lewis, Tim de Heiden
-description: Learn about all of the ways to control authentication with the Directus SDK
+description: Learn about all of the ways to control authentication with the CaseFusion SDK
 ---
 
-# Directus SDK Authentication
+# CaseFusion SDK Authentication
 
-The Directus SDK provides multiple ways to [authenticate your requests](/reference/authentication), by either generating
-access and refresh tokens through login, or by setting a static token.
+The CaseFusion SDK provides multiple ways to [authenticate your requests](/reference/authentication), by either
+generating access and refresh tokens through login, or by setting a static token.
 
 ## Generate, Use, and Refresh Access Tokens
 
 ### Using the `authentication()` Composable
 
-The `authentication()` composable provides the Directus client with new methods related to authentication. It also
+The `authentication()` composable provides the CaseFusion client with new methods related to authentication. It also
 manages token storage and refreshing on your behalf.
 
 ```js
@@ -56,14 +56,14 @@ const client = createDirectus('http://directus.example.com').with(realtime());
 client.sendMessage({ type: 'auth', email: email, password: password });
 ```
 
-When using Directus Realtime's [default 'handshake' authentication strategy](/guides/real-time/authentication), the
+When using CaseFusion Realtime's [default 'handshake' authentication strategy](/guides/real-time/authentication), the
 first message sent must include authentication details. This example uses the `email` & `password` combination, but
 tokens can be used as well (see
 [Authenticate Realtime Connection with a Token](#authenticate-realtime-connection-with-a-token)).
 
 ## Set a Token
 
-### Create a Directus Client with a Token
+### Create a CaseFusion Client with a Token
 
 ```js
 import { createDirectus, staticToken, rest } from '@directus/sdk';
@@ -163,7 +163,7 @@ credentials in the `localStorage` of browsers.
 
 ## Cross-Domain Cookies
 
-A common situation is for the Directus backend and frontend to be hosted on different domains, requiring extra
+A common situation is for the CaseFusion backend and frontend to be hosted on different domains, requiring extra
 configuration to make sure cookies are passed correctly. Usually this is only required for authentication with cookies
 but this can be set globally for each composable that does requests. This will then apply to all requests made using
 that composable:

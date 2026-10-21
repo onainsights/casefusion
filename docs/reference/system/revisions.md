@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Revisions collection in Directus.
+description: REST and GraphQL API documentation on the Revisions collection in CaseFusion.
 readTime: 2 min read
 pageClass: page-reference
 ---
 
 # Revisions
 
-> Revisions are individual changes to items made. Directus keeps track of changes made, so you're able to revert to a
+> Revisions are individual changes to items made. CaseFusion keeps track of changes made, so you're able to revert to a
 > previous state at will. [Learn more about Revisions](/user-guide/overview/glossary#revisions).
 
 ## The Revision Object
@@ -50,7 +50,7 @@ Parent revision that triggered this revision. Many-to-one to revisions (recursiv
 
 ## List revisions
 
-List all revisions that exist in Directus.
+List all revisions that exist in CaseFusion.
 
 ::: tip Permissions
 

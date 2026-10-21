@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build extension bundles in Directus.
+description: A guide on how to build extension bundles in CaseFusion.
 readTime: 5 min read
 ---
 
@@ -11,8 +11,8 @@ readTime: 5 min read
 
 ## Create a Bundle
 
-When [scaffolding your Directus extension](/extensions/creating-extensions#scaffolding-your-directus-extension), select
-the `bundle` type. This will create a new empty bundle.
+When [scaffolding your CaseFusion extension](/extensions/creating-extensions#scaffolding-your-casefusion-extension),
+select the `bundle` type. This will create a new empty bundle.
 
 ## Entries
 

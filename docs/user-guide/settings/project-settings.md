@@ -68,7 +68,7 @@ To manage your project settings programmatically, see our API documentation on [
 ::: tip Browser FavIcon & Title
 
 The Project Color is also used to set a dynamic FavIcon and the Project Name is used in the browser's page title, making
-it easier to identify different Directus projects.
+it easier to identify different CaseFusion projects.
 
 :::
 
@@ -87,7 +87,7 @@ it easier to identify different Directus projects.
     - **Name** — Sets the title of the module link, also shown in a tooltip on hover.
     - **Icon** — Selects an icon for the module button.
     - **URL** — Should start with a `/` for links within the
-      [Directus Data Studio](/user-guide/overview/data-studio-app).
+      [CaseFusion Data Studio](/user-guide/overview/data-studio-app).
 
 ## Security
 
@@ -136,7 +136,7 @@ To learn more, please see the API guide on [transformation presets](/reference/f
 
 ## Mapping
 
-![How to Configure Mapping in Directus](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/mapping-project-settings-20220815A.webp)
+![How to Configure Mapping in CaseFusion](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/mapping-project-settings-20220815A.webp)
 
 - **Mapbox Access Token** — Create a [Mapbox Access Token](https://docs.mapbox.com/help/glossary/access-token) and enter
   it here to improve the platform's mapping experience.

@@ -1,5 +1,5 @@
 {
-	"extends": "@directus/tsconfig/node18-esm",
+	"extends": "../packages/tsconfig/node18-esm/tsconfig.json",
 	"compilerOptions": {
 		"declaration": false
 	},

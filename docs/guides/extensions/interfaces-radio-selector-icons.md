@@ -157,7 +157,7 @@ select-icon, which provides a searchable dropdown of the icon library.
 
 ## Work With Images
 
-When working with images inside Directus, you need an access token. Rather than use a static token, create a new file
+When working with images inside CaseFusion, you need an access token. Rather than use a static token, create a new file
 called `use-directus-token.js` and use the following script that fetches the current user’s access token:
 
 ```js
@@ -237,8 +237,8 @@ props: {
   they created this field.
 - `width` is either half or full. Use this to style the structure of the interface when using a smaller space.
 
-Directly after the `props`, inject the api which is made available by Directus and add the following functions to a new
-section called methods.
+Directly after the `props`, inject the api which is made available by CaseFusion and add the following functions to a
+new section called methods.
 
 ```js
 inject: ['api'],
@@ -267,7 +267,7 @@ methods: {
 - `selectOption` will “emit” the value of the selected option into the input and allow the value to be saved to the
   database. In short, this allows the clicked option to be saved.
 - `isChecked` will highlight the previously selected option when opening an existing record.
-- `renderImage` uses the Directus api and the current user token to fetch the image.
+- `renderImage` uses the CaseFusion api and the current user token to fetch the image.
 - `handleChange` is a fallback if the value is changed by another interface.
 
 ### Create the Template
@@ -462,16 +462,16 @@ Build the interface with the latest changes.
 npm run build
 ```
 
-## Add Interface to Directus
+## Add Interface to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-interface-custom-radio-buttons`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 

@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Settings collection in Directus.
+description: REST and GraphQL API documentation on the Settings collection in CaseFusion.
 readTime: 3 min read
 pageClass: page-reference
 ---

@@ -1,19 +1,19 @@
 ---
-description: How to get support for your Directus project.
+description: How to get support for your CaseFusion project.
 readTime: 4 min read
 ---
 
 # Help & Support
 
-> If you have questions while working with Directus, there are many resources to help you get up-and-running smoothly.
+> If you have questions while working with CaseFusion, there are many resources to help you get up-and-running smoothly.
 
 ## Troubleshooting Steps
 
-If you're experiencing issues or think you have found a problem in Directus, be sure to follow these steps before
+If you're experiencing issues or think you have found a problem in CaseFusion, be sure to follow these steps before
 [Reporting a Bug](/contributing/introduction#bug-reporting):
 
 1. Ensure your server and database meet the [minimum requirements](/self-hosted/docker-guide#supported-databases).
-2. Ensure you’re on the [latest version](https://github.com/directus/directus/releases/latest) of Directus.
+2. Ensure you’re on the [latest version](https://github.com/directus/directus/releases/latest) of CaseFusion.
 3. Stop `CTRL+C` and restart the server `npx directus start`.
 4. Run the database migration script: `directus database migrate:latest`\
    _Note: backup your database first._
@@ -39,14 +39,14 @@ help channels, be considerate, and remember that you are getting free help from 
 
 ::: warning No Guaranteed Response Time
 
-While the Directus Core Team plays an active and engaged role in community discussions, there is no guaranteed response
-time for Community Support.
+While the CaseFusion Core Team plays an active and engaged role in community discussions, there is no guaranteed
+response time for Community Support.
 
 :::
 
 ### Basic and Premium Support
 
-Basic and Premium Support offer direct communication with the Directus Core Team. Basic support is included on all
+Basic and Premium Support offer direct communication with the CaseFusion Core Team. Basic support is included on all
 Enterprise Projects, and Premium Support adds 24/7 response times for critical software issues only.
 
 Cloud customers and Self-Hosted users interested in learning more about our monthly retainer agreements should contact
@@ -56,7 +56,7 @@ us at [support@directus.io](mailto:support@directus.io).
 
 ### Commissioned Features
 
-If you need a specific feature added to Directus faster than the normal development timeline,
+If you need a specific feature added to CaseFusion faster than the normal development timeline,
 [reach out to us](https://directus.io/contact) for a quote. Our parent agency will often help subsidize the cost of
 developing new features if they pass our 80/20 Rule (supports 80% of our user's common use cases) and can be merged into
 the core codebase. Other custom/proprietary development will be built bespoke within our robust extension system.
@@ -68,20 +68,20 @@ resolved sooner, [reach out to us](https://directus.io/contact) for a quote.
 
 ## Frequently Asked Questions
 
-### Does Directus support Mongo/NoSQL?
+### Does CaseFusion support Mongo/NoSQL?
 
-Not currently. Directus has been built specifically for wrapping _relational_ databases. While we could force Mongo to
+Not currently. CaseFusion has been built specifically for wrapping _relational_ databases. While we could force Mongo to
 use tables, columns, and rows via Mongoose object modeling, that approach of "faking" a relational structure in a
 non-structured environment like Mongo doesn't make a lot of sense. We do realize many users are interested in this
 feature, and will continue to explore its possibility.
 
 ### Why haven't you added this feature, or fixed that issue yet?
 
-Directus is an open-source project, maintained by a small core team and community contributors who have limited time and
-resources.
+CaseFusion is an open-source project, maintained by a small core team and community contributors who have limited time
+and resources.
 
 Our platform is feature-rich, however we strictly adhere to our
-[80/20 Rule](/contributing/introduction#feature-requests) to avoid a messy/bloated codebase. Directus is also quite
+[80/20 Rule](/contributing/introduction#feature-requests) to avoid a messy/bloated codebase. CaseFusion is also quite
 stable, however new issues still arise, some of which may be triaged with a lower prioritization.
 
 If you need, you can contact us about [sponsoring expedited fixes](#expedited-fixes) or

@@ -6,21 +6,21 @@ contributors: Tim Butterfield, Kevin Lewis
 # Create A Panel To Display External API Data With Vonage
 
 Panels are used in dashboards as part of the Insights module, and typically allow users to better-understand data held
-in their Directus collections. In this guide, you will instead fetch data from an external API and display it in a table
-as part of a panel.
+in their CaseFusion collections. In this guide, you will instead fetch data from an external API and display it in a
+table as part of a panel.
 
 <img src="https://marketing.directus.app/assets/31ac7437-99ed-44fe-9b75-b21c92198fda.png" alt="Table with header Messages shows several items with status, sent delative date, a recipient ID, and a provider">
 
-Panels can only talk to internal Directus services, and can't reliably make external web requests because browser
+Panels can only talk to internal CaseFusion services, and can't reliably make external web requests because browser
 security protections prevent these cross-origin requests from being made. To create a panel that can interact with
 external APIs, this guide will create a bundle of an endpoint (that can make external requests) and a panel (that uses
 the endpoint).
 
 ## Before You Start
 
-You will need a Directus project - check out our [quickstart guide](https://docs.directus.io/getting-started/quickstart)
-if you don't already have one. You will also need a
-[Vonage Developer API account](https://developer.vonage.com/sign-up), taking note of your API Key and Secret.
+You will need a CaseFusion project - check out our
+[quickstart guide](https://docs.directus.io/getting-started/quickstart) if you don't already have one. You will also
+need a [Vonage Developer API account](https://developer.vonage.com/sign-up), taking note of your API Key and Secret.
 
 ## Create Bundle
 
@@ -436,16 +436,16 @@ Both extensions are now complete. Build the extensions with the latest changes f
 npm run build
 ```
 
-## Add Extensions to Directus
+## Add Extensions to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus extensions `directory`. Make sure the directory with your bundle has a name that starts with
-`directus-extension`. In this case, you may choose to use `directus-extension-bundle-vonage-activity`.
+directory into the CaseFusion extensions `directory`. Make sure the directory with your bundle has a name that starts
+with `directus-extension`. In this case, you may choose to use `directus-extension-bundle-vonage-activity`.
 
-Restart Directus to load the extensions.
+Restart CaseFusion to load the extensions.
 
 :::info Required files
 

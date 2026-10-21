@@ -54,7 +54,7 @@ the database.
 
 For example, let's say you configure the scope to be `item.create`.
 
-- A request to create an item is sent to Directus.
+- A request to create an item is sent to CaseFusion.
 - The create item event halts.
 - The event's `payload` is copied into the `$trigger` of the flow.
 - The flow runs.
@@ -86,7 +86,7 @@ desired.
 
 For example, let's imagine once more that you configure the scope to be `item.create`.
 
-- A request to create an item is sent to Directus.
+- A request to create an item is sent to CaseFusion.
 - The create item event is transacted.
 - The event's `payload` is copied into the `$trigger` of the flow.
 - The flow runs.

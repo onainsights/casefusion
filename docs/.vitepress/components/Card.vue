@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { sitePath } from '../lib/site-path';
 
 const props = withDefaults(
 	defineProps<{
@@ -22,9 +23,9 @@ const iconIsImage = computed(() => props.icon.startsWith('/'));
 </script>
 
 <template>
-	<component :is="tagType" :href="url" class="card" :class="{ margin: addMargin }">
+	<component :is="tagType" :href="sitePath(url)" class="card" :class="{ margin: addMargin }">
 		<div v-if="icon" class="icon">
-			<img v-if="iconIsImage" :src="icon" alt="" />
+			<img v-if="iconIsImage" :src="sitePath(icon)" alt="" />
 			<span v-else mi>{{ icon }}</span>
 		</div>
 

@@ -1,11 +1,11 @@
 ---
-description: Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards.
+description: Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards.
 readTime: 9 min read
 ---
 
 # Panels
 
-> Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards. Regardless of your
+> Insights is a Module in CaseFusion that allows rapid, no-code build-out of analytics dashboards. Regardless of your
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
@@ -15,7 +15,7 @@ readTime: 9 min read
 
 ## Panels Overview
 
-![Directus Dashboard Panels](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panels-overview-20220216A.webp)
+![CaseFusion Dashboard Panels](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panels-overview-20220216A.webp)
 
 Panels are the building-blocks we add onto Insights dashboards to create, save and display data analytics. There are
 five types of Panels, and each one provides some unique analytics tool.

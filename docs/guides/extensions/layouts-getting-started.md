@@ -38,15 +38,15 @@ the internal API and render them on the page.
 
 ## Access Data Using Internal APIs
 
-To start interacting with Directus, you will need to import various functions that will bridge the gap between the empty
-page and the data.
+To start interacting with CaseFusion, you will need to import various functions that will bridge the gap between the
+empty page and the data.
 
 Open the `index.js` file and change the id to a unique value. This is usually your layout name such as example-layout.
 Then, change the `name` of the layout. This is visible in the list of layout options when changing a collection’s
 layout. If you want to change the icon, use the material-icons library to find the name of the icon and replace it in
 this file.
 
-Import the `useItems` and `useCollection` stores to this file by importing the functions from the Directus Extensions
+Import the `useItems` and `useCollection` stores to this file by importing the functions from the CaseFusion Extensions
 SDK. Add the following line underneath the ref import from vue and include `toRefs` from vue.
 
 ```js
@@ -55,7 +55,7 @@ import { useItems, useCollection } from '@directus/extensions-sdk';
 ```
 
 In the `setup()` method, copy and paste the following code which defines all the constants needed to fetch the items for
-the current collection and uses the built-in search and filters from the Directus UI.
+the current collection and uses the built-in search and filters from the CaseFusion UI.
 
 ```js
 const { collection, filter, search } = toRefs(props);
@@ -158,16 +158,16 @@ Build the interface with the latest changes.
 npm run build
 ```
 
-## Add Layout To Directus
+## Add Layout To CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-layout-example`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -178,7 +178,7 @@ code has no negative effect.
 
 ## Use The Layout
 
-To use your new layout in Directus, you will need a table that already contains the fields `id`, `name` and `email`:
+To use your new layout in CaseFusion, you will need a table that already contains the fields `id`, `name` and `email`:
 
 1. Open a collection
 2. If the right side menu is closed, click on the Layout Options icon.

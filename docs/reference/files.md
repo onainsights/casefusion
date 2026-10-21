@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation for file access and management in Directus.
+description: REST and GraphQL API documentation for file access and management in CaseFusion.
 readTime: 10 min read
 pageClass: page-reference
 ---
@@ -51,8 +51,8 @@ This optional filename is also used in the Content-Disposition header when the `
 ::: warning Direct File Access
 
 While you may _technically_ be able to expose your storage adapters root file system and access your raw files through
-there, it is recommended that you always use the Directus API. This is the only way that you can take advantage of file
-permissions and other built-in features.
+there, it is recommended that you always use the CaseFusion API. This is the only way that you can take advantage of
+file permissions and other built-in features.
 
 :::
 
@@ -105,7 +105,7 @@ grained control:
 
 ### Advanced Transformations
 
-For even more advanced control over the file generation, Directus exposes
+For even more advanced control over the file generation, CaseFusion exposes
 [the full `sharp` API](https://sharp.pixelplumbing.com/api-operation) through the `transforms` query parameter. This
 parameter accepts a two-dimensional array with the format `[Operation, ...arguments]`.
 
@@ -288,7 +288,7 @@ Location of the file.
 Tags for the file.
 
 `metadata` **object**\
-Any additional metadata Directus was able to scrape from the file. For images, this includes EXIF, IPTC, and ICC information.
+Any additional metadata CaseFusion was able to scrape from the file. For images, this includes EXIF, IPTC, and ICC information.
 
 ```json
 {
@@ -329,7 +329,7 @@ Any additional metadata Directus was able to scrape from the file. For images, t
 
 ## List Files
 
-List all files that exist in Directus.
+List all files that exist in CaseFusion.
 
 ### Request
 

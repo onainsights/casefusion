@@ -1,18 +1,18 @@
 ---
-description: A guide on how to build custom Modules in Directus.
+description: A guide on how to build custom Modules in CaseFusion.
 readTime: 5 min read
 ---
 
 # Custom Modules <small></small>
 
-> Custom Modules are completely open-ended components that allow you to create new experiences within the Directus
+> Custom Modules are completely open-ended components that allow you to create new experiences within the CaseFusion
 > platform. They are developed using Vue.js. [Learn more about Modules](/user-guide/overview/glossary#modules).
 
 ## Extension Entrypoint
 
 The entrypoint of your module is the `index` file inside the `src/` folder of your extension package. It exports a
 configuration object with options to configure the behavior of your module. When loading your module, this object is
-imported by the Directus host.
+imported by the CaseFusion host.
 
 Example of an entrypoint:
 
@@ -37,7 +37,7 @@ export default {
 - `id` — The unique key for this module. It is good practice to scope proprietary modules with an author prefix.
 - `name` — The human-readable name for this module.
 - `icon` — An icon name from the [material icon set](/user-guide/overview/glossary#material-icons), or the extended list
-  of Directus custom icons.
+  of CaseFusion custom icons.
 - `color` — A color associated with the module.
 - `routes` — Details the routes in your module. The routes are registered as nested routes with the module's `id`
   serving as the base path.
@@ -80,7 +80,7 @@ export default {};
 ```
 
 A route component provides a blank canvas for creating anything you need. You can use the globally registered
-`private-view` component to get access to Directus' page structure consisting of the module bar, the navigation, the
+`private-view` component to get access to CaseFusion' page structure consisting of the module bar, the navigation, the
 sidebar, the header and the main content area.
 
 ::: warning Enable the Module
@@ -91,7 +91,7 @@ Before a module appears in the module bar, it has to be enabled inside the proje
 
 ::: warning Vue Version
 
-The Directus App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
+The CaseFusion App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
 
 :::
 

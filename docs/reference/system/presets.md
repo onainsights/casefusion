@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Presets collection in Directus.
+description: REST and GraphQL API documentation on the Presets collection in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
 
 # Preset
 
-> Presets hold the preferences of individual users of the platform. This allows Directus to show and maintain custom
+> Presets hold the preferences of individual users of the platform. This allows CaseFusion to show and maintain custom
 > item listings and bookmarks for users of the app. [Learn more about Presets](/user-guide/overview/glossary#presets).
 
 ## The Preset Object
@@ -73,7 +73,7 @@ The options used by the layout. This structure is based on the used layout.
 
 ## List Presets
 
-List all presets that exist in Directus.
+List all presets that exist in CaseFusion.
 
 ::: tip Permissions
 

@@ -11,7 +11,7 @@ const { page } = useData();
 		<!-- eslint-disable-next-line vue/no-v-html -->
 		<p v-if="page.frontmatter['description']" v-html="marked(page.frontmatter['description'])" />
 	</blockquote>
-	<Meta title-left="Author" title-right="Directus Version">
+	<Meta title-left="Author" title-right="Version">
 		<template #left>
 			<div class="data">{{ page.frontmatter['author'] }}</div>
 		</template>

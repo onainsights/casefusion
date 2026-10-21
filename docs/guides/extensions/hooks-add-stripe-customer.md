@@ -6,7 +6,7 @@ contributors: Tim Butterfield, Kevin Lewis
 # Use Hooks to Create Stripe Customers
 
 Hooks allow you to trigger your own code under certain conditions. This tutorial will show you how to create a Stripe
-account when an item is created in Directus and write the customer ID back to the record.
+account when an item is created in CaseFusion and write the customer ID back to the record.
 
 ## Install Dependencies
 
@@ -31,7 +31,7 @@ npm install stripe
 
 Create a collection called Customers with a field called `stripe_id` and the following required fields: `first_name`,
 `last_name` and `email_address` (unique). This hook will be used to create a new customer in Stripe whenever a new
-customer is created in Directus.
+customer is created in CaseFusion.
 
 Open the `index.js` file inside the src directory. Delete all the existing code and start with the import of the
 `stripe` package:
@@ -47,7 +47,7 @@ environment variables and `services` to write back to the record:
 export default ({ action }, { env, services }) => {};
 ```
 
-Inside the function, define the internal `ItemsService` Directus API function from the `services` scope. Also include
+Inside the function, define the internal `ItemsService` CaseFusion API function from the `services` scope. Also include
 the `MailService` to send yourself an email if the Stripe API fails.
 
 ```js
@@ -77,7 +77,7 @@ Instantiate Stripe with the secret token:
 const stripe = new Stripe(env.STRIPE_TOKEN);
 ```
 
-`env` looks inside the Directus environment variables for `STRIPE_TOKEN`. In order to start using this hook, this
+`env` looks inside the CaseFusion environment variables for `STRIPE_TOKEN`. In order to start using this hook, this
 variable must be added to your `.env` file. This can be found in the developers area on your Stripe dashboard.
 
 Create a new customer with the customer's name and email as the input values.
@@ -132,18 +132,18 @@ Build the hook with the latest changes.
 npm run build
 ```
 
-## Add Hook to Directus
+## Add Hook to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-hook-create-stripe-customer`.
 
 Ensure the `.env` file has `STRIPE_TOKEN` variable.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -155,7 +155,7 @@ code has no negative effect.
 ## Summary
 
 With Stripe now integrated in this hook, whenever a new customer is created, this hook will create a customer in Stripe
-and write back the customer ID to Directus. Now that you know how to interact with the Stripe API, you can investigate
+and write back the customer ID to CaseFusion. Now that you know how to interact with the Stripe API, you can investigate
 other endpoints that Stripe has to offer.
 
 ## Complete Code

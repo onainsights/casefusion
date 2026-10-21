@@ -1,58 +1,49 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress';
 import Divider from '../Divider.vue';
 import SocialIcon from './SocialIcon.vue';
-import Logo from './icons/Logo.vue';
-
-const currentYear = new Date().getFullYear();
 </script>
 
 <template>
 	<footer>
 		<div class="container">
 			<div class="content">
-				<Logo class="logo" />
+				<img class="logo" :src="withBase('/logo-light.svg')" alt="CaseFusion" />
 
 				<ul class="social">
 					<li>
-						<SocialIcon url="https://www.linkedin.com/company/directus-io" icon="linkedin" />
-					</li>
-					<li>
-						<SocialIcon url="https://hub.docker.com/r/directus/directus" icon="docker" />
-					</li>
-					<li>
-						<SocialIcon url="https://www.npmjs.com/package/directus" icon="npm" />
-					</li>
-					<li>
-						<SocialIcon url="https://www.youtube.com/c/DirectusVideos" icon="youtube" />
-					</li>
-					<li>
-						<SocialIcon url="https://directus.chat" icon="discord" />
-					</li>
-					<li>
-						<SocialIcon url="https://twitter.com/directus" icon="twitter" />
-					</li>
-					<li>
-						<SocialIcon url="https://github.com/directus" icon="github" />
+						<SocialIcon url="https://github.com/onainsights/casefusion" icon="github" />
 					</li>
 				</ul>
 
 				<ul class="links">
 					<li>
-						<a href="https://github.com/directus/directus/blob/main/license" target="_blank" rel="noreferrer noopener">
+						<a
+							href="https://github.com/onainsights/casefusion/blob/main/license"
+							target="_blank"
+							rel="noreferrer noopener"
+						>
 							License
 						</a>
 					</li>
-					<li><a href="https://directus.io/terms/" target="_blank" rel="noreferrer noopener">Terms</a></li>
-					<li><a href="https://directus.io/privacy/" target="_blank" rel="noreferrer noopener">Privacy</a></li>
+					<li>
+						<a
+							href="https://github.com/onainsights/casefusion/blob/main/LICENSE-NOTICE.md"
+							target="_blank"
+							rel="noreferrer noopener"
+						>
+							License notice
+						</a>
+					</li>
+					<li><a href="https://onainsights.io/" target="_blank" rel="noreferrer noopener">Ona Insights</a></li>
 				</ul>
 			</div>
 
 			<Divider />
 
 			<small>
-				<a href="https://monospace.io/" target="_blank" rel="noreferrer noopener">
-					&copy; {{ currentYear }} Monospace Inc
-				</a>
+				Original documentation &copy; 2023 Monospace, Inc.; modifications &copy; 2026 Ona Insights. GPLv3. CaseFusion is
+				not affiliated with Monospace, Inc.; "Directus" is a trademark of Monospace, Inc.
 			</small>
 		</div>
 	</footer>
@@ -81,6 +72,10 @@ a {
 	justify-content: space-between;
 	gap: 12px;
 	max-width: 500px;
+}
+
+.content .logo {
+	height: 32px;
 }
 
 .content .logo,

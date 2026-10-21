@@ -57,7 +57,7 @@ BIGINT when using incremental IDs, or this could be GUID which is stored as a `S
 `localTypes` is unique to relational fields. Some interfaces can have `o2m` and `m2o`. This interface can only be used
 for `m2o`. `group` will allow us to add this interface alongside other relational interfaces.
 
-Setting `relational: true` will force Directus to only offer this interface on a relational field. Finally,
+Setting `relational: true` will force CaseFusion to only offer this interface on a relational field. Finally,
 `recommendedDisplays` are a way of pinning one or more displays to the top of the list when the user is setting up the
 field.
 
@@ -121,7 +121,7 @@ the following to add the built-in filter builder.
 ## Build the View
 
 The `interface.vue` file contains the barebones code required for an interface to work. Import dependencies from Vue and
-the Directus Extensions SDK right before `export default`:
+the CaseFusion Extensions SDK right before `export default`:
 
 ```js
 import { ref, computed } from 'vue';
@@ -298,8 +298,8 @@ function useRelation() {
 
 ### Create the Template
 
-Inside the `template` tag, add the following code which uses Directus' provided components. For the `v-input`, pass the
-`searchQuery`, `disabled` and `placeholder` values and include the `onInput` function on the `@update:model-value`
+Inside the `template` tag, add the following code which uses CaseFusion' provided components. For the `v-input`, pass
+the `searchQuery`, `disabled` and `placeholder` values and include the `onInput` function on the `@update:model-value`
 event.
 
 There is also a `v-icon` to prompt the user to dropdown the field and close the dropdown when open.
@@ -377,16 +377,16 @@ Build the interface with the latest changes.
 npm run build
 ```
 
-## Add Interface to Directus
+## Add Interface to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-interface-m2o-searchable-dropdown`.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 

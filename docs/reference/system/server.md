@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Server collection in Directus.
+description: REST and GraphQL API documentation on the Server collection in CaseFusion.
 readTime: 4 min read
 pageClass: page-reference
 ---
@@ -476,10 +476,10 @@ One of `ok`, `warn`, `error`.
 Authenticated admin users also get the following information:
 
 `releaseId` **string**\
-Directus version in use.
+CaseFusion version in use.
 
 `serviceId` **string**\
-UUID of the current Directus instance.
+UUID of the current CaseFusion instance.
 
 `checks` **array**\
 Array with the status of all individually connected services.

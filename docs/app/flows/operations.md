@@ -1,6 +1,6 @@
 ---
 description:
-  Operations are the individual actions in a flow. They enable you to do things like manage data within Directus,
+  Operations are the individual actions in a flow. They enable you to do things like manage data within CaseFusion,
   transform the flow's data, send information off to outside services, set conditional logic, trigger other flows, and
   beyond!
 readTime: 5 min read
@@ -8,7 +8,7 @@ readTime: 5 min read
 
 # Operations
 
-> Operations are the individual actions in a flow. They enable you to do things like manage data within Directus,
+> Operations are the individual actions in a flow. They enable you to do things like manage data within CaseFusion,
 > transform the flow's data, send information off to outside services, set conditional logic, trigger other flows, _and
 > beyond!_
 
@@ -149,7 +149,7 @@ An array with the ID(s) of all items created will be appended under its `<operat
 
 ::: warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if toggled on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout CaseFusion. For example, if toggled on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.create` which contains an
 operation that then tries to create another item in that `<collection>`. This would throw an infinite loop where the
@@ -186,7 +186,7 @@ An array with the ID(s) of all items deleted will be appended under its `<operat
 
 ::: warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout CaseFusion. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.delete` which contains an
 operation that then tries to delete another item in that `<collection>`. This would throw an infinite loop where the
@@ -218,7 +218,7 @@ An array containing all items read will be appended under its `<operationKey>`.
 
 ::: warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout CaseFusion. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.read` which contains an
 operation that then tries to read another item in that `<collection>`. This would throw an infinite loop where the
@@ -250,7 +250,7 @@ An array containing all items updated will be appended under its `<operationKey>
 
 ::: warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout CaseFusion. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.update` which contains an
 operation that then tries to update another item in that `<collection>`. This would throw an infinite loop where the
@@ -340,8 +340,8 @@ may send it there automatically.
 
 ![Send Notification](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/send-notification-20220603A.webp)
 
-This operation pushes notifications to Directus Users. If the operation executes successfully, a list containing the IDs
-of all sent notifications generated is appended under this operation's key.
+This operation pushes notifications to CaseFusion Users. If the operation executes successfully, a list containing the
+IDs of all sent notifications generated is appended under this operation's key.
 
 **Options**
 

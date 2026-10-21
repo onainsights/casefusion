@@ -16,6 +16,7 @@ import Layout from './Layout.vue';
 import './icons.css';
 import './overrides.css';
 import './vars.css';
+import './casefusion.css';
 
 const theme: Theme = {
 	extends: DefaultTheme,

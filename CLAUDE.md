@@ -17,8 +17,8 @@ The repository keeps full upstream git history. `upstream` is a fetch-only remot
 ## Stack
 
 - **Monorepo:** pnpm workspaces (`pnpm-workspace.yaml`): `api/`, `app/`, `casefusion/` (CLI entry, bins `casefusion` and
-  `directus`), `sdk/`, `packages/*`, `tests/**`. `docs/` is not a workspace: it is kept as upstream reference text and
-  never installed or built.
+  `directus`), `sdk/`, `packages/*`, `tests/**`. `docs/` is not a workspace: it is the documentation site (VitePress),
+  with its own lockfile, published to https://onainsights.github.io/casefusion/ by `.github/workflows/docs.yml`.
 - **Backend:** Node.js + TypeScript, Express 4, Knex 2.5, Pino 8, under `api/`
 - **Frontend:** Vue 3.5 + Vite 6 + Pinia + vue-i18n, under `app/`; Ona Insights brand theme (`brand/readme.md`)
 - **Tests:** Vitest per workspace (4.1 in `app/`, 0.31 elsewhere); integration suite in `tests/blackbox` (Vitest, Docker
@@ -47,7 +47,10 @@ pnpm --recursive exec tsc --noEmit # typecheck only
 - **Rebrand what a user sees, not what code depends on.** Change product name, logos, README, image name, docs links. Do
   **not** rename `directus_*` tables, cookies, env var names, API routes, `@directus/*` package names or extension type
   strings: that breaks databases, extensions and upstream merges.
-- **Keep `docs/` as upstream.** It is reference documentation; do not rebrand it.
+- **Docs: rebrand the product name, keep the content.** `scripts/rebrand-docs.mjs` replaces "Directus" with "CaseFusion"
+  in prose (not code, URLs, Directus Cloud or the trademark notices); run it after every upstream merge, CI checks it.
+  Otherwise only the site config and theme (`docs/.vitepress/`) are ours; keep page content as upstream wrote it so
+  merges stay clean.
 - **Security first, features never.** Dependency and tooling changes only. The one allowed behaviour change is disabling
   phone-home (telemetry, update check) by default.
 - **Keep the upstream diff small.** Every touched upstream file is a future merge conflict. Prefer config, env defaults

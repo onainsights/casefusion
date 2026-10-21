@@ -1,6 +1,6 @@
 ---
 description:
-  If you're looking for the fastest way to get up-and-running with Directus locally, this guide will get you there in minutes.
+  If you're looking for the fastest way to get up-and-running with CaseFusion locally, this guide will get you there in minutes.
 ---
 
 <script setup lang="ts">
@@ -20,9 +20,9 @@ You should have Docker installed and running on your machine. You can
 
 Docker is a developer tool that allows software-creators to distribute their work along with all dependencies and
 required environment settings. This means that applications can run reliably and consistently, making it the perfect way
-to use Directus both locally and in-production.
+to use CaseFusion both locally and in-production.
 
-As soon as there are new releases of Directus, we publish them on
+As soon as there are new releases of CaseFusion, we publish them on
 [Docker Hub](https://hub.docker.com/r/directus/directus).
 
 :::
@@ -67,13 +67,14 @@ Save the file. Let's step through it:
     and `SECRET` is used to sign access tokens.
   - `ADMIN_EMAIL` and `ADMIN_PASSWORD` is the initial admin user credentials on first launch.
   - `DB_CLIENT` and `DB_FILENAME` are defining the connection to your database.
-  - `WEBSOCKETS_ENABLED` is not required, but enables [Directus Realtime](/guides/real-time/getting-started/index.html).
+  - `WEBSOCKETS_ENABLED` is not required, but enables
+    [CaseFusion Realtime](/guides/real-time/getting-started/index.html).
 
 The volumes section is not required, but without this, our database and file uploads will be destroyed when the Docker
 container stops running. The default database is SQLite - a self-contained server-less database that stores data to a
 file.
 
-## Run Directus
+## Run CaseFusion
 
 ::: tabs
 
@@ -97,5 +98,5 @@ docker compose up
 
 :::
 
-Directus should now be available at <a href="http://localhost:8055" target="_blank">http://localhost:8055</a> or
+CaseFusion should now be available at <a href="http://localhost:8055" target="_blank">http://localhost:8055</a> or
 <a href="http://127.0.0.1:8055" target="_blank">http://127.0.0.1:8055</a>

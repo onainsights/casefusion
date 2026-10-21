@@ -89,7 +89,7 @@ The following video shows how to filter for Blog posts written within the past 6
 	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/dynamic-variables-20220307A.mp4" type="video/mp4" />
 </video>
 
-The following Dynamic Variables are built into Directus to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
+The following Dynamic Variables are built into CaseFusion to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
 `$NOW` and `$NOW(<adjustment>)`. For more information, please see the Dynamic Variables section in
 [Filter Rules](/reference/filter-rules).
 
@@ -132,8 +132,8 @@ Filters.
 
 ## Extensibility Options
 
-Directus Core is completely open-source, modular and extensible. Extensions allow you to expand or modify any part of
-Directus to fit your needs. Here are some great resources to get started down that track.
+CaseFusion Core is completely open-source, modular and extensible. Extensions allow you to expand or modify any part of
+CaseFusion to fit your needs. Here are some great resources to get started down that track.
 
 - [Extensions > Introduction](/extensions/introduction)
 - [Extensions > Creating Extensions](/extensions/creating-extensions)

@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Utilities collection in Directus.
+description: REST and GraphQL API documentation on the Utilities collection in CaseFusion.
 readTime: 3 min read
 pageClass: page-reference
 ---
@@ -476,7 +476,7 @@ const result = await client.request(
 
 ## Clear the Internal Cache
 
-Resets both the data and schema cache of Directus. This endpoint is only available to admin users.
+Resets both the data and schema cache of CaseFusion. This endpoint is only available to admin users.
 
 <SnippetToggler :choices="['REST', 'GraphQL', 'SDK']" group="api">
 <template #rest>

@@ -1,15 +1,15 @@
 ---
 contributors: Kevin Lewis
-description: "Learn about Directus' real-time security and authentication settings."
+description: "Learn about CaseFusion' real-time security and authentication settings."
 ---
 
 # WebSocket & GraphQL Authentication
 
-Authentication is an important part of establishing your persistent connection with a Directus project.
+Authentication is an important part of establishing your persistent connection with a CaseFusion project.
 
 ## Authentication Modes
 
-There are three authentication modes in Directus.
+There are three authentication modes in CaseFusion.
 
 | Mode          | Description                                                                                                     |
 | ------------- | --------------------------------------------------------------------------------------------------------------- |

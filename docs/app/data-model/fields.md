@@ -70,7 +70,7 @@ start. To create a field in advanced mode, follow these steps.
 ::: tip Database Columns
 
 Remember, a field is a database column. Therefore, you can create a column directly in the database and it will
-automatically appear within Directus. You can then enhance the experience further by configuring it as desired.
+automatically appear within CaseFusion. You can then enhance the experience further by configuring it as desired.
 
 :::
 

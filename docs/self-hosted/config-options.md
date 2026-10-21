@@ -1,28 +1,28 @@
 ---
 description:
-  Environment variables are used for all configuration within a Directus project. These variables can be defined in a
+  Environment variables are used for all configuration within a CaseFusion project. These variables can be defined in a
   number of ways, which we cover below.
 readTime: 28 min read
 ---
 
 # Configuration Options
 
-> Environment variables are used for all configuration within a Directus project. These variables can be defined in a
+> Environment variables are used for all configuration within a CaseFusion project. These variables can be defined in a
 > number of ways, which we cover below.
 
 ## Configuration Files
 
-By default, Directus will read the `.env` file located next to your project's `package.json` (typically in the root
+By default, CaseFusion will read the `.env` file located next to your project's `package.json` (typically in the root
 folder of your project) for its configuration. You can change this path and filename by setting the `CONFIG_PATH`
-environment variable before starting Directus. For example:
+environment variable before starting CaseFusion. For example:
 
 ```bash
 CONFIG_PATH="/path/to/config.js" npx directus start
 ```
 
 In case you prefer using a configuration file instead of environment variables, you can also use the `CONFIG_PATH`
-environment variable to instruct Directus to use a local configuration file instead of environment variables. The config
-file can be one of the following formats:
+environment variable to instruct CaseFusion to use a local configuration file instead of environment variables. The
+config file can be one of the following formats:
 
 - [.env](#env)
 - [config.json](#config-json)
@@ -31,7 +31,7 @@ file can be one of the following formats:
 
 ### .env
 
-If the config path has no file extension, or a file extension that's not one of the other supported formats, Directus
+If the config path has no file extension, or a file extension that's not one of the other supported formats, CaseFusion
 will try reading the file config path as environment variables. This has the following structure:
 
 ```
@@ -211,8 +211,8 @@ DB_SSL__REJECT_UNAUTHORIZED="false"
 
 ## Environment Syntax Prefix
 
-Directus will attempt to [automatically type cast environment variables](#type-casting-and-nesting) based on context
-clues. If you have a specific need for a given type, you can tell Directus what type to use for the given value by
+CaseFusion will attempt to [automatically type cast environment variables](#type-casting-and-nesting) based on context
+clues. If you have a specific need for a given type, you can tell CaseFusion what type to use for the given value by
 prefixing the value with `{type}:`. The following types are available:
 
 | Syntax Prefix | Example                                                                                                         | Output                                                                                                                       |
@@ -292,7 +292,7 @@ into unexpected behaviors.
 | `DB_FILENAME`              | Where to read/write the SQLite database. **Required** when using `sqlite3`.                                                                        | --                            |
 | `DB_CONNECTION_STRING`     | When using `pg`, you can submit a connection string instead of individual properties. Using this will ignore any of the other connection settings. | --                            |
 | `DB_POOL__*`               | Pooling settings. Passed on to [the `tarn.js`](https://github.com/vincit/tarn.js#usage) library.                                                   | --                            |
-| `DB_EXCLUDE_TABLES`        | CSV of tables you want Directus to ignore completely                                                                                               | `spatial_ref_sys,sysdiagrams` |
+| `DB_EXCLUDE_TABLES`        | CSV of tables you want CaseFusion to ignore completely                                                                                             | `spatial_ref_sys,sysdiagrams` |
 | `DB_CHARSET`               | Charset/collation to use in the connection to MySQL/MariaDB                                                                                        | `UTF8_GENERAL_CI`             |
 | `DB_VERSION`               | Database version, in case you use the PostgreSQL adapter to connect a non-standard database. Not normally required.                                | --                            |
 | `DB_HEALTHCHECK_THRESHOLD` | Healthcheck timeout threshold in ms.                                                                                                               | `150`                         |
@@ -314,8 +314,8 @@ All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.co
 
 ## Redis
 
-Directus requires Redis for multi-container deployments. This ensures that things like caching, rate-limiting, and
-WebSockets work reliably across multiple containers of Directus.
+CaseFusion requires Redis for multi-container deployments. This ensures that things like caching, rate-limiting, and
+WebSockets work reliably across multiple containers of CaseFusion.
 
 | Variable         | Description                                                                                                                                                | Default Value |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
@@ -325,7 +325,7 @@ WebSockets work reliably across multiple containers of Directus.
 | `REDIS_USERNAME` | Username for your Redis instance, e.g., `"default"`                                                                                                        | --            |
 | `REDIS_PASSWORD` | Password for your Redis instance, e.g., `"yourRedisPassword"`                                                                                              | --            |
 
-Redis is required when you run Directus load balanced across multiple containers/processes.
+Redis is required when you run CaseFusion load balanced across multiple containers/processes.
 
 ## Security
 
@@ -369,7 +369,7 @@ your project and API on different domains, make sure to verify your configuratio
 | `HASH_TYPE`            | The variant of the hash function (`0`: argon2d, `1`: argon2i, or `2`: argon2id).                                                 | `2` (argon2id)      |
 | `HASH_ASSOCIATED_DATA` | An extra and optional non-secret value. The value will be included Base64 encoded in the parameters portion of the digest.       | --                  |
 
-Argon2's hashing function is used by Directus for three purposes: 1) hashing user passwords, 2) generating hashes for
+Argon2's hashing function is used by CaseFusion for three purposes: 1) hashing user passwords, 2) generating hashes for
 the `Hash` field type in collections, and 3) the
 [generate a hash API endpoint](/reference/system/utilities#generate-a-hash).
 
@@ -453,17 +453,17 @@ is overloaded.
 
 ## Cache
 
-Directus has a built-in data-caching option. Enabling this will cache the output of requests (based on the current user
-and exact query parameters used) into configured cache storage location. This drastically improves API performance, as
-subsequent requests are served straight from this cache. Enabling cache will also make Directus return accurate
+CaseFusion has a built-in data-caching option. Enabling this will cache the output of requests (based on the current
+user and exact query parameters used) into configured cache storage location. This drastically improves API performance,
+as subsequent requests are served straight from this cache. Enabling cache will also make CaseFusion return accurate
 cache-control headers. Depending on your setup, this will further improve performance by caching the request in
 middleman servers (like CDNs) and even the browser.
 
 ::: tip Internal Caching
 
-In addition to data-caching, Directus also does some internal caching. Note `CACHE_SCHEMA` and `CACHE_PERMISSIONS` which
-are enabled by default. These speed up the overall performance of Directus, as we don't want to introspect the whole
-database or check all permissions on every request.
+In addition to data-caching, CaseFusion also does some internal caching. Note `CACHE_SCHEMA` and `CACHE_PERMISSIONS`
+which are enabled by default. These speed up the overall performance of CaseFusion, as we don't want to introspect the
+whole database or check all permissions on every request.
 
 :::
 
@@ -493,12 +493,12 @@ than you would cache database content. To learn more, see [Assets](#assets).
 | `CACHE_HEALTHCHECK_THRESHOLD`                | Healthcheck timeout threshold in ms.                                                                                    | `150`                                |
 
 <sup>[1]</sup> `CACHE_TTL` Based on your project's needs, you might be able to aggressively cache your data, only
-requiring new data to be fetched every hour or so. This allows you to squeeze the most performance out of your Directus
-instance. This can be incredibly useful for applications where you have a lot of (public) read-access and where updates
-aren't real-time (for example a website). `CACHE_TTL` uses [`ms`](https://www.npmjs.com/package/ms) to parse the value,
-so you configure it using human readable values (like `2 days`, `7 hrs`, `5m`).
+requiring new data to be fetched every hour or so. This allows you to squeeze the most performance out of your
+CaseFusion instance. This can be incredibly useful for applications where you have a lot of (public) read-access and
+where updates aren't real-time (for example a website). `CACHE_TTL` uses [`ms`](https://www.npmjs.com/package/ms) to
+parse the value, so you configure it using human readable values (like `2 days`, `7 hrs`, `5m`).
 
-<sup>[2]</sup> `CACHE_AUTO_PURGE` allows you to keep the Directus API real-time, while still getting the performance
+<sup>[2]</sup> `CACHE_AUTO_PURGE` allows you to keep the CaseFusion API real-time, while still getting the performance
 benefits on quick subsequent reads.
 
 <sup>[3]</sup> The cache has to be manually cleared when requiring to access updated results for collections in
@@ -511,7 +511,7 @@ Instead, you can use the above `CACHE_STORE` environment variable to use `redis`
 
 ## File Storage
 
-By default, Directus stores all uploaded files locally on disk. However, you can also configure Directus to use S3,
+By default, CaseFusion stores all uploaded files locally on disk. However, you can also configure CaseFusion to use S3,
 Google Cloud Storage, Azure, Cloudinary or Supabase. You can also configure _multiple_ storage adapters at the same
 time. This allows you to choose where files are being uploaded on a file-by-file basis. In the Admin App, files will
 automatically be uploaded to the first configured storage location (in this case `local`). The used storage location is
@@ -607,8 +607,8 @@ Based on your configured driver, you must also provide the following configurati
 
 ::: warning One-way sync
 
-Cloudinary is supported as a _storage_ driver. Changes made on Cloudinary are _not_ synced back to Directus, and
-Directus _won't_ rely on Cloudinary's asset transformations in the `/assets` endpoint.
+Cloudinary is supported as a _storage_ driver. Changes made on Cloudinary are _not_ synced back to CaseFusion, and
+CaseFusion _won't_ rely on Cloudinary's asset transformations in the `/assets` endpoint.
 
 :::
 
@@ -645,8 +645,8 @@ STORAGE_AWS_BUCKET="my-files"
 
 ### Metadata
 
-When uploading an image, Directus persists the _description, title, and tags_ from available EXIF metadata. For security
-purposes, collection of additional metadata must be configured:
+When uploading an image, CaseFusion persists the _description, title, and tags_ from available EXIF metadata. For
+security purposes, collection of additional metadata must be configured:
 
 | Variable                   | Description                                                                                           | Default Value                                                                 |
 | -------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -692,24 +692,24 @@ You may also be required to specify additional variables depending on the auth d
 
 ::: tip Multiple Providers
 
-Directus users can only authenticate using the auth provider they are created with. It is not possible to authenticate
+CaseFusion users can only authenticate using the auth provider they are created with. It is not possible to authenticate
 with multiple providers for the same user.
 
 :::
 
 ### Local (`local`)
 
-The default Directus email/password authentication flow.
+The default CaseFusion email/password authentication flow.
 
 No additional configuration required.
 
 ### SSO (`oauth2` and `openid`)
 
-Directus' SSO integrations provide powerful alternative ways to authenticate into your project. Directus will ask you to
-login on the external service, and return authenticated with a Directus account linked to that service.
+CaseFusion' SSO integrations provide powerful alternative ways to authenticate into your project. CaseFusion will ask
+you to login on the external service, and return authenticated with a CaseFusion account linked to that service.
 
-For example, you can login to Directus using a GitHub account by creating an
-[OAuth 2.0 app in GitHub](https://github.com/settings/developers) and adding the following configuration to Directus:
+For example, you can login to CaseFusion using a GitHub account by creating an
+[OAuth 2.0 app in GitHub](https://github.com/settings/developers) and adding the following configuration to CaseFusion:
 
 ```
 AUTH_PROVIDERS="github"
@@ -745,13 +745,13 @@ These flows rely on the `PUBLIC_URL` variable for redirecting. Ensure the variab
 | `AUTH_<PROVIDER>_FIRST_NAME_KEY`            | User profile first name key.                                                                      | --               |
 | `AUTH_<PROVIDER>_LAST_NAME_KEY`             | User profile last name key.                                                                       | --               |
 | `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                           | `false`          |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                       | --               |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A CaseFusion role ID to assign created users.                                                     | --               |
 | `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/user-guide/overview/glossary#icons). | `account_circle` |
 | `AUTH_<PROVIDER>_LABEL`                     | Text to be presented on SSO button within App.                                                    | `<PROVIDER>`     |
 | `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                         | --               |
 
-<sup>[1]</sup> When authenticating, Directus will match the identifier value from the external user profile to a
-Directus users "External Identifier".
+<sup>[1]</sup> When authenticating, CaseFusion will match the identifier value from the external user profile to a
+CaseFusion users "External Identifier".
 
 ### OpenID
 
@@ -766,20 +766,20 @@ OpenID is an authentication protocol built on OAuth 2.0, and should be preferred
 | `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>.                                                       | `sub`<sup>[2]</sup>    |
 | `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                           | `false`                |
 | `AUTH_<PROVIDER>_REQUIRE_VERIFIED_EMAIL`    | Require created users to have a verified email address.                                           | `false`                |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                       | --                     |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A CaseFusion role ID to assign created users.                                                     | --                     |
 | `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/user-guide/overview/glossary#icons). | `account_circle`       |
 | `AUTH_<PROVIDER>_LABEL`                     | Text to be presented on SSO button within App.                                                    | `<PROVIDER>`           |
 | `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                         | --                     |
 
-<sup>[1]</sup> When authenticating, Directus will match the identifier value from the external user profile to a
-Directus users "External Identifier".
+<sup>[1]</sup> When authenticating, CaseFusion will match the identifier value from the external user profile to a
+CaseFusion users "External Identifier".
 
 <sup>[2]</sup> `sub` represents a unique user identifier defined by the OpenID provider. For users not relying on
 `PUBLIC_REGISTRATION` it is recommended to use a human-readable identifier, such as `email`.
 
 ### LDAP (`ldap`)
 
-LDAP allows Active Directory users to authenticate and use Directus without having to be manually configured. User
+LDAP allows Active Directory users to authenticate and use CaseFusion without having to be manually configured. User
 information and roles will be assigned from Active Directory.
 
 | Variable                                 | Description                                                            | Default Value |
@@ -796,7 +796,7 @@ information and roles will be assigned from Active Directory.
 | `AUTH_<PROVIDER>_GROUP_DN`<sup>[3]</sup> | Directory path containing groups.                                      | --            |
 | `AUTH_<PROVIDER>_GROUP_ATTRIBUTE`        | Attribute to identify user as a member of a group.                     | `member`      |
 | `AUTH_<PROVIDER>_GROUP_SCOPE`            | Scope of the group search, either `base`, `one`, `sub` <sup>[2]</sup>. | `one`         |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`        | A fallback Directus role ID to assign created users.                   | --            |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`        | A fallback CaseFusion role ID to assign created users.                 | --            |
 
 <sup>[1]</sup> The bind user must have permission to query users and groups to perform authentication. Anonymous binding
 can by achieved by setting an empty value for `BIND_DN` and `BIND_PASSWORD`.
@@ -838,19 +838,19 @@ without a password.
 | `AUTH_<PROVIDER>_SP_metadata`               | String containing XML metadata for service provider                      | --            |
 | `AUTH_<PROVIDER>_IDP_metadata`              | String containing XML metadata for identity provider                     | --            |
 | `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                  | `false`       |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                              | --            |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A CaseFusion role ID to assign created users.                            | --            |
 | `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>. Will default to `EMAIL_KEY`. | --            |
 | `AUTH_<PROVIDER>_EMAIL_KEY`                 | User profile email key.                                                  | `email`       |
 
-<sup>[1]</sup> When authenticating, Directus will match the identifier value from the external user profile to a
-Directus users "External Identifier".
+<sup>[1]</sup> When authenticating, CaseFusion will match the identifier value from the external user profile to a
+CaseFusion users "External Identifier".
 
 The `SP_metadata` and `IDP_metadata` variables should be set to the XML metadata provided by the service provider and
 identity provider respectively.
 
 ### Example: Multiple Auth Providers
 
-You can configure multiple providers for handling authentication in Directus. This allows for different options when
+You can configure multiple providers for handling authentication in CaseFusion. This allows for different options when
 logging in. To do this, provide a comma-separated list of provider names, and a config block for each provider:
 
 ```
@@ -989,13 +989,12 @@ variables to automatically configure the first user:
 
 ## Telemetry
 
-To more accurately gauge the frequency of installation, version fragmentation, and general size of the userbase,
-Directus collects little and anonymized data about your environment. You can easily opt-out with the following
-environment variable:
+CaseFusion sends no telemetry by default. Setting `TELEMETRY` to `true` turns on the anonymous usage reporting inherited
+from upstream, which sends data about your environment to the telemetry service of Monospace, Inc.
 
-| Variable    | Description                                                       | Default Value |
-| ----------- | ----------------------------------------------------------------- | ------------- |
-| `TELEMETRY` | Allow Directus to collect anonymized data about your environment. | `true`        |
+| Variable    | Description                                                           | Default Value |
+| ----------- | --------------------------------------------------------------------- | ------------- |
+| `TELEMETRY` | Send anonymized data about your environment to the telemetry service. | `false`       |
 
 ## Limits & Optimizations
 

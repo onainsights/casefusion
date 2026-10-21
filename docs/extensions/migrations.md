@@ -1,11 +1,11 @@
 ---
-description: A guide on how to setup your owns custom Migrations in Directus.
+description: A guide on how to setup your owns custom Migrations in CaseFusion.
 readTime: 2 min read
 ---
 
 # Custom Migrations
 
-> Directus allows adding custom migration files that run whenever the `directus database migrate:*` commands are
+> CaseFusion allows adding custom migration files that run whenever the `directus database migrate:*` commands are
 > executed. All migrations must reside in the `extensions/migrations` folder.
 
 ## File Name
@@ -51,12 +51,12 @@ what you're doing and backup your database before adding these migrations.
 
 :::
 
-## Migrations and Directus schema
+## Migrations and CaseFusion schema
 
-Migrations can be used to manage the contents of Directus collections (e.g. initial hydration). In order to do it, you
+Migrations can be used to manage the contents of CaseFusion collections (e.g. initial hydration). In order to do it, you
 must ensure that the schema is up to date before running your migrations.
 
-`directus database migrate:latest` runs the required Directus internal migrations and the migrations from `migrations`
+`directus database migrate:latest` runs the required CaseFusion internal migrations and the migrations from `migrations`
 directory. In general, you need the following flow:
 
 ```sh
@@ -71,4 +71,4 @@ npx directus schema apply ./path/to/snapshot.yaml
 ```
 
 Take notice here - to comply with this flow, `migrations` directory **must not contain** tasks that modify the contents
-of your Directus, because schema is not yet created when you run `migrate:latest`.
+of your CaseFusion, because schema is not yet created when you run `migrate:latest`.

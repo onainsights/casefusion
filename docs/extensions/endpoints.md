@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build custom API endpoints in Directus.
+description: A guide on how to build custom API endpoints in CaseFusion.
 readTime: 3 min read
 ---
 

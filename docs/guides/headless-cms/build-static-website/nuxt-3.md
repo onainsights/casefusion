@@ -1,16 +1,16 @@
 ---
-description: This guide shows you how build a website with Nuxt 3 and Directus as a Headless CMS.
+description: This guide shows you how build a website with Nuxt 3 and CaseFusion as a Headless CMS.
 directus_version: 9.21.4
 author: Kevin Lewis
 ---
 
-# Build a Website With Nuxt 3 and the Directus JavaScript SDK
+# Build a Website With Nuxt 3 and the CaseFusion JavaScript SDK
 
 > {{ $frontmatter.description }}
 
 [Nuxt](https://nuxt.com/) is a popular JavaScript framework based on Vue.js. In this tutorial, you will learn how to
-build a website using Directus as a CMS. You will store, retrieve, and use global metadata such as the site title,
-create new pages dynamically based on Directus items, and build a blog.
+build a website using CaseFusion as a CMS. You will store, retrieve, and use global metadata such as the site title,
+create new pages dynamically based on CaseFusion items, and build a blog.
 
 ## Before You Start
 
@@ -22,7 +22,7 @@ You will need:
 
 Create a new Directus Cloud project - any tier and configuration is suitable for this tutorial.
 
-Open your terminal and run the following commands to create a new Nuxt project and the Directus JavaScript SDK:
+Open your terminal and run the following commands to create a new Nuxt project and the CaseFusion JavaScript SDK:
 
 ```
 npx nuxt init my-website
@@ -52,7 +52,7 @@ export default defineNuxtPlugin(() => {
 });
 ```
 
-Ensure your Project URL is correct when initializing the Directus JavaScript SDK.
+Ensure your Project URL is correct when initializing the CaseFusion JavaScript SDK.
 
 Inside of your `app.vue` entry file, add the following to the bottom to test that your plugin works:
 
@@ -63,14 +63,14 @@ console.log($directus);
 </script>
 ```
 
-Refresh your browser, and check the console. You should see the Directus instance logged, which means you have access to
-all of the Directus JavaScript SDK methods by using the `useNuxtApp()` composable in any page or component.
+Refresh your browser, and check the console. You should see the CaseFusion instance logged, which means you have access
+to all of the CaseFusion JavaScript SDK methods by using the `useNuxtApp()` composable in any page or component.
 
 Once you've confirmed this, remove the `<script>` from `app.vue` before continuing.
 
 ## Using Global Metadata and Settings
 
-In your Directus project, navigate to Settings -> Data Model and create a new collection called `global`. Under the
+In your CaseFusion project, navigate to Settings -> Data Model and create a new collection called `global`. Under the
 Singleton option, select 'Treat as a single object', as this collection will have just a single entry containing global
 website metadata.
 
@@ -104,9 +104,9 @@ const { data: global } = await useAsyncData('global', () => {
 </script>
 ```
 
-Refresh your browser. You should see data from your Directus Global collection in your page.
+Refresh your browser. You should see data from your CaseFusion Global collection in your page.
 
-## Creating Pages With Directus
+## Creating Pages With CaseFusion
 
 Create a new collection called `pages` - make the Primary ID Field a "Manually Entered String" called `slug`, which will
 correlate with the URL for the page. For example `about` will later correlate to the page `localhost:3000/about`.
@@ -139,14 +139,14 @@ if (!page.value) throw createError({
 </script>
 ```
 
-Go to `http://localhost:3000/about`, replacing `about` with any of your item slugs. Using the Directus JavaScript SDK,
+Go to `http://localhost:3000/about`, replacing `about` with any of your item slugs. Using the CaseFusion JavaScript SDK,
 the single item with that slug is retrieved, and the page should show your data. `readOne()` only checks against your
 `slug` Primary ID Field.
 
 _Note that we check if a returned value exists, and return a 404 if not. Please also note that
 [`v-html` should only be used for trusted content.](https://vuejs.org/api/built-in-directives.html#v-html)_
 
-## Creating Blog Posts With Directus
+## Creating Blog Posts With CaseFusion
 
 Create a new collection called `authors` with a single text input field called `name`. Create one or more authors.
 
@@ -247,11 +247,11 @@ if (!post.value) throw createError({
 
 Some key notes about this code snippet.
 
-- In the `<img>` tag, `$directus.url` is the value provided when creating the Directus plugin.
-- The `width` attribute demonstrates Directus' built-in image transformations.
+- In the `<img>` tag, `$directus.url` is the value provided when creating the CaseFusion plugin.
+- The `width` attribute demonstrates CaseFusion' built-in image transformations.
 - Once again, `v-html` should only be used if all content is trusted.
 - Because almost-all fields are used in this page, including those from the `image` relational field, the `fields`
-  property when using the Directus JavaScript SDK can be set to `*.*`.
+  property when using the CaseFusion JavaScript SDK can be set to `*.*`.
 
 Click on any of the blog post links, and it will take you to a blog post page complete with a header image.
 
@@ -259,7 +259,7 @@ Click on any of the blog post links, and it will take you to a blog post page co
 
 ## Add Navigation
 
-While not strictly Directus-related, there are now several pages that aren't linked to each other. In `app.vue`, above
+While not strictly CaseFusion-related, there are now several pages that aren't linked to each other. In `app.vue`, above
 the `<NuxtPage />` component, add a navigation. Don't forget to use your specific page slugs.
 
 ```vue-html
@@ -274,8 +274,8 @@ the `<NuxtPage />` component, add a navigation. Don't forget to use your specifi
 
 ## Next Steps
 
-Through this guide, you have set up a Nuxt project, created a Directus plugin, and used it to query data. You have used
-a singleton collection for global metadata, dynamically created pages, as well as blog listing and post pages.
+Through this guide, you have set up a Nuxt project, created a CaseFusion plugin, and used it to query data. You have
+used a singleton collection for global metadata, dynamically created pages, as well as blog listing and post pages.
 
 If you want to change what is user-accessible, consider setting up more restrictive roles and accessing only valid data
 at build-time.

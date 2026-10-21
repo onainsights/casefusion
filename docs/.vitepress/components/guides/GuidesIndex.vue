@@ -6,8 +6,8 @@ import GuidesSection from './GuidesSection.vue';
 <template>
 	<section class="hero">
 		<div>
-			<h1>Directus Guides</h1>
-			<p>Our official guides to help you get started, integrate, and make the most of Directus.</p>
+			<h1>CaseFusion Guides</h1>
+			<p>Our official guides to help you get started, integrate, and make the most of CaseFusion.</p>
 		</div>
 	</section>
 

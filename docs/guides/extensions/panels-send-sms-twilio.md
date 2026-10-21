@@ -12,7 +12,7 @@ with form inputs.
 
 ## Install Dependencies
 
-Panels can only talk to internal Directus services, and can't reliably make external web requests because browser
+Panels can only talk to internal CaseFusion services, and can't reliably make external web requests because browser
 security protections prevent these cross-origin requests from being made. To create a panel that can interact with
 external APIs, you must interact with the API using an endpoint. This particular panel extension builds off of the
 [Twilio Custom Endpoint Extension guide](/guides/extensions/endpoints-api-proxy-twilio). Make sure you have access to
@@ -78,7 +78,7 @@ Number and Account SID:
 
 To fetch the contacts, add a field for selecting a collection using the system-collection interface and a field for
 selecting the phone number field using the system-field interface. These will automatically populate the dropdown with
-the values from Directus and form the basis for an API call.
+the values from CaseFusion and form the basis for an API call.
 
 For occasions where the user might want to limit the scope of contacts, add a filter field using the system-filter
 interface.
@@ -365,7 +365,7 @@ The outcome of the above functions will change "<span v-pre>{{ name }}</span>, <
 "Tim, +0123456789".
 
 When the phone number field is specified and batch send is disabled, the user will need a way to select a contact or
-contacts. Directus has an interface called `v-select`. When items are selected, write the selection into the
+contacts. CaseFusion has an interface called `v-select`. When items are selected, write the selection into the
 `recipients` variable with the following function:
 
 ```js
@@ -649,19 +649,19 @@ Both files are now complete. Build the panel with the latest changes.
 npm run build
 ```
 
-## Add Panel to Directus
+## Add Panel to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-panel-twilio-sms`.
 
 If you don’t have the Twilio Endpoint Extension, follow the instructions
 [here](/guides/extensions/endpoints-api-proxy-twilio).
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 

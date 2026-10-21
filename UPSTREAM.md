@@ -66,6 +66,11 @@ git merge --no-ff v10.7.0 -m "Merge upstream v10.7.0 (GPLv3 since 2026-10-23)"
 # 5. Re-apply invariants
 git grep -n BUSL -- '*package.json' '*license'   # must be empty (upstream re-adds it; CI checks too)
 git grep -nE "telemetry.directus.io"    # must be empty
+# Docs pages: on a conflict in docs/**/*.md take upstream's version (`git checkout --theirs`), then re-apply the name:
+node scripts/rebrand-docs.mjs && pnpm exec prettier --write docs   # CI checks with --check
+# docs/self-hosted/config-options.md: keep our Telemetry section (off by default) on a conflict.
+# New docs pages about Directus Cloud or upstream's own contribution process: add them to srcExclude in
+# docs/.vitepress/config.js and drop them from the sidebar.
 
 # 6. Verify (same gate as every phase)
 pnpm install --frozen-lockfile && pnpm build && pnpm lint && pnpm test

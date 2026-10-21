@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation to access and manage Items in Directus.
+description: REST and GraphQL API documentation to access and manage Items in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -12,7 +12,7 @@ pageClass: page-reference
 ## The Item Object
 
 Items don't have a predefined schema. The format depends completely on how you configured your collections and fields in
-Directus. For the sake of documentation, we'll use a fictional articles collection with the following fields: `id`,
+CaseFusion. For the sake of documentation, we'll use a fictional articles collection with the following fields: `id`,
 `status`, `title`, `body`, `featured_image`, and `author`.
 
 ::: tip Relational Data
@@ -35,7 +35,7 @@ By default, the item object doesn't contain nested relational data. To retrieve 
 
 ## Get Items
 
-List all items that exist in Directus.
+List all items that exist in CaseFusion.
 
 ### Request
 
@@ -136,7 +136,7 @@ const result = await client.request(
 
 ## Get Item by ID
 
-Get an item that exists in Directus.
+Get an item that exists in CaseFusion.
 
 ### Request
 
@@ -212,7 +212,7 @@ const result = await client.request(readItem('articles', '1'));
 
 ## Get Singleton
 
-List the singleton item in Directus.
+List the singleton item in CaseFusion.
 
 ### Request
 

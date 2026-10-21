@@ -1,14 +1,14 @@
 ---
 description:
-  Get up and running with Directus in minutes. Learn the basics of building your data model and managing
+  Get up and running with CaseFusion in minutes. Learn the basics of building your data model and managing
   permissions.
 readTime: 7 min read
 ---
 
 # Quickstart Guide
 
-> This quickstart guide is designed to get you up and running with a Directus Project in a few minutes. Along the way,
-> you will better understand what Directus is, setup your Directus project locally or with Directus Cloud, and get a
+> This quickstart guide is designed to get you up and running with a CaseFusion Project in a few minutes. Along the way,
+> you will better understand what CaseFusion is, setup your CaseFusion project locally or with Directus Cloud, and get a
 > hands-on introduction to the App and API.
 
 ## 1. Create a Project
@@ -44,7 +44,7 @@ docker run \
 directus/directus
 ```
 
-_Learn more about self-hosting Directus in our [Self-Hosted Quickstart](/self-hosted/quickstart)._
+_Learn more about self-hosting CaseFusion in our [Self-Hosted Quickstart](/self-hosted/quickstart)._
 
 :::
 
@@ -77,7 +77,7 @@ With your first Collection created, it's time to start adding some [Fields](/use
 1. Navigate to **Settings Module > Data Model > `Collection-Name`**.
 2. Click the **"Create Field"** button and select the **"Input"** Field type.
 3. Fill in a Field name under **Key**. We'll be calling our Field `title`.\
-   Directus offers powerful Field customization options, but let's stick to the defaults for now.
+   CaseFusion offers powerful Field customization options, but let's stick to the defaults for now.
 4. Select **"Save"**.
 
 ::: tip Learn More About Fields
@@ -104,16 +104,16 @@ Now that we have a Collection with a Field configured, it's time to add an [Item
 
 ## 5. Set Roles & Permissions
 
-Directus comes with two built-in roles: Public and Admin. The Public Role determines what data is returned to
+CaseFusion comes with two built-in roles: Public and Admin. The Public Role determines what data is returned to
 non-authenticated users. Public comes with all permissions turned off and can be reconfigured with fully granular
 control to expose exactly what you want unauthenticated Users to see. The Admin role has full permissions and this
 cannot be changed. Aside from these built-in Roles, any number of new Roles can be created, all with fully customized,
 granular permissions.
 
-By Default, content entered into Directus will be considered private. So permissions always start off set to the default
-of <span mi icon dngr>block</span> **No Access**, with full ability to reconfigure as desired. So, in order to have the
-API return our Items, let's add some read permissions. For simplicity's sake, we'll do this on the Public Role, instead
-of creating a new Role.
+By Default, content entered into CaseFusion will be considered private. So permissions always start off set to the
+default of <span mi icon dngr>block</span> **No Access**, with full ability to reconfigure as desired. So, in order to
+have the API return our Items, let's add some read permissions. For simplicity's sake, we'll do this on the Public Role,
+instead of creating a new Role.
 
 1. Navigate to **Settings Module > Roles & Permissions > Public**.
 2. Click <span mi icon dngr>block</span> under the <span mi icon>visibility</span> icon on the desired Collection.\

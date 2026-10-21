@@ -1,20 +1,20 @@
 ---
 contributors: Kevin Lewis
-description: "Learn how to get started with Directus' WebSockets interface."
+description: "Learn how to get started with CaseFusion' WebSockets interface."
 ---
 
 # Getting Started With WebSockets
 
-You can connect to a Directus project using a WebSocket interface and get updates on data held in a collection in
+You can connect to a CaseFusion project using a WebSocket interface and get updates on data held in a collection in
 real-time.
 
-This guide will show you how to get started with Directus' WebSockets interface and JavaScript. WebSockets are
+This guide will show you how to get started with CaseFusion' WebSockets interface and JavaScript. WebSockets are
 language-agnostic, so you can apply the same set of steps in your stack of choice.
 
 ## Before You Begin
 
-You will need a Directus project. If you don’t already have one, the easiest way to get started is with our
-[managed Directus Cloud service](https://directus.cloud). You can also self-host Directus, ensuring the
+You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
+[managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion, ensuring the
 `WEBSOCKETS_ENABLED` environment variable is set to `true`.
 
 Create a new collection called `messages`, with a `date_created` field enabled in the _Optional System Fields_ pane on
@@ -22,7 +22,7 @@ collection creation. Create a text field called `text` and a second called `user
 
 If it doesn’t already exist, create a user with a role that can execute read and create operations on the collection.
 
-Finally in the Directus Data Studio, create a static access token for the user, copy it, and save the user profile.
+Finally in the CaseFusion Data Studio, create a static access token for the user, copy it, and save the user profile.
 
 Create an `index.html` file and open it in your code editor. Add the following boilerplate code:
 
@@ -149,10 +149,10 @@ createItem('Hello Universe!', 'Rijk');
 createItem('Hello Everyone Everywhere All At Once!', 'Kevin');
 ```
 
-Every time you create an item, you will receive a message in response with the new item as created in your Directus
+Every time you create an item, you will receive a message in response with the new item as created in your CaseFusion
 collection.
 
-![Directus Data Studio Content Module showing the Messages collection with three items in it - one for each time the above command was run in the console.](https://cdn.directus.io/docs/v9/guides/websockets/getting-started-messages-collection.webp)
+![CaseFusion Data Studio Content Module showing the Messages collection with three items in it - one for each time the above command was run in the console.](https://cdn.directus.io/docs/v9/guides/websockets/getting-started-messages-collection.webp)
 
 ## Get Latest Item
 
@@ -193,7 +193,7 @@ You may wish to exclude these messages from your application logic.
 In this guide, you have successfully created a new WebSocket connection, authenticated yourself, and performed CRUD
 operations over the connection. You have also created your first subscription.
 
-[Learn more about subscriptions with WebSockets with Directus.](/guides/real-time/subscriptions/websockets)
+[Learn more about subscriptions with WebSockets with CaseFusion.](/guides/real-time/subscriptions/websockets)
 
 ## Full Code Sample
 

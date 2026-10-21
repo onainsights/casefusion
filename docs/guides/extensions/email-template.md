@@ -5,11 +5,11 @@ contributors: Tim Butterfield, Kevin Lewis
 
 # Create An Email Template With Dynamic Values
 
-Email templates allow you to design your own email look and feel, then populate the template with data from Directus
+Email templates allow you to design your own email look and feel, then populate the template with data from CaseFusion
 before sending it to the recipient. This guide will introduce you to the basics of LiquidJS and how to render data
 inside your email template.
 
-Unlike many extensions types, email templates are not included in the Directus Extensions SDK so all you will need to
+Unlike many extensions types, email templates are not included in the CaseFusion Extensions SDK so all you will need to
 get started is your favorite text editor and some knowledge of [LiquidJS](https://liquidjs.com/). A useful feature of
 LiquidJS is the ability to split the template into blocks such as base, header, footer, content etc then import the base
 and overwrite what needed.
@@ -33,7 +33,7 @@ For the base template, start with the raw essentials:
 ```
 
 You can use a free responsive email template and adjust it to fit your brand. Be aware that images cannot be uploaded
-alongside your template and must be hosted. If you host them in Directus, make sure the image permission is set to
+alongside your template and must be hosted. If you host them in CaseFusion, make sure the image permission is set to
 public and you use the full URL in the template.
 
 ## Extend the Template
@@ -190,22 +190,22 @@ appearance:
 {% endblock %}
 ```
 
-## Add Template to Directus
+## Add Template to CaseFusion
 
-Inside the Directus project directory is an extensions directory, this is where the custom extensions live. There is a
+Inside the CaseFusion project directory is an extensions directory, this is where the custom extensions live. There is a
 directory for each type. In this case you are adding a template.
 
 1. Inside the templates directory, copy and paste the required liquid files for your email. These cannot go in a
    subdirectory.
-2. Restart Directus.
+2. Restart CaseFusion.
 
-The template is now available to Directus.
+The template is now available to CaseFusion.
 
-Make sure to keep a reference of what templates you have available because Directus will not provide a selection list
+Make sure to keep a reference of what templates you have available because CaseFusion will not provide a selection list
 for templates. You must type the filename of the template without the extension.
 
 ## Summary
 
 With this guide you have learned how to create your own email templates using LiquidJS and how to include data from
-Directus in your emails. Make sure to read up on the various
+CaseFusion in your emails. Make sure to read up on the various
 [documentation about LiquidJS](https://shopify.github.io/liquid/basics/introduction/) to see what it’s fully capable of.

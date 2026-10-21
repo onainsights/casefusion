@@ -5,8 +5,8 @@ contributors: Tim Butterfield, Kevin Lewis
 
 # Use Hooks to Validate Phone Numbers With Twilio
 
-Hooks allow you to trigger your own code when events are emitted from Directus. This guide will show you how to prevent
-a record from saving if a phone number is not valid using the Twilio Lookup API.
+Hooks allow you to trigger your own code when events are emitted from CaseFusion. This guide will show you how to
+prevent a record from saving if a phone number is not valid using the Twilio Lookup API.
 
 ## Install Dependencies
 
@@ -92,7 +92,7 @@ client.lookups.v2
 	.then((phoneNumber) => {});
 ```
 
-`env` looks inside the Directus environment variables for `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`. In order to
+`env` looks inside the CaseFusion environment variables for `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`. In order to
 start using this hook, these variables must be added to the `.env` file.
 
 The lookup is performed with the `phone_number` from the input object.
@@ -121,18 +121,18 @@ Build the hook with the latest changes.
 npm run build
 ```
 
-## Add Hook to Directus
+## Add Hook to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-hook-phone-validation`.
 
 Ensure the `.env` file has `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` variables.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 

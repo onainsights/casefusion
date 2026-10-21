@@ -1,5 +1,5 @@
 ---
-description: This guide shows you how to build re-usable page components using Directus Many-to-Any (M2A) relationships.
+description: This guide shows you how to build re-usable page components using CaseFusion Many-to-Any (M2A) relationships.
 directus_version: 9.21.4
 author: Bryant Gillespie
 ---
@@ -12,7 +12,7 @@ author: Bryant Gillespie
 
 Many websites are made of common, repeating sections or groups of content.
 
-A common use case when using Directus as a Headless CMS is creating individual blocks that can be re-used on many
+A common use case when using CaseFusion as a Headless CMS is creating individual blocks that can be re-used on many
 different pages.
 
 This enables your content team create unique page layouts from re-usable components.
@@ -30,14 +30,14 @@ To achieve this, you will:
 
 ::: tip Requirements
 
-You’ll need to have either a Directus Cloud project configured and running or a self-hosted instance of Directus up and
-running.
+You’ll need to have either a Directus Cloud project configured and running or a self-hosted instance of CaseFusion up
+and running.
 
 :::
 
 ### Map Out Your Data Model
 
-Before creating Collections inside Directus, it’s helpful to map out your data model (schema).
+Before creating Collections inside CaseFusion, it’s helpful to map out your data model (schema).
 
 Consider this sample page below.
 
@@ -89,7 +89,7 @@ Let’s break down the data model for each section.
 
 ---
 
-Now let's create a Collection for each inside Directus.
+Now let's create a Collection for each inside CaseFusion.
 
 ::: tip
 
@@ -171,7 +171,7 @@ To keep things organized, we recommend that you namespace each collection with a
    - Gallery / Cards
    - Article
 
-   c. Save the field. Directus will create a new, hidden
+   c. Save the field. CaseFusion will create a new, hidden
    [junction collection](/app/data-model/relationships#many-to-any-m2a) for you automatically.
 
 ::: tip
@@ -329,9 +329,9 @@ This guide has quite a few steps and involves several different collections. Her
 ### Study the API Response
 
 To prevent frustration when building your front-end, it’s important you understand the structure of the JSON data that
-Directus returns for Many To Any (M2A) relationships.
+CaseFusion returns for Many To Any (M2A) relationships.
 
-- Complete your page builder data model inside Directus.
+- Complete your page builder data model inside CaseFusion.
 - Add some content.
 - Test your API calls.
 

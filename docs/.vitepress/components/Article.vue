@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { sitePath } from '../lib/site-path';
+
 defineProps<{
 	title: string;
 	tag?: string;
@@ -12,9 +14,9 @@ defineProps<{
 
 <template>
 	<div class="article">
-		<a :href="url">
+		<a :href="sitePath(url)">
 			<div class="image">
-				<img :src="img" :alt="title" loading="lazy" />
+				<img :src="sitePath(img)" :alt="title" loading="lazy" />
 			</div>
 			<div class="content">
 				<h3 class="heading">{{ title }}</h3>

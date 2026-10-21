@@ -34,7 +34,7 @@ permissions. We welcome any [pull-requests](/contributing/introduction) to addre
 ::: warning Users, Roles and Permissions!
 
 You will need to understand how [Users, Roles, and Permissions](/user-guide/user-management/users-roles-permissions)
-work in Directus to configure Shares properly.
+work in CaseFusion to configure Shares properly.
 
 :::
 
@@ -72,9 +72,9 @@ Once the link is opened by a user, a custom page displaying the Shared Item will
 
 ::: warning Logout to test links
 
-If you open a Share link while logged in to Directus, it will redirect to the Item in the Directus App. When testing a
-Share, make sure to log out of the app before opening the link, or simply open the link in another browser or incognito
-tab.
+If you open a Share link while logged in to CaseFusion, it will redirect to the Item in the CaseFusion App. When testing
+a Share, make sure to log out of the app before opening the link, or simply open the link in another browser or
+incognito tab.
 
 :::
 

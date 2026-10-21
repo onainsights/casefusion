@@ -1,5 +1,5 @@
 ---
-description: A guide on how to scaffold your Directus Extension.
+description: A guide on how to scaffold your CaseFusion Extension.
 readTime: 5 min read
 contributors: Rijk Van Zanten, Esther Agbaje
 ---
@@ -20,7 +20,7 @@ If you want to combine and share dependencies between one or more extensions, us
 
 ## Building Your Extension
 
-Before your extension can be used by Directus, it has to be built. If you used the `create-directus-extension` utility
+Before your extension can be used by CaseFusion, it has to be built. If you used the `create-directus-extension` utility
 to scaffold your extension, building your extension is as easy as running:
 
 ```bash
@@ -74,8 +74,8 @@ the config file can be loaded as a CommonJS or ESM file.
 
 ::: tip Component Library
 
-Directus comes shipped with it's own [Vue Component Library and Storybook](https://components.directus.io) that you can
-use to enrich your extensions. These components can be used in any of the "app extensions", including Interfaces,
+CaseFusion comes shipped with it's own [Vue Component Library and Storybook](https://components.directus.io) that you
+can use to enrich your extensions. These components can be used in any of the "app extensions", including Interfaces,
 Displays, Modules, Layouts, and Panels.
 
 :::
@@ -101,7 +101,7 @@ The generated `package.json` file contains an additional `directus:extension` fi
 - `type` — The type of the extension
 - `path` — The path to the built extension
 - `source` — The path to the source entrypoint
-- `host` — A semver string that indicates with which versions of the Directus host, the extension is compatible with
+- `host` — A semver string that indicates with which versions of the CaseFusion host, the extension is compatible with
 
 The CLI will use those fields by default to determine the input and output file paths and how the extension should be
 built.

@@ -1,5 +1,5 @@
 ---
-description: 'Learn how to get started with Directus real-time subscriptons.'
+description: 'Learn how to get started with CaseFusion real-time subscriptons.'
 ---
 
 # Real-Time Subscriptions
@@ -18,7 +18,7 @@ collection.
 <Card
   title="GraphQL Subscriptions"
   h="2"
-  text="Learn how to implement GraphQL Subscriptions in Directus."
+  text="Learn how to implement GraphQL Subscriptions in CaseFusion."
   url="/guides/real-time/subscriptions/graphql"
   add-margin
 />

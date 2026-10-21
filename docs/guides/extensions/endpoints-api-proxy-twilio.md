@@ -7,9 +7,9 @@ contributors: Tim Butterfield, Kevin Lewis
 
 Endpoints are used in the API to perform certain functions.
 
-Accessing a 3rd party API via a proxy in Directus has many advantages such as allowing multiple Directus users to access
-a service via a single 3rd party auth token, simplifying front-end extensions by accessing 3rd party APIs using the
-local API endpoint and credentials, and eliminating Cross-Origin issues.
+Accessing a 3rd party API via a proxy in CaseFusion has many advantages such as allowing multiple CaseFusion users to
+access a service via a single 3rd party auth token, simplifying front-end extensions by accessing 3rd party APIs using
+the local API endpoint and credentials, and eliminating Cross-Origin issues.
 
 As an example, this guide will proxy the Twilio API, but the same approach can be used for any API.
 
@@ -179,18 +179,18 @@ This is now complete and ready for testing. Build the endpoint with the latest c
 npm run build
 ```
 
-## Add Endpoint to Directus
+## Add Endpoint to CaseFusion
 
-When Directus starts, it will look in the `extensions` directory for any subdirectory starting with
+When CaseFusion starts, it will look in the `extensions` directory for any subdirectory starting with
 `directus-extension-`, and attempt to load them.
 
 To install an extension, copy the entire directory with all source code, the `package.json` file, and the `dist`
-directory into the Directus `extensions` directory. Make sure the directory with your extension has a name that starts
+directory into the CaseFusion `extensions` directory. Make sure the directory with your extension has a name that starts
 with `directus-extension`. In this case, you may choose to use `directus-extension-endpoint-twilio`.
 
 Ensure the `.env` file has `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` variables.
 
-Restart Directus to load the extension.
+Restart CaseFusion to load the extension.
 
 :::info Required files
 
@@ -208,7 +208,7 @@ Visit the Twilio docs and find an endpoint - for example
 [Send an SMS Message](https://www.twilio.com/docs/sms/api/message-resource).
 
 Make sure to select CURL as the coding language and this will output the URL to use. Copy the URL without the host and
-paste it to the end of your Directus endpoint, making sure to replace the `$TWILIO_ACCOUNT_SID` with your account SID.
+paste it to the end of your CaseFusion endpoint, making sure to replace the `$TWILIO_ACCOUNT_SID` with your account SID.
 
 It will look something like:
 
@@ -231,8 +231,8 @@ You should receive the direct response from Twilio.
 
 ## Summary
 
-With this endpoint, you now have access to the Twilio API within Directus using the built-in credentials of the current
-user. Now that you know how to create a proxy to Twilio, you can create proxies for other 3rd party services and
+With this endpoint, you now have access to the Twilio API within CaseFusion using the built-in credentials of the
+current user. Now that you know how to create a proxy to Twilio, you can create proxies for other 3rd party services and
 simplify your other extensions.
 
 ## Complete Code

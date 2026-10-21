@@ -3,7 +3,6 @@ layout: home
 ---
 
 <script setup lang="ts">
-import { data } from './.vitepress/data/blog.data.js';
 import Pattern from './.vitepress/components/home/Pattern.vue';
 import Footer from './.vitepress/components/home/Footer.vue';
 import Github from './.vitepress/components/home/icons/Github.vue';
@@ -16,12 +15,12 @@ import Badge from './.vitepress/components/Badge.vue'
 	</div>
 	<div :class="[$style.sectionContainer, $style.sectionContainerHero, $style.flex]">
 		<div :class="[$style.heroContent, $style.sectionPaddingHero]">
-			<Badge>Resource Hub</Badge>
-			<h1>Directus Documentation</h1>
-			<p>Explore our resources and powerful data engine to build your projects confidently.</p>
+			<Badge>GPLv3 · version 10.6.4</Badge>
+			<h1>CaseFusion Documentation</h1>
+			<p>The GPLv3 data platform maintained by Ona Insights: REST and GraphQL APIs, the admin app, flows and extensions.</p>
 			<div :class="[$style.heroButtons, $style.buttonGroup]">
 				<Button href="/getting-started/quickstart">Get Started</Button>
-				<Button secondary :icon="Github" href="https://github.com/directus/directus/" external>GitHub</Button>
+				<Button secondary :icon="Github" href="https://github.com/onainsights/casefusion" external>GitHub</Button>
 			</div>
 		</div>
 		<div :class="$style.heroToggler">
@@ -152,12 +151,6 @@ await directus.request(
 				url="/user-guide/content-module/translation-strings"
 				icon="g_translate"
 			/>
-			<Card
-				title="Directus Cloud"
-				text="Explore key aspects of Directus Cloud including the dashboard, projects, and members."
-				url="/user-guide/cloud/overview"
-				icon="cloud"
-			/>
 		</template>
 	</Tabs>
 </section>
@@ -168,43 +161,18 @@ await directus.request(
 	</div>
 </div>
 
-<section :class="[$style.sectionPaddingMd, $style.paddingBox]">
-	<div :class="[$style.sectionContainer]">
-		<div :class="$style.header">
-			<h2>Latest From The Blog</h2>
-			<p>
-				Project tutorials, tips & tricks, and best practices from the Directus team and community.
-			</p>
-		</div>
-		<div :class="[$style.grid4, $style.m60]">
-			<Article
-				v-for="article in data.blog.articles.slice(0,4)"
-				:key="article.id"
-				:title="article.title"
-				:desc="article.description"
-				:url="`/blog/${article.id}`"
-				:img="`https://marketing.directus.app/assets/${article.image}?key=card`"
-				:showMeta="false"
-			/>
-		</div>
-		<div :class="$style.header">
-			<Button href="/blog/">View All Posts</Button>
-		</div>
-	</div>
-</section>
-
 <section :class="[$style.grayBg, $style.paddingBox]">
 	<div :class="[$style.sectionContainer, $style.sectionPaddingMd]">
 		<div :class="$style.header">
 			<h2>Framework Guides</h2>
 			<p>
-				Combine Directus with your favorite framework to create dynamic and efficient web applications.
+				Combine CaseFusion with your favorite framework to create dynamic and efficient web applications.
 			</p>
 		</div>
 		<div :class="[$style.grid3, $style.m60]">
 			<Article
 				title="Build a Static Website with Nuxt.js"
-				desc="Learn how to build a website using Directus as a CMS and Nuxt 3."
+				desc="Learn how to build a website using CaseFusion as a CMS and Nuxt 3."
 				img="/assets/nuxt-guide.png"
 				url="/guides/headless-cms/build-static-website/nuxt-3"
 			/>
@@ -216,7 +184,7 @@ await directus.request(
 			/>
 			<Article
 				title="Build a Multi-User Chat With React.js"
-				desc="Deep dive into how to use Directus websockets to build an interactive chat application."
+				desc="Deep dive into how to use CaseFusion websockets to build an interactive chat application."
 				img="/assets/react-guide.png"
 				url="/guides/real-time/chat/react"
 			/>
@@ -232,10 +200,10 @@ await directus.request(
 		<div :class="[$style.header, $style.headerSelfHosted]">
 			<h2 :class="$style.headingSelfHosted">
 				Self Hosted
-				<span style="white-space: nowrap">Directus</span>
+				<span style="white-space: nowrap">CaseFusion</span>
 			</h2>
 			<p>
-				Learn how to run Directus on your own machine, customize settings, and deploy with confidence.
+				Learn how to run CaseFusion on your own machine, customize settings, and deploy with confidence.
 			</p>
 		</div>
 		<div :class="[$style.grid2, $style.m60]">
@@ -263,37 +231,14 @@ await directus.request(
 
 <section :class="[$style.sectionContainer, $style.sectionPaddingMd, $style.paddingBox]">
 	<div :class="$style.header">
-		<h2>Contributing to Directus</h2>
+		<h2>Contributing to CaseFusion</h2>
 		<p>
-			There are many ways in which you can contribute to the health and growth of the Directus project.
+			Bug reports and pull requests are welcome. Read the contributing guide and the security policy on GitHub.
 		</p>
 		<div :class="$style.buttonGroup">
-			<Button href="https://discord.com/invite/directus" external>Join the Community</Button>
-			<Button secondary :icon="Github" href="https://github.com/directus/directus/" external>GitHub</Button>
+			<Button href="https://github.com/onainsights/casefusion/blob/main/contributing.md" external>Contributing Guide</Button>
+			<Button secondary :icon="Github" href="https://github.com/onainsights/casefusion" external>GitHub</Button>
 		</div>
-	</div>
-	<div :class="[$style.grid3, $style.m60]">
-		<Card
-			h="3"
-			title="Request a Feature"
-			text="Propose new features to improve Directus. Find out how we use GitHub Discussions to organize requests."
-			url="/contributing/feature-request-process"
-			icon="post_add"
-		/>
-		<Card
-			h="3"
-			title="Contribute via Code"
-			text="Make a significant impact with code contributions. Read our Pull Request process and find out about our CLA."
-			url="/contributing/introduction"
-			icon="code"
-		/>
-		<Card
-			h="3"
-			title="Sponsorship & Advocacy"
-			text="Sponsor our project, increase its visibility and find out how to share the word with others!"
-			url="/contributing/sponsor"
-			icon="handshake"
-		/>
 	</div>
 </section>
 

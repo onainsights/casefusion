@@ -1,11 +1,11 @@
 ---
 contributors: Esther Agbaje, Kevin Lewis
-description: Learn how to use the Directus JavaScript SDK to work with your data and files.
+description: Learn how to use the CaseFusion JavaScript SDK to work with your data and files.
 ---
 
-# Directus JavaScript SDK
+# CaseFusion JavaScript SDK
 
-Learn how to use the new Directus JavaScript SDK to easily access and manipulate your data.
+Learn how to use the new CaseFusion JavaScript SDK to easily access and manipulate your data.
 
 ::: info Older SDK Documentation
 
@@ -32,8 +32,8 @@ npm install @directus/sdk
 
 ## Basic Usage
 
-Create a Directus client using the `createDirectus` hook from `@directus/sdk`. The client gives you access to your
-Directus project and data.
+Create a CaseFusion client using the `createDirectus` hook from `@directus/sdk`. The client gives you access to your
+CaseFusion project and data.
 
 ```js
 import { createDirectus } from '@directus/sdk';
@@ -49,8 +49,9 @@ The SDK requires a minimum TypeScript version of 5.0 but it is recommended to ke
 
 ## Creating a Composable Client
 
-The Directus SDK is a "Composable Client" that allows you to customize and build a client with the specific features you
-need. The client starts as an empty wrapper without any functionality. To add features, use the following composables:
+The CaseFusion SDK is a "Composable Client" that allows you to customize and build a client with the specific features
+you need. The client starts as an empty wrapper without any functionality. To add features, use the following
+composables:
 
 - `rest()`: REST request functions, adds `.request(...)` to the client.
 - `graphql()`: GraphQL request functions, adds `.query(...)` to the client.
@@ -96,7 +97,7 @@ const client = createDirectus<Schema>('http://directus.example.com').with(graphq
 
 :::
 
-If using TypeScript, you need to provide a `Schema` when creating a Directus client to make use of type hinting and
+If using TypeScript, you need to provide a `Schema` when creating a CaseFusion client to make use of type hinting and
 completion. This schema contains definitions for each collection and provides you with type hints (on input) and
 completion (on output).
 
@@ -114,12 +115,12 @@ const client = createDirectus('http://directus.example.com').with(authentication
 await client.login(email, password);
 ```
 
-There are many ways to create authenticated requests with the Directus SDK.
+There are many ways to create authenticated requests with the CaseFusion SDK.
 [Read our SDK Authentication guide](/guides/sdk/authentication) for more.
 
 ## Making Requests
 
-To query or update your collection in Directus, use the `rest()` or `graphql()` composable.
+To query or update your collection in CaseFusion, use the `rest()` or `graphql()` composable.
 
 ### Using REST
 
@@ -292,6 +293,6 @@ const client = createDirectus('http://directus.example.com');
 
 ## Next Steps
 
-You can find code examples using the Directus SDK throughout our [API reference](/reference/items).
+You can find code examples using the CaseFusion SDK throughout our [API reference](/reference/items).
 
 You can also find an auto-generated [TypeDoc of the new SDK](/packages/@directus/sdk/).

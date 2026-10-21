@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build custom hooks in Directus.
+description: A guide on how to build custom hooks in CaseFusion.
 readTime: 7 min read
 ---
 
@@ -46,7 +46,7 @@ the event.
 
 Filter hooks act on the event's payload before the event is fired. They allow you to check, modify, or cancel an event.
 
-Below is an example of canceling a `create` event by throwing a Directus error.
+Below is an example of canceling a `create` event by throwing a CaseFusion error.
 
 ```js
 import { createError } from '@directus/errors';
@@ -111,7 +111,7 @@ The context object has the following properties:
 
 ### Init
 
-Init hooks execute at a defined point within the life cycle of Directus. Use init hook objects to inject logic into
+Init hooks execute at a defined point within the life cycle of CaseFusion. Use init hook objects to inject logic into
 internal services.
 
 The init register function receives two parameters:
@@ -125,8 +125,8 @@ The callback function itself receives one parameter:
 
 ### Schedule
 
-Schedule hooks execute at certain points in time rather than when Directus performs a specific action. This is supported
-through [`node-schedule`](https://www.npmjs.com/package/node-schedule).
+Schedule hooks execute at certain points in time rather than when CaseFusion performs a specific action. This is
+supported through [`node-schedule`](https://www.npmjs.com/package/node-schedule).
 
 To set up a scheduled event, provide a cron statement as the first parameter to the `schedule()` function. For example
 `schedule('15 14 1 * *', <...>)` (at 14:15 on day-of-month 1) or `schedule('5 4 * * sun', <...>)` (at 04:05 on Sunday).

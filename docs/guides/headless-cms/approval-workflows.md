@@ -47,7 +47,7 @@ This whole workflow is created with permissions. All we need to do to create the
 To implement a workflow, you'll need:
 
 - An understanding of [permissions](/user-guide/user-management/users-roles-permissions) and
-  [filters](/reference/filter-rules) in Directus.
+  [filters](/reference/filter-rules) in CaseFusion.
 - A collection with some kind of content. In this recipe, we'll use a collection called `articles`.
 - A field on that collection to validate conditionally. We'll use a `status` field.
 - Two _(or more)_ roles that will work to author content. We'll use `writer` and `editor` roles.

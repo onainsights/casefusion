@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Schema endpoint in Directus.
+description: REST and GraphQL API documentation on the Schema endpoint in CaseFusion.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -97,7 +97,7 @@ uploads. Check [Upload a File](/reference/files#upload-a-file) for more informat
 
 ::: warning Different versions and vendors
 
-This endpoint does not allow different Directus versions and database vendors by default. This is to avoid any
+This endpoint does not allow different CaseFusion versions and database vendors by default. This is to avoid any
 unintentional diffs from being generated. You can opt in to bypass these checks by passing the `force` query parameter.
 
 :::
