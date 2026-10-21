@@ -28,7 +28,7 @@ function done(id: string) {
 				</v-card-text>
 				<v-card-actions>
 					<v-button v-if="notification.type === 'error' && isAdmin && notification.code === 'UNKNOWN'" secondary>
-						<a target="_blank" href="https://github.com/directus/directus/issues/new?template=bug_report.yml">
+						<a target="_blank" href="https://github.com/onainsights/casefusion/issues/new">
 							{{ t('report_error') }}
 						</a>
 					</v-button>

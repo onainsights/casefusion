@@ -2,10 +2,12 @@
 
 // Main palette
 $purple: #6644ff;
+// CaseFusion: Ona Insights brand colours. Teal is darkened from the brand #3ab1b0 to meet WCAG AA (4.7:1) with white
+$teal: #2a7f7e;
 $pink: #ff99dd;
 $blue: #3399ff;
 $green: #2ecda7;
-$yellow: #fbc54f;
+$yellow: #ffc342;
 $orange: #ffa439;
 $red: #e35169;
 
@@ -24,8 +26,9 @@ $color-mapping: (
 	'yellow': $yellow,
 	'orange': $orange,
 	'red': $red,
-	'primary': $purple,
-	'secondary': $pink,
+	'teal': $teal,
+	'primary': $teal,
+	'secondary': $yellow,
 	'success': $green,
 	'warning': $orange,
 	'danger': $red,
