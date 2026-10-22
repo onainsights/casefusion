@@ -608,8 +608,7 @@ describe('Integration Tests', () => {
 					accountability: { role: 'test', admin: false },
 				});
 
-				// mock return value for the following empty query
-				vi.spyOn(ItemsService.prototype, 'readByQuery').mockResolvedValueOnce([{ id: 1 }]);
+				vi.spyOn(ItemsService.prototype, 'getKeysByQuery').mockResolvedValue([1]);
 
 				const promise = service.deleteByQuery({ filter: { id: { _eq: 1 } } });
 
