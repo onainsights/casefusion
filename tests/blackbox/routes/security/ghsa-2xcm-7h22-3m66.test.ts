@@ -1,12 +1,12 @@
 // GHSA-2xcm-7h22-3m66: update and delete by query must not evaluate the filter beyond what the caller may read.
 // Otherwise the difference between "nothing matched" and "matched but forbidden" leaks hidden field values.
 import { getUrl } from '@common/config';
-import { CreateCollection, CreateField, CreateItem, ReadItem } from '@common/functions';
+import { ReadItem } from '@common/functions';
 import vendors from '@common/get-dbs-to-test';
 import { USER } from '@common/variables';
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { SeedRoleWithPermissions } from './security.seed';
+import { SeedCollection, SeedItem, SeedRoleWithPermissions } from './security.seed';
 
 const collection = 'security_2xcm';
 
@@ -16,10 +16,12 @@ const USERS_NO_EMAIL = { token: 'Security2xcmUsersToken', email: 'security-2xcm-
 
 beforeAll(async () => {
 	for (const vendor of vendors) {
-		await CreateCollection(vendor, { collection });
-		await CreateField(vendor, { collection, field: 'name', type: 'string' });
-		await CreateField(vendor, { collection, field: 'secret', type: 'string' });
-		await CreateItem(vendor, { collection, item: { name: 'first', secret: 'swordfish' } });
+		await SeedCollection(vendor, collection, [
+			{ field: 'name', type: 'string' },
+			{ field: 'secret', type: 'string' },
+		]);
+
+		await SeedItem(vendor, collection, { name: 'first', secret: 'swordfish' });
 
 		// May update and delete, but read nothing
 		await SeedRoleWithPermissions(vendor, {
