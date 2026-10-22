@@ -1,11 +1,10 @@
 // GHSA-7cvf-pxgp-42fc: a manual flow may only be triggered by a user who can read the flow and the items it runs on.
 import { getUrl } from '@common/config';
-import { CreateCollection, CreateField, CreateItem } from '@common/functions';
 import vendors from '@common/get-dbs-to-test';
 import { USER } from '@common/variables';
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { SeedRoleWithPermissions } from './security.seed';
+import { SeedCollection, SeedItem, SeedRoleWithPermissions } from './security.seed';
 
 const collection = 'security_7cvf';
 
@@ -18,9 +17,8 @@ const itemIds: Record<string, any> = {};
 
 beforeAll(async () => {
 	for (const vendor of vendors) {
-		await CreateCollection(vendor, { collection });
-		await CreateField(vendor, { collection, field: 'name', type: 'string' });
-		const item = await CreateItem(vendor, { collection, item: { name: 'target' } });
+		await SeedCollection(vendor, collection, [{ field: 'name', type: 'string' }]);
+		const item = await SeedItem(vendor, collection, { name: 'target' });
 		itemIds[vendor] = item.id;
 
 		const flow = await request(getUrl(vendor))
