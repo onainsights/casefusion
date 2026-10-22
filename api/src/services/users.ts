@@ -333,11 +333,13 @@ export class UsersService extends ItemsService {
 
 		// Check permissions before the clean-up below, which `super.deleteMany` would otherwise only check after it has
 		// already changed the notifications (GHSA-p623-wgx3-wxp8)
-		await new AuthorizationService({
-			knex: this.knex,
-			schema: this.schema,
-			accountability: this.accountability,
-		}).checkAccess('delete', this.collection, keys);
+		if (this.accountability && this.accountability.admin !== true) {
+			await new AuthorizationService({
+				knex: this.knex,
+				schema: this.schema,
+				accountability: this.accountability,
+			}).checkAccess('delete', this.collection, keys);
+		}
 
 		if (opts?.preMutationError) throw opts.preMutationError;
 
