@@ -62,6 +62,18 @@ describe('search', () => {
 		});
 	});
 
+	describe('filter_count does not match fields the role cannot read or concealed fields', () => {
+		it.each(vendors)('%s', async (vendor) => {
+			const hidden = await get(vendor, { search: 'marmal', meta: 'filter_count', limit: 0 });
+			const concealed = await get(vendor, { search: 'swordf', meta: 'filter_count', limit: 0 });
+			const readable = await get(vendor, { search: 'visib', meta: 'filter_count', limit: 0 });
+
+			expect(hidden.body.meta.filter_count).toBe(0);
+			expect(concealed.body.meta.filter_count).toBe(0);
+			expect(readable.body.meta.filter_count).toBe(1);
+		});
+	});
+
 	describe('still matches readable fields', () => {
 		it.each(vendors)('%s', async (vendor) => {
 			const response = await get(vendor, { search: 'VISIB', fields: 'name' });
