@@ -49,7 +49,7 @@ import { clearSystemCache, getCache } from '../../cache.js';
 import { DEFAULT_AUTH_PROVIDER, GENERATE_SPECIAL } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import env from '../../env.js';
-import { ErrorCode, ForbiddenError, InvalidPayloadError } from '@directus/errors';
+import { ErrorCode, ForbiddenError, InvalidPayloadError, InvalidQueryError } from '@directus/errors';
 import { getExtensionManager } from '../../extensions/index.js';
 import type { AbstractServiceOptions, GraphQLParams, Item } from '../../types/index.js';
 import { generateHash } from '../../utils/generate-hash.js';
@@ -1688,6 +1688,12 @@ export class GraphQLService {
 						if (!query.deep) query.deep = {};
 
 						const args: Record<string, any> = this.parseArgs(selection.arguments, variableValues);
+
+						// Aliases are chosen by the client; one naming an inherited member (`toString`, ...) would make `set`
+						// walk into a built-in prototype (GHSA-gwvv-rr68-cmv6)
+						if ((currentAlias ?? current).split('.').some((segment) => segment in Object.prototype)) {
+							throw new InvalidQueryError({ reason: `"${currentAlias ?? current}" can't be used as a field alias` });
+						}
 
 						set(
 							query.deep,

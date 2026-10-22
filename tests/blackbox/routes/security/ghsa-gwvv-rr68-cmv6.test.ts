@@ -8,7 +8,11 @@ import { describe, expect, it } from 'vitest';
 
 describe('deep with inherited member names', () => {
 	it.each(vendors)('%s', async (vendor) => {
-		const deep = JSON.stringify({ toString: { call: { _limit: 1 } }, valueOf: { call: { _limit: 1 } } });
+		const deep = JSON.stringify({
+			toString: { call: { _limit: 1 } },
+			valueOf: { call: { _limit: 1 } },
+			x: { 0: { _limit: 1 }, slice: { call: { _limit: 1 } } },
+		});
 
 		const polluting = await request(getUrl(vendor)).get('/server/ping').query({ deep });
 		expect(polluting.statusCode).toBe(200);
