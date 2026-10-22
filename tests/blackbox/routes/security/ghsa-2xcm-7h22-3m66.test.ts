@@ -12,6 +12,7 @@ const collection = 'security_2xcm';
 
 const UPDATE_ONLY = { token: 'Security2xcmUpdateOnlyToken', email: 'security-2xcm-update@tests.com' };
 const READ_NAME = { token: 'Security2xcmReadNameToken', email: 'security-2xcm-read-name@tests.com' };
+const USERS_NO_EMAIL = { token: 'Security2xcmUsersToken', email: 'security-2xcm-users@tests.com' };
 
 beforeAll(async () => {
 	for (const vendor of vendors) {
@@ -38,6 +39,21 @@ beforeAll(async () => {
 				{ collection, action: 'read', fields: ['id', 'name'] },
 				{ collection, action: 'update', fields: ['name'] },
 				{ collection, action: 'delete' },
+			],
+		});
+
+		// Reads users without their email, and may only update its own row
+		await SeedRoleWithPermissions(vendor, {
+			roleName: 'Security 2xcm users without email',
+			...USERS_NO_EMAIL,
+			permissions: [
+				{ collection: 'directus_users', action: 'read', fields: ['id', 'first_name'] },
+				{
+					collection: 'directus_users',
+					action: 'update',
+					fields: ['first_name'],
+					permissions: { id: { _eq: '$CURRENT_USER' } },
+				},
 			],
 		});
 	}
@@ -93,19 +109,35 @@ describe.each(callers)('$label', ({ token }) => {
 	});
 });
 
-describe('PATCH /users by query on another user’s token', () => {
+describe('PATCH by query with a search matching only a field the caller cannot read', () => {
+	it.each(vendors)('%s', async (vendor) => {
+		const response = await request(getUrl(vendor))
+			.patch(`/items/${collection}`)
+			.set('Authorization', `Bearer ${READ_NAME.token}`)
+			.send({ query: { search: 'swordfish' }, data: { name: 'changed' } });
+
+		expect(response.statusCode).toBe(200);
+		expect(response.body.data).toEqual([]);
+
+		const items = await ReadItem(vendor, { collection, fields: ['name'] });
+		expect(items).toEqual([{ name: 'first' }]);
+	});
+});
+
+describe('PATCH /users by query on another user\u2019s email', () => {
 	it.each(vendors)('%s', async (vendor) => {
 		const matching = await request(getUrl(vendor))
 			.patch('/users')
-			.set('Authorization', `Bearer ${USER.API_ONLY.TOKEN}`)
-			.send({ query: { filter: { token: { _starts_with: USER.ADMIN.TOKEN.slice(0, 3) } } }, data: {} });
+			.set('Authorization', `Bearer ${USERS_NO_EMAIL.token}`)
+			.send({ query: { filter: { email: { _starts_with: USER.ADMIN.EMAIL.slice(0, 5) } } }, data: {} });
 
 		const notMatching = await request(getUrl(vendor))
 			.patch('/users')
-			.set('Authorization', `Bearer ${USER.API_ONLY.TOKEN}`)
-			.send({ query: { filter: { token: { _starts_with: 'zzz' } } }, data: {} });
+			.set('Authorization', `Bearer ${USERS_NO_EMAIL.token}`)
+			.send({ query: { filter: { email: { _starts_with: 'zzz' } } }, data: {} });
 
-		expect(matching.statusCode).toBe(notMatching.statusCode);
+		expect(matching.statusCode).toBe(403);
+		expect(notMatching.statusCode).toBe(403);
 	});
 });
 
