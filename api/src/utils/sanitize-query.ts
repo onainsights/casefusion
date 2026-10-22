@@ -188,6 +188,10 @@ function sanitizeDeep(deep: Record<string, any>, accountability?: Accountability
 		for (const [key, value] of Object.entries(level)) {
 			if (!key) break;
 
+			// A key naming an inherited member (`toString`, `constructor`, ...) would make `set` below walk into and
+			// overwrite a built-in prototype, breaking the process for every request (GHSA-gwvv-rr68-cmv6)
+			if (key in Object.prototype) continue;
+
 			if (key.startsWith('_')) {
 				// Collect all sub query parameters without the leading underscore
 				subQuery[key.substring(1)] = value;

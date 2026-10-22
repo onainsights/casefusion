@@ -334,6 +334,24 @@ describe('deep', () => {
 		expect(sanitizedQuery.deep).toEqual({ deep: { relational_field: { _sort: ['name'] } } });
 	});
 
+	test.each(['toString', 'valueOf', 'hasOwnProperty', 'constructor', '__proto__'])(
+		'should ignore keys naming inherited members (%s)',
+		(key) => {
+			const deep = JSON.stringify({
+				[key]: { call: { _limit: 1 }, apply: { _limit: 1 } },
+				relational_field: { [key]: { call: { _limit: 1 } }, _limit: 1 },
+			});
+
+			const sanitizedQuery = sanitizeQuery({ deep });
+
+			expect(sanitizedQuery.deep).toEqual({ relational_field: { _limit: 1 } });
+			expect(typeof Object.prototype.toString.call).toBe('function');
+			expect(typeof Object.prototype.valueOf.call).toBe('function');
+			expect(typeof Object.prototype.hasOwnProperty.call).toBe('function');
+			expect(typeof Object.prototype.constructor.call).toBe('function');
+		}
+	);
+
 	test('should ignore non-underscore-prefixed queries', () => {
 		const deep = { deep: { relational_field_a: { _sort: ['name'] }, relational_field_b: { sort: ['name'] } } };
 
