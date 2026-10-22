@@ -1,6 +1,7 @@
 import type { FlowRaw } from '@directus/types';
 import { getFlowManager } from '../flows.js';
 import type { AbstractServiceOptions, Item, MutationOptions, PrimaryKey } from '../types/index.js';
+import { AuthorizationService } from './authorization.js';
 import { ItemsService } from './items.js';
 
 export class FlowsService extends ItemsService<FlowRaw> {
@@ -46,6 +47,14 @@ export class FlowsService extends ItemsService<FlowRaw> {
 
 	override async deleteMany(keys: PrimaryKey[], opts?: MutationOptions): Promise<PrimaryKey[]> {
 		const flowManager = getFlowManager();
+
+		// Check permissions before the clean-up below, which `super.deleteMany` would otherwise only check after it has
+		// already changed the operations (GHSA-p623-wgx3-wxp8)
+		await new AuthorizationService({
+			knex: this.knex,
+			schema: this.schema,
+			accountability: this.accountability,
+		}).checkAccess('delete', this.collection, keys);
 
 		// this is to prevent foreign key constraint error on directus_operations resolve/reject during cascade deletion
 		await this.knex('directus_operations').update({ resolve: null, reject: null }).whereIn('flow', keys);

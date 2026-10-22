@@ -14,6 +14,7 @@ import isUrlAllowed from '../utils/is-url-allowed.js';
 import { verifyJWT } from '../utils/jwt.js';
 import { stall } from '../utils/stall.js';
 import { Url } from '../utils/url.js';
+import { AuthorizationService } from './authorization.js';
 import { ItemsService } from './items.js';
 import { MailService } from './mail/index.js';
 import { SettingsService } from './settings.js';
@@ -329,6 +330,16 @@ export class UsersService extends ItemsService {
 		} catch (err: any) {
 			(opts || (opts = {})).preMutationError = err;
 		}
+
+		// Check permissions before the clean-up below, which `super.deleteMany` would otherwise only check after it has
+		// already changed the notifications (GHSA-p623-wgx3-wxp8)
+		await new AuthorizationService({
+			knex: this.knex,
+			schema: this.schema,
+			accountability: this.accountability,
+		}).checkAccess('delete', this.collection, keys);
+
+		if (opts?.preMutationError) throw opts.preMutationError;
 
 		await this.knex('directus_notifications').update({ sender: null }).whereIn('sender', keys);
 
