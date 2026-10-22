@@ -136,15 +136,21 @@ describe('alias', () => {
 		});
 	});
 
-	describe('refuses an alias of the own password hash', () => {
+	describe('refuses an alias of the password hash', () => {
 		it.each(vendors)('%s', async (vendor) => {
-			const response = await request(getUrl(vendor))
+			const list = await request(getUrl(vendor))
+				.get('/users')
+				.query({ fields: 'x', alias: JSON.stringify({ x: 'password' }) })
+				.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
+
+			const me = await request(getUrl(vendor))
 				.get('/users/me')
 				.query({ fields: 'x', alias: JSON.stringify({ x: 'password' }) })
 				.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
 
-			expect(response.statusCode).toBe(403);
-			expect(JSON.stringify(response.body)).not.toContain('$argon2');
+			expect(list.statusCode).toBe(403);
+			expect(JSON.stringify(list.body)).not.toContain('$argon2');
+			expect(JSON.stringify(me.body)).not.toContain('$argon2');
 		});
 	});
 
@@ -171,7 +177,7 @@ describe('sort', () => {
 			expect((await get(vendor, { sort: 'secret' })).statusCode).toBe(403);
 
 			const users = await request(getUrl(vendor))
-				.get('/users/me')
+				.get('/users')
 				.query({ sort: 'password' })
 				.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
 
