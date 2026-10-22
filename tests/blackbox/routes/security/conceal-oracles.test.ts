@@ -1,6 +1,7 @@
 // Values a role may not see must not come back through search, aggregates or aliases.
 // GHSA-7wq3-jr35-275c (search on non-permitted fields), GHSA-8jpw-gpr4-8cmh (search on concealed fields),
-// GHSA-38hg-ww64-rrwc (aggregates on concealed fields), GHSA-p8v3-m643-4xqx (aliases of concealed fields).
+// GHSA-38hg-ww64-rrwc (aggregates on concealed fields), GHSA-p8v3-m643-4xqx (aliases of concealed fields), and
+// sorting, which orders items by a value the role cannot see.
 import { getUrl } from '@common/config';
 import { CreateCollection, CreateField, CreateItem } from '@common/functions';
 import vendors from '@common/get-dbs-to-test';
@@ -152,6 +153,37 @@ describe('alias', () => {
 
 			expect(response.statusCode).toBe(200);
 			expect(response.body.data).toEqual([{ x: 'visible' }]);
+		});
+	});
+});
+
+describe('sort', () => {
+	describe('refuses fields the role cannot read', () => {
+		it.each(vendors)('%s', async (vendor) => {
+			expect((await get(vendor, { sort: 'hidden_note' })).statusCode).toBe(403);
+			expect((await get(vendor, { sort: '-code' })).statusCode).toBe(403);
+		});
+	});
+
+	describe('refuses concealed fields', () => {
+		it.each(vendors)('%s', async (vendor) => {
+			expect((await get(vendor, { sort: 'secret' })).statusCode).toBe(403);
+
+			const users = await request(getUrl(vendor))
+				.get('/users/me')
+				.query({ sort: 'password' })
+				.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
+
+			expect(users.statusCode).toBe(403);
+		});
+	});
+
+	describe('still sorts by readable fields', () => {
+		it.each(vendors)('%s', async (vendor) => {
+			const response = await get(vendor, { sort: '-name', fields: 'name' });
+
+			expect(response.statusCode).toBe(200);
+			expect(response.body.data).toEqual([{ name: 'visible' }]);
 		});
 	});
 });

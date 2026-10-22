@@ -187,6 +187,11 @@ export class AuthorizationService {
 							extractRequiredFieldPermissions(collection, ast.query?.[collection]?.filter ?? {})
 						);
 
+						requiredFieldPermissions = mergeRequiredFieldPermissions(
+							requiredFieldPermissions,
+							extractSortPermissions(collection, ast.query?.[collection]?.sort)
+						);
+
 						for (const child of ast.children[collection]!) {
 							const childPermissions = validateFilterPermissions(child, schema, action, accountability);
 
@@ -206,6 +211,11 @@ export class AuthorizationService {
 					requiredFieldPermissions = mergeRequiredFieldPermissions(
 						requiredFieldPermissions,
 						extractRequiredFieldPermissions(ast.name, ast.query?.filter ?? {})
+					);
+
+					requiredFieldPermissions = mergeRequiredFieldPermissions(
+						requiredFieldPermissions,
+						extractSortPermissions(ast.name, ast.query?.sort)
 					);
 
 					for (const child of ast.children) {
@@ -231,6 +241,34 @@ export class AuthorizationService {
 			}
 
 			return requiredFieldPermissions;
+
+			/**
+			 * Sorting orders the items by a field's value, so it needs the same field permissions as filtering on it, and
+			 * cannot use concealed fields
+			 */
+			function extractSortPermissions(collection: string, sort?: string[] | null) {
+				if (!sort || sort.length === 0) return {};
+
+				const filter: Filter = {
+					_and: sort.map((field) =>
+						field
+							.replace(/^-/, '')
+							.split('.')
+							.reduceRight<Record<string, any>>((nested, key) => ({ [key]: nested }), { _null: true })
+					) as Filter[],
+				};
+
+				const requiredPermissions = extractRequiredFieldPermissions(collection, filter);
+
+				for (const [requiredCollection, fields] of Object.entries(requiredPermissions)) {
+					for (const field of fields) {
+						const fieldOverview = schema.collections[requiredCollection]?.fields[stripFunction(field)];
+						if (fieldOverview && isConcealedField(fieldOverview)) throw new ForbiddenError();
+					}
+				}
+
+				return requiredPermissions;
+			}
 
 			function extractRequiredFieldPermissions(
 				collection: string,
