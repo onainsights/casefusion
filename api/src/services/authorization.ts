@@ -247,14 +247,26 @@ export class AuthorizationService {
 			 * cannot use concealed fields
 			 */
 			function extractSortPermissions(collection: string, sort?: string[] | null) {
-				if (!sort || sort.length === 0) return {};
+				// The sorts the server applies when none is given (primary key, the collection's or an o2m relation's sort
+				// field) only reveal the order the app shows anyway
+				const { primary, sortField } = schema.collections[collection] ?? {};
+
+				const isDefaultSort = (field: string) =>
+					field === primary ||
+					field === sortField ||
+					schema.relations.some(
+						(relation) => relation.collection === collection && relation.meta?.sort_field === field
+					);
+
+				const sortFields = (sort ?? [])
+					.map((field) => field.replace(/^-/, ''))
+					.filter((field) => !isDefaultSort(field));
+
+				if (sortFields.length === 0) return {};
 
 				const filter: Filter = {
-					_and: sort.map((field) =>
-						field
-							.replace(/^-/, '')
-							.split('.')
-							.reduceRight<Record<string, any>>((nested, key) => ({ [key]: nested }), { _null: true })
+					_and: sortFields.map((field) =>
+						field.split('.').reduceRight<Record<string, any>>((nested, key) => ({ [key]: nested }), { _null: true })
 					) as Filter[],
 				};
 
