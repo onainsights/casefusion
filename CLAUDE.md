@@ -51,8 +51,10 @@ pnpm --recursive exec tsc --noEmit # typecheck only
   in prose (not code, URLs, Directus Cloud or the trademark notices); run it after every upstream merge, CI checks it.
   Otherwise only the site config and theme (`docs/.vitepress/`) are ours; keep page content as upstream wrote it so
   merges stay clean.
-- **Security first, features never.** Dependency and tooling changes only. The one allowed behaviour change is disabling
-  phone-home (telemetry, update check) by default.
+- **Security first, features never.** Dependency and tooling changes only. The allowed behaviour changes are disabling
+  phone-home (telemetry, update check) by default and fixing a Directus advisory listed in
+  `security/directus-advisories.md`. Write those fixes from the public advisory text only: never open, copy or diff
+  upstream's BUSL code (newer commits in local history included). Each fix cites the GHSA and adds a regression test.
 - **Keep the upstream diff small.** Every touched upstream file is a future merge conflict. Prefer config, env defaults
   and new files over edits to upstream code.
 - **One phase or step per PR**, with the verification gate in `UPGRADE-PLAN.md` run before merging.
