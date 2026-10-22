@@ -1,12 +1,4 @@
-import type {
-	Accountability,
-	Aggregate,
-	Filter,
-	Permission,
-	PermissionsAction,
-	Query,
-	SchemaOverview,
-} from '@directus/types';
+import type { Accountability, Filter, Permission, PermissionsAction, Query, SchemaOverview } from '@directus/types';
 import { validatePayload } from '@directus/utils';
 import { FailedValidationError, joiValidationErrorItemToErrorExtensions } from '@directus/validation';
 import type { Knex } from 'knex';
@@ -23,6 +15,7 @@ import type {
 	NestedCollectionNode,
 	PrimaryKey,
 } from '../types/index.js';
+import { getSearchFilter, isConcealedField } from '../utils/apply-query.js';
 import { getRelationInfo } from '../utils/get-relation-info.js';
 import { stripFunction } from '../utils/strip-function.js';
 import { ItemsService } from './items.js';
@@ -46,6 +39,7 @@ export class AuthorizationService {
 	}
 
 	async processAST(ast: AST, action: PermissionsAction = 'read'): Promise<AST> {
+		const schema = this.schema;
 		const collectionsRequested = getCollectionsFromAST(ast);
 
 		const permissionsForCollections =
@@ -113,21 +107,24 @@ export class AuthorizationService {
 			if (ast.type !== 'field' && ast.type !== 'functionField') {
 				if (ast.type === 'a2o') {
 					for (const [collection, children] of Object.entries(ast.children)) {
-						checkFields(collection, children, ast.query?.[collection]?.aggregate);
+						checkFields(collection, children, ast.query?.[collection]);
 					}
 				} else {
-					checkFields(ast.name, ast.children, ast.query?.aggregate);
+					checkFields(ast.name, ast.children, ast.query);
 				}
 			}
 
 			function checkFields(
 				collection: string,
 				children: (NestedCollectionNode | FieldNode | FunctionFieldNode)[],
-				aggregate?: Aggregate | null
+				query?: Query
 			) {
 				// We check the availability of the permissions in the step before this is run
 				const permissions = permissionsForCollections.find((permission) => permission.collection === collection)!;
 				const allowedFields = permissions.fields || [];
+				const aggregate = query?.aggregate;
+
+				checkConcealedFields(collection, query);
 
 				if (aggregate && allowedFields.includes('*') === false) {
 					for (const aliasMap of Object.values(aggregate)) {
@@ -155,6 +152,23 @@ export class AuthorizationService {
 					}
 				}
 			}
+		}
+
+		/**
+		 * Concealed values are masked on read, but not when they come back as an aggregate or under an alias
+		 * (GHSA-38hg-ww64-rrwc, GHSA-p8v3-m643-4xqx). Counting them is fine.
+		 */
+		function checkConcealedFields(collection: string, query?: Query) {
+			const fields = schema.collections[collection]?.fields ?? {};
+			const isConcealed = (field: string) => !!fields[field] && isConcealedField(fields[field]!);
+
+			for (const [operation, columns] of Object.entries(query?.aggregate ?? {})) {
+				if (['count', 'countDistinct', 'countAll'].includes(operation)) continue;
+
+				if ((columns ?? []).some(isConcealed)) throw new ForbiddenError();
+			}
+
+			if (Object.values(query?.alias ?? {}).some(isConcealed)) throw new ForbiddenError();
 		}
 
 		function validateFilterPermissions(
@@ -468,6 +482,15 @@ export class AuthorizationService {
 
 				if (permissions.permissions && Object.keys(permissions.permissions).length > 0) {
 					query.filter._and.push(permissions.permissions);
+				}
+
+				if (query.search) {
+					const allowedFields = permissions.fields?.length
+						? permissions.fields
+						: [schema.collections[collection]!.primary];
+
+					query.filter._and.push(getSearchFilter(schema, collection, query.search, allowedFields));
+					delete query.search;
 				}
 
 				if (query.filter._and.length === 0) delete query.filter;
