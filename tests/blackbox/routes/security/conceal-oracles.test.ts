@@ -3,12 +3,11 @@
 // GHSA-38hg-ww64-rrwc (aggregates on concealed fields), GHSA-p8v3-m643-4xqx (aliases of concealed fields), and
 // sorting, which orders items by a value the role cannot see.
 import { getUrl } from '@common/config';
-import { CreateCollection, CreateField, CreateItem } from '@common/functions';
 import vendors from '@common/get-dbs-to-test';
 import { USER } from '@common/variables';
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { SeedRoleWithPermissions } from './security.seed';
+import { SeedCollection, SeedItem, SeedRoleWithPermissions } from './security.seed';
 
 const collection = 'security_conceal';
 
@@ -18,12 +17,14 @@ const item = { name: 'visible', secret: 'swordfish', hidden_note: 'marmalade', c
 
 beforeAll(async () => {
 	for (const vendor of vendors) {
-		await CreateCollection(vendor, { collection });
-		await CreateField(vendor, { collection, field: 'name', type: 'string' });
-		await CreateField(vendor, { collection, field: 'secret', type: 'string', meta: { special: ['conceal'] } });
-		await CreateField(vendor, { collection, field: 'hidden_note', type: 'string' });
-		await CreateField(vendor, { collection, field: 'code', type: 'integer' });
-		await CreateItem(vendor, { collection, item });
+		await SeedCollection(vendor, collection, [
+			{ field: 'name', type: 'string' },
+			{ field: 'secret', type: 'string', meta: { special: ['conceal'] } },
+			{ field: 'hidden_note', type: 'string' },
+			{ field: 'code', type: 'integer' },
+		]);
+
+		await SeedItem(vendor, collection, item);
 
 		// Reads `secret` (concealed) but not `hidden_note` or `code`
 		await SeedRoleWithPermissions(vendor, {
