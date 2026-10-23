@@ -1,6 +1,6 @@
 ---
 description: An introduction to what CaseFusion is, how it works, who it is for, and when to use it.
-readTime: 8 min read
+readTime: 6 min read
 ---
 
 # Introduction
@@ -10,18 +10,15 @@ readTime: 8 min read
 
 ## What is CaseFusion?
 
-::: tip CaseFusion
+**CaseFusion is a platform for building highly configured case management applications.**\
+It comes from [Ona Insights](https://onainsights.io/)' experience building and configuring case management applications for
+humanitarian organizations such as UNICEF, UN Women and Jacaranda Health. CaseFusion is a GPLv3 fork of [Directus 10.6.4](https://github.com/directus/directus/tree/v10.6.4),
+maintained by Ona Insights.
 
-CaseFusion (_duh REKT iss_) is Latin for: _laid straight, arranged in lines_.\
-The broadest goal of our platform is to present data in a simple, orderly, and intuitive way.
-
-:::
-
-<!--
-@TODO
-getting-started > introduction
-Add 2-4 min Promo Video When Ready
--->
+Its primary uses are case management applications and master data management. Custom workflows, strong security, tight
+access controls, easy integration and a web-based interface make it possible to build very custom apps that support
+operations needing a high degree of confidentiality, such as child protection, customer feedback management, and the
+prevention of sexual exploitation and abuse.
 
 **CaseFusion is an Open Data Platform built to democratize the database.**\
 This platform provides everyone on your team, _regardless of technical skill_, equal access to data and digital file asset
@@ -48,8 +45,7 @@ with data in some specific way, such as data and content management, digital fil
 dashboard creation, or whatever. If you find CaseFusion is missing something that your project needs, no problem!
 
 Built entirely in Typescript, primarily on [Node.js](https://nodejs.dev) and [Vue.js](https://vuejs.org), CaseFusion is
-100% open-source, modular and extensible, ensuring your project never hits a hard feature ceiling. The platform scales
-without issue, _and some Projects have hundreds of millions of users._
+100% open-source, modular and extensible, ensuring your project never hits a hard feature ceiling.
 
 You can use it with any _(or many)_ stacks or frontend frameworks.
 
@@ -60,12 +56,9 @@ _and much more._
 
 ### What Do Teams Use CaseFusion For?
 
-- [Headless CMS](https://directus.io/headless-cms)
-- [Learning Management System](https://directus.io/headless-cms)
-- [Product Inventory Management](https://directus.io/studio)
-- [No-Code Data Platform](https://directus.io/studio)
-- [Backend-as-a-Service](https://directus.io/engine)
-- [Full API-Based Data Architecture](https://directus.io/engine)
+- [Case Management](#case-management)
+- [Master Data Management](#master-data-management)
+- [Product Inventory Management](#product-inventory-management)
 
 ::: tip Ready to dive in?
 
@@ -143,28 +136,25 @@ Change this CTA to the 20-30 min crashcourse
 
 ## When to Use It
 
-**CaseFusion can power any data-driven project and can be linked or removed at any time.**
+**CaseFusion is built for operational data that has to be configured closely and kept confidential.**
 
-Build, monitor or manage any data model or app you desire: IoT fleets, e-commerce, SaaS, business data analytics,
-multi-channel content, _or anything else!_ If it involves SQL and digital files, you can link up CaseFusion. With this
-in mind, four broad use cases do emerge:
+### Case Management
 
-**Backend as a Service**\
-An end-to-end data solution. Efficiently connects data, auto-generates exhaustive APIs for projects that scale, and provides
-webhooks and task automation. Completely detached from the database, you're free to link and remove CaseFusion anytime or
-use any other service in tandem.
+Track people, cases and the services delivered to them through their whole lifecycle. Model each programme's case types
+and forms, route work with custom workflows, and use role- and field-level permissions so that each caseworker,
+supervisor or partner sees only what they should. This suits sensitive work such as child protection, customer feedback
+management, and the prevention of sexual exploitation and abuse.
 
-**Headless CMS**\
-Remember, _content_ is just data from a database! Manage any omnichannel digital experience. Deliver file assets and data
-across websites, apps, kiosks, digital signage... _the sky's the limit!_
+### Master Data Management
 
-**Internal Tool Builder**\
-The whole team can build custom apps! Ditch the spreadsheet and quickly build back-office apps and admin panels for customers,
-inventory, projects, marketing, _or anything else._
+Keep _a single source of truth_ for shared reference data: beneficiaries, locations, facilities, organizations or
+service catalogues. Other systems read and update it through the REST and GraphQL APIs, and changes can trigger flows
+that keep them in sync.
 
-**Data Management and Analytics**\
-Establish _a single source of truth_ for all data. Build no-code analytics dashboards to gain insights into company KPIs
-and other metrics. Coalesce previously siloed department data.
+### Product Inventory Management
+
+Manage stock, supplies and assets with their locations, movements and history, with dashboards to monitor levels and
+flows to automate reorders or alerts.
 
 <!--
 ::: tip Ready to dive-in?
@@ -178,14 +168,9 @@ Get a Project running in minutes. Learn CaseFusion hands-on in the [Quickstart G
 
 **CaseFusion is a simple, data-first solution to complex problems with no downsides.**
 
-CaseFusion was created in 2004 and has been slowly, iteratively improved on for a long time. The core team has carefully
-thought through the app, beginning to end, and strives to make this platform an all-benefit and no downside experience.
-It is also plug-and-play, so you're free to link or remove it anytime, with zero impact on your data. You have no vendor
-lock-in whatsoever, _your data is yours_. There are no artificial data limits _(e.g. limits on users or roles)_.
+CaseFusion is plug-and-play, so you're free to link or remove it anytime, with zero impact on your data. You have no
+vendor lock-in whatsoever, _your data is yours_. There are no artificial data limits _(e.g. limits on users or roles)_.
 
-Consider competing platforms in the four general use cases [mentioned above](#when-to-use-it). Due diligence to select a
-viable solution from one of these categories can easily take six months to ensure the feature list, pricing,
-scalability, migration options, etc.. all match the project in question. However, with CaseFusion, that's not the case!
 You can test it immediately on an existing database or build a new data model from scratch, _with no impact on your data
 and no long-term commitments._
 
@@ -198,26 +183,7 @@ The following core principles guide this platform:
 - **Extensible** — Every aspect of this platform is modular to avoid any hard feature ceiling.
 - **Unopinionated** — Choose the stack, database, and architecture as you wish.
 
-## Directus Cloud
+## Ona Insights Managed Cloud
 
-**Directus Cloud is the fastest and easiest way to get your CaseFusion Projects going.**
-
-Cloud architecture can be complicated and resource-intensive. Directus Cloud provides scalable, optimized storage and
-infrastructure, and automatic updates so developers can focus on the app's core business logic.
-
-With your free Directus Cloud account, you can set up Teams to organize Projects, Project billing, and other Team
-Members however you need. You'll be able to get a Project running in about 90 seconds. Then as Project growth changes
-over time, scale service up or down as needed at the click of a button. The cloud dashboard also provides simple,
-straightforward analytics to help understand traffic and inform scaling decisions.
-
-::: tip Ready to try Directus Cloud?
-
-Set up your free Cloud account and learn CaseFusion hands-on in the [Quickstart Guide](/getting-started/quickstart).
-
-:::
-
-::: tip Enterprise Cloud
-
-Need advanced configuration, unlimited scalability, and dedicated support? [Contact us](https://directus.io/contact)
-
-:::
+[Ona Insights](https://onainsights.io/) offers managed cloud hosting for CaseFusion.
+[Get in touch with Ona Insights](https://onainsights.io/) for more information.
