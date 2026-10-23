@@ -3,7 +3,7 @@ import type { Knex } from 'knex';
 import getDatabase from '../database/index.js';
 import { ForbiddenError } from '@directus/errors';
 import type { AbstractServiceOptions } from '../types/index.js';
-import { applyFilter, applySearch } from '../utils/apply-query.js';
+import { applyFilter, applySearch, getSearchFilter } from '../utils/apply-query.js';
 
 export class MetaService {
 	knex: Knex;
@@ -59,6 +59,7 @@ export class MetaService {
 		const dbQuery = this.knex(collection);
 
 		let filter = query.filter || {};
+		let search = query.search;
 		let hasJoins = false;
 
 		if (this.accountability?.admin !== true) {
@@ -75,14 +76,25 @@ export class MetaService {
 			} else {
 				filter = permissions;
 			}
+
+			// Count with the same search the items were read with: over readable fields only (GHSA-7wq3-jr35-275c)
+			if (search) {
+				const allowedFields = permissionsRecord.fields?.length
+					? permissionsRecord.fields
+					: [this.schema.collections[collection]!.primary];
+
+				const searchFilter = getSearchFilter(this.schema, collection, search, allowedFields);
+				filter = Object.keys(filter).length > 0 ? { _and: [filter, searchFilter] } : searchFilter;
+				search = undefined;
+			}
 		}
 
 		if (Object.keys(filter).length > 0) {
 			({ hasJoins } = applyFilter(this.knex, this.schema, dbQuery, filter, collection, {}));
 		}
 
-		if (query.search) {
-			applySearch(this.schema, dbQuery, query.search, collection);
+		if (search) {
+			applySearch(this.schema, dbQuery, search, collection);
 		}
 
 		if (hasJoins) {

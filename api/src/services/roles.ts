@@ -163,14 +163,14 @@ export class RolesService extends ItemsService {
 				{
 					filter: { role: { _in: keys } },
 				},
-				{ ...opts, bypassLimits: true }
+				{ ...opts, bypassLimits: true, trustedQuery: true }
 			);
 
 			await presetsService.deleteByQuery(
 				{
 					filter: { role: { _in: keys } },
 				},
-				{ ...opts, bypassLimits: true }
+				{ ...opts, bypassLimits: true, trustedQuery: true }
 			);
 
 			await usersService.updateByQuery(
@@ -181,7 +181,7 @@ export class RolesService extends ItemsService {
 					status: 'suspended',
 					role: null,
 				},
-				{ ...opts, bypassLimits: true }
+				{ ...opts, bypassLimits: true, trustedQuery: true }
 			);
 
 			await itemsService.deleteMany(keys, opts);

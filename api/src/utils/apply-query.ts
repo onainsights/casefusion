@@ -777,7 +777,9 @@ export async function applySearch(
 	searchQuery: string,
 	collection: string
 ): Promise<void> {
-	const fields = Object.entries(schema.collections[collection]!.fields);
+	const fields = Object.entries(schema.collections[collection]!.fields).filter(
+		([, field]) => isConcealedField(field) === false
+	);
 
 	dbQuery.andWhere(function () {
 		fields.forEach(([name, field]) => {
@@ -795,6 +797,47 @@ export async function applySearch(
 			}
 		});
 	});
+}
+
+/**
+ * The search as a filter over `allowedFields` only, with the same matching rules as `applySearch`. Used for roles with
+ * field permissions, so a search cannot match on fields the role may not read (GHSA-7wq3-jr35-275c).
+ */
+export function getSearchFilter(
+	schema: SchemaOverview,
+	collection: string,
+	searchQuery: string,
+	allowedFields: string[]
+): Filter {
+	const { fields, primary } = schema.collections[collection]!;
+	const conditions: Filter[] = [];
+
+	for (const [name, field] of Object.entries(fields)) {
+		if (allowedFields.includes('*') === false && allowedFields.includes(name) === false) continue;
+		if (isConcealedField(field)) continue;
+
+		if (['text', 'string'].includes(field.type)) {
+			conditions.push({ [name]: { _icontains: searchQuery } });
+		} else if (['bigInteger', 'integer', 'decimal', 'float'].includes(field.type)) {
+			const number = Number(searchQuery);
+
+			if (validateNumber(searchQuery, number)) {
+				conditions.push({ [name]: { _eq: number } });
+			}
+		} else if (field.type === 'uuid' && validate(searchQuery)) {
+			conditions.push({ [name]: { _eq: searchQuery } });
+		}
+	}
+
+	// Nothing to search in matches no item, like an empty `applySearch`
+	return conditions.length > 0 ? { _or: conditions } : { [primary]: { _null: true } };
+}
+
+/**
+ * Concealed and hashed values are masked on read, so they must not be matched by search either (GHSA-8jpw-gpr4-8cmh)
+ */
+export function isConcealedField(field: FieldOverview): boolean {
+	return field.type === 'hash' || field.special.includes('conceal');
 }
 
 function validateNumber(value: string, parsed: number) {

@@ -334,6 +334,50 @@ describe('deep', () => {
 		expect(sanitizedQuery.deep).toEqual({ deep: { relational_field: { _sort: ['name'] } } });
 	});
 
+	test.each(['toString', 'valueOf', 'hasOwnProperty', 'constructor', '__proto__'])(
+		'should ignore keys naming inherited members (%s)',
+		(key) => {
+			const deep = JSON.stringify({
+				[key]: { call: { _limit: 1 }, apply: { _limit: 1 } },
+				relational_field: { [key]: { call: { _limit: 1 } }, _limit: 1 },
+			});
+
+			const sanitizedQuery = sanitizeQuery({ deep });
+
+			expect(sanitizedQuery.deep).toEqual({ relational_field: { _limit: 1 } });
+			expect(typeof Object.prototype.toString.call).toBe('function');
+			expect(typeof Object.prototype.valueOf.call).toBe('function');
+			expect(typeof Object.prototype.hasOwnProperty.call).toBe('function');
+			expect(typeof Object.prototype.constructor.call).toBe('function');
+		}
+	);
+
+	test('should not follow array members after numeric keys', () => {
+		const deep = JSON.stringify({
+			x: { 0: { _limit: 1 }, slice: { call: { _limit: 1 } } },
+			y: { 0: { _limit: 1 }, map: { call: { bind: { _limit: 1 } } } },
+		});
+
+		const sanitizedQuery = sanitizeQuery({ deep });
+
+		expect(typeof Array.prototype.slice.call).toBe('function');
+		expect(typeof Function.prototype.call.bind).toBe('function');
+		expect(Array.isArray(sanitizedQuery.deep!['x'])).toBe(false);
+
+		expect(sanitizedQuery.deep).toEqual({
+			x: { 0: { _limit: 1 }, slice: { call: { _limit: 1 } } },
+			y: { 0: { _limit: 1 }, map: { call: { bind: { _limit: 1 } } } },
+		});
+	});
+
+	test('should merge nested levels into their parent', () => {
+		const deep = { a: { _limit: 2, b: { _limit: 3, c: { _sort: ['name'] } } } };
+
+		const sanitizedQuery = sanitizeQuery({ deep });
+
+		expect(sanitizedQuery.deep).toEqual({ a: { _limit: 2, b: { _limit: 3, c: { _sort: ['name'] } } } });
+	});
+
 	test('should ignore non-underscore-prefixed queries', () => {
 		const deep = { deep: { relational_field_a: { _sort: ['name'] }, relational_field_b: { sort: ['name'] } } };
 
