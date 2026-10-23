@@ -58,6 +58,12 @@ export type MutationOptions = {
 	 */
 	mutationTracker?: MutationTracker | undefined;
 
+	/**
+	 * Select the keys of an update or delete by query without the caller's read permissions. Only for queries the server
+	 * builds itself, never for a filter a client sent (GHSA-2xcm-7h22-3m66).
+	 */
+	trustedQuery?: boolean | undefined;
+
 	/*
 	 * The validation error to throw right before the mutation takes place
 	 */
