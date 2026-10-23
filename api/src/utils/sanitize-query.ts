@@ -1,6 +1,6 @@
 import type { Accountability, Aggregate, Filter, Query } from '@directus/types';
 import { parseFilter, parseJSON } from '@directus/utils';
-import { flatten, get, isPlainObject, merge, set } from 'lodash-es';
+import { flatten, isPlainObject } from 'lodash-es';
 import { getEnv } from '../env.js';
 import logger from '../logger.js';
 import { Meta } from '../types/index.js';
@@ -188,6 +188,9 @@ function sanitizeDeep(deep: Record<string, any>, accountability?: Accountability
 		for (const [key, value] of Object.entries(level)) {
 			if (!key) break;
 
+			// A key naming an inherited member (`toString`, `__proto__`, ...) must never become a path below
+			if (key in Object.prototype) continue;
+
 			if (key.startsWith('_')) {
 				// Collect all sub query parameters without the leading underscore
 				subQuery[key.substring(1)] = value;
@@ -206,7 +209,17 @@ function sanitizeDeep(deep: Record<string, any>, accountability?: Accountability
 		}
 
 		if (Object.keys(parsedLevel).length > 0) {
-			set(result, path, merge({}, get(result, path, {}), parsedLevel));
+			// Walk own properties of plain objects only. lodash `set` followed inherited members (and turned numeric keys
+			// into arrays), which let a crafted `deep` overwrite built-in prototypes for every request
+			// (GHSA-gwvv-rr68-cmv6)
+			let target = result;
+
+			for (const key of path) {
+				if (!Object.hasOwn(target, key) || !isPlainObject(target[key])) target[key] = {};
+				target = target[key];
+			}
+
+			Object.assign(target, parsedLevel);
 		}
 	}
 }
