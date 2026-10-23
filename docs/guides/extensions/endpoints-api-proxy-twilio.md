@@ -201,8 +201,8 @@ code has no negative effect.
 
 ## Use the Endpoint
 
-Using an application such as Postman, create a new request. The URL will be: `https://example.directus.app/twilio/` (be
-sure that you change the URL for your project's URL)
+Using an application such as Postman, create a new request. The URL will be: `https://casefusion.example.com/twilio/`
+(be sure that you change the URL for your project's URL)
 
 Visit the Twilio docs and find an endpoint - for example
 [Send an SMS Message](https://www.twilio.com/docs/sms/api/message-resource).
@@ -212,7 +212,7 @@ paste it to the end of your CaseFusion endpoint, making sure to replace the `$TW
 
 It will look something like:
 
-`https://example.directus.app/twilio/2010-04-01/Accounts/XXXXX_YOUR_SID_XXXXX/Messages.json`
+`https://casefusion.example.com/twilio/2010-04-01/Accounts/XXXXX_YOUR_SID_XXXXX/Messages.json`
 
 Change the method to as required (in this case POST) and add the following json to the body:
 

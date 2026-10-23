@@ -14,8 +14,8 @@ language-agnostic, so you can apply the same set of steps in your stack of choic
 ## Before You Begin
 
 You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
-[managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion, ensuring the
-`WEBSOCKETS_ENABLED` environment variable is set to `true`.
+[managed cloud hosting](https://onainsights.io/). You can also self-host CaseFusion, ensuring the `WEBSOCKETS_ENABLED`
+environment variable is set to `true`.
 
 Create a new collection called `messages`, with a `date_created` field enabled in the _Optional System Fields_ pane on
 collection creation. Create a text field called `text` and a second called `user`.

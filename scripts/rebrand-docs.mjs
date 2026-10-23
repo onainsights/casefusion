@@ -40,7 +40,7 @@ const references = [
 		`[GitHub Container Registry](${repo}/pkgs/container/casefusion)`,
 	],
 	[/https:\/\/hub\.docker\.com\/r\/directus\/directus\/?/g, `${repo}/pkgs/container/casefusion`],
-	[/(?<![\w./-])directus\/directus(?=:|`)/g, 'ghcr.io/onainsights/casefusion'],
+	[/(?<![\w./-])directus\/directus(?=:|`|$)/g, 'ghcr.io/onainsights/casefusion'],
 	[/https:\/\/www\.npmjs\.com\/package\/directus(?![\w/-])/g, `${repo}#running-it`],
 	[/https:\/\/github\.com\/directus\/directus\/blob\/main\//g, `${repo}/blob/main/`],
 	[
@@ -50,6 +50,53 @@ const references = [
 	[/https:\/\/github\.com\/directus\/directus\/pulls/g, `${repo}/pulls`],
 	[/https:\/\/github\.com\/directus\/directus\/releases(?:\/latest)?/g, `${repo}/releases`],
 	[/https:\/\/github\.com\/directus\/directus\/?(?=[)\s]|$)/g, repo],
+	// Links into upstream's docs: to the same page of this site (upstream's contributing pages are not published)
+	[/\]\(https:\/\/docs\.directus\.io\/contributing\/[^)]*\)/g, `](${repo}/blob/main/contributing.md)`],
+	[/\]\(\/contributing\/[^)]*\)/g, `](${repo}/blob/main/contributing.md)`],
+	[/\]\(https:\/\/docs\.directus\.io\//g, '](/'],
+	[/https:\/\/docs\.directus\.io\//g, 'https://onainsights.github.io/casefusion/'],
+	// Placeholder hosts and addresses in examples: example.com is reserved for this
+	[/https:\/\/example\.directus\.app/g, 'https://casefusion.example.com'],
+	[/\b(your-[a-z-]+|example|ldap)\.directus\.(?:app|io)\b/g, '$1.example.com'],
+	[/\b([a-z]+)@directus\.io\b/g, '$1@example.com'],
+	// Directus' hosting, community and services: Ona Insights or this repository instead
+	[
+		/\[managed Directus Cloud service\]\(https:\/\/directus\.cloud\/?\)/g,
+		'[managed cloud hosting](https://onainsights.io/)',
+	],
+	[/Contact \[our team\]\(https:\/\/directus\.io\/contact\)/g, 'Contact [Ona Insights](https://onainsights.io/)'],
+	[
+		/^Looking for technical support for your non-enterprise project\? Chat with thousands of engineers within our growing$/,
+		'Looking for help? Search or open an issue on',
+	],
+	[/^\[Community on Discord\]\(https:\/\/discord\.com\/invite\/directus\)$/, `[CaseFusion's GitHub](${repo}/issues).`],
+	[
+		/\[Vue Component Library and Storybook\]\(https:\/\/components\.directus\.io\)/g,
+		`[Vue Component Library](${repo}/tree/main/app/src/components)`,
+	],
+	[
+		/\[available via NPM\]\(https:\/\/www\.npmjs\.com\/package\/@directus\/sdk\)/g,
+		`[in this repository](${repo}/tree/main/sdk)`,
+	],
+	[
+		/\[our Crowdin page\]\(https:\/\/locales\.directus\.io\)/g,
+		`[the translation files](${repo}/tree/main/app/src/lang/translations)`,
+	],
+	[/ through the integration with$/, ' by opening'],
+	[
+		/^\[Crowdin\]\(https:\/\/locales\.directus\.io\)\.$/,
+		`[a pull request to the translation files](${repo}/tree/main/app/src/lang/translations).`,
+	],
+	[
+		/^We have \[integration guides\]\(https:\/\/directus\.io\/guides\/?\) for many popular front-end frameworks\. But there are far too$/,
+		'There are far too many front-end frameworks',
+	],
+	[/^many to cover in this recipe\.$/, 'to cover in this recipe.'],
+	[
+		/^Here's a \[list of various extensions\]\(https:\/\/github\.com\/directus-community\/awesome-directus#extensions\) created by the$/,
+		'Extensions from the Directus community often work with CaseFusion. Test each one before you',
+	],
+	[/^Directus Community\.$/, 'rely on it.'],
 ];
 
 function replaceReferences(line) {

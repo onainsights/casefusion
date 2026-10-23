@@ -13,14 +13,6 @@ const extensionsPage = computed(() => /\/(guides\/)?extensions\//.test(route.pat
 <template>
 	<Layout>
 		<template #doc-before>
-			<div class="info custom-block casefusion-notice">
-				<p>
-					<a href="https://onainsights.io/">Ona Insights</a>
-					maintains CaseFusion, a GPLv3 fork of Directus 10.6.4, and adapted this documentation from the Directus 10.6.4
-					documentation. Mentions of Directus Cloud, licensing or the marketplace do not apply to CaseFusion. CaseFusion
-					is not affiliated with Monospace, Inc.; "Directus" is a trademark of Monospace, Inc.
-				</p>
-			</div>
 			<div v-if="extensionsPage" class="warning custom-block casefusion-notice">
 				<p>
 					The CaseFusion extensions SDK will be made available soon. Until then,

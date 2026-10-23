@@ -42,8 +42,8 @@ Tags for the user.
 Avatar file. Many-to-one to [files](/reference/files).
 
 `language` **string**\
-Language the Admin App is rendered in. See [our Crowdin page](https://locales.directus.io) for all available languages and
-translations.
+Language the Admin App is rendered in. See [the translation files](https://github.com/onainsights/casefusion/tree/main/app/src/lang/translations)
+for all available languages and translations.
 
 `theme` **string**\
 One of `auto`, `light`, `dark`.

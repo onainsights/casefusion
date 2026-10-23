@@ -302,8 +302,7 @@ const page = page[0];
 
 ### Structuring Your Front End
 
-We have [integration guides](https://directus.io/guides/) for many popular front-end frameworks. But there are far too
-many to cover in this recipe.
+There are far too many front-end frameworks to cover in this recipe.
 
 Here’s some general advice on how to structure your front end to display page blocks / Many-To-Any (M2A) Relationship
 data.

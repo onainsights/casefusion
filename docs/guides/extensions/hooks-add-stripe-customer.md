@@ -118,8 +118,8 @@ stripe.customers
 	.then((customer) => {})
 	.catch((error) => {
 		mailService.send({ // [!code ++]
-			to: 'sharedmailbox@directus.io', // [!code ++]
-			from: 'noreply@directus.io', // [!code ++]
+			to: 'sharedmailbox@example.com', // [!code ++]
+			from: 'noreply@example.com', // [!code ++]
 			subject: `An error has occurred with Stripe API`, // [!code ++]
 			text: `The following error occurred for ${payload.first_name} ${payload.last_name} when attempting to create an account in Stripe.\r\n\r\n${error}\r\n\r\nPlease investigate.\r\n\r\nID: ${key}\r\nEmail: ${payload.email_address}`, // [!code ++]
 		}); // [!code ++]
@@ -183,8 +183,8 @@ export default ({ action }, { env, services }) => {
 			})
 			.catch((error) => {
 				mailService.send({
-					to: 'sharedmailbox@directus.io',
-					from: 'noreply@directus.io',
+					to: 'sharedmailbox@example.com',
+					from: 'noreply@example.com',
 					subject: `An error has occurred with Stripe API`,
 					text: `The following error occurred for ${payload.first_name} ${payload.last_name} when attempting to create an account in Stripe.\r\n\r\n${error}\r\n\r\nPlease investigate.\r\n\r\nID: ${key}\r\nEmail: ${payload.email_address}`,
 				});

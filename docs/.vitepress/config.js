@@ -32,11 +32,8 @@ export default defineConfig({
 	],
 	lastUpdated: true,
 	themeConfig: {
-		siteTitle: false,
-		logo: {
-			light: '/logo-light.svg',
-			dark: '/logo-dark.svg',
-		},
+		siteTitle: 'CaseFusion',
+		logo: '/logo.svg',
 		socialLinks: [{ icon: 'github', link: 'https://github.com/onainsights/casefusion' }],
 		nav: [
 			{
@@ -452,7 +449,7 @@ function sidebar() {
 			collapsed: true,
 			items: [
 				{
-					link: 'https://github.com/directus/directus/releases',
+					link: 'https://github.com/onainsights/casefusion/releases',
 					text: 'Release Notes',
 				},
 				{

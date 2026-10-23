@@ -234,12 +234,12 @@ code has no negative effect.
 
 ## Use the Endpoint
 
-Using an application such as Postman, create a new request. The URL will be: `https://example.directus.app/stripe/` (be
-sure that you change the URL for your project's URL)
+Using an application such as Postman, create a new request. The URL will be: `https://casefusion.example.com/stripe/`
+(be sure that you change the URL for your project's URL)
 
-- To view all payments: https://example.directus.app/stripe/payments
-- To view all payments for a customer: https://example.directus.app/stripe/payments/CUS_XXX
-- To create a customer: POST to https://example.directus.app/stripe/customer with the following payload:
+- To view all payments: https://casefusion.example.com/stripe/payments
+- To view all payments for a customer: https://casefusion.example.com/stripe/payments/CUS_XXX
+- To create a customer: POST to https://casefusion.example.com/stripe/customer with the following payload:
 
 ```json
 {

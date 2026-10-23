@@ -117,7 +117,7 @@ const directus = new Directus(url, init);
 #### `url` _required_
 
 - **Type** — `String`
-- **Description** — A string that points to your CaseFusion instance. E.g., `https://example.directus.io`
+- **Description** — A string that points to your CaseFusion instance. E.g., `https://example.example.com`
 - **Default** — N/A
 
 <br />
@@ -229,7 +229,7 @@ class MyAuth extends IAuth {
 	}
 }
 
-const directus = new Directus('https://example.directus.app', {
+const directus = new Directus('https://casefusion.example.com', {
 	auth: new MyAuth(),
 });
 ```
@@ -307,7 +307,7 @@ class SessionStorage extends BaseStorage {
 	}
 }
 
-const directus = new Directus('https://example.directus.app', {
+const directus = new Directus('https://casefusion.example.com', {
 	storage: new SessionStorage(),
 });
 ```
@@ -430,7 +430,7 @@ class MyTransport extends ITransport {
 	}
 }
 
-const directus = new Directus('https://example.directus.app', {
+const directus = new Directus('https://casefusion.example.com', {
 	transport: new MyTransport(),
 });
 ```
@@ -460,7 +460,7 @@ type MyCollections = {
 };
 
 // This is how you feed custom type information to Directus.
-const directus = new Directus<MyCollections>('https://example.directus.app');
+const directus = new Directus<MyCollections>('https://casefusion.example.com');
 
 // ...
 
@@ -492,7 +492,7 @@ type CustomTypes = {
 	directus_users: UserType;
 };
 
-const directus = new Directus<CustomTypes>('https://example.directus.app');
+const directus = new Directus<CustomTypes>('https://casefusion.example.com');
 
 await directus.auth.login({
 	email: 'admin@example.com',
@@ -605,7 +605,7 @@ You can get an instance of the item handler by providing the collection (and typ
 // import { Directus, ID } from '@directus/sdk';
 const { Directus } = require('@directus/sdk');
 
-const directus = new Directus('https://example.directus.app');
+const directus = new Directus('https://casefusion.example.com');
 
 const articles = directus.items('articles');
 ```
@@ -638,7 +638,7 @@ type MyBlog = {
 };
 
 // Let the SDK know about your collection types.
-const directus = new Directus<MyBlog>('https://example.directus.app');
+const directus = new Directus<MyBlog>('https://casefusion.example.com');
 
 // typeof(article) is a partial "Article"
 await directus.items('articles').readOne(10);
@@ -936,7 +936,7 @@ In addition to the items common methods, the files property adds the import meth
 directus.files.import(/* ... */);
 ```
 
-See [API File Import](https://docs.directus.io/reference/files/#import-a-file)
+See [API File Import](/reference/files/#import-a-file)
 
 ### Uploading a file
 
@@ -946,7 +946,7 @@ To upload a file you will need to send a `multipart/form-data` as body. On brows
 /* index.js */
 import { Directus } from 'https://unpkg.com/@directus/sdk@latest/dist/sdk.esm.min.js';
 
-const directus = new Directus('https://example.directus.app', {
+const directus = new Directus('https://casefusion.example.com', {
 	auth: {
 		staticToken: 'STATIC_TOKEN', // If you want to use a static token, otherwise check below how you can use email and password.
 	},
@@ -990,7 +990,7 @@ set:
 ```js
 import { Directus } from 'https://unpkg.com/@directus/sdk@latest/dist/sdk.esm.min.js';
 
-const directus = new Directus('https://example.directus.app', {
+const directus = new Directus('https://casefusion.example.com', {
 	auth: {
 		staticToken: 'STATIC_TOKEN', // If you want to use a static token, otherwise check below how you can use email and password.
 	},

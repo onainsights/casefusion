@@ -102,15 +102,15 @@ code has no negative effect.
 
 ## Use the Endpoint
 
-Using an application such as Postman, create a new request. The URL will be: `https://example.directus.app/pokeapi/` (be
-sure that you change the URL for your project's URL)
+Using an application such as Postman, create a new request. The URL will be: `https://casefusion.example.com/pokeapi/`
+(be sure that you change the URL for your project's URL)
 
 Visit the PokéAPI docs and find an endpoint - for example [Request a Pokémon](https://pokeapi.co/docs/v2#pokemon).
 
 Make sure to select CURL as the coding language and this will output the URL to use. Copy the URL without the host and
 paste it to the end of your CaseFusion endpoint. It will look something like:
 
-`https://example.directus.app/pokeapi/pokemon/25`
+`https://casefusion.example.com/pokeapi/pokemon/25`
 
 You should receive the direct response from PokéAPI.
 

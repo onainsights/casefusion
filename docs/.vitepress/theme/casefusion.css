@@ -74,3 +74,46 @@
 	--vp-custom-block-tip-border: var(--vp-c-teal-dimm-2);
 	--vp-custom-block-tip-text: var(--vp-c-teal-light);
 }
+
+/**
+ * Upstream components use the purple and pink variables directly (cards, tabs, icons, badges) and navy for dark
+ * surfaces. Point them at teal and the app's charcoal, so no Directus purple or navy is left.
+ * -------------------------------------------------------------------------- */
+
+:root {
+	--vp-c-purple: var(--vp-c-teal);
+	--vp-c-purple-light: var(--vp-c-teal-light);
+	--vp-c-purple-lighter: var(--vp-c-teal-lighter);
+	--vp-c-purple-dark: var(--vp-c-teal-dark);
+	--vp-c-purple-darker: var(--vp-c-teal-darker);
+	--vp-c-purple-dimm-1: var(--vp-c-teal-dimm-1);
+	--vp-c-purple-dimm-2: var(--vp-c-teal-dimm-2);
+	--vp-c-purple-dimm-3: var(--vp-c-teal-dimm-3);
+	--vp-c-pink: var(--vp-c-yellow);
+
+	--vp-c-black-pure: #2b2b2b;
+	--vp-docs-section-bg: #2f2f31;
+}
+
+.dark {
+	--vp-c-purple: var(--vp-c-teal);
+	--vp-c-purple-dimm-1: var(--vp-c-teal-dimm-1);
+	--vp-c-purple-dimm-2: var(--vp-c-teal-dimm-2);
+	--vp-c-purple-dimm-3: var(--vp-c-teal-dimm-3);
+
+	--vp-docs-section-bg: #000;
+}
+
+/**
+ * Nav bar: the yellow square icon followed by the name, as in the app's sidebar.
+ * -------------------------------------------------------------------------- */
+
+.VPNav .VPNavBar .VPNavBarTitle .logo {
+	height: 32px;
+	margin-right: 10px;
+}
+
+.VPNavBarTitle .title {
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}

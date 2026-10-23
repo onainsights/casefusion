@@ -91,7 +91,6 @@ to share dependencies among multiple extensions, significantly reducing file siz
 
 ::: tip Extensions Library
 
-Here's a [list of various extensions](https://github.com/directus-community/awesome-directus#extensions) created by the
-Directus Community.
+Extensions from the Directus community often work with CaseFusion. Test each one before you rely on it.
 
 :::

@@ -113,9 +113,10 @@ migrations to promote data between them.
 ## Extensions
 
 The platform has been built to be modular and extensible. This helps keep the core codebase simple and clean (see the
-[80/20 Rule](/contributing/introduction#feature-requests)), while allowing the flexibility needed to satisfy all
-use-cases... no matter how complex. There are many different types of supported extensions, each offering a way to
-deeply customize, override, or extend the core platform. [Learn more about Extensions](/extensions/introduction).
+[80/20 Rule](https://github.com/onainsights/casefusion/blob/main/contributing.md)), while allowing the flexibility
+needed to satisfy all use-cases... no matter how complex. There are many different types of supported extensions, each
+offering a way to deeply customize, override, or extend the core platform.
+[Learn more about Extensions](/extensions/introduction).
 
 ## Fields
 
@@ -354,14 +355,14 @@ the following drivers:
 
 Special Casing — If you are trying to update the specific casing (uppercase/lowercase) for a word (e.g., `Dna` to `DNA`)
 you will want to add the edge-case to the [Format Title package](https://github.com/directus/format-title). If you feel
-the case passes our [80/20 rule](https://docs.directus.io/contributing/introduction#feature-requests) you should submit
+the case passes our [80/20 rule](https://github.com/onainsights/casefusion/blob/main/contributing.md) you should submit
 a Pull Request to the codebase, otherwise you can update this in your instance.
 
 ## Translations
 
 The platform supports internationalization across its entire Admin App. Many languages are currently supported, with
-more being added all the time. Anyone can add or refine any languages through the integration with
-[Crowdin](https://locales.directus.io).
+more being added all the time. Anyone can add or refine any languages by opening
+[a pull request to the translation files](https://github.com/onainsights/casefusion/tree/main/app/src/lang/translations).
 
 In addition to the App itself being multilingual, the platform allows translating your schema too. By default,
 collections and field names come from the database's naming, but you can override this in different languages.

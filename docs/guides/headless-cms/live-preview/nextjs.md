@@ -22,7 +22,7 @@ collection inside of CaseFusion.
 You will need:
 
 - A CaseFusion project. The easiest way to get started with CaseFusion is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
+  [managed cloud hosting](https://onainsights.io/). You can also self-host CaseFusion.
 - A Next.js application.
 - Some knowledge of React.js and Next.js.
 

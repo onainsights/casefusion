@@ -42,8 +42,14 @@ import SocialIcon from './SocialIcon.vue';
 			<Divider />
 
 			<small>
-				Original documentation &copy; 2023 Monospace, Inc.; modifications &copy; 2026 Ona Insights. GPLv3. CaseFusion is
-				not affiliated with Monospace, Inc.; "Directus" is a trademark of Monospace, Inc.
+				GPLv3 &middot;
+				<a
+					href="https://github.com/onainsights/casefusion/blob/main/LICENSE-NOTICE.md"
+					target="_blank"
+					rel="noreferrer noopener"
+				>
+					Licence and trademark notice
+				</a>
 			</small>
 		</div>
 	</footer>

@@ -63,5 +63,4 @@ When you delete a Folder, any nested Files and Folders will be moved one level u
 
 ## More Help
 
-Looking for technical support for your non-enterprise project? Chat with thousands of engineers within our growing
-[Community on Discord](https://discord.com/invite/directus)
+Looking for help? Search or open an issue on [CaseFusion's GitHub](https://github.com/onainsights/casefusion/issues).
