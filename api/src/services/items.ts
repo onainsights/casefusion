@@ -73,19 +73,20 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 		};
 	}
 
-	async getKeysByQuery(query: Query): Promise<PrimaryKey[]> {
+	async getKeysByQuery(query: Query, opts?: MutationOptions): Promise<PrimaryKey[]> {
 		const primaryKeyField = this.schema.collections[this.collection]!.primary;
 		const readQuery = cloneDeep(query);
 		readQuery.fields = [primaryKeyField];
 
-		// Allow unauthenticated access
+		// The filter can come from the client, so it is evaluated with the caller's read permissions. A full-access read
+		// would let the caller learn field values they cannot read from whether the mutation matched (GHSA-2xcm-7h22-3m66).
+		// `updateMany` / `deleteMany` still check update / delete permissions for the keys found here.
 		const itemsService = new ItemsService(this.collection, {
 			knex: this.knex,
 			schema: this.schema,
+			accountability: opts?.trustedQuery ? null : this.accountability,
 		});
 
-		// We read the IDs of the items based on the query, and then run `updateMany`. `updateMany` does it's own
-		// permissions check for the keys, so we don't have to make this an authenticated read
 		const items = await itemsService.readByQuery(readQuery);
 		return items.map((item: AnyItem) => item[primaryKeyField]).filter((pk) => pk);
 	}
@@ -519,7 +520,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 	 * Update multiple items by query
 	 */
 	async updateByQuery(query: Query, data: Partial<Item>, opts?: MutationOptions): Promise<PrimaryKey[]> {
-		const keys = await this.getKeysByQuery(query);
+		const keys = await this.getKeysByQuery(query, opts);
 
 		const primaryKeyField = this.schema.collections[this.collection]!.primary;
 		validateKeys(this.schema, this.collection, primaryKeyField, keys);
@@ -857,7 +858,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 	 * Delete multiple items by query
 	 */
 	async deleteByQuery(query: Query, opts?: MutationOptions): Promise<PrimaryKey[]> {
-		const keys = await this.getKeysByQuery(query);
+		const keys = await this.getKeysByQuery(query, opts);
 
 		const primaryKeyField = this.schema.collections[this.collection]!.primary;
 		validateKeys(this.schema, this.collection, primaryKeyField, keys);

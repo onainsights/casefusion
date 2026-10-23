@@ -681,6 +681,7 @@ export class PayloadService {
 							opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
 						emitEvents: opts?.emitEvents,
 						mutationTracker: opts?.mutationTracker,
+						trustedQuery: true,
 					});
 				} else {
 					await itemsService.updateByQuery(
@@ -692,6 +693,7 @@ export class PayloadService {
 								opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
 							emitEvents: opts?.emitEvents,
 							mutationTracker: opts?.mutationTracker,
+							trustedQuery: true,
 						}
 					);
 				}
@@ -789,6 +791,7 @@ export class PayloadService {
 								opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
 							emitEvents: opts?.emitEvents,
 							mutationTracker: opts?.mutationTracker,
+							trustedQuery: true,
 						});
 					} else {
 						await itemsService.updateByQuery(
@@ -800,6 +803,7 @@ export class PayloadService {
 									opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
 								emitEvents: opts?.emitEvents,
 								mutationTracker: opts?.mutationTracker,
+								trustedQuery: true,
 							}
 						);
 					}

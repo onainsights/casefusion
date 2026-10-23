@@ -3,7 +3,7 @@ import { getSimpleHash, toArray } from '@directus/utils';
 import { FailedValidationError, joiValidationErrorItemToErrorExtensions } from '@directus/validation';
 import Joi from 'joi';
 import jwt from 'jsonwebtoken';
-import { cloneDeep, isEmpty } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 import { performance } from 'perf_hooks';
 import getDatabase from '../database/index.js';
 import env from '../env.js';
@@ -14,6 +14,7 @@ import isUrlAllowed from '../utils/is-url-allowed.js';
 import { verifyJWT } from '../utils/jwt.js';
 import { stall } from '../utils/stall.js';
 import { Url } from '../utils/url.js';
+import { AuthorizationService } from './authorization.js';
 import { ItemsService } from './items.js';
 import { MailService } from './mail/index.js';
 import { SettingsService } from './settings.js';
@@ -215,7 +216,7 @@ export class UsersService extends ItemsService {
 	 * Update many users by query
 	 */
 	override async updateByQuery(query: Query, data: Partial<Item>, opts?: MutationOptions): Promise<PrimaryKey[]> {
-		const keys = await this.getKeysByQuery(query);
+		const keys = await this.getKeysByQuery(query, opts);
 		return keys.length ? await this.updateMany(keys, data, opts) : [];
 	}
 
@@ -330,6 +331,18 @@ export class UsersService extends ItemsService {
 			(opts || (opts = {})).preMutationError = err;
 		}
 
+		// Check permissions before the clean-up below, which `super.deleteMany` would otherwise only check after it has
+		// already changed the notifications (GHSA-p623-wgx3-wxp8)
+		if (this.accountability && this.accountability.admin !== true) {
+			await new AuthorizationService({
+				knex: this.knex,
+				schema: this.schema,
+				accountability: this.accountability,
+			}).checkAccess('delete', this.collection, keys);
+		}
+
+		if (opts?.preMutationError) throw opts.preMutationError;
+
 		await this.knex('directus_notifications').update({ sender: null }).whereIn('sender', keys);
 
 		await super.deleteMany(keys, opts);
@@ -337,18 +350,7 @@ export class UsersService extends ItemsService {
 	}
 
 	override async deleteByQuery(query: Query, opts?: MutationOptions): Promise<PrimaryKey[]> {
-		const primaryKeyField = this.schema.collections[this.collection]!.primary;
-		const readQuery = cloneDeep(query);
-		readQuery.fields = [primaryKeyField];
-
-		// Not authenticated:
-		const itemsService = new ItemsService(this.collection, {
-			knex: this.knex,
-			schema: this.schema,
-		});
-
-		const itemsToDelete = await itemsService.readByQuery(readQuery);
-		const keys: PrimaryKey[] = itemsToDelete.map((item: Item) => item[primaryKeyField]);
+		const keys = await this.getKeysByQuery(query, opts);
 
 		if (keys.length === 0) return [];
 
