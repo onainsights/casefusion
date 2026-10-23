@@ -46,8 +46,6 @@ include a professional prefix. You can choose an icon from the library [here](ht
 
 With the information above, the operation will appear in the list like this:
 
-<img src="https://marketing.directus.app/assets/8e5245cb-2454-4c46-8a59-04a325385d61.png" alt="Custom operation featuring the previously set icon, name and description" style="padding:3px 2px 2px;"/>
-
 ### Accepting Inputs
 
 The default `options` object in `app.js` has a single text interface called `text`:

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isExcludedPath } from '../excluded.js';
 import { sitePath } from '../lib/site-path';
 
 defineProps<{
@@ -13,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-	<div class="article">
+	<div v-if="!isExcludedPath(url)" class="article">
 		<a :href="sitePath(url)">
 			<div class="image">
 				<img :src="sitePath(img)" :alt="title" loading="lazy" />

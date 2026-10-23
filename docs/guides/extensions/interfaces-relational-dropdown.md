@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Interfaces provide a meaningful way for users to provide data. This guide will show you how to create a dropdown menu
 that is searchable for data from another collection.
 
-![A dropdown showing a number of values](https://marketing.directus.app/assets/46b4070d-fd77-4ee3-b08b-654519dda031)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -399,8 +397,6 @@ code has no negative effect.
 
 The interface will appear in the list of available interfaces. Create a new field and select the interface from the list
 and create options.
-
-![An interface configuration showing the new M2O Dropdown with Search option](https://marketing.directus.app/assets/95195049-82f4-4494-8ed7-9a1a2dcd184d)
 
 ## Summary
 

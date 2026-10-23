@@ -152,8 +152,6 @@ createItem('Hello Everyone Everywhere All At Once!', 'Kevin');
 Every time you create an item, you will receive a message in response with the new item as created in your CaseFusion
 collection.
 
-![CaseFusion Data Studio Content Module showing the Messages collection with three items in it - one for each time the above command was run in the console.](https://cdn.directus.io/docs/v9/guides/websockets/getting-started-messages-collection.webp)
-
 ## Get Latest Item
 
 You can use your connection to perform all CRUD actions by using `type: 'items'` in the payload and including the

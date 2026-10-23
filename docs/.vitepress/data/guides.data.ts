@@ -1,4 +1,5 @@
 import { defineLoader } from 'vitepress';
+import { isExcludedPath } from '../excluded.js';
 
 export default defineLoader({
 	async load() {
@@ -252,8 +253,27 @@ export default defineLoader({
 		return {
 			guides: {
 				gettingStarted,
-				sections,
+				sections: withoutExcluded(sections),
 			},
 		};
 	},
 });
+
+// CaseFusion: drop guides left out of the site (../excluded.js), then blocks and sections left empty
+function withoutExcluded(sections: any[]) {
+	return sections
+		.map((section) => ({
+			...section,
+			blocks: section.blocks
+				.map((block: any) => ({
+					...block,
+					items: block.items
+						.map((item: any) =>
+							item.paths ? { ...item, paths: item.paths.filter((p: any) => !isExcludedPath(p.path)) } : item
+						)
+						.filter((item: any) => (item.paths ? item.paths.length > 0 : !isExcludedPath(item.path))),
+				}))
+				.filter((block: any) => block.items.length > 0),
+		}))
+		.filter((section) => section.blocks.length > 0);
+}

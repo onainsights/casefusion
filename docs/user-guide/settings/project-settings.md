@@ -17,10 +17,6 @@ To maintain project safety and integrity, only Administrators have access to the
 
 ## Configure Project Settings
 
-<video title="How to Configure Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/configure-a-project-20220815A.mp4" type="video/mp4" />
-</video>
-
 To configure Project Settings, follow these steps.
 
 1. Navigate to **Settings > Project Settings**.
@@ -37,7 +33,7 @@ To manage your project settings programmatically, see our API documentation on [
 
 ## General
 
-![How to Configure General Project Settings](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/general-project-settings-20220811A.webp)
+![How to Configure General Project Settings](/img/user-guide/general-project-settings.webp)
 
 - **Project Name** — Sets the name on the [Navigation Bar](/user-guide/overview/data-studio-app#_2-navigation-bar), as
   well as login and public pages.
@@ -47,10 +43,6 @@ To manage your project settings programmatically, see our API documentation on [
 - **Default Language** — Sets the default language used within the app.
 
 ## Branding & Style
-
-<video title="How to Configure Branding and Style in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/branding-and-style-20220811A.mp4" type="video/mp4" />
-</video>
 
 - **Project Color** — Sets color on the project logo, FavIcon and login/public pages.
 - **Project Logo** — Adds a 40x40px logo at the top of the
@@ -74,10 +66,6 @@ it easier to identify different CaseFusion projects.
 
 ## Modules
 
-<video title="How to Configure the Module Bar in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/module-bar-20220811A.mp4" type="video/mp4" />
-</video>
-
 - **Module Bar** — Allows the following customization of links displayed in the
   [Module Bar](/user-guide/overview/data-studio-app#_1-module-bar).
   - **Toggle Visibility** — Toggle <span mi icon>check_box_outline_blank</span> to set module link visibility in the
@@ -91,7 +79,7 @@ it easier to identify different CaseFusion projects.
 
 ## Security
 
-![How to Configure Security in Project Settings](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/security-project-settings-20220811A.webp)
+![How to Configure Security in Project Settings](/img/user-guide/security-project-settings.webp)
 
 - **Auth Password Policy** — Sets a policy requirement for all user's passwords via a JavaScript regex. Supports the
   following options:
@@ -103,10 +91,6 @@ it easier to identify different CaseFusion projects.
   locked, an Admin user is required to unlock the account.
 
 ## Files & Storage
-
-<video title="How to configure Files and Storage in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/transformation-presets-20220815A.mp4" type="video/mp4" />
-</video>
 
 The platform's file middleware allows for cropping and transforming image assets on the fly. This means you can simply
 request an original image, include any desired parameters, and you'll be served the new asset as a response.
@@ -136,7 +120,7 @@ To learn more, please see the API guide on [transformation presets](/reference/f
 
 ## Mapping
 
-![How to Configure Mapping in CaseFusion](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/mapping-project-settings-20220815A.webp)
+![How to Configure Mapping in CaseFusion](/img/user-guide/mapping-project-settings.webp)
 
 - **Mapbox Access Token** — Create a [Mapbox Access Token](https://docs.mapbox.com/help/glossary/access-token) and enter
   it here to improve the platform's mapping experience.
@@ -148,10 +132,6 @@ To learn more, please see the API guide on [transformation presets](/reference/f
   - **Attribution** — Sets attribution information.
 
 ## Image Editor
-
-<video title="How to configure Image Editor Project Settings in Directus" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/image-editor-20220815A.mp4" type="video/mp4" />
-</video>
 
 - **Custom Aspect Ratios** — Adds custom aspect ratios in the
   [image editor](/user-guide/file-library/files#edit-an-image).

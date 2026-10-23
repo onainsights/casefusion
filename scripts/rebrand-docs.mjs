@@ -14,14 +14,20 @@
 //
 // It also points references to upstream's distribution at ours (`references` below), in code blocks too: the Docker
 // image, Docker Hub, the npm package and links into upstream's GitHub repository.
+//
+// Media hosted by Directus (`hotlinked` below) is replaced or removed (`stripMedia`): images listed in
+// docs/.vitepress/screenshots.json point at our own screenshot in docs/public/img/; other images, videos and YouTube
+// embeds are removed, with a "Video coming soon" note where the text nearby refers to the video.
 
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isExcludedPath } from '../docs/.vitepress/excluded.js';
 
 const docsDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'docs');
-// Not published (docs/.vitepress/config.js srcExclude) or not prose
-const skipDirs = ['node_modules', '.vitepress', 'blog', 'packages', 'contributing', 'cloud', 'public'];
+// Not prose, or not published (pages in docs/.vitepress/excluded.js are skipped too)
+const skipDirs = ['node_modules', '.vitepress', 'public'];
+const screenshots = JSON.parse(await readFile(join(docsDir, '.vitepress', 'screenshots.json'), 'utf8'));
 const check = process.argv.includes('--check');
 
 // "Directus" followed by these words is a Monospace product, team or trademark, not the software.
@@ -161,6 +167,58 @@ function rewriteLine(line, next = '') {
 	return out + replaceName(line.slice(last), next);
 }
 
+const hotlinked = /^https:\/\/(?:cdn\.directus\.io|marketing\.directus\.app)\//;
+const videoNote = '::: info Video coming soon\n\n:::';
+const removed = '\u0000';
+
+export function stripMedia(source) {
+	let out = source;
+
+	// Videos: <video ...>...</video> with a hotlinked source
+	out = out.replace(/^[ \t]*<video\b[\s\S]*?<\/video>[ \t]*$/gm, (block, offset, whole) => {
+		const src = block.match(/src="([^"]*)"/)?.[1] ?? '';
+		if (!hotlinked.test(src)) return block;
+		const before = whole.slice(0, offset).split('\n').slice(-10).join('\n');
+		const after = whole
+			.slice(offset + block.length)
+			.split('\n')
+			.slice(0, 10)
+			.join('\n');
+		const nearby = (before + '\n' + after).replace(/<[^>]*>/g, '');
+		return /\bvideo\b/i.test(nearby) ? videoNote : removed;
+	});
+
+	// YouTube embeds
+	out = out.replace(/^[ \t]*<iframe\b[^>]*youtube[^>]*>\s*<\/iframe>[ \t]*$/gm, removed);
+
+	// Markdown images, optionally with a title: ![alt](url "title")
+	out = out.replace(/!\[([^\]]*)\]\((\S+?)(\s+"[^"]*")?\)/g, (image, alt, url, title = '') => {
+		if (!hotlinked.test(url)) return image;
+		return screenshots[url] ? `![${alt}](${screenshots[url]}${title})` : removed;
+	});
+
+	// HTML images
+	out = out.replace(/<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g, (image, url) => {
+		if (!hotlinked.test(url)) return image;
+		return screenshots[url] ? image.replace(url, screenshots[url]) : removed;
+	});
+
+	// Drop lines that held only removed media, with one of the blank lines around them
+	const lines = out.split('\n');
+	const kept = [];
+
+	for (let i = 0; i < lines.length; i++) {
+		if (lines[i].replaceAll(removed, '').trim() === '' && lines[i].includes(removed)) {
+			if (kept.at(-1) === '' && lines[i + 1] === '') i++;
+			continue;
+		}
+
+		kept.push(lines[i].replaceAll(removed, ''));
+	}
+
+	return kept.join('\n');
+}
+
 export function rebrand(source) {
 	const lines = source.split('\n');
 	let fence = null;
@@ -204,7 +262,8 @@ async function* markdownFiles(dir) {
 		if (entry.isDirectory()) {
 			if (!skipDirs.includes(entry.name)) yield* markdownFiles(join(dir, entry.name));
 		} else if (entry.name.endsWith('.md')) {
-			yield join(dir, entry.name);
+			const file = join(dir, entry.name);
+			if (!isExcludedPath(relative(docsDir, file).replace(/\.md$/, ''))) yield file;
 		}
 	}
 }
@@ -214,7 +273,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 
 	for await (const file of markdownFiles(docsDir)) {
 		const source = await readFile(file, 'utf8');
-		const output = rebrand(source);
+		const output = rebrand(stripMedia(source));
 
 		if (output !== source) {
 			changed.push(relative(docsDir, file));

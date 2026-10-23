@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Displays provide a meaningful way for users to consume data. This guide will show you how to create a display to change
 a date of birth to the current age in years and months.
 
-![A table of data is shown with a value reading '22 years 10 months'](https://marketing.directus.app/assets/7d58a582-ace9-47fe-848e-437fa29fe868)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -51,8 +49,6 @@ Make sure the `id` is unique between all extensions including ones created by 3r
 include a professional prefix. You can choose an icon from the library [here](https://fonts.google.com/icons).
 
 With the information above, the display will appear in the list like this:
-
-![A new display option is shown - Datetime.](https://marketing.directus.app/assets/3cd68dc3-95ee-4eef-a3c6-17ddaca7aa09)
 
 Currently the options object is `null`. To provide the option to include months, replace the `options` value with the
 following object:
@@ -177,10 +173,6 @@ code has no negative effect.
 Now the display will appear in the list of available displays for a date field. To test, create a new date field and
 select this display from the list and make sure to add some data. The results will appear in the layout if you have that
 column showing.
-
-![Display age settings showing a checkbox to display months](https://marketing.directus.app/assets/78da9218-2c6e-4356-860c-9fe713081c45)
-
-![A table of data is shown with a value reading '22 years 10 months'](https://marketing.directus.app/assets/7d58a582-ace9-47fe-848e-437fa29fe868)
 
 ## Summary
 

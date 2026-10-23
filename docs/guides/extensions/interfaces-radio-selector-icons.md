@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Interfaces provide a meaningful way for users to provide data. This guide will show you how to create a radio selection
 input using icons, SVGs or images where the user selects an option and the value is saved in the database.
 
-![Interface showing three boxes next to each other - each has an image and text.](https://marketing.directus.app/assets/20d77946-e01e-4fac-8916-536b1ccc20d6)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -332,8 +330,6 @@ the `field` variable. This will allow the value to be emitted when a choice is c
 Inside the button, add the HTML to output the icon, svg or image inside the button. Use the `v-if` directives to control
 which take priority if present. This example orders the priority icon, then svg, then image.
 
-![Three icons next to each other with text underneath.](https://marketing.directus.app/assets/b873f262-c653-45ab-bb8e-a8dd30a92ed8)
-
 The buttons currently have no indication that they are selected. At the bottom of `interface.vue`, add the following
 under the closing `script` tag:
 
@@ -454,8 +450,6 @@ under the closing `script` tag:
 
 Now, the buttons should be complete:
 
-![Interface showing three boxes next to each other - each has an image and text.](https://marketing.directus.app/assets/20d77946-e01e-4fac-8916-536b1ccc20d6)
-
 Build the interface with the latest changes.
 
 ```
@@ -484,8 +478,6 @@ code has no negative effect.
 
 The interface will appear in the list of available interfaces. Create a new field and select the interface from the list
 and set options.
-
-![An interface configuration showing an icon button group](https://marketing.directus.app/assets/1dd9d145-d3a1-46a4-bd24-3db6d33418d6)
 
 ## Summary
 

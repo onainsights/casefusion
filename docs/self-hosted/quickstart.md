@@ -9,8 +9,6 @@ import { data as directus } from '../.vitepress/data/directus.data.js';
 
 # Self-Hosting Quickstart
 
-<iframe style="width:100%; aspect-ratio:16/9; margin-top: 2em;" src="https://www.youtube.com/embed/J7tFWxAGkh4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 ## Install Docker
 
 You should have Docker installed and running on your machine. You can

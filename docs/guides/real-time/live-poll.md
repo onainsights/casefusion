@@ -60,8 +60,6 @@ to replace `your-directus-url` with your project’s URL.
 _Load `vote.html` in your browser and click a button. Check your CaseFusion project and you should see a new item in the
 `votes` collection._
 
-![CaseFusion Votes collection with a single item with a choice of ‘cats’.](https://cdn.directus.io/docs/v9/guides/websockets/poll-item-added.webp)
-
 At the bottom of your `vote` function, add some user feedback that the vote was cast:
 
 ```js
@@ -183,8 +181,6 @@ if (data.type == 'subscription' && data.event == 'init') {
 ```
 
 Refresh the page, and you should see the chart update with the initial values.
-
-![A pie chart with two segments - one labeled cats and the other dogs.](https://cdn.directus.io/docs/v9/guides/websockets/poll-pie-chart.webp)
 
 ### Update Chart With New Votes
 

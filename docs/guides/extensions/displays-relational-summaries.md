@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Displays provide a meaningful way for users to consume data. This guide will show you how to create a display that
 queries another table and returns the `SUM` or `COUNT` of a column.
 
-![In a table, a new field called 'Test Junction' is shown. The values are '5 items' and '2 items'.](https://marketing.directus.app/assets/c1965f6c-dfa3-461a-bda9-e3767f9d40be)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -56,8 +54,6 @@ Make sure the `id` is unique between all extensions including ones created by 3r
 include a professional prefix. You can choose an icon from the library [here](https://fonts.google.com/icons).
 
 With the information above, the display will appear in the list like this:
-
-![A new display option is shown - Related Values.](https://marketing.directus.app/assets/128e9282-a988-4e8f-9775-ec6cfe208525)
 
 Currently the options object is `null`. To provide the option to include months, update the `options` object with the
 following code:
@@ -189,8 +185,6 @@ the performance of CaseFusion.
 
 Here is a preview of how this appears in CaseFusion:
 
-![New display options showing a select field for column, a checkbox for calculate sum, and text fields for prefix and suffix.](https://marketing.directus.app/assets/1ac7ce81-f5ae-43a7-a1a1-18590fdfa404)
-
 ## Build the View
 
 The `display.vue` file contains the barebones code required for a display to work. The value is imported in the `props`
@@ -315,8 +309,6 @@ display:
 1. Create a new relational field and select your new display from the list.
 2. After saving the new field, edit the field to configure the display and populate the fields as needed.
 3. Save changes and add some data to the table. You will see the relational fields at work in the layout.
-
-![In a table, a new field called 'Test Junction' is shown. The values are '5 items' and '2 items'.](https://marketing.directus.app/assets/c1965f6c-dfa3-461a-bda9-e3767f9d40be)
 
 ## Summary
 

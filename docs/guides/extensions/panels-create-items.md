@@ -9,8 +9,6 @@ Panels are used in dashboards as part of the Insights module. As well as read-on
 with form inputs. In this guide, you will create a panel that automatically generates a form based on a collection's
 fields, and allows item creation from an Insights dashboard.
 
-![A panel shows a form called Add Customer. It has a name, surname, and phone number text input.](https://marketing.directus.app/assets/5385ebc9-e3d9-4f75-9ec8-86bd54589d56.png)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -99,8 +97,6 @@ skipUndefinedKeys: ['responseFormat'],
 ```
 
 The output of these options will look like this:
-
-<img src="https://marketing.directus.app/assets/840bb61a-46ff-4474-a026-da5191f1272b.png" alt="Form with collections and fields selection." style="padding: 0 8px 8px 10px">
 
 ## Prepare the View
 
@@ -348,11 +344,7 @@ Lastly, replace the CSS at the bottom with this:
 
 When it's all put together, the panel looks like this:
 
-![A panel shows a form called Add Customer. It has a name, surname, and phone number text input.](https://marketing.directus.app/assets/5385ebc9-e3d9-4f75-9ec8-86bd54589d56.png)
-
 And the response looks like this:
-
-![A popup reads 'Saved - User Added!' with a link to the user and a but purple Done button.](https://marketing.directus.app/assets/182dfa12-e236-41f2-97cf-ec6a983f0d7c.png)
 
 Both files are now complete. Build the panel with the latest changes.
 
@@ -387,8 +379,6 @@ Fill in the configuration fields as needed:
 - Choose a collection.
 - Select all the fields to include from that collection.
 - Create a custom response message.
-
-<img src="https://marketing.directus.app/assets/082d5150-fde8-4268-b79a-df444e6efe20.png" alt="Form showing a collection is selected, 3 items are included, and a response is formed as a string with two dynamic variables." style="padding: 0 0 0 10px">
 
 ## Summary
 

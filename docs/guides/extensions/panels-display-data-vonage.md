@@ -9,8 +9,6 @@ Panels are used in dashboards as part of the Insights module, and typically allo
 in their CaseFusion collections. In this guide, you will instead fetch data from an external API and display it in a
 table as part of a panel.
 
-<img src="https://marketing.directus.app/assets/31ac7437-99ed-44fe-9b75-b21c92198fda.png" alt="Table with header Messages shows several items with status, sent delative date, a recipient ID, and a provider">
-
 Panels can only talk to internal CaseFusion services, and can't reliably make external web requests because browser
 security protections prevent these cross-origin requests from being made. To create a panel that can interact with
 external APIs, this guide will create a bundle of an endpoint (that can make external requests) and a panel (that uses
@@ -243,8 +241,6 @@ minHeight: 18,
 
 The output of these options will look like this:
 
-<img src="https://marketing.directus.app/assets/053298df-a5ff-4fd5-85ec-ff0f78bb64ca.png" alt="Form shows product type dropdown, direction dropdown, date range dropdown, included message checkbox, and status dropdown." style="padding: 2px 12px;">
-
 ## Prepare the View
 
 Open the `panel.vue` file and you will see the starter template and script. Skip to the script section and import the
@@ -467,8 +463,6 @@ Fill in the configuration fields as needed:
 5. (SMS only) Only show messages with a status.
 
 Save the panel and dashboard. It will look something like this:
-
-<img src="https://marketing.directus.app/assets/31ac7437-99ed-44fe-9b75-b21c92198fda.png" alt="Table with header Messages shows several items with status, sent delative date, a recipient ID, and a provider">
 
 ## Summary
 
