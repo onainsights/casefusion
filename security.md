@@ -24,4 +24,4 @@ Only the latest commit on `main` receives security fixes.
 CaseFusion is based on an older Directus release. If the issue is also present in the current Directus release, please
 report it to Directus as well, through
 [their security advisories](https://github.com/directus/directus/security/advisories/new). Known upstream advisories
-that apply to our base version are tracked as part of [`UPGRADE-PLAN.md`](UPGRADE-PLAN.md).
+that apply to our base version are tracked in [`security/directus-advisories.md`](security/directus-advisories.md).
