@@ -253,6 +253,26 @@ class FlowManager {
 						throw new ForbiddenError();
 					}
 
+					// Only users who can see the flow and the items it runs on may trigger it (GHSA-7cvf-pxgp-42fc)
+					const accountability = (context['accountability'] as Accountability | null | undefined) ?? null;
+
+					if (!accountability || (!accountability.user && accountability.admin !== true)) {
+						throw new ForbiddenError();
+					}
+
+					if (accountability.admin !== true) {
+						const schema = (context['schema'] as SchemaOverview | undefined) ?? (await getSchema());
+						const authorizationService = new services.AuthorizationService({ accountability, schema });
+
+						await authorizationService.checkAccess('read', 'directus_flows', flow.id);
+
+						const keys = toArray((data as Record<string, any>)?.['body'].keys ?? []);
+
+						if (keys.length > 0) {
+							await authorizationService.checkAccess('read', targetCollection, keys);
+						}
+					}
+
 					if (flow.options['async']) {
 						this.executeFlow(flow, data, context);
 						return { result: undefined };
