@@ -41,8 +41,6 @@ Before creating Collections inside CaseFusion, it’s helpful to map out your da
 
 Consider this sample page below.
 
-![Website wireframe that shows three different sections. A hero block with a headline and image, a group of content cards, and a block of rich text.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/sample-page.webp)
-
 There are three main “blocks” that could be broken down into separate components.
 
 1. A hero block at the top of the page that includes a strong headline, an image, and some copy with a call to action.
@@ -52,8 +50,6 @@ There are three main “blocks” that could be broken down into separate compon
 Let’s break down the data model for each section.
 
 ---
-
-![Simple wireframe of a hero section on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-hero.webp)
 
 **Hero**
 
@@ -67,8 +63,6 @@ Let’s break down the data model for each section.
 
 ---
 
-![Simple wireframe of a group of content cards on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-cardgroup.webp)
-
 **Card Group**
 
 - `headline` - short text that describes the section (string)
@@ -79,8 +73,6 @@ Let’s break down the data model for each section.
   - `content` - text summary of a blog post or content (string)
 
 ---
-
-![Simple wireframe of a block of rich text on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-richtext.webp)
 
 **Rich Text**
 
@@ -161,8 +153,6 @@ To keep things organized, we recommend that you namespace each collection with a
 
 5. Create a new Builder (M2A) field inside the `pages` data model.
 
-   ![In the data model settings for the pages collection, a new Many-To-Any relationship is being created. The key is named blocks. There are 3 related collections selected - Block Cardgroup, Block Hero, and Block Rich text.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-m2a-screen.webp)
-
    a. For the **Key**, use `blocks`.
 
    b. For **Related Collections**, choose the following:
@@ -184,10 +174,6 @@ Mode option.
 ### Create Your Page Content
 
 6. [Create a new item](/user-guide/content-module/content/items#create-an-item) in the `pages` collection
-
-   <video title="Create Your Page Content" autoplay muted loop controls playsinline>
-   <source src="https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-adding-content.mp4"> type="video/mp4" />
-   </video>
 
    a. Enter the page **Title** and **Slug**.
 
@@ -349,14 +335,10 @@ We recommend adding types for each of your different collections to your fronten
 Consider using [data model folders](/app/data-model/collections#create-a-folder) to keep things nicely organized and
 your collections easy to find.
 
-![In the data model settings, a folder is highlighted. It is named blocks. There is a caption that reads "Data Model Folders help you keep collections well-organized and easy to find."](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-folders.webp)
-
 ### Use Translations for Collection Names
 
 When [setting up Collections](/app/data-model/collections#collection-setup) within your data model, use the Collection
 Naming Translations to create names that easier for the Data Studio users to understand.
-
-![In the data model settings for the hero collection a section is highlighted. It reads "Collection naming translations" with a single item called "Hero".](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-translations.webp)
 
 For example:
 

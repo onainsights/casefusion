@@ -10,8 +10,6 @@ author: Bryant Gillespie
 
 Here's what the end result will look like for users when using the Data Studio to manage content.
 
-![A CaseFusion item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
-
 ## Before You Start
 
 You will need:
@@ -44,8 +42,6 @@ Create a new collection for all the different languages your application will su
    a. When creating the collection, set the primary key to `code` and use the `Manually entered string` type. There's no
    need to add Optional System Fields.
 
-   ![The Creating New Collection form overlay is shown. The active tab is Collection Setup. Name, Singleton, Primary Key Field, and Type fields are shown and editable by the user.](https://marketing.directus.app/assets/e4fe9a63-9cfd-48d9-a1a9-7aedff6279a9.png?key=doc)
-
    b. Add another field for the `name` of the language.
 
    c. Add one last field for the `direction` of the text if you're supporting languages that read right to left.
@@ -70,8 +66,6 @@ Before you can create translations, you need a collection of content to translat
    - date_published (Type: Timestamp, Interface: Datetime)
    ```
 
-   ![Data Model settings screen for the Articles collection is displayed. The following fields are shown: id, status, date_published, author, image.](https://marketing.directus.app/assets/fdeb07d9-d11a-42e9-a39a-14f0a196ecc6.png?key=doc)
-
    Create these fields inside the collection.
 
    They will be shared across all the different translations of each article.
@@ -84,8 +78,6 @@ Before you can create translations, you need a collection of content to translat
 3. Still within the `articles` collection, create a new field for `translations` using the specially designed
    [Translations interface](/app/data-model/fields/relational#translations). This will create a new junction collection
    inside your project.
-
-   ![The New Field form overlay is shown. The Translations interface is selected. The fields for creating a new Translations relational field are shown: Key, Type, Default Value, Required, Languages Collection, Language Indicator Field, Language Direction Field, Default Language, Use Current User Language.](https://marketing.directus.app/assets/61248b4d-7f6d-47fe-890c-6f9db98642bb.png?key=doc)
 
    - Use `translations` for the key.
    - For the Languages Collection field, select the `languages` collection you created in Step 1.
@@ -117,8 +109,6 @@ within, you can choose to Continue in Advanced Field Creation Mode.
    - content (Type: Text, Inferface: WYSIWYG)
    ```
 
-   ![Data Model settings screen for the Articles Translations collection is displayed. The following fields are shown: id, articles_id, languages_code, title, slug, summary, content.](https://marketing.directus.app/assets/e2ee5c61-3449-40cf-9cd4-24f9edb2ae6a.png?key=doc)
-
 ## Test By Creating Content
 
 Everything is now setup to allow you to translate Articles into multiple languages so it's time to test what you've
@@ -127,18 +117,12 @@ built.
 5. Before you create your first article, you'll need to add a few items to the `languages` collection. Navigate to the
    Content module > Languages collection and add two languages.
 
-   ![The table layout for the Languages collection is shown. There are two items displayed. One for English and one for French.](https://marketing.directus.app/assets/9afe044e-405c-46e7-851f-2a400f3672ea.png?key=doc)
-
 6. In the Articles collection, create a new article and scroll down to the Translations field and start translating your
    content.
 
    You can show one language at a time or show two languages side by side.
 
-   ![A CaseFusion item detail page is shown using the Translations interface. Editable fields for the English and French translations for an article are displayed side-by-side. Fields include Title, Slug, Summary, and Content. ](https://marketing.directus.app/assets/64eee60e-605b-4d2c-809f-83557ed0d5ef.png?key=doc)
-
    There is also a progress indicator for the status of each language.
-
-   ![A dropdown menu with a progress indicator for English and French languages are shown. The progress is less than half and shown in red.](https://marketing.directus.app/assets/78a895e9-744e-4d33-9d87-3c5ca4c784e2.png?key=doc)
 
 ## Fetching Translated Content With The API
 

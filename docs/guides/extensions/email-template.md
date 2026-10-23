@@ -79,8 +79,6 @@ await mailService.send({
 
 If you are using Flows, you can also inject data into emails:
 
-![Type template. Template name 'my custom template' and data is a JSON object with a property named first name and a value of trigger.payload.firstname.](https://marketing.directus.app/assets/e1330f0f-a15f-40e6-96d1-3cf113a6da6b)
-
 In your template, you can use the `firstname` variable like this:
 
 ```liquid
@@ -119,12 +117,8 @@ You can provide an array of data to a template and use a for loop to render the 
 A team needs a weekly update of how many new subscriptions were created in the last week. The company has a base
 template called `example-base` and looks like this:
 
-![A designed boilerplate email with clear placeholders for header text and content](https://marketing.directus.app/assets/760d10b0-92dd-4a22-b221-1b811441035d)
-
 Using Flows, create a Schedule trigger with the value `0 8 * * 1` to send the email every Monday at 8am, then add a Read
 Data operation with the following filters:
-
-![A query on the customers collections showing a filter of active users in the last 7 days, aggregated by customer ID and grouped by subscription name.](https://marketing.directus.app/assets/0fa9b186-8d4d-478a-a4de-314d0628001d)
 
 The response may look like this:
 
@@ -159,8 +153,6 @@ The response may look like this:
 
 Create an operation to Send an Email and change the type to Template. In the Data field, add the results of `{{$last}}`
 to a variable such as `report`.
-
-![An email showing the custom template and passing in an object with one property - report - and the value of last.](https://marketing.directus.app/assets/a9450c81-a133-48c6-9d87-876fb8247915)
 
 For this report, the template uses a for loop to generate a table of results and capitalize the name for better
 appearance:

@@ -5,7 +5,7 @@
 
 ## File
 
-![A file type form input where user can pick from three options: "Upload File From Device", "Choose Files from Library", "Import File from URL"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-file.webp)
+![A file type form input where user can pick from three options: "Upload File From Device", "Choose Files from Library", "Import File from URL"](/img/app/interface-file.webp)
 
 Interface that allows uses to upload a single file of any mime-type, choose an existing file from the
 [File Library](/user-guide/file-library/files), or import a file from a URL.
@@ -14,7 +14,7 @@ Interface that allows uses to upload a single file of any mime-type, choose an e
 
 ## Image
 
-![A file type form input where user can pick from three options: "Upload File From Device", "Choose Files from Library", "Import File from URL"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-image.webp)
+![A file type form input where user can pick from three options: "Upload File From Device", "Choose Files from Library", "Import File from URL"](/img/app/interface-image.webp)
 
 Interface that allows uses to upload a single image file, choose an existing image from the
 [File Library](/user-guide/file-library/files), or import an image from a URL.
@@ -24,7 +24,7 @@ Interface that allows uses to upload a single image file, choose an existing ima
 
 ## Files
 
-![A file type form input where user can select and upload multiple files.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-files.webp)
+![A file type form input where user can select and upload multiple files.](/img/app/interface-files.webp)
 
 Interface that allows uses to upload multiple files, choose an existing image from the
 [File Library](/user-guide/file-library/files), or import an image from a URL.
@@ -41,7 +41,7 @@ added to the [Data Model](/app/data-model) for your [Collection](/app/data-model
 
 ## Builder (M2A)
 
-![A form interface that allows users to create a relationship from the current item by selecting different items from multiple, distinct Collections.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-m2a.webp)
+![A form interface that allows users to create a relationship from the current item by selecting different items from multiple, distinct Collections.](/img/app/interface-m2a.webp)
 
 Interface that allows users to create relationships between the current item and multiple items from multiple, distinct
 collections. See [Many-to-Any (M2A) Relationships](/app/data-model/relationships#many-to-any-m2a).
@@ -56,7 +56,7 @@ Useful in many different contexts including
 
 ## Many To Many
 
-![A form interface that allows users to select multiple different items from a single collection. Buttons for "Create New" and "Add Existing".](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-m2m.webp)
+![A form interface that allows users to select multiple different items from a single collection. Buttons for "Create New" and "Add Existing".](/img/app/interface-m2m.webp)
 
 Interface that allows users to create relationships between the current item and many different items from a single
 collection.
@@ -75,7 +75,7 @@ added to the [Data Model](/app/data-model) for your [Collection](/app/data-model
 
 ## One to Many
 
-![A form interface that allows users to select multiple items from a single collection. Buttons for "Create New" and "Add Existing".](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-o2m.webp)
+![A form interface that allows users to select multiple items from a single collection. Buttons for "Create New" and "Add Existing".](/img/app/interface-o2m.webp)
 
 Interface that allows users to create a relationship between the current item and many items from a single collection.
 
@@ -93,7 +93,7 @@ Adding a One To Many field to the data model will create a corresponding Many to
 
 ## Tree View
 
-![A form interface that shows multiple parent and child items from the same collection. Buttons for "Create New" and "Add Existing".](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-treeview.webp)
+![A form interface that shows multiple parent and child items from the same collection. Buttons for "Create New" and "Add Existing".](/img/app/interface-treeview.webp)
 
 Special One-to-Many (O2M) interface that allows users to create and manage recursive relationships between items from
 the same collection.
@@ -109,7 +109,7 @@ The Tree View interface is only available on self-referencing (recursive) relati
 
 ## Many to One
 
-![A form interface that allows a user to select a single item from a collection."](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-m2o.webp)
+![A form interface that allows a user to select a single item from a collection."](/img/app/interface-m2o.webp)
 
 Interface that allows users to create a relationship between the current item and a single item from a single
 collection.
@@ -124,7 +124,7 @@ See [Many-to-One (M20) Relationships](/app/data-model/relationships#many-to-one-
 
 ## Translations
 
-![A form interface with two columns and two fields per column - "Title" and "Content". One column contains the English translation for each field. Second column contains the French translation for each field.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-translations.webp)
+![A form interface with two columns and two fields per column - "Title" and "Content". One column contains the English translation for each field. Second column contains the French translation for each field.](/img/app/interface-translations.webp)
 
 Special relational Interface designed specifically to handle translations. See
 [Translations (O2M)](/app/data-model/relationships#translations-o2m).

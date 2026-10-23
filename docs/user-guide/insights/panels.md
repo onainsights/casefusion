@@ -9,13 +9,9 @@ readTime: 9 min read
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
-</video>
-
 ## Panels Overview
 
-![CaseFusion Dashboard Panels](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panels-overview-20220216A.webp)
+![CaseFusion Dashboard Panels](/img/user-guide/panels-overview.webp)
 
 Panels are the building-blocks we add onto Insights dashboards to create, save and display data analytics. There are
 five types of Panels, and each one provides some unique analytics tool.
@@ -29,7 +25,7 @@ five types of Panels, and each one provides some unique analytics tool.
 
 ## Panel Header Options
 
-![Panel Header Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panel-header-options-20220216A.webp)
+![Panel Header Options](/img/user-guide/panel-header-options.webp)
 
 All panel types let you set custom text to provide quick and clear context about what a Panel represents. Panel Header
 options are exactly the same for all four Panel types. Headers are also totally optional and can be hidden.
@@ -42,7 +38,7 @@ options are exactly the same for all four Panel types. Headers are also totally 
 
 ## Labels
 
-![Label Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/label-panel-options-20220216A.webp)
+![Label Panel Options](/img/user-guide/label-panel-options.webp)
 
 As the name implies, this panel simply allows you to _label_ a group of other panels. Labels do not provide analytics.
 Labels simply help visually group the other panels (_which do provide analytics_) and give context to your dashboard.
@@ -52,7 +48,7 @@ Labels simply help visually group the other panels (_which do provide analytics_
 
 ## Lists
 
-![List Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/list-panel-options-20220216A.webp)
+![List Panel Options](/img/user-guide/list-panel-options.webp)
 
 List panels display some number of Items from a Collection, _as a list!_ These Items displayed can be filtered by other
 criteria as well. So for example, you could show your top 5 selling products, 3 worst performing sales regions, 10
@@ -69,7 +65,7 @@ list that could be generated from your dataset.
 
 ## Metrics
 
-![Metrics Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/metric-panel-options-20220216A.webp)
+![Metrics Panel Options](/img/user-guide/metric-panel-options.webp)
 
 Metrics Panels allow you to aggregate all Items in a Field down to a single value.
 
@@ -120,7 +116,7 @@ grayed out and unselectable in the `field dropdown list`.
 
 ## Time Series
 
-![Time Series Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/time-series-panel-options-20220216A.webp)
+![Time Series Panel Options](/img/user-guide/time-series-panel-options.webp)
 
 The Time Series Panel allows you to build graphs and see how data changes over time.
 
@@ -155,7 +151,7 @@ type in `3 years`, `1 month`, `2 weeks`, `5 days`, etc.
 
 ## Global Variable
 
-![Global Variables](https://cdn.directus.io/docs/v9/app-guide/insights/insights-220624A/global-variable-220624A.webp)
+![Global Variables](/img/user-guide/global-variable.webp)
 
 - **Variable Key** — Sets your variable. Use this key to access the variable in other Insights panels.
 - **Type** — Sets the data type of your variable.

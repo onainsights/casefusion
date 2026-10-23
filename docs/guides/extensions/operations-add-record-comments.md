@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Operations allow you to trigger your own code in a Flow. This guide will show you how to add comments to a record using
 built-in services and make it available as a configurable Flow operation.
 
-![An Add Comment operation in a Flow](https://marketing.directus.app/assets/5b20c836-39f1-4905-95ad-e829f1a65efc.png)
-
 ## Install Dependencies
 
 Open a console to your preferred working directory and initialize a new extension, which will create the boilerplate
@@ -42,8 +40,6 @@ Make sure the `id` is unique between all extensions including ones created by 3r
 include a professional prefix. You can choose an icon from the library [here](https://fonts.google.com/icons).
 
 With the information above, the operation will appear in the list like this:
-
-<img src="https://marketing.directus.app/assets/7033ae7b-178f-489a-aa7f-170d498e6c83.png" alt="Add comment - add a comment to a record. A chat icon is displayed in the box." style="padding:2px 6px;"/>
 
 `options` are the fields presented in the frontend when adding this operation to the Flow. To add a comment, you will
 need to know the collection, item id and the comment itself. Replace the placeholder options with the following:
@@ -90,8 +86,6 @@ options: [
 - `comment` - a simple input-multiline field (textarea) to match how comments are made. Variables from the Flow can be
   mixed with standard text.
 
-<img src="https://marketing.directus.app/assets/000d7d2a-8bdf-400f-8e46-2a6c018a58b3.png" alt="Add comment operation is selected. There are three fields - collection, IDs, and comment. Collection is a dropdown and IDs is a key." style="padding:6px 8px;"/>
-
 The `overview` section defines what is visible inside the operation’s card on the Flow canvas. An overview object
 contains 2 parameters, `label` and `text`. The label can be any string and does not need to match the field name. The
 text parameter can be a variable or just another string.
@@ -114,8 +108,6 @@ overview: ({ collection, comment }) => [
 
 - `collection` will use the system’s label for a collection and the text will be the chosen collection from the user.
 - `comment` uses a string for the label, and the text will be the contents of the comment textarea field from the user.
-
-<img src="https://marketing.directus.app/assets/1eaa545e-05a0-4b1c-b921-1d56902ac10d.png" alt="The flow overview card shows a collection and comment value." style="max-width: 400px;"/>
 
 ## Build the API Function
 
@@ -195,8 +187,6 @@ by the user that triggers the workflow. At the end, the results array is returne
 
 Here is an example of how the comment will appear on a record:
 
-<img src="https://marketing.directus.app/assets/4155f7fa-41af-4af1-8b96-d3e7b26f20db.png" alt="Inside of the sidebar, the comment pane shows one new comment from Tim Butterfield saying 'reminder sent'" style="max-width: 300px; padding: 1em 1em 1em 0;"/>
-
 Build the operation with the latest changes.
 
 ```
@@ -228,8 +218,6 @@ In the CaseFusion Data Studio, open the Flows section in Settings. Create a new 
 
 Add a new step (operation) in the flow by clicking the tick/plus on the card. This can be at any point in the workflow.
 From the list of options, choose **Add Comment**.
-
-<img src="https://marketing.directus.app/assets/0bc1022b-2da7-4064-8c80-0fc32da59159.png" alt="Select Add Comment. Inside of Collection, type {{$trigger.payload.collection}}. Inside of IDs, type {{$trigger.payload.keys}}. For the comment, type any that you would like to add as a comment." style="padding:6px 8px;"/>
 
 Save the operation, save the Flow, and then trigger it by updating a record from the chosen collections. Open the
 collection records again to see the new comment. To see the response from the API function, open the flow and check out

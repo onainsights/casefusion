@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Panels are used in dashboards as part of the Insights module. As well as read-only data panels, they can be interactive
 with form inputs.
 
-![An insights panel showing a form called message customer. The form has a dropdown with 4 items selected, and a text box for a message. The button reads send message.](https://marketing.directus.app/assets/f1c2eafa-507b-46f7-b4f7-b2bf62a73621.png)
-
 ## Install Dependencies
 
 Panels can only talk to internal CaseFusion services, and can't reliably make external web requests because browser
@@ -48,8 +46,6 @@ Make sure the `id` is unique between all extensions including ones created by 3r
 include a professional prefix. You can choose an icon from the library [here](https://fonts.google.com/icons).
 
 With the information above, the panel will appear in the list like this:
-
-<img alt="Twilio SMS - Send a SMS from a panel. A chat icon is shown in the box." src="https://marketing.directus.app/assets/c2863cc4-2e66-44b0-81bd-e9a3f25d22c1.png" style="padding: 6px 7px 8px 8px;">
 
 The Panel will need some configuration to be able to send messages such as the Twilio account, the sending number, where
 to find the contacts and some visual customization. In the `options` section, add two fields to collect the Twilio Phone
@@ -179,8 +175,6 @@ width and 5 for the height.
 It is important to include `skipUndefinedKeys` which is a list of system-display-template fields.
 
 This completes the `index.js` file. The output of the options will look like this:
-
-![A long form showing Twilio credential fields, collection and field selection, a filter, message, button information, an optional Send to All checkbox, and a display template.](https://marketing.directus.app/assets/7aeca419-8a9f-4809-bfcc-889be678f0b7.png)
 
 ## Prepare the View
 
@@ -637,11 +631,7 @@ Add the following CSS:
 
 When it’s all together, the panel looks like this:
 
-<img src="https://marketing.directus.app/assets/eedcafab-0397-4956-b5ba-6f6d54473e0f.png" alt="A form with a select contacts dropdown and a text box. A disabled button reads Send Message." style="max-width: 400px; padding: 6px 0 0 8px;"/>
-
 The confirmation panel looks like this:
-
-<img src="https://marketing.directus.app/assets/e219e78c-22ee-48c0-bd14-74bc3e3ddbc5.png" alt="Popup box reads 'Send the following message to 3 recipients: This is awesome. With a cancel and confirm button." style="max-width: 400px;"/>
 
 Both files are now complete. Build the panel with the latest changes.
 

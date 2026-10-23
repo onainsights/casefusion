@@ -8,8 +8,6 @@ contributors: Tim Butterfield, Kevin Lewis
 Operations allow you to trigger your own code in a Flow. This guide will show you how to use the SendGrid SDK to bulk
 send emails as an operation in Flows.
 
-![A SendGrid Bulk Email operation in a Flow](https://marketing.directus.app/assets/d6e597b7-f53c-47e7-89de-2eaaa4297bf0.png)
-
 ## Install Dependencies
 
 To follow this guide, you will need a SendGrid API Key and access to SendGrid Dynamic Templates.
@@ -50,8 +48,6 @@ Make sure the `id` is unique between all extensions including ones created by 3r
 include a professional prefix. You can choose an icon from the library [here](https://fonts.google.com/icons).
 
 With the information above, the operation will appear in the list like this:
-
-<img src="https://marketing.directus.app/assets/4a9c482b-0e69-4070-a2e0-4f8227f1c6c9.png" alt="SendGrid Bulk Email - send bulk emails using SendGrid API. An envelope icon is displayed in the box." style="padding: 2px 6px 4px;">
 
 `options` are the fields presented in the frontend when adding this operation to the Flow. To send an email with
 SendGrid, you will need the sending address, a recipient address, a subject and the template id. Replace the placeholder
@@ -155,8 +151,6 @@ options: [
 - `template_id` field uses a standard input field for the ID from SendGrid. This can be a static ID or dynamically added
   through the workflow.
 
-<img alt="A form shows all of the defined fields above" src="https://marketing.directus.app/assets/a9cd9f44-b2c7-4ab7-912f-db0b693e7915.png" style="padding: 8px 12px 0;">
-
 The `overview` section defines what is visible inside the operation’s card on the Flow canvas. An overview object
 contains 2 parameters, `label` and `text`. The label can be any string and does not need to match the field name. The
 text parameter can be a variable or just another string.
@@ -178,8 +172,6 @@ overview: ({ subject, from }) => [
 ```
 
 Now, the overview of the operation looks like this:
-
-<img src="https://marketing.directus.app/assets/63f985a6-e73a-4a2d-9c31-5e6b0c135b58.png" alt="The flow overview card shows a subject and from value." style="max-width: 400px;"/>
 
 ## Build the API Function
 
@@ -314,8 +306,6 @@ collection(s) to include this button on.
 Fetch some recipients by adding a **Read Data** operation and include the required fields and filters. Add a new step
 (operation) after the Data Read operation by clicking the tick/plus on the card, then choose **SendGrid Bulk Email**
 from the list.
-
-<img alt="The full form is filled with values." src="https://marketing.directus.app/assets/028907bb-90db-47cb-994b-589f520d0f41.png" style="padding: 8px;">
 
 - For the **From Address**, type `no-reply@company.com`. This must be the domain registered with SendGrid
 - For the **Recipients Object**, use a previous flow operation such as Read Data to fetch all the required recipients as

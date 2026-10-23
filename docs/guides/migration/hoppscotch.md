@@ -32,8 +32,6 @@ starting, make sure you have a static access token for both projects.
 
 ### Retrieve Data Model Snapshot From Source Project
 
-![Screenshot of Hoppscotch annotated with numbers associated with the below points.](https://cdn.directus.io/docs/v9/cookbook/migration-hoppscotch/snapshot.webp)
-
 1. Make sure `GET` is selected in the method dropdown.
 2. In the URL field, enter your source CaseFusion project URL followed by `/schema/snapshot`.
 3. In the Parameters tab, set a query parameter called `access_token` with the access token for your source project.
@@ -41,8 +39,6 @@ starting, make sure you have a static access token for both projects.
 5. Copy the JSON response with your data model snapshot.
 
 ### Retrieve Data Model Diff
-
-![Screenshot of Hoppscotch annotated with numbers associated with the below points.](https://cdn.directus.io/docs/v9/cookbook/migration-hoppscotch/diff.webp)
 
 This section will create a "diff" that describes all differences between your source and target project's data models.
 
@@ -55,8 +51,6 @@ This section will create a "diff" that describes all differences between your so
 6. Copy the JSON response with your data model diff.
 
 ### Apply Diff To Target Project
-
-![Screenshot of Hoppscotch annotated with numbers associated with the below points.](https://cdn.directus.io/docs/v9/cookbook/migration-hoppscotch/apply.webp)
 
 1. Make sure `POST` is selected in the method dropdown.
 2. In the URL field, enter your target CaseFusion project URL followed by `/schema/apply`.

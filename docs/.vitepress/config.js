@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vitepress';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
+import { excludedPages } from './excluded.js';
 import guidesData from './data/guides.data.js';
 
 const { guides } = await guidesData.load();
@@ -13,7 +14,7 @@ export default defineConfig({
 	title: 'CaseFusion Docs',
 	description: 'Documentation for CaseFusion, the GPLv3 fork of Directus maintained by Ona Insights.',
 	ignoreDeadLinks: true,
-	srcExclude: ['blog/**', 'packages/**', 'contributing/**', 'user-guide/cloud/**', 'README.md'],
+	srcExclude: excludedPages,
 	markdown: {
 		theme: {
 			light: 'github-light',

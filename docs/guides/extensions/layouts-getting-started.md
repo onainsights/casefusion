@@ -31,8 +31,6 @@ the source code is located - `index.js` and `layout.vue`. Any new files that are
 This layout will currently only load an empty page with the title “Custom Layout” followed by the name of the collection
 that you have assigned this custom layout to.
 
-![A mostly-empty layout that reads "name: custom layout, collection: test"](https://marketing.directus.app/assets/96f01ff4-0574-4388-8060-5ca598744648)
-
 In most cases, a layout will visualize the data within a collection. This guide will show you how to fetch records with
 the internal API and render them on the page.
 
@@ -183,8 +181,6 @@ To use your new layout in CaseFusion, you will need a table that already contain
 1. Open a collection
 2. If the right side menu is closed, click on the Layout Options icon.
 3. Click on the dropdown and choose your new layout from the list.
-
-![Two screenshots. On the left is the layout dropdown showing that custom layout is selected. On the right is the table showing data from the layout.](https://marketing.directus.app/assets/ef0c6c19-ef1d-45bd-a66d-df8f581b98a4)
 
 ## Summary
 

@@ -9,15 +9,7 @@ readTime: 9 min read
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
-</video>
-
 ## How it Works
-
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-how-it-works-20220216A_1.mp4" type="video/mp4" />
-</video>
 
 First, create a Dashboard, then fill the Dashboard with Panels.
 
@@ -33,7 +25,7 @@ First, create a Dashboard, then fill the Dashboard with Panels.
 
 ## Dashboards Overview
 
-![Dashboard Grid Area](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/dashboards-overview-20220216A.webp)
+![Dashboard Grid Area](/img/user-guide/dashboards-overview.webp)
 
 Each CaseFusion Dashboard provides a drag-and-drop canvas where you can create and arrange different Panels to easily
 build out customized analytics. The Dashboard area automatically expands as you add more and more Panels. In theory, a
@@ -51,7 +43,7 @@ refresh dashboard data.
 
 ## Create, Edit, and Delete Dashboards
 
-![How to Add, Edit and Delete Dashboards in CaseFusion Insights](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/create-edit-delete-dashboards-20220216A.webp)
+![How to Add, Edit and Delete Dashboards in CaseFusion Insights](/img/user-guide/create-edit-delete-dashboards.webp)
 
 1. Click the <span mi btn >add</span> icon in the page header to create a new Dashboard.
 2. Click the item option to edit or delete a Dashboard.

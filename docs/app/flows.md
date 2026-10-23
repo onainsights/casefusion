@@ -55,8 +55,6 @@ Async/Sync ->
 
 ## What's a Flow?
 
-![What's a Flow?](https://cdn.directus.io/docs/v9/configuration/flows/flows/flows-20220603A/whats-a-flow-20220603A.webp)
-
 <!--
 <video title="What's a Flow" autoplay playsinline muted loop controls>
 <source src="" type="video/mp4" />
@@ -113,10 +111,6 @@ _And there we have it!_ These are the conceptual cornerstones of any flow. Now y
 create a flow, which we discuss in the next section.
 
 ## Configure A Flow
-
-<video autoplay playsinline muted loop controls title="Create a Flow">
-	<source src="https://cdn.directus.io/docs/v9/configuration/flows/flows/flows-20220603A/create-a-flow-20220603A.mp4" type="video/mp4" />
-</video>
 
 ### Create a Flow
 
@@ -195,9 +189,6 @@ Now that we know how to create and configure a flow, it's time to get a firmer u
 ## The Data Chain
 
 <!--
-<video title="The data chain" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/" type="video/mp4" />
-</video>
 -->
 
 Remember, each flow creates its own JSON object to store any data generated.
@@ -261,9 +252,6 @@ Remember, `$trigger`, `$accountability`, and `$last` begin with `$`, but not `op
 ## Data Chain Variables
 
 <!--
-<video title="Use data chain Keys as Variables" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/" type="video/mp4" />
-</video>
 -->
 
 While [configuring your operations](#configure-an-operation), you can use keys from the data chain as variables to
@@ -318,16 +306,9 @@ input raw values directly with [Toggle to Raw Editor](#configure-an-operation). 
 access data dynamically in these input options as well.
 
 <!--
-<video autoplay playsinline muted loop controls title="">
-	<source src="https://cdn.directus.io/docs/v9/configuration/flows/flows/" type="video/mp4" />
-</video>
 -->
 
 ## Logs
-
-<video autoplay playsinline muted loop controls title="">
-	<source src="https://cdn.directus.io/docs/v9/configuration/flows/flows/flows-20220603A/logs-20220603A.mp4" type="video/mp4" />
-</video>
 
 Accessible from the sidebar, logs store information for each flow execution. Each log will display information from
 triggers as well as each operation in the flow. To access a flow's logs, follow these steps.

@@ -10,7 +10,7 @@ readTime: 7 min read
 > to a [Role](/user-guide/overview/glossary#roles) which defines its
 > [Permissions](/user-guide/overview/glossary#permissions).
 
-![User Directory Page](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-directory-20220222A.webp)
+![User Directory Page](/img/user-guide/user-directory.webp)
 
 <!-- @TODO getting-started > learn-directus
 
@@ -36,13 +36,6 @@ automatic sorting, batch edit/delete/archive, import/export from files, etc.
 
 ## User Directory Page
 
-<video title="User Directory Options" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-directory-options-20220222A.mp4" />
-	<p>
-		Your browser is not displaying the video for some reason. Here's a <a href="https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-directory-options-20220222A.mp4">link to the video</a> instead.
-	</p>
-</video>
-
 The User Directory Page lists all Users in a Project, with a navigation that allows quick access to Users by Role. This
 page has the same functionality as the [Collection Page](/user-guide/content-module/content/collections).
 
@@ -63,14 +56,14 @@ _The following are only visible once Users are selected._
 
 ### Layout Options
 
-![User Directory Layout Options](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-directory-layout-options-20220222A.webp)
+![User Directory Layout Options](/img/user-guide/user-directory-layout-options.webp)
 
 The **Sidebar > Layout Options** _(denoted by <span mi icon>layers</span> when Sidebar is minimized)_ allows you to
 adjust how Users are displayed on the User Directory. To learn more, see [Layouts](/user-guide/content-module/layouts).
 
 ## User Details Page
 
-![The User Page](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-profile-20220222A.webp)
+![The User Page](/img/user-guide/user-profile.webp)
 
 A User's profile page can be accessed from the User Directory or by clicking the User Menu at the bottom of the
 [Module Bar](/user-guide/overview/data-studio-app#_1-module-bar). The profile page has the same features and
@@ -89,7 +82,7 @@ under [Settings > Data Model > CaseFusion Users](/app/data-model), but the follo
 
 ### User Preferences
 
-![User Preferences](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-preferences-20220222A.webp)
+![User Preferences](/img/user-guide/user-preferences.webp)
 
 - **Language** — The preferred App language/locale.
 - **Theme** — Light or Dark mode (or based on system preferences).
@@ -98,7 +91,7 @@ under [Settings > Data Model > CaseFusion Users](/app/data-model), but the follo
 
 ### Admin Options
 
-![Admin Options](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/admin-options-20220222A.webp)
+![Admin Options](/img/user-guide/admin-options.webp)
 
 - **Status** — Sets User status as Draft, Invited, Active, Suspended, Archived.
 - **Role** — Defines the User's Role.
@@ -108,7 +101,7 @@ under [Settings > Data Model > CaseFusion Users](/app/data-model), but the follo
 
 ### Read-only Info
 
-![User Profile Sidebar Information](https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/user-profile-sidebar-information-20220309A.webp)
+![User Profile Sidebar Information](/img/user-guide/user-profile-sidebar-information.webp)
 
 Information in the Sidebar _(denoted by <span mi icon dark>info</span> when Sidebar is minimized)_ also includes the
 following read-only details:
@@ -118,13 +111,6 @@ following read-only details:
 - **Last Access** — The timestamp of the User's last App or API action.
 
 ## View a User
-
-<video autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/viewing-a-user-20220222A.mp4" />
-	<p>
-		Your browser is not displaying the video for some reason. Here's a <a href="https://cdn.directus.io/docs/v9/app-guide/user-directory/user-directory-20220222A/viewing-a-user-20220222A.mp4">link to the video</a> instead.
-	</p>
-</video>
 
 Users are referenced throughout the app, often for accountability purposes. Hovering over a User in this context will
 provide a popover with basic information. Clicking that popover will navigate you to a view of that User's profile page.

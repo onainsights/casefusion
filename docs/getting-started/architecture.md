@@ -13,8 +13,6 @@ asset storage, all in one place.
 
 Here's how the platform architecture breaks down.
 
-![CaseFusion Architecture Graphic](https://cdn.directus.io/docs/v9/getting-started/architecture/architecture-20220512/directus-architecture-20220512A.webp)
-
 ## The Database
 
 CaseFusion is plug-and-play. Once linked, it doesn't _own_ your data or file assets, but it does create about 20 new

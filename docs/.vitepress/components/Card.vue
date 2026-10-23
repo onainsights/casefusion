@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { isExcludedPath } from '../excluded.js';
 import { sitePath } from '../lib/site-path';
 
 const props = withDefaults(
@@ -23,7 +24,13 @@ const iconIsImage = computed(() => props.icon.startsWith('/'));
 </script>
 
 <template>
-	<component :is="tagType" :href="sitePath(url)" class="card" :class="{ margin: addMargin }">
+	<component
+		:is="tagType"
+		v-if="!url || !isExcludedPath(url)"
+		:href="sitePath(url)"
+		class="card"
+		:class="{ margin: addMargin }"
+	>
 		<div v-if="icon" class="icon">
 			<img v-if="iconIsImage" :src="sitePath(icon)" alt="" />
 			<span v-else mi>{{ icon }}</span>

@@ -9,13 +9,9 @@ readTime: 9 min read
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
-</video>
-
 ## Bar Chart
 
-![Dashboard edit page with a bar chart options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-bar-options-230223A.webp)
+![Dashboard edit page with a bar chart options panel visible.](/img/user-guide/panels-bar-options.webp)
 
 The Bar Chart Panel allows you to build vertical and horizontal bar charts from data held in collections.
 
@@ -31,7 +27,7 @@ The Bar Chart Panel allows you to build vertical and horizontal bar charts from 
 
 ## Line Chart
 
-![Dashboard edit page with a line chart options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-line-options-230223A.webp)
+![Dashboard edit page with a line chart options panel visible.](/img/user-guide/panels-line-options.webp)
 
 The Line Chart Panel allows you to build line charts from data held in collections, and are often used for time-series
 data.
@@ -53,7 +49,7 @@ data.
 
 ## Meter
 
-![Dashboard edit page with a meter options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-meter-options-230223A.webp)
+![Dashboard edit page with a meter options panel visible.](/img/user-guide/panels-meter-options.webp)
 
 The Meter Panel takes a maximum value and allows you to show a completion percentage given a second value.
 
@@ -71,7 +67,7 @@ The Meter Panel takes a maximum value and allows you to show a completion percen
 
 ## Pie or Donut Chart
 
-![Dashboard edit page with a pie or donut options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-pie-donut-options-230223A.webp)
+![Dashboard edit page with a pie or donut options panel visible.](/img/user-guide/panels-pie-donut-options.webp)
 
 The Pie and Donut Charts allow you to create segmented charts based on your data.
 

@@ -13,8 +13,6 @@ creation and management of collections, definition of relationships, and control
 
 The App also enables users to create flows and dashboards for internal applications.
 
-<img src="https://cdn.directus.io/docs/v9/app-guide/overview/app-overview-20220810A.svg" alt="Directus Application Overview" class="no-shadow" />
-
 ## 1. Module Bar
 
 The leftmost section of the App is the module bar, which includes the:

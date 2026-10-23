@@ -4,9 +4,9 @@
 
 ## Hash
 
-![Form text input. Value is "value to hash on save"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-hash.webp)
+![Form text input. Value is "value to hash on save"](/img/app/interface-hash.webp)
 
-![Form text input that shows the value is securely hashed.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-hash-secure.webp)
+![Form text input that shows the value is securely hashed.](/img/app/interface-hash-secure.webp)
 
 Text input that allows users to hash the value on save. Both the API and SDK provide methods to
 [verify the hash](/reference/system/utilities.html#verify-a-hash).
@@ -17,7 +17,7 @@ Text input that allows users to hash the value on save. Both the API and SDK pro
 
 ## Slider
 
-![A standard form text input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-slider.webp)
+![A standard form text input](/img/app/interface-slider.webp)
 
 Range input that allows users to select a number with an interactive slider.
 

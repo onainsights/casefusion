@@ -24,10 +24,6 @@ To manage the Activity Log programmatically, please see our guide on the [Activi
 
 ## Overview
 
-<video title="Activity Log Overview" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/activity-log/activity-log-20220816/activity-log-20220816A.mp4" type="video/mp4" />
-</video>
-
 The Activity Log is the only Module in CaseFusion Core that is not found in the
 [Module Bar](/user-guide/overview/data-studio-app#_1-module-bar). Instead, it is accessed via the notifications tray of
 the [Sidebar](/user-guide/overview/data-studio-app#_4-sidebar). The Activity Log page has the same features and
@@ -49,7 +45,7 @@ please see [Revert an Item](/user-guide/content-module/content/items#revert-an-i
 
 ## View an Activity Log Item
 
-![Activity Log Default Fields](https://cdn.directus.io/docs/v9/configuration/activity-log/activity-log-20220816/activity-log-default-fields-20220816A.webp)
+![Activity Log Default Fields](/img/user-guide/activity-log-default-fields.webp)
 
 Click any item in the Activity Log and a side drawer will open, displaying its logged details. The following information
 is stored for each item.
@@ -65,19 +61,11 @@ is stored for each item.
 
 ## Filter by Activity
 
-<video title="Filter by Activity" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/activity-log/activity-log-20220816/filter-by-activity-20220817A.mp4" type="video/mp4" />
-</video>
-
 In addition to the filter and display functionality inherited from the
 [Collection Page](/user-guide/content-module/content/collections), you can also filter items by activity from the
 Navigation Bar.
 
 ## Modify an Activity
-
-<video title="Filter by Activity" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/activity-log/activity-log-20220816/modify-an-activity-20220817A.mp4" type="video/mp4" />
-</video>
 
 To ensure proper accountability, system collections are **read only** by design. However, users with an Admin role have
 the ability to reopen, view, and modify an item's values in activities from non-system collections (where the name does

@@ -9,7 +9,7 @@ readTime: 7 min read
 > full-featured Digital Asset Management (DAM) system for storing, organizing, browsing, and transforming your various
 > files and assets.
 
-![File Library](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-library-20220307A.webp)
+![File Library](/img/user-guide/file-library.webp)
 
 ::: warning More Documents on Folder and File Management
 
@@ -35,13 +35,6 @@ programmatically via the API. Any type of file can be uploaded, _not just images
 Navigation Bar, the [File Listing Page](#folders) is presented. This page has all the same features and functionalities
 as the [Collections Page](/user-guide/content-module/content/collections).
 
-<video title="How the File Library Works" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/how-it-works-20220305A.mp4" type="video/mp4"/>
-	<p>
-		Your browser is not displaying the video for some reason. Here's a <a href="">link to the video</a> instead.
-	</p>
-</video>
-
 1. Select a Folder. There are two options:
    - Choose desired Folder from the Navigation Bar.
    - Click <span mi btn sec>create_new_folder</span> in the Page Header, name your folder, and click **"Save"**.
@@ -59,7 +52,7 @@ and embeds, with core Fields included out-of-the-box (see below), and the abilit
 custom Fields. This page has the same features and functionality as the
 [Item Page](/user-guide/overview/glossary#items).
 
-![Files](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/files-20220305A.webp)
+![Files](/img/user-guide/files.webp)
 
 ### Action Buttons
 
@@ -85,7 +78,7 @@ constraint of your File Field to `SET NULL` or `CASCADE` when the File is delete
 The Files Collection comes pre-configured with the following Fields out of the box. New Fields can be created and
 customized as needed in **Settings > Data Model**. However the pre-configured Fields cannot be changed or deleted.
 
-![File Details](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-details-20220305A.webp)
+![File Details](/img/user-guide/file-details.webp)
 
 - **Preview** – A preview of the image or file.
 - **Title** – A title for the File.
@@ -100,7 +93,7 @@ customized as needed in **Settings > Data Model**. However the pre-configured Fi
 
 The file sidebar also includes the following details, which are not editable and serve as metadata.
 
-![File Sidebar](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-sidebar-20220305A.webp)
+![File Sidebar](/img/user-guide/file-sidebar.webp)
 
 - **Type** – The MIME type of the file, displayed in the App as a formatted media type.
 - **Dimensions** – _Images only_. The width and height of the image in pixels.
@@ -115,10 +108,6 @@ The file sidebar also includes the following details, which are not editable and
 ## Edit an Image
 
 Rotate, crop, flip, or adjust aspect ratios of an image.
-
-<video alt="Edit an Image" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220516A/edit-an-image-20220516A.mp4" type="video/mp4">
-</video>
 
 1. From the **File Library**, click a file to open its detail page.
 2. Click the <span mi btn sec>tune</span> button in the top right to open the image editor.
@@ -140,10 +129,6 @@ be [uploaded programmatically via the API](/reference/files).
 ## Replace a File
 
 When a file is replaced, its existing info and all relationships are kept.
-
-<video alt="Replace a File" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220608A/replace-a-file-20220608A.mp4" type="video/mp4">
-</video>
 
 1. Click the Image Preview on the File Detail page. A popup will appear.
 2. Upload your file. You have 3 options:

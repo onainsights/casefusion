@@ -12,8 +12,6 @@ readTime: 7 min read
 > user is assigned a [role](/user-guide/overview/glossary#roles) which defines its
 > [access permissions](/user-guide/overview/glossary#permissions).
 
-![Users, Roles and Permissions](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/users-roles-permissions-20220907A.webp)
-
 ::: tip Before You Begin
 
 We recommend you try the [Quickstart Guide](/getting-started/quickstart) to get an overview of the platform.
@@ -110,10 +108,6 @@ It is common to have multiple, complex business rules in a project.
 
 ## How it Works in CaseFusion
 
-<video title="How Users, Roles, & Permissions Work" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/how-users-roles-and-permissions-work-20220909A.mp4" type="video/mp4" />
-</video>
-
 While you have full reign to configure these using SQL, CaseFusion also provides a complete system to configure and
 manage users, roles, and permissions without writing a single line of SQL. The process has three key steps.
 
@@ -137,7 +131,7 @@ is optional. You may configure your own system as desired.
 
 ## CaseFusion Users
 
-![Users in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/users-20220807A.webp)
+![Users in the CaseFusion Data Studio](/img/user-guide/users.webp)
 
 Within the Data Studio, users are managed within the [User Directory](/user-guide/user-management/user-directory).
 However, there are some controls available to assign users to roles in **Settings > Roles and Permissions**.
@@ -146,7 +140,7 @@ To learn more, please see our guide on [users](/user-guide/user-management/users
 
 ## CaseFusion Roles
 
-![Roles in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/roles-20220907A.webp)
+![Roles in the CaseFusion Data Studio](/img/user-guide/roles.webp)
 
 You can create as many roles as you need for your project. CaseFusion also comes with built-in administrator and public
 roles, which cannot be deleted.
@@ -162,7 +156,7 @@ To learn more, see our guide on [roles](/user-guide/user-management/roles).
 
 ## CaseFusion Permissions
 
-![Roles in the CaseFusion Data Studio](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/permissions-20220907A.webp)
+![Roles in the CaseFusion Data Studio](/img/user-guide/permissions.webp)
 
 CaseFusion offers an extremely granular, yet easy to configure permissions system. When you
 [create a role](#create-a-role), all permissions are turned off by default, allowing you to explicitly grant permissions
@@ -178,8 +172,6 @@ items in a collection.
 To learn more, see our guide on [permissions](/user-guide/user-management/permissions).
 
 ## Workflows
-
-![Workflows in the CaseFusion](https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/workflows-20220909/workflows-20220909B.webp)
 
 Workflows are a way to setup structured stages to content authoring and data management. They are created primarily with
 custom access permissions, but can be enhanced with email notifications, custom [Interfaces](/extensions/interfaces) as

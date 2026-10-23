@@ -164,33 +164,36 @@ await directus.request(
 <section :class="[$style.grayBg, $style.paddingBox]">
 	<div :class="[$style.sectionContainer, $style.sectionPaddingMd]">
 		<div :class="$style.header">
-			<h2>Framework Guides</h2>
+			<h2>Guides</h2>
 			<p>
-				Combine CaseFusion with your favorite framework to create dynamic and efficient web applications.
+				Step-by-step guides to flows, content workflows, real-time data and the SDK.
 			</p>
 		</div>
 		<div :class="[$style.grid3, $style.m60]">
-			<Article
-				title="Build a Static Website with Nuxt.js"
-				desc="Learn how to build a website using CaseFusion as a CMS and Nuxt 3."
-				img="/assets/nuxt-guide.png"
-				url="/guides/headless-cms/build-static-website/nuxt-3"
+			<Card
+				h="3"
+				title="Build Content Approval Workflows"
+				text="Use roles, permissions and flows to route content through review before it is published."
+				url="/guides/headless-cms/approval-workflows"
+				icon="approval"
 			/>
-			<Article
-				title="Set up Live Preview in a Next.js project"
-				desc="By adding a preview URL, you can instantly see live changes made to your collection."
-				img="/assets/next-guide.png"
-				url="/guides/headless-cms/live-preview/nextjs"
+			<Card
+				h="3"
+				title="Slugify Text With Run Script"
+				text="Transform data in a flow with a sandboxed Run Script operation."
+				url="/guides/flows/slugify-text-with-run-script"
+				icon="bolt"
 			/>
-			<Article
-				title="Build a Multi-User Chat With React.js"
-				desc="Deep dive into how to use CaseFusion websockets to build an interactive chat application."
-				img="/assets/react-guide.png"
-				url="/guides/real-time/chat/react"
+			<Card
+				h="3"
+				title="Build a Multi-User Chat"
+				text="Use WebSockets to build an interactive chat application in plain JavaScript."
+				url="/guides/real-time/chat/javascript"
+				icon="forum"
 			/>
 		</div>
 		<div :class="$style.header">
-			<Button href="/guides">View All Guides</Button>
+			<Button href="/guides/">View All Guides</Button>
 		</div>
 	</div>
 </section>

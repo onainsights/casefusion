@@ -178,8 +178,6 @@ document.querySelector('#new').addEventListener('submit', function (event) {
 _Refresh your browser, login, and submit a new message. Check the `Messages` collection in your CaseFusion project and
 you should see a new item._
 
-![CaseFusion Data Studio Content Module showing the Messages collection with one item in it. Visible is the text, User, and Date Created.](https://cdn.directus.io/docs/v9/guides/websockets/chat-collection.webp)
-
 ## Display New Messages
 
 At the bottom of your `<script>`, create an `addMessageToList` function:
@@ -203,8 +201,6 @@ if (data.type == 'subscription' && data.event == 'create') {
 
 _Refresh your browser, login, and submit a new message. The result should be shown on the page. Open a second browser
 and navigate to your index.html file, login and submit a message there and both pages should immediately update_
-
-![Web page showing the login form, new message form, and one message shown. The message reads “Kevin: This is brilliant!”](https://cdn.directus.io/docs/v9/guides/websockets/chat-webpage.webp)
 
 ## Display Historical Messages
 
