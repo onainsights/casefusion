@@ -8,27 +8,17 @@ readTime: 7 min read
 # Quickstart Guide
 
 > This quickstart guide is designed to get you up and running with a CaseFusion Project in a few minutes. Along the way,
-> you will better understand what CaseFusion is, setup your CaseFusion project locally or with Directus Cloud, and get a
+> you will better understand what CaseFusion is, setup your CaseFusion project locally or with Ona Insights, and get a
 > hands-on introduction to the App and API.
 
 ## 1. Create a Project
 
 ::: tabs
 
-== Directus Cloud
+== Ona Insights Managed Cloud
 
-Create and login to your [Directus Cloud account](https://directus.cloud).
-
-The very first time you log in to your Cloud Account, you will be prompted to create a Team. Each Directus Cloud Project
-exists within the scope of one Team. They allow you to organize Team Members, Projects and Project Billing as desired.
-
-Create a new project - once started, it should take around 90 seconds for the Cloud Project to created. During this
-time, a link will be sent to the email associated with your Cloud Account. The email will contain your Project URL as
-well as an email and password to login. If you used GitHub to create your account, this will be your GitHub email.
-
-Login to your new project using the URL in your email inbox or on your Directus Cloud Dashboard.
-
-_Learn more about Directus Cloud Projects in our [User Guide](/user-guide/cloud/projects)._
+[Ona Insights](https://onainsights.io/) offers managed cloud hosting for CaseFusion.
+[Get in touch with Ona Insights](https://onainsights.io/) for more information.
 
 == Self-Hosted Installation
 
@@ -41,7 +31,7 @@ docker run \
 -p 8055:8055 \
 -e KEY=replace-with-random-value \
 -e SECRET=replace-with-random-value \
-directus/directus
+ghcr.io/onainsights/casefusion
 ```
 
 _Learn more about self-hosting CaseFusion in our [Self-Hosted Quickstart](/self-hosted/quickstart)._

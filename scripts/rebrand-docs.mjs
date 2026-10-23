@@ -40,7 +40,7 @@ const references = [
 		`[GitHub Container Registry](${repo}/pkgs/container/casefusion)`,
 	],
 	[/https:\/\/hub\.docker\.com\/r\/directus\/directus\/?/g, `${repo}/pkgs/container/casefusion`],
-	[/(?<![\w./-])directus\/directus(?=:|`)/g, 'ghcr.io/onainsights/casefusion'],
+	[/(?<![\w./-])directus\/directus(?=:|`|$)/g, 'ghcr.io/onainsights/casefusion'],
 	[/https:\/\/www\.npmjs\.com\/package\/directus(?![\w/-])/g, `${repo}#running-it`],
 	[/https:\/\/github\.com\/directus\/directus\/blob\/main\//g, `${repo}/blob/main/`],
 	[
