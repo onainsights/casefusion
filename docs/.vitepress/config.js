@@ -32,11 +32,8 @@ export default defineConfig({
 	],
 	lastUpdated: true,
 	themeConfig: {
-		siteTitle: false,
-		logo: {
-			light: '/logo-light.svg',
-			dark: '/logo-dark.svg',
-		},
+		siteTitle: 'CaseFusion',
+		logo: '/logo.svg',
 		socialLinks: [{ icon: 'github', link: 'https://github.com/onainsights/casefusion' }],
 		nav: [
 			{
