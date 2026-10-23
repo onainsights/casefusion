@@ -44,9 +44,10 @@ can set SSO and allow login through Google, Facebook, etc.
 Finally, a complete set of REST and GraphQL endpoints are generated dynamically, based on your data model as well as
 your configured roles and associated access permissions.
 
-The CaseFusion JS-SDK is [available via NPM](https://www.npmjs.com/package/@directus/sdk). You also have access to two
-Command-Line Interfaces (CLI). One enables server-side actions relating to your on-prem instance, like migrating the
-database or resetting a user. The other allows you to interact with a CaseFusion instance as you would with an SDK.
+The CaseFusion JS-SDK is [in this repository](https://github.com/onainsights/casefusion/tree/main/sdk). You also have
+access to two Command-Line Interfaces (CLI). One enables server-side actions relating to your on-prem instance, like
+migrating the database or resetting a user. The other allows you to interact with a CaseFusion instance as you would
+with an SDK.
 
 ## The Data Studio
 

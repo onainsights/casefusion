@@ -26,8 +26,8 @@ link leads to a page containing the read-only content for just that shared Item.
 ::: tip Read-only
 
 At this time, Shares are read-only. However, Data Sharing is an extensible feature that could support full CRUD
-permissions. We welcome any [pull-requests](/contributing/introduction) to address this or interest in
-[sponsoring the feature](/getting-started/support#sponsored-work).
+permissions. We welcome any [pull-requests](https://github.com/onainsights/casefusion/blob/main/contributing.md) to
+address this or interest in [sponsoring the feature](/getting-started/support#sponsored-work).
 
 :::
 

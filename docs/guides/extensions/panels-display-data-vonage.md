@@ -18,9 +18,9 @@ the endpoint).
 
 ## Before You Start
 
-You will need a CaseFusion project - check out our
-[quickstart guide](https://docs.directus.io/getting-started/quickstart) if you don't already have one. You will also
-need a [Vonage Developer API account](https://developer.vonage.com/sign-up), taking note of your API Key and Secret.
+You will need a CaseFusion project - check out our [quickstart guide](/getting-started/quickstart) if you don't already
+have one. You will also need a [Vonage Developer API account](https://developer.vonage.com/sign-up), taking note of your
+API Key and Secret.
 
 ## Create Bundle
 

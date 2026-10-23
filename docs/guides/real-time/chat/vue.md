@@ -14,7 +14,7 @@ immediately update all connected chats.
 ### Set Up Your CaseFusion Project
 
 You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
-[managed Directus Cloud service](https://directus.cloud).
+[managed cloud hosting](https://onainsights.io/).
 
 Create a new collection called `messages`, with `date_created` and `user_created` fields enabled in the _Optional System
 Fields_ pane on collection creation. Create a text field called `text`.

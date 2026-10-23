@@ -37,10 +37,10 @@ Create a new `index.js` file and set it up:
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS_URL = 'https://your-base-project.directus.app';
+const BASE_DIRECTUS_URL = 'https://your-base-project.example.com';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS_URL = 'https://your-target-project.directus.app';
+const TARGET_DIRECTUS_URL = 'https://your-target-project.example.com';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {}
@@ -154,10 +154,10 @@ The complete and final code is available below.
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS_URL = 'https://your-base-project.directus.app';
+const BASE_DIRECTUS_URL = 'https://your-base-project.example.com';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS_URL = 'https://your-target-project.directus.app';
+const TARGET_DIRECTUS_URL = 'https://your-target-project.example.com';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {

@@ -74,9 +74,10 @@ the config file can be loaded as a CommonJS or ESM file.
 
 ::: tip Component Library
 
-CaseFusion comes shipped with it's own [Vue Component Library and Storybook](https://components.directus.io) that you
-can use to enrich your extensions. These components can be used in any of the "app extensions", including Interfaces,
-Displays, Modules, Layouts, and Panels.
+CaseFusion comes shipped with it's own
+[Vue Component Library](https://github.com/onainsights/casefusion/tree/main/app/src/components) that you can use to
+enrich your extensions. These components can be used in any of the "app extensions", including Interfaces, Displays,
+Modules, Layouts, and Panels.
 
 :::
 

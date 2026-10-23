@@ -122,7 +122,7 @@ Now that your Project has some content in it which is exposed to the Public, it'
 externally! Data can be accessed in a number of ways, including the REST and GraphQL API endpoints. In this case, we'll
 use the `/items/` [REST API endpoint](/reference/items) to retrieve the Item we just created.
 
-1. Open `http://your-project-url.directus.app/items/articles` in your browser.
+1. Open `http://your-project-url.example.com/items/articles` in your browser.
 
 _And there it is! The Article Item you just created is being served in beautiful JSON, ready to be used anywhere and
 everywhere!_

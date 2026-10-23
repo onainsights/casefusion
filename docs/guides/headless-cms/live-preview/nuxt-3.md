@@ -19,7 +19,7 @@ collection inside of CaseFusion.
 You will need:
 
 - A CaseFusion project. The easiest way to get started with CaseFusion is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
+  [managed cloud hosting](https://onainsights.io/). You can also self-host CaseFusion.
 - A Nuxt 3 application.
 - Some knowledge of Vue and Nuxt.
 

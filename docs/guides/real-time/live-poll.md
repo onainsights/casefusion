@@ -12,7 +12,7 @@ updated using [Chart.js](https://www.chartjs.org).
 ## Before You Start
 
 You will need a CaseFusion project. If you don’t already have one, the easiest way to get started is with our
-[managed Directus Cloud service](https://directus.cloud).
+[managed cloud hosting](https://onainsights.io/).
 
 Create a new collection called `votes`, with a dropdown selection field called `choice`. Create two choices - one with
 the value of `dogs` and one with `cats`.

@@ -449,7 +449,7 @@ function sidebar() {
 			collapsed: true,
 			items: [
 				{
-					link: 'https://github.com/directus/directus/releases',
+					link: 'https://github.com/onainsights/casefusion/releases',
 					text: 'Release Notes',
 				},
 				{

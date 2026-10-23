@@ -17,7 +17,7 @@ Here's what the end result will look like for users when using the Data Studio t
 You will need:
 
 - A CaseFusion project. The easiest way to get started with CaseFusion is with our
-  [managed Directus Cloud service](https://directus.cloud). You can also self-host CaseFusion.
+  [managed cloud hosting](https://onainsights.io/). You can also self-host CaseFusion.
 - Familiarity with [creating collections](/app/data-model/collections#create-a-collection) and
   [creating fields](/app/data-model/fields#create-a-field-standard) inside CaseFusion.
 

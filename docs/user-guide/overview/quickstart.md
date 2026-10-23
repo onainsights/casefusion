@@ -1,54 +1,23 @@
 ---
 description:
-  Get up and running with Directus Cloud in minutes. Learn the basics of building your data model and managing
-  permissions.
+  Get up and running with CaseFusion in minutes. Learn the basics of building your data model and managing permissions.
 readTime: 7 min read
 ---
 
 # Quickstart Guide
 
-> This quickstart guide is designed to get you up and running with a Directus Cloud Project in a snap. Along the way,
-> you will better understand what CaseFusion is, setup your Directus Cloud Account, and get a _hands-on introduction_ to
-> the App.
+> This quickstart guide is designed to get you up and running with a CaseFusion Project in a snap. Along the way, you
+> will better understand what CaseFusion is and get a _hands-on introduction_ to the App.
 
-## 1. Create Cloud Account and Login
+## 1. Get a Project
 
-First, you'll need to create an Account and log in on [Directus Cloud](https://directus.cloud/login).
+You need a running CaseFusion Project. Either [self-host CaseFusion](/self-hosted/quickstart), or
+[get in touch with Ona Insights](https://onainsights.io/) about managed cloud hosting.
 
-Your Directus Cloud Account allows you to create and manage any number of Projects. We've made life easier by giving you
-the option to create and log in to your Cloud Account automatically with GitHub. If you don't have a GitHub account or
-prefer not to use this login method, email-and-password login is available as well.
+## 2. Log In
 
-The very first time you log in to your Cloud Account, you will be prompted to create a Team. Each Directus Cloud Project
-exists within the scope of one Team. They allow you to organize Team Members, Projects and Project Billing as desired.
-
-Once your Team is created, it's time to create your Directus Cloud Project!
-
-## 2. Create and Access Project
-
-To create a Project, follow the steps below:
-
-1. Open the Team Menu in the Dashboard Header and select or create the desired Team.
-2. Navigate to **"Projects"** and click **"Create Project"**.
-3. Set the Project Name and tier.
-4. Scroll to the bottom of the screen and choose the **"Empty Project"** Starting Template.\
-   Note: The **"Demo Project"** adds in dummy data for in-depth feature demonstrations.
-5. Click **"Create Project"**.
-
-_It should take around 90 seconds for the Cloud Project to build out. During this time, a link will be sent to the email
-associated with your Cloud Account. The email will contain your Project URL as well as an email and password to login.
-If you used GitHub to create your account, this will be your GitHub email. Once the build is complete, it's time log
-in!_
-
-7. You can access a Project from within the Cloud Dashboard or type the URL into your browser.
-8. Log in with your username and password from the email.
-
-::: tip Check All Inbox Folders
-
-Due to the algorithms used by some email providers, it is possible the email containing your Project login information
-will end up in another folder like "Social" or "Promotions".
-
-:::
+Open your Project's URL in your browser and log in with your email and password. On a new self-hosted Project, the first
+admin user is the one set by `ADMIN_EMAIL` and `ADMIN_PASSWORD` when it first started.
 
 ## 3. Create a Collection
 

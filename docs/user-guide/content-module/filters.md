@@ -137,17 +137,16 @@ CaseFusion to fit your needs. Here are some great resources to get started down 
 
 - [Extensions > Introduction](/extensions/introduction)
 - [Extensions > Creating Extensions](/extensions/creating-extensions)
-- [Contributing > Introduction](/contributing/introduction)
-- [Contributing > Codebase Overview](/contributing/codebase-overview)
+- [Contributing > Introduction](https://github.com/onainsights/casefusion/blob/main/contributing.md)
+- [Contributing > Codebase Overview](https://github.com/onainsights/casefusion/blob/main/contributing.md)
 
 ::: tip Accelerated Development
 
 Working on an enterprise project and looking to outsource or financially sponsor the development of a Shares extension?
-Contact [our team](https://directus.io/contact)
+Contact [Ona Insights](https://onainsights.io/)
 
 :::
 
 ## More Help
 
-Looking for technical support for your non-enterprise project? Chat with thousands of engineers within our growing
-[Community on Discord](https://discord.com/invite/directus)
+Looking for help? Search or open an issue on [CaseFusion's GitHub](https://github.com/onainsights/casefusion/issues).
