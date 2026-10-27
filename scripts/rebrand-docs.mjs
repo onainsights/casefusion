@@ -60,7 +60,7 @@ const references = [
 	[/\]\(https:\/\/docs\.directus\.io\/contributing\/[^)]*\)/g, `](${repo}/blob/main/contributing.md)`],
 	[/\]\(\/contributing\/[^)]*\)/g, `](${repo}/blob/main/contributing.md)`],
 	[/\]\(https:\/\/docs\.directus\.io\//g, '](/'],
-	[/https:\/\/docs\.directus\.io\//g, 'https://onainsights.github.io/casefusion/'],
+	[/https:\/\/docs\.directus\.io\//g, 'https://casefusion.onainsights.io/'],
 	// Placeholder hosts and addresses in examples: example.com is reserved for this
 	[/https:\/\/example\.directus\.app/g, 'https://casefusion.example.com'],
 	[/\b(your-[a-z-]+|example|ldap)\.directus\.(?:app|io)\b/g, '$1.example.com'],

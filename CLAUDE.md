@@ -18,7 +18,7 @@ The repository keeps full upstream git history. `upstream` is a fetch-only remot
 
 - **Monorepo:** pnpm workspaces (`pnpm-workspace.yaml`): `api/`, `app/`, `casefusion/` (CLI entry, bins `casefusion` and
   `directus`), `sdk/`, `packages/*`, `tests/**`. `docs/` is not a workspace: it is the documentation site (VitePress),
-  with its own lockfile, published to https://onainsights.github.io/casefusion/ by `.github/workflows/docs.yml`.
+  with its own lockfile, published to https://casefusion.onainsights.io/ by `.github/workflows/docs.yml`.
 - **Backend:** Node.js + TypeScript, Express 4, Knex 2.5, Pino 8, under `api/`
 - **Frontend:** Vue 3.5 + Vite 6 + Pinia + vue-i18n, under `app/`; Ona Insights brand theme (`brand/readme.md`)
 - **Tests:** Vitest per workspace (4.1 in `app/`, 0.31 elsewhere); integration suite in `tests/blackbox` (Vitest, Docker

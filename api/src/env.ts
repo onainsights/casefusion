@@ -1,6 +1,6 @@
 /**
  * @NOTE
- * For all possible keys, see: https://onainsights.github.io/casefusion/self-hosted/config-options
+ * For all possible keys, see: https://casefusion.onainsights.io/self-hosted/config-options
  */
 
 import { parseJSON, toArray } from '@directus/utils';
@@ -504,7 +504,7 @@ function processValues(env: Record<string, any>) {
 		}
 
 		// Convert values with a type prefix
-		// (see https://onainsights.github.io/casefusion/self-hosted/config-options#environment-syntax-prefix)
+		// (see https://casefusion.onainsights.io/self-hosted/config-options#environment-syntax-prefix)
 		if (typeof value === 'string' && isEnvSyntaxPrefixPresent(value)) {
 			env[key] = getEnvironmentValueByType(value);
 			continue;
