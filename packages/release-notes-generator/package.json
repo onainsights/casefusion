@@ -25,10 +25,10 @@
 		"test": "vitest --watch=false"
 	},
 	"dependencies": {
-		"@changesets/get-github-info": "0.5.2",
-		"@pnpm/find-workspace-dir": "6.0.0",
-		"@pnpm/find-workspace-packages": "6.0.8",
-		"@pnpm/workspace.pkgs-graph": "2.0.6",
+		"@changesets/get-github-info": "0.8.0",
+		"@pnpm/find-workspace-dir": "6.0.3",
+		"@pnpm/find-workspace-packages": "6.0.9",
+		"@pnpm/workspace.pkgs-graph": "2.0.16",
 		"semver": "7.8.5"
 	},
 	"devDependencies": {
@@ -36,8 +36,8 @@
 		"@directus/tsconfig": "workspace:*",
 		"@types/node": "22.20.5",
 		"@types/semver": "7.5.0",
-		"@vitest/coverage-c8": "0.31.1",
-		"typescript": "5.2.2",
-		"vitest": "0.31.1"
+		"@vitest/coverage-c8": "0.33.0",
+		"typescript": "5.9.3",
+		"vitest": "0.34.6"
 	}
 }
