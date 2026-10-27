@@ -26,11 +26,11 @@
 		"dev": "tsup src/index.ts --format=esm --dts --watch"
 	},
 	"dependencies": {
-		"zod": "3.22.4"
+		"zod": "3.25.76"
 	},
 	"devDependencies": {
 		"@directus/tsconfig": "workspace:*",
 		"tsup": "7.2.0",
-		"typescript": "5.2.2"
+		"typescript": "5.9.3"
 	}
 }

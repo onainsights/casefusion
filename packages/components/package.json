@@ -31,22 +31,22 @@
 	},
 	"devDependencies": {
 		"@directus/tsconfig": "workspace:*",
-		"@histoire/plugin-vue": "0.16.1",
-		"@histoire/shared": "0.16.1",
-		"@rollup/plugin-node-resolve": "15.0.2",
-		"@vitejs/plugin-vue": "4.2.3",
-		"@vitest/coverage-c8": "0.31.1",
-		"histoire": "0.16.1",
-		"rollup-plugin-node-externals": "6.1.1",
-		"typescript": "5.2.2",
+		"@histoire/plugin-vue": "0.17.17",
+		"@histoire/shared": "0.17.17",
+		"@rollup/plugin-node-resolve": "15.3.1",
+		"@vitejs/plugin-vue": "4.6.2",
+		"@vitest/coverage-c8": "0.33.0",
+		"histoire": "0.17.17",
+		"rollup-plugin-node-externals": "6.1.2",
+		"typescript": "5.9.3",
 		"vite": "4.5.14",
 		"vite-plugin-dts": "2.3.0",
-		"vitest": "0.31.1"
+		"vitest": "0.34.6"
 	},
 	"dependencies": {
-		"pinia": "2.1.1",
+		"pinia": "2.3.1",
 		"vue": "3.5.44",
 		"vue-i18n": "9.14.5",
-		"vue-router": "4.2.0"
+		"vue-router": "4.6.4"
 	}
 }

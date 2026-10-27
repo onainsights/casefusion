@@ -30,13 +30,13 @@
 		"validate": "swagger-cli validate src/openapi.yaml"
 	},
 	"dependencies": {
-		"openapi3-ts": "4.1.2"
+		"openapi3-ts": "4.6.2"
 	},
 	"devDependencies": {
-		"npm-watch": "0.11.0",
-		"openapi-types": "12.1.0",
+		"npm-watch": "0.13.0",
+		"openapi-types": "12.1.3",
 		"swagger-cli": "4.0.4",
-		"swagger-ui-watcher": "2.1.13"
+		"swagger-ui-watcher": "2.1.14"
 	},
 	"watch": {
 		"build": {
