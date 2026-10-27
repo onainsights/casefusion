@@ -166,6 +166,11 @@ need Node 22 and remove most of the inherited advisories.
     `package.json` under `pnpm.auditConfig.ignoreGhsas`, each with its reason here:
     - `GHSA-vfj7-8cjw-p6xm` (`braces`, via `chokidar` 3 in the extension watcher): see E2b; patterns are fixed server
       configuration, not user input.
+    - `GHSA-mrhx-c7xc-m3w5` (`zod` 3.22.4; accepted 2026-10-27 after GitHub widened the range to all `<4.6.6` on
+      2026-10-23): memory exhaustion only when validating oversized collections that carry size constraints. The one
+      untrusted-input use, the WebSocket message schemas in `api/src/websocket/messages.ts`, has no `.max()`, `.min()`
+      or `.length()` on arrays or records; the other uses validate extension manifests and server configuration. Remove
+      the entry once `zod` is on 4.6.6 or later.
   - The full audit (app bundle, build and test tooling) stays report-only. Status 2026-10-21: production dependencies 9
     distinct advisories (0 critical, 1 high accepted, 7 moderate, 1 low); app browser bundle 0 critical/high; the rest
     is development tooling (Vitest 0.31 in per-package tests, `histoire`, `swagger-ui-watcher`, ...).
