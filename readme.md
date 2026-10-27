@@ -67,12 +67,11 @@ image workflow also builds both architectures. (Plain `v<version>` tags are upst
 
 ## Documentation
 
-The documentation is at [casefusion.onainsights.io](https://casefusion.onainsights.io/), built from
-`docs/`: upstream's Directus 10.6.4 documentation with the product name changed to CaseFusion, so it matches this
-codebase (docs.directus.io describes newer Directus releases). Anything about Directus Cloud, licensing or the
-marketplace does not apply. Internal names (`directus_*` tables, `@directus/*` packages, env vars, API routes, the
-`directus` CLI command) are deliberately unchanged so that extensions and databases stay compatible, so code samples
-that use them are correct as written.
+The documentation is at [casefusion.onainsights.io](https://casefusion.onainsights.io/), built from `docs/`: upstream's
+Directus 10.6.4 documentation with the product name changed to CaseFusion, so it matches this codebase (docs.directus.io
+describes newer Directus releases). Anything about Directus Cloud, licensing or the marketplace does not apply. Internal
+names (`directus_*` tables, `@directus/*` packages, env vars, API routes, the `directus` CLI command) are deliberately
+unchanged so that extensions and databases stay compatible, so code samples that use them are correct as written.
 
 ## Relationship with upstream
 
