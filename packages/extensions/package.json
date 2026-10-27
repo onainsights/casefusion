@@ -32,7 +32,7 @@
 		"@directus/utils": "workspace:*",
 		"fs-extra": "11.1.1",
 		"tmp": "0.2.7",
-		"zod": "3.22.4"
+		"zod": "4.6.6"
 	},
 	"devDependencies": {
 		"@directus/constants": "workspace:*",
