@@ -54,7 +54,7 @@ export const MODULE_BAR_DEFAULT = [
 		enabled: true,
 		name: '$t:documentation',
 		icon: 'help',
-		url: 'https://onainsights.github.io/casefusion/',
+		url: 'https://casefusion.onainsights.io/',
 	},
 	{
 		type: 'module',

@@ -7,9 +7,9 @@ import guidesData from './data/guides.data.js';
 const { guides } = await guidesData.load();
 
 export default defineConfig({
-	// CaseFusion: published on GitHub Pages under /casefusion/; Directus' trackers, marketing CMS, Algolia index and
-	// generated package reference are removed
-	base: '/casefusion/',
+	// CaseFusion: published on GitHub Pages at https://casefusion.onainsights.io/; Directus' trackers, marketing CMS,
+	// Algolia index and generated package reference are removed
+	base: '/',
 	lang: 'en-US',
 	title: 'CaseFusion Docs',
 	description: 'Documentation for CaseFusion, the GPLv3 fork of Directus maintained by Ona Insights.',
@@ -28,8 +28,8 @@ export default defineConfig({
 		},
 	},
 	head: [
-		['link', { rel: 'icon', type: 'image/svg+xml', href: '/casefusion/favicon.svg' }],
-		['link', { rel: 'apple-touch-icon', href: '/casefusion/favicon.svg' }],
+		['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+		['link', { rel: 'apple-touch-icon', href: '/favicon.svg' }],
 	],
 	lastUpdated: true,
 	themeConfig: {
@@ -62,7 +62,7 @@ export default defineConfig({
 		},
 	},
 	sitemap: {
-		hostname: 'https://onainsights.github.io/casefusion/',
+		hostname: 'https://casefusion.onainsights.io/',
 	},
 	transformPageData(pageData) {
 		if (pageData.frontmatter.type === 'guides-index') {
