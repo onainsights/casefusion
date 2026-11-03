@@ -7,7 +7,7 @@ import guidesData from './data/guides.data.js';
 const { guides } = await guidesData.load();
 
 export default defineConfig({
-	// CaseFusion: published on GitHub Pages at https://casefusion.onainsights.io/; Directus' trackers, marketing CMS,
+	// CaseFusion: published on GitHub Pages at https://docs.casefusion.onainsights.io/; Directus' trackers, marketing CMS,
 	// Algolia index and generated package reference are removed
 	base: '/',
 	lang: 'en-US',
@@ -62,7 +62,7 @@ export default defineConfig({
 		},
 	},
 	sitemap: {
-		hostname: 'https://casefusion.onainsights.io/',
+		hostname: 'https://docs.casefusion.onainsights.io/',
 	},
 	transformPageData(pageData) {
 		if (pageData.frontmatter.type === 'guides-index') {
