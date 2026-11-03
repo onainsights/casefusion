@@ -132,7 +132,7 @@ services:
       ADMIN_PASSWORD: 'd1r3ctu5'
 
       # Make sure to set this in production
-      # (see https://casefusion.onainsights.io/self-hosted/config-options#general)
+      # (see https://docs.casefusion.onainsights.io/self-hosted/config-options#general)
       # PUBLIC_URL: 'https://directus.example.com'
 ```
 
